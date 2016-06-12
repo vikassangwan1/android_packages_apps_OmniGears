@@ -64,10 +64,12 @@ public class BarsSettings extends SettingsPreferenceFragment implements
     private static final String NAVIGATIONBAR_ROOT = "category_navigationbar";
     private static final String TABLET_NAVIGATION_BAR = "enable_tablet_navigation";
     private static final String CUSTOM_HEADER_IMAGE_SHADOW = "status_bar_custom_header_shadow";
+    private static final String QUICK_SETTTINGS_PULLDOWN = "status_bar_quick_qs_pulldown";
 
     private ListPreference mDaylightHeaderPack;
     private CheckBoxPreference mCustomHeaderImage;
     private SeekBarPreference mHeaderShadow;
+    private ListPreference mQuickPulldown;
 
     @Override
     protected int getMetricsCategory() {
@@ -128,6 +130,12 @@ public class BarsSettings extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
         mHeaderShadow.setValue((int)(((double) headerShadow / 255) * 100));
         mHeaderShadow.setOnPreferenceChangeListener(this);
+
+        mQuickPulldown = (ListPreference) findPreference(QUICK_SETTTINGS_PULLDOWN);
+        mQuickPulldown.setOnPreferenceChangeListener(this);
+        int quickPullDownValue = Settings.System.getInt(getContentResolver(), Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0);
+        mQuickPulldown.setValue(String.valueOf(quickPullDownValue));
+        updatePulldownSummary(quickPullDownValue);
     }
 
     @Override
@@ -155,6 +163,11 @@ public class BarsSettings extends SettingsPreferenceFragment implements
             int realHeaderValue = (int) (((double) headerShadow / 100) * 255);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, realHeaderValue);
+        } else if (preference == mQuickPulldown) {
+            int quickPullDownValue = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, quickPullDownValue);
+            updatePulldownSummary(quickPullDownValue);
         }
         return true;
     }
@@ -190,6 +203,20 @@ public class BarsSettings extends SettingsPreferenceFragment implements
                 label = packageName;
             }
             entries.add(label);
+        }
+    }
+
+    private void updatePulldownSummary(int value) {
+        Resources res = getResources();
+
+        if (value == 0) {
+            // quick pulldown deactivated
+            mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_off));
+        } else {
+            String direction = res.getString(value == 2
+                    ? R.string.status_bar_quick_qs_pulldown_summary_left
+                    : R.string.status_bar_quick_qs_pulldown_summary_right);
+            mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_summary, direction));
         }
     }
 
