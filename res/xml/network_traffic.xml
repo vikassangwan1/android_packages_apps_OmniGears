@@ -13,13 +13,12 @@
 
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
- -->
-
+-->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
         android:key="category_network_traffic"
         android:title="@string/network_traffic_title">
-
+<!--
             <ListPreference
                 android:key="network_traffic_state"
                 android:title="@string/show_network_traffic_state"
@@ -57,4 +56,5 @@
                 android:dependency="network_traffic_autohide"
                 android:persistent="false" />
 
+-->
 </PreferenceScreen>
