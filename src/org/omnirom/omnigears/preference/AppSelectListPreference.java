@@ -1,213 +1,186 @@
 /*
- *  Copyright (C) 2016 The OmniROM Project
+ * Copyright (C) 2012-2014 The CyanogenMod Project
  *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package org.omnirom.omnigears.preference;
 
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
-import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
-import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
-import android.os.Bundle;
-import android.preference.DialogPreference;
-import android.util.AttributeSet;
-import android.util.Log;
+import android.os.Handler;
+import android.os.Message;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.settings.R;
 
-import java.text.Collator;
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
+import java.util.TreeSet;
 
-public class AppSelectListPreference extends DialogPreference {
-    private final List<MyApplicationInfo> mPackageInfoList = new ArrayList<MyApplicationInfo>();
-    private AppListAdapter mAdapter;
-    private String mReturnValue;
+public class AppSelectListPreference extends BaseAdapter implements Runnable {
+    private PackageManager mPm;
+    private LayoutInflater mInflater;
+    private List<PackageItem> mInstalledPackages = new LinkedList<PackageItem>();
 
-    public AppSelectListPreference(Context context) {
-        this(context, null);
-    }
+    // Packages which don't have launcher icons, but which we want to show nevertheless
+    private static final String[] PACKAGE_WHITELIST = new String[] {
+        "android",                          /* system server */
+        "com.android.systemui",             /* system UI */
+        "com.android.providers.downloads"   /* download provider */
+    };
 
-    public AppSelectListPreference(Context context, AttributeSet attrs) {
-        super(context, attrs);
-
-        setDialogLayoutResource(R.layout.preference_app_list);
-
-        final Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
-        mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
-        List<ResolveInfo> installedAppsInfo = getContext().getPackageManager().queryIntentActivities(
-                mainIntent, 0);
-
-        for (ResolveInfo info : installedAppsInfo) {
-            MyApplicationInfo myInfo = new MyApplicationInfo();
-            myInfo.resolveInfo = info;
-            myInfo.label = getResolveInfoTitle(info);
-            mPackageInfoList.add(myInfo);
-        }
-        Collections.sort(mPackageInfoList, sDisplayNameComparator);
-    }
-
-    public String getValue() {
-        return mReturnValue;
-    }
-
-    @Override
-    protected void onBindDialogView(View view) {
-        super.onBindDialogView(view);
-
-        mAdapter = new AppListAdapter(getContext());
-        final ListView listView = (ListView) view.findViewById(R.id.app_list);
-        listView.setAdapter(mAdapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                final AppViewHolder holder = (AppViewHolder) view.getTag();
-
-                MyApplicationInfo myInfo = mAdapter.getItem(position);
-                ResolveInfo info = myInfo.resolveInfo;
-                Intent intent = getIntentForResolveInfo(info, Intent.ACTION_MAIN);
-                intent.addCategory(Intent.CATEGORY_LAUNCHER);
-
-                mReturnValue = intent.toUri(0).toString();
-                AppSelectListPreference.this.onClick(getDialog(), DialogInterface.BUTTON_POSITIVE);
-                getDialog().dismiss();
-            }
-        });
-    }
-
-    @Override
-    protected void onPrepareDialogBuilder(Builder builder) {
-        super.onPrepareDialogBuilder(builder);
-        builder.setPositiveButton(null, null);
-    }
-
-    @Override
-    protected void onDialogClosed(boolean positiveResult) {
-        super.onDialogClosed(positiveResult);
-        callChangeListener(mReturnValue);
-    }
-
-    private String getResolveInfoTitle(ResolveInfo info) {
-        CharSequence label = info.loadLabel(getContext().getPackageManager());
-        if (label == null) label = info.activityInfo.name;
-        return label != null ? label.toString() : null;
-    }
-
-    private Intent getIntentForResolveInfo(ResolveInfo info, String action) {
-        Intent intent = new Intent(action);
-        ActivityInfo ai = info.activityInfo;
-        intent.setClassName(ai.packageName, ai.name);
-        return intent;
-    }
-
-    class MyApplicationInfo {
-        ApplicationInfo info;
-        CharSequence label;
-        ResolveInfo resolveInfo;
-    }
-
-    public class AppListAdapter extends ArrayAdapter<MyApplicationInfo> {
-        private final LayoutInflater mInflater;
-
-        public AppListAdapter(Context context) {
-            super(context, 0);
-            mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            addAll(mPackageInfoList);
-        }
-
+    private final Handler mHandler = new Handler() {
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            // A ViewHolder keeps references to children views to avoid unnecessary calls
-            // to findViewById() on each row.
-            AppViewHolder holder = AppViewHolder.createOrRecycle(mInflater, convertView);
-            convertView = holder.rootView;
-            MyApplicationInfo info = getItem(position);
-            holder.appName.setText(info.label);
-            Drawable icon = info.resolveInfo.loadIcon(getContext().getPackageManager());
-            if (icon != null) {
-                holder.appIcon.setImageDrawable(icon);
+        public void handleMessage(Message msg) {
+            PackageItem item = (PackageItem) msg.obj;
+            int index = Collections.binarySearch(mInstalledPackages, item);
+            if (index < 0) {
+                mInstalledPackages.add(-index - 1, item);
             } else {
-                holder.appIcon.setImageDrawable(null);
+                mInstalledPackages.get(index).activityTitles.addAll(item.activityTitles);
             }
-            return convertView;
-        }
-
-        @Override
-        public MyApplicationInfo getItem(int position) {
-            return mPackageInfoList.get(position);
-        }
-    }
-
-    public static class AppViewHolder {
-        public View rootView;
-        public TextView appName;
-        public ImageView appIcon;
-        public CheckBox checkBox;
-
-        public static AppViewHolder createOrRecycle(LayoutInflater inflater, View convertView) {
-            if (convertView == null) {
-                convertView = inflater.inflate(R.layout.app_select_item, null);
-
-                // Creates a ViewHolder and store references to the two children views
-                // we want to bind data to.
-                AppViewHolder holder = new AppViewHolder();
-                holder.rootView = convertView;
-                holder.appName = (TextView) convertView.findViewById(R.id.app_name);
-                holder.appIcon = (ImageView) convertView.findViewById(R.id.app_icon);
-                holder.checkBox = (CheckBox) convertView.findViewById(android.R.id.checkbox);
-                holder.checkBox.setVisibility(View.GONE);
-                convertView.setTag(holder);
-                return holder;
-            } else {
-                // Get the ViewHolder back to get fast access to the TextView
-                // and the ImageView.
-                return (AppViewHolder)convertView.getTag();
-            }
-        }
-    }
-
-    private final static Comparator<MyApplicationInfo> sDisplayNameComparator
-            = new Comparator<MyApplicationInfo>() {
-
-        private final Collator collator = Collator.getInstance();
-
-        public final int compare(MyApplicationInfo a, MyApplicationInfo b) {
-            return collator.compare(a.label, b.label);
+            notifyDataSetChanged();
         }
     };
-}
 
+    public static class PackageItem implements Comparable<PackageItem> {
+        public final String packageName;
+        public final CharSequence title;
+        private final TreeSet<CharSequence> activityTitles = new TreeSet<CharSequence>();
+        public final Drawable icon;
+
+        PackageItem(String packageName, CharSequence title, Drawable icon) {
+            this.packageName = packageName;
+            this.title = title;
+            this.icon = icon;
+        }
+
+        @Override
+        public int compareTo(PackageItem another) {
+            int result = title.toString().compareToIgnoreCase(another.title.toString());
+            return result != 0 ? result : packageName.compareTo(another.packageName);
+        }
+    }
+
+    public AppSelectListPreference(Context context) {
+        mPm = context.getPackageManager();
+        mInflater = LayoutInflater.from(context);
+        reloadList();
+    }
+
+    @Override
+    public int getCount() {
+        synchronized (mInstalledPackages) {
+            return mInstalledPackages.size();
+        }
+    }
+
+    @Override
+    public PackageItem getItem(int position) {
+        synchronized (mInstalledPackages) {
+            return mInstalledPackages.get(position);
+        }
+    }
+
+    @Override
+    public long getItemId(int position) {
+        synchronized (mInstalledPackages) {
+            // packageName is guaranteed to be unique in mInstalledPackages
+            return mInstalledPackages.get(position).packageName.hashCode();
+        }
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder;
+        if (convertView != null) {
+            holder = (ViewHolder) convertView.getTag();
+        } else {
+            convertView = mInflater.inflate(R.layout.preference_icon, null, false);
+            holder = new ViewHolder();
+            convertView.setTag(holder);
+            holder.title = (TextView) convertView.findViewById(com.android.internal.R.id.title);
+            holder.summary = (TextView) convertView.findViewById(com.android.internal.R.id.summary);
+            holder.icon = (ImageView) convertView.findViewById(R.id.icon);
+        }
+
+        PackageItem applicationInfo = getItem(position);
+        holder.title.setText(applicationInfo.title);
+        holder.icon.setImageDrawable(applicationInfo.icon);
+
+        boolean needSummary = applicationInfo.activityTitles.size() > 0;
+        if (applicationInfo.activityTitles.size() == 1) {
+            if (TextUtils.equals(applicationInfo.title, applicationInfo.activityTitles.first())) {
+                needSummary = false;
+            }
+        }
+
+        if (needSummary) {
+            holder.summary.setText(TextUtils.join(", ", applicationInfo.activityTitles));
+            holder.summary.setVisibility(View.VISIBLE);
+        } else {
+            holder.summary.setVisibility(View.GONE);
+        }
+
+        return convertView;
+    }
+
+    private void reloadList() {
+        mInstalledPackages.clear();
+        new Thread(this).start();
+    }
+
+    @Override
+    public void run() {
+        final Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
+        mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+        List<ResolveInfo> installedAppsInfo = mPm.queryIntentActivities(mainIntent, 0);
+
+        for (ResolveInfo info : installedAppsInfo) {
+            ApplicationInfo appInfo = info.activityInfo.applicationInfo;
+            final PackageItem item = new PackageItem(appInfo.packageName,
+                    appInfo.loadLabel(mPm), appInfo.loadIcon(mPm));
+            item.activityTitles.add(info.loadLabel(mPm));
+            mHandler.obtainMessage(0, item).sendToTarget();
+        }
+
+        for (String packageName : PACKAGE_WHITELIST) {
+            try {
+                ApplicationInfo appInfo = mPm.getApplicationInfo(packageName, 0);
+                final PackageItem item = new PackageItem(appInfo.packageName,
+                        appInfo.loadLabel(mPm), appInfo.loadIcon(mPm));
+                mHandler.obtainMessage(0, item).sendToTarget();
+            } catch (PackageManager.NameNotFoundException ignored) {
+                // package not present, so nothing to add -> ignore it
+            }
+        }
+    }
+
+    private static class ViewHolder {
+        TextView title;
+        TextView summary;
+        ImageView icon;
+    }
+}
