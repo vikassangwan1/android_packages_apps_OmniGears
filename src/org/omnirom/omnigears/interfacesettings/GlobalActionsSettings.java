@@ -14,24 +14,25 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
-
+*/
 package org.omnirom.omnigears.interfacesettings;
 
 import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.UserManager;
-import android.preference.Preference;
-import android.preference.PreferenceGroup;
-import android.preference.PreferenceManager;
-import android.preference.PreferenceScreen;
-import android.preference.SwitchPreference;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceGroup;
+import android.support.v7.preference.PreferenceManager;
+import android.support.v7.preference.PreferenceScreen;
+import android.support.v7.preference.Preference.OnPreferenceChangeListener;
+import android.support.v14.preference.SwitchPreference;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.android.internal.logging.MetricsLogger;
+import com.android.internal.logging.MetricsProto.MetricsEvent;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -44,14 +45,16 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 public class GlobalActionsSettings extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener, Indexable {
+        OnPreferenceChangeListener, Indexable {
     private static final String TAG = "GlobalActionsSettings";
+ //   private static final String GLOBAL_ACTIONS = "global_actions";
 
     private LinkedHashMap<String, Boolean> mGlobalActionsMap;
+//    private PreferenceScreen prefScreen = null;
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsLogger.OMNI_SETTINGS;
+        return MetricsEvent.OMNI_SETTINGS;
     }
 
     @Override
@@ -60,6 +63,7 @@ public class GlobalActionsSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.global_actions);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
+      //  prefScreen = (PreferenceScreen)findPreference(GLOBAL_ACTIONS);
         final ContentResolver contentResolver = getContext().getContentResolver();
 
         final String[] defaultActions = getContext().getResources().getStringArray(
@@ -108,7 +112,7 @@ public class GlobalActionsSettings extends SettingsPreferenceFragment implements
     }
 
     @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+    public boolean onPreferenceTreeClick(Preference preference) {
         if (preference instanceof SwitchPreference) {
             SwitchPreference action = (SwitchPreference) preference;
             mGlobalActionsMap.put(action.getKey(), action.isChecked());
@@ -123,7 +127,7 @@ public class GlobalActionsSettings extends SettingsPreferenceFragment implements
             setList(enabledActionsList);
             return true;
         }
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
+        return super.onPreferenceTreeClick(preference);
     }
 
     private void setList(List<String> actionList) {
@@ -159,4 +163,3 @@ public class GlobalActionsSettings extends SettingsPreferenceFragment implements
                 }
             };
 }
-*/

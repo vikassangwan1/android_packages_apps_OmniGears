@@ -30,7 +30,7 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
-
+<!--
     <PreferenceCategory
         android:key="button_volume_keys"
         android:title="@string/button_volume_keys_title" >
@@ -41,7 +41,7 @@
             android:summary="@string/button_volume_wake_summary"
             android:persistent="false"
             android:disableDependentsState="true" />
-
+-->
         <!--<ListPreference
             android:key="button_volume_default_screen"
             android:title="@string/button_volume_default_title"
@@ -49,13 +49,13 @@
             android:entries="@array/button_volume_default_entries"
             android:entryValues="@array/button_volume_default_values"
             android:persistent="false"/>-->
-
-        <com.android.settings.preference.SystemCheckBoxPreference
+<!--
+        <org.omnirom.omnigears.preference.SystemCheckBoxPreference
             android:key="volume_button_music_control"
             android:title="@string/volume_button_music_control_title"
             android:summary="@string/volume_button_music_control_summary"
             android:dependency="button_volume_wake_screen"/>
-
+-->
         <!-- <ListPreference
             android:key="volume_key_cursor_control"
             android:persistent="false"
@@ -63,7 +63,7 @@
             android:title="@string/volume_key_cursor_control_title"
             android:entries="@array/volume_key_cursor_control_entries"
             android:entryValues="@array/volume_key_cursor_control_values" /> -->
-
+<!--
         <CheckBoxPreference
             android:key="swap_volume_buttons"
             android:title="@string/swap_volume_buttons_title"
@@ -87,7 +87,7 @@
             android:title="@string/hardware_keys_disable_title"
             android:summary="@string/hardware_keys_disable_summary"
             android:persistent="false"/>
-
+-->
         <!--<CheckBoxPreference
             android:key="virtual_key_haptic_feedback"
             android:title="@string/virtual_key_haptic_feedback_title"
@@ -99,19 +99,19 @@
             android:title="@string/force_show_overflow_menu_title"
             android:summary="@string/force_show_overflow_menu_summary"
             android:persistent="false"/>-->
-
+<!--
         <PreferenceScreen
             android:key="button_brightness"
             android:title="@string/button_backlight_title"
             android:fragment="org.omnirom.omnigears.brightness.ButtonBrightnessSettings" />
-
+-->
         <!--<SwitchPreference
             android:key="keys_enable_custom"
             android:title="@string/keys_enable_custom_title"
             android:persistent="false" />-->
 
-    </PreferenceCategory>
-
+<!--    </PreferenceCategory> -->
+<!--
     <PreferenceCategory
        android:key="button_keys_back"
         android:title="@string/button_keys_back_title" >
@@ -248,18 +248,18 @@
             android:persistent="false"
             android:dependency="keys_enable_custom" />
     </PreferenceCategory>
-
+-->
     <PreferenceCategory
         android:key="button_other"
         android:title="@string/button_other_title" >
-        <ListPreference
+<!--        <ListPreference
             android:key="navbar_recents_style"
             android:title="@string/navbar_recents_style_title"
             android:entries="@array/navbar_recents_style_entries"
             android:entryValues="@array/navbar_recents_style_values"
             android:persistent="false"/>
 
-        <com.android.settings.preference.SystemCheckBoxPreference
+        <org.omnirom.omnigears.preference.SystemCheckBoxPreference
             android:key="button_back_kill_enable"
             android:title="@string/button_back_kill_enable_title"
             android:summary="@string/button_back_kill_enable_summary"
@@ -272,7 +272,7 @@
             android:entryValues="@array/button_back_kill_timeout_values"
             android:persistent="false"
             android:dependency="button_back_kill_enable"/>
-
+-->
         <PreferenceScreen
             android:key="global_actions"
             android:title="@string/global_actions_title"

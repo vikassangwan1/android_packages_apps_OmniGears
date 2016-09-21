@@ -14,6 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
+*/
 package org.omnirom.omnigears;
 
 import android.content.ContentResolver;
@@ -46,112 +47,112 @@ import com.android.settings.Utils;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
-import com.android.settings.preference.SystemCheckBoxPreference;
+import org.omnirom.omnigears.preference.SystemCheckBoxPreference;
 
-import com.android.internal.logging.MetricsLogger;
+import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.internal.util.omni.OmniSwitchConstants;
 import com.android.internal.util.omni.PackageUtils;
 import com.android.internal.util.omni.DeviceUtils;
 
 public class ButtonSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener, Indexable {
 
-    private static final String CATEGORY_VOLUME = "button_volume_keys";
-    private static final String CATEGORY_KEYS = "button_keys";
-    private static final String CATEGORY_BACK = "button_keys_back";
-    private static final String CATEGORY_HOME = "button_keys_home";
-    private static final String CATEGORY_MENU = "button_keys_menu";
-    private static final String CATEGORY_ASSIST = "button_keys_assist";
-    private static final String CATEGORY_APPSWITCH = "button_keys_appSwitch";
+//    private static final String CATEGORY_VOLUME = "button_volume_keys";
+//    private static final String CATEGORY_KEYS = "button_keys";
+//    private static final String CATEGORY_BACK = "button_keys_back";
+//    private static final String CATEGORY_HOME = "button_keys_home";
+//    private static final String CATEGORY_MENU = "button_keys_menu";
+//    private static final String CATEGORY_ASSIST = "button_keys_assist";
+//    private static final String CATEGORY_APPSWITCH = "button_keys_appSwitch";
 
-    private static final String BUTTON_VOLUME_WAKE = "button_volume_wake_screen";
-    private static final String BUTTON_HOME_WAKE = "button_home_wake_screen";
-    private static final String BUTTON_HOME_ANSWERS_CALL = "button_home_answers_call";
+//    private static final String BUTTON_VOLUME_WAKE = "button_volume_wake_screen";
+//    private static final String BUTTON_HOME_WAKE = "button_home_wake_screen";
+//    private static final String BUTTON_HOME_ANSWERS_CALL = "button_home_answers_call";
 //    private static final String BUTTON_VOLUME_DEFAULT = "button_volume_default_screen";
 //    private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
-    private static final String SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
+//    private static final String SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
 //    private static final String CATEGORY_HEADSETHOOK = "button_headsethook";
 //    private static final String BUTTON_HEADSETHOOK_LAUNCH_VOICE = "button_headsethook_launch_voice";
 
-    private static final String KEYS_ENABLE_CUSTOM = "keys_enable_custom";
-    private static final String KEYS_BACK_PRESS = "keys_back_press";
-    private static final String KEYS_BACK_LONG_PRESS = "keys_back_long_press";
-    private static final String KEYS_HOME_PRESS = "keys_home_press";
-    private static final String KEYS_HOME_LONG_PRESS = "keys_home_long_press";
-    private static final String KEYS_HOME_DOUBLE_TAP = "keys_home_double_tap";
-    private static final String KEYS_MENU_PRESS = "keys_menu_press";
-    private static final String KEYS_MENU_LONG_PRESS = "keys_menu_long_press";
-    private static final String KEYS_ASSIST_PRESS = "keys_assist_press";
-    private static final String KEYS_ASSIST_LONG_PRESS = "keys_assist_long_press";
-    private static final String KEYS_APP_SWITCH_PRESS = "keys_app_switch_press";
-    private static final String KEYS_APP_SWITCH_LONG_PRESS = "keys_app_switch_long_press";
+//    private static final String KEYS_ENABLE_CUSTOM = "keys_enable_custom";
+//    private static final String KEYS_BACK_PRESS = "keys_back_press";
+//    private static final String KEYS_BACK_LONG_PRESS = "keys_back_long_press";
+//    private static final String KEYS_HOME_PRESS = "keys_home_press";
+//    private static final String KEYS_HOME_LONG_PRESS = "keys_home_long_press";
+//    private static final String KEYS_HOME_DOUBLE_TAP = "keys_home_double_tap";
+//    private static final String KEYS_MENU_PRESS = "keys_menu_press";
+//    private static final String KEYS_MENU_LONG_PRESS = "keys_menu_long_press";
+//    private static final String KEYS_ASSIST_PRESS = "keys_assist_press";
+//    private static final String KEYS_ASSIST_LONG_PRESS = "keys_assist_long_press";
+//    private static final String KEYS_APP_SWITCH_PRESS = "keys_app_switch_press";
+//    private static final String KEYS_APP_SWITCH_LONG_PRESS = "keys_app_switch_long_press";
 
 //    private static final String VIRTUAL_KEY_HAPTIC_FEEDBACK = "virtual_key_haptic_feedback";
 //    private static final String FORCE_SHOW_OVERFLOW_MENU = "force_show_overflow_menu";
-    private static final String KEYS_BRIGHTNESS_KEY = "button_brightness";
-    private static final String KEYS_SHOW_NAVBAR_KEY = "navigation_bar_show";
-    private static final String KEYS_DISABLE_HW_KEY = "hardware_keys_disable";
-    private static final String NAVIGATION_BAR_RECENTS_STYLE = "navbar_recents_style";
-    private static final String BUTTON_BACK_KILL_TIMEOUT = "button_back_kill_timeout";
+//    private static final String KEYS_BRIGHTNESS_KEY = "button_brightness";
+//    private static final String KEYS_SHOW_NAVBAR_KEY = "navigation_bar_show";
+//    private static final String KEYS_DISABLE_HW_KEY = "hardware_keys_disable";
+//    private static final String NAVIGATION_BAR_RECENTS_STYLE = "navbar_recents_style";
+//    private static final String BUTTON_BACK_KILL_TIMEOUT = "button_back_kill_timeout";
 
     // Available custom actions to perform on a key press.
-    private static final int ACTION_NOTHING = 0;
-    private static final int ACTION_MENU = 1;
-    private static final int ACTION_APP_SWITCH = 2;
-    private static final int ACTION_SEARCH = 3;
-    private static final int ACTION_VOICE_SEARCH = 4;
-    private static final int ACTION_IN_APP_SEARCH = 5;
-    private static final int ACTION_HOME = 6;
-    private static final int ACTION_BACK = 7;
-    private static final int ACTION_LAST_APP = 8;
-    private static final int ACTION_KILL_APP = 9;
-    private static final int ACTION_SLEEP = 10;
-    private static final int ACTION_OMNISWITCH = 11;
+//    private static final int ACTION_NOTHING = 0;
+//    private static final int ACTION_MENU = 1;
+//    private static final int ACTION_APP_SWITCH = 2;
+//    private static final int ACTION_SEARCH = 3;
+//    private static final int ACTION_VOICE_SEARCH = 4;
+//    private static final int ACTION_IN_APP_SEARCH = 5;
+//    private static final int ACTION_HOME = 6;
+//    private static final int ACTION_BACK = 7;
+//    private static final int ACTION_LAST_APP = 8;
+//    private static final int ACTION_KILL_APP = 9;
+//    private static final int ACTION_SLEEP = 10;
+//    private static final int ACTION_OMNISWITCH = 11;
 
     // Masks for checking presence of hardware keys.
     // Must match values in frameworks/base/core/res/res/values/config.xml
-    private static final int KEY_MASK_HOME = 0x01;
-    private static final int KEY_MASK_BACK = 0x02;
-    private static final int KEY_MASK_MENU = 0x04;
-    private static final int KEY_MASK_ASSIST = 0x08;
-    private static final int KEY_MASK_APP_SWITCH = 0x10;
+//    private static final int KEY_MASK_HOME = 0x01;
+//    private static final int KEY_MASK_BACK = 0x02;
+//    private static final int KEY_MASK_MENU = 0x04;
+//    private static final int KEY_MASK_ASSIST = 0x08;
+//    private static final int KEY_MASK_APP_SWITCH = 0x10;
 
-    private CheckBoxPreference mVolumeWake;
-    private CheckBoxPreference mHomeWake;
-    private CheckBoxPreference mHomeAnswerCall;
-    private CheckBoxPreference mSwapVolumeButtons;
+//    private CheckBoxPreference mVolumeWake;
+//    private CheckBoxPreference mHomeWake;
+//    private CheckBoxPreference mHomeAnswerCall;
+//    private CheckBoxPreference mSwapVolumeButtons;
 //    private ListPreference mVolumeKeyCursorControl;
-    private SwitchPreference mEnableCustomBindings;
-    private ListPreference mBackPressAction;
-    private ListPreference mBackLongPressAction;
-    private ListPreference mHomePressAction;
-    private ListPreference mHomeLongPressAction;
-    private ListPreference mHomeDoubleTapAction;
-    private ListPreference mMenuPressAction;
-    private ListPreference mMenuLongPressAction;
-    private ListPreference mAssistPressAction;
-    private ListPreference mAssistLongPressAction;
-    private ListPreference mAppSwitchPressAction;
-    private ListPreference mAppSwitchLongPressAction;
-    private Map<String, Integer> mKeySettings = new HashMap<String, Integer>();
+//    private SwitchPreference mEnableCustomBindings;
+//    private ListPreference mBackPressAction;
+//    private ListPreference mBackLongPressAction;
+//    private ListPreference mHomePressAction;
+//    private ListPreference mHomeLongPressAction;
+//    private ListPreference mHomeDoubleTapAction;
+//    private ListPreference mMenuPressAction;
+//    private ListPreference mMenuLongPressAction;
+//    private ListPreference mAssistPressAction;
+//    private ListPreference mAssistLongPressAction;
+//    private ListPreference mAppSwitchPressAction;
+//    private ListPreference mAppSwitchLongPressAction;
+//    private Map<String, Integer> mKeySettings = new HashMap<String, Integer>();
 //    private ListPreference mVolumeDefault;
 //    private CheckBoxPreference mHeadsetHookLaunchVoice;
 //    private CheckBoxPreference mVirtualKeyHapticFeedback;
 //    private CheckBoxPreference mForceShowOverflowMenu;
-    private boolean mButtonBrightnessSupport;
-    private SwitchPreference mEnableNavBar;
-    private SwitchPreference mDisabkeHWKeys;
-    private PreferenceScreen mButtonBrightness;
-    private PreferenceCategory mKeysBackCategory;
-    private PreferenceCategory mKeysHomeCategory;
-    private PreferenceCategory mKeysMenuCategory;
-    private PreferenceCategory mKeysAppSwitchCategory;
-    private PreferenceCategory mKeysAssistCategory;
-    private ListPreference mNavbarRecentsStyle;
-    private ListPreference mBackKillTimeout;
+//    private boolean mButtonBrightnessSupport;
+//    private SwitchPreference mEnableNavBar;
+//    private SwitchPreference mDisabkeHWKeys;
+//    private PreferenceScreen mButtonBrightness;
+//    private PreferenceCategory mKeysBackCategory;
+//    private PreferenceCategory mKeysHomeCategory;
+//    private PreferenceCategory mKeysMenuCategory;
+//    private PreferenceCategory mKeysAppSwitchCategory;
+//    private PreferenceCategory mKeysAssistCategory;
+//    private ListPreference mNavbarRecentsStyle;
+//    private ListPreference mBackKillTimeout;
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsLogger.OMNI_SETTINGS;
+        return MetricsEvent.OMNI_SETTINGS;
     }
 
     @Override
@@ -160,7 +161,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
 
         addPreferencesFromResource(R.xml.button_settings);
 
-        final ContentResolver resolver = getContentResolver();
+/*        final ContentResolver resolver = getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = getResources();
         final boolean mPersistHomeWakeSupport = res.getBoolean(
@@ -483,8 +484,9 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
 //        mHeadsetHookLaunchVoice = (CheckBoxPreference) findPreference(BUTTON_HEADSETHOOK_LAUNCH_VOICE);
 //        mHeadsetHookLaunchVoice.setChecked(Settings.System.getInt(resolver,
 //                Settings.System.HEADSETHOOK_LAUNCH_VOICE, 1) == 1);
+*/
     }
-
+/*
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mVolumeWake) {
@@ -538,9 +540,9 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
-
+*/
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mEnableCustomBindings) {
+/*        if (preference == mEnableCustomBindings) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(), Settings.System.HARDWARE_KEY_REBINDING,
                     value ? 1 : 0);
@@ -700,11 +702,11 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
             mBackKillTimeout.setSummary(mBackKillTimeout.getEntries()[index]);
             Settings.System.putInt(getContentResolver(), Settings.System.BUTTON_BACK_KILL_TIMEOUT, value);
             return true;
-        }
+        } */
         return false;
     }
 
-    private boolean hasVolumeRocker() {
+/*    private boolean hasVolumeRocker() {
         return getActivity().getResources().getBoolean(R.bool.config_has_volume_rocker);
     }
 
@@ -881,5 +883,5 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
                     }
                     return result;
                 }
-            };
-}*/
+            }; */
+}
