@@ -327,6 +327,7 @@
     <string name="global_actions_title">Power menu</string>
     <string name="global_actions_summary">Actions shown in power menu</string>
     <string name="global_actions_header">Some actions are only visible depending on the setup or only if the device is unlocked</string>
+    <string name="global_actions_anim">Appearance</string>
 
     <string name="font_sample_text">11:57</string>
 
@@ -345,4 +346,11 @@
     <string name="status_bar_quick_qs_pulldown_off">Off</string>
     <string name="status_bar_quick_qs_pulldown_left">Left</string>
     <string name="status_bar_quick_qs_pulldown_right">Right</string>
+    <!-- Power menu Animations  -->
+    <string name="power_menu_animation_title">Power menu animation</string>
+    <string name="power_menu_animation_summary">Change the enter/exit animation of the power menu</string>
+    <string name="power_menu_animation_dialog_title">Select power menu animation</string>
+    <string name="power_menu_animation_enter">Omni (default)</string>
+    <string name="power_menu_animation_bottom">Bottom</string>
+    <string name="power_menu_animation_top">Top</string>
 </resources>

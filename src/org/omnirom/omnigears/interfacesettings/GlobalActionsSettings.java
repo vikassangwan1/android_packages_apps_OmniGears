@@ -21,6 +21,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.UserManager;
+import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceGroup;
 import android.support.v7.preference.PreferenceManager;
@@ -47,10 +48,13 @@ import java.util.LinkedHashMap;
 public class GlobalActionsSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener, Indexable {
     private static final String TAG = "GlobalActionsSettings";
- //   private static final String GLOBAL_ACTIONS = "global_actions";
+    private static final String POWER_MENU_ANIMATIONS = "power_menu_animations";
+//   private static final String GLOBAL_ACTIONS = "global_actions";
 
     private LinkedHashMap<String, Boolean> mGlobalActionsMap;
 //    private PreferenceScreen prefScreen = null;
+
+    ListPreference mPowerMenuAnimations;
 
     @Override
     protected int getMetricsCategory() {
@@ -76,6 +80,12 @@ public class GlobalActionsSettings extends SettingsPreferenceFragment implements
 
         final String enabledActions = Settings.System.getString(contentResolver,
                 Settings.System.GLOBAL_ACTIONS_LIST);
+
+        mPowerMenuAnimations = (ListPreference) findPreference(POWER_MENU_ANIMATIONS);
+        mPowerMenuAnimations.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.POWER_MENU_ANIMATIONS, 0)));
+        mPowerMenuAnimations.setSummary(mPowerMenuAnimations.getEntry());
+        mPowerMenuAnimations.setOnPreferenceChangeListener(this);
 
         List<String> enabledActionsList = null;
         if (enabledActions != null) {
@@ -138,7 +148,16 @@ public class GlobalActionsSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-        return false;
+         ContentResolver resolver = getActivity().getContentResolver();
+         boolean result = false;
+         if (preference == mPowerMenuAnimations) {
+            Settings.System.putInt(getContentResolver(), Settings.System.POWER_MENU_ANIMATIONS,
+                    Integer.valueOf((String) objValue));
+            mPowerMenuAnimations.setValue(String.valueOf(objValue));
+            mPowerMenuAnimations.setSummary(mPowerMenuAnimations.getEntry());
+            return true;
+          }
+          return result;
     }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
