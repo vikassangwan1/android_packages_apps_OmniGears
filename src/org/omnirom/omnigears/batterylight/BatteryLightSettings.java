@@ -109,6 +109,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
             mReallyFullColorPref.setOnPreferenceChangeListener(this);
         } else {
             prefSet.removePreference(prefSet.findPreference("colors_list"));
+            resetColors();
         }
     }
 
@@ -167,10 +168,10 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
         }
     }
 
-    /*@Override
+    @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         menu.add(0, MENU_RESET, 0, R.string.reset)
-                .setIcon(R.drawable.ic_settings_backup) // use the backup icon
+                .setIcon(R.drawable.ic_settings_backup_restore)
                 .setAlphabeticShortcut('r')
                 .setShowAsActionFlags(MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
     }
@@ -179,14 +180,14 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case MENU_RESET:
-                resetColors();
+                resetToDefaults();
                 return true;
         }
         return false;
     }
 
     protected void resetColors() {
-        ContentResolver resolver = getContentResolver();
+        ContentResolver resolver = getActivity().getContentResolver();
         Resources res = getResources();
 
         // Reset to the framework default colors
@@ -199,7 +200,14 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
         Settings.System.putInt(resolver, Settings.System.BATTERY_LIGHT_REALLY_FULL_COLOR,
                 res.getInteger(com.android.internal.R.integer.config_notificationsBatteryFullARGB));
         refreshDefault();
-    }*/
+    }
+
+    protected void resetToDefaults() {
+        if (mEnabledPref != null) mEnabledPref.setChecked(true);
+        if (mPulsePref != null) mPulsePref.setChecked(false);
+
+        resetColors();
+    }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
