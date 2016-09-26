@@ -28,6 +28,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
@@ -35,14 +36,13 @@
         android:key="button_volume_keys"
         android:title="@string/button_volume_keys_title" >
 
-<!--
         <CheckBoxPreference
             android:key="button_volume_wake_screen"
             android:title="@string/button_volume_wake_title"
             android:summary="@string/button_volume_wake_summary"
             android:persistent="false"
             android:disableDependentsState="true" />
--->
+
         <!--<ListPreference
             android:key="button_volume_default_screen"
             android:title="@string/button_volume_default_title"
