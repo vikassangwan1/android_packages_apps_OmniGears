@@ -23,7 +23,7 @@ import android.os.Bundle;
 import android.os.UserManager;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceGroup;
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceManager;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
@@ -49,11 +49,9 @@ public class GlobalActionsSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener, Indexable {
     private static final String TAG = "GlobalActionsSettings";
     private static final String POWER_MENU_ANIMATIONS = "power_menu_animations";
-//   private static final String GLOBAL_ACTIONS = "global_actions";
+    private static final String GLOBAL_ACTIONS_LIST = "global_actions_list";
 
     private LinkedHashMap<String, Boolean> mGlobalActionsMap;
-//    private PreferenceScreen prefScreen = null;
-
     ListPreference mPowerMenuAnimations;
 
     @Override
@@ -67,7 +65,6 @@ public class GlobalActionsSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.global_actions);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
-      //  prefScreen = (PreferenceScreen)findPreference(GLOBAL_ACTIONS);
         final ContentResolver contentResolver = getContext().getContentResolver();
 
         final String[] defaultActions = getContext().getResources().getStringArray(
@@ -102,22 +99,28 @@ public class GlobalActionsSettings extends SettingsPreferenceFragment implements
         }
         final UserManager um = (UserManager) getContext().getSystemService(Context.USER_SERVICE);
         boolean multiUser = um.isUserSwitcherEnabled();
-        int count = prefScreen.getPreferenceCount();
+
+        PreferenceCategory actionList = (PreferenceCategory) findPreference(GLOBAL_ACTIONS_LIST);
+        int count = actionList.getPreferenceCount();
+        List<Preference> toRemoveList = new ArrayList<>();
         for (int i = 0; i < count; i++) {
-            Preference p = prefScreen.getPreference(i);
+            Preference p = actionList.getPreference(i);
             if (p instanceof SwitchPreference) {
                 SwitchPreference action = (SwitchPreference) p;
                 String key = action.getKey();
                 if (!allActionssList.contains(key)) {
-                    prefScreen.removePreference(action);
+                    toRemoveList.add(action);
                     continue;
                 }
                 if (key.equals("users") && !multiUser) {
-                    prefScreen.removePreference(action);
+                    toRemoveList.add(action);
                     continue;
                 }
                 action.setChecked(mGlobalActionsMap.get(key));
             }
+        }
+        for (Preference p : toRemoveList) {
+            actionList.removePreference(p);
         }
     }
 
