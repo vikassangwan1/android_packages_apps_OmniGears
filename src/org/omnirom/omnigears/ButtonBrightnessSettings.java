@@ -13,9 +13,9 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
+ */
 
-package org.omnirom.omnigears.brightness;
+package org.omnirom.omnigears;
 
 import com.android.settings.SettingsPreferenceFragment;
 
@@ -27,13 +27,14 @@ import android.os.Handler;
 import android.os.PowerManager;
 import android.os.IPowerManager;
 import android.os.ServiceManager;
-import android.preference.Preference;
-import android.preference.PreferenceGroup;
-import android.preference.PreferenceScreen;
-import android.preference.ListPreference;
-import android.preference.CheckBoxPreference;
-import android.preference.PreferenceCategory;
-import android.preference.SwitchPreference;
+import android.support.v7.preference.CheckBoxPreference;
+import android.support.v7.preference.ListPreference;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.Preference.OnPreferenceChangeListener;
+import android.support.v7.preference.PreferenceCategory;
+import android.support.v7.preference.PreferenceScreen;
+import android.support.v7.preference.ListPreference;
+import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
 import android.provider.SearchIndexableResource;
 import android.view.View;
@@ -47,9 +48,9 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import org.omnirom.omnigears.R;
+import org.omnirom.omnigears.preference.SeekBarPreference;
 
-import com.android.internal.logging.MetricsLogger;
-import com.android.settings.preference.SeekBarPreference;
+import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
@@ -74,7 +75,7 @@ public class ButtonBrightnessSettings extends SettingsPreferenceFragment impleme
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsLogger.OMNI_SETTINGS;
+        return MetricsEvent.OMNI_SETTINGS;
     }
 
     public void onCreate(Bundle savedInstanceState) {
@@ -112,7 +113,7 @@ public class ButtonBrightnessSettings extends SettingsPreferenceFragment impleme
     }
 
     @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+    public boolean onPreferenceTreeClick(Preference preference) {
         if (preference == mButtonBacklightEnable) {
             boolean checked = ((SwitchPreference)preference).isChecked();
             Settings.System.putInt(getContentResolver(),
@@ -124,7 +125,7 @@ public class ButtonBrightnessSettings extends SettingsPreferenceFragment impleme
                     Settings.System.CUSTOM_BUTTON_USE_SCREEN_BRIGHTNESS, checked ? 1 : 0);
             return true;
         }
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
+        return super.onPreferenceTreeClick(preference);
     }
 
     @Override
@@ -145,4 +146,4 @@ public class ButtonBrightnessSettings extends SettingsPreferenceFragment impleme
         return true;
     }
 }
-*/
+
