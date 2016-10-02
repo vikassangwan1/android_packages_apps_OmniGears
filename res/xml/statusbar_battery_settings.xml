@@ -16,7 +16,7 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
-<!--
+
         <ListPreference
             android:key="statusbar_battery_enable"
             android:title="@string/battery_enable_title"
@@ -38,7 +38,7 @@
             android:entryValues="@array/values_battery_percent"
             android:persistent="false"
             android:defaultValue="2"/>
-        <com.android.settings.preference.SystemCheckBoxPreference
+        <org.omnirom.omnigears.preference.SystemCheckBoxPreference
             android:key="statusbar_battery_percent_inside"
             android:title="@string/statusbar_percent_inside_title"
             android:summary="@string/statusbar_percent_inside_summary"
@@ -48,12 +48,12 @@
             android:key="statusbar_category_charging"
             android:title="@string/statusbar_category_charging_title">
 
-            <com.android.settings.preference.SystemCheckBoxPreference
+            <org.omnirom.omnigears.preference.SystemCheckBoxPreference
                 android:key="statusbar_battery_charging_image"
                 android:title="@string/statusbar_charging_image_title"
                 android:summary="@string/statusbar_charging_image_summary"
                 android:defaultValue="true"/>
-            <com.android.settings.preference.SystemCheckBoxPreference
+            <org.omnirom.omnigears.preference.SystemCheckBoxPreference
                 android:key="statusbar_battery_charging_color_enable"
                 android:title="@string/statusbar_battery_charging_color_enable_title"
                 android:summary="@string/statusbar_battery_charging_color_enable_summary"
@@ -65,5 +65,4 @@
                 android:dependency ="statusbar_battery_charging_color_enable"/>
 
         </PreferenceCategory>
--->
 </PreferenceScreen>
