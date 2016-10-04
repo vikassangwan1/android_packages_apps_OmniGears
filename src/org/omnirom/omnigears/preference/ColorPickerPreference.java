@@ -29,7 +29,8 @@ import android.content.res.Resources;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.RectShape;
 import android.os.Bundle;
-import android.preference.Preference;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceViewHolder;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,7 +68,7 @@ public class ColorPickerPreference extends Preference implements DialogInterface
     }
 
     private void init() {
-        setLayoutResource(R.layout.preference_color_picker);
+        setWidgetLayoutResource(R.layout.preference_color_picker);
         mResources = getContext().getResources();
     }
 
@@ -81,11 +82,9 @@ public class ColorPickerPreference extends Preference implements DialogInterface
     }
 
     @Override
-    protected void onBindView(View view) {
-        super.onBindView(view);
-
-        mLightColorView = (ImageView) view.findViewById(R.id.light_color);
-
+    public void onBindViewHolder(PreferenceViewHolder holder) {
+        super.onBindViewHolder(holder);
+        mLightColorView = (ImageView) holder.findViewById(R.id.light_color);
         updatePreferenceViews();
     }
 
