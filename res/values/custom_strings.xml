@@ -19,6 +19,7 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <string name="more_settings_title">OmniGears More...</string>
     <string name="ok">OK</string>
     <string name="advanced">Advanced</string>
     <string name="profiles_add">Add...</string>
@@ -393,5 +394,6 @@
     <string name="led_notification_title">Light settings</string>
     <string name="led_notification_text">LED light enabled by settings</string>
     <string name="notification_light_no_apps_summary">To add per app control, activate \'%1$s\' and press \'\u002b\' on the menu bar</string>
-
+    <!-- Hostname setting -->
+    <string name="device_hostname">Device hostname</string>
 </resources>
