@@ -7,12 +7,13 @@ package org.omnirom.omnigears.preference;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.preference.DialogPreference;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.NumberPicker;
 
 import org.omnirom.omnigears.R;
+
+import com.android.settings.CustomDialogPreference;
 
 /**
 * A {@link DialogPreference} that provides a user with the means to select an integer from a {@link NumberPicker}, and persist it.
@@ -20,7 +21,7 @@ import org.omnirom.omnigears.R;
 * @author lukehorvat
 *
 */
-public class NumberPickerPreference extends DialogPreference
+public class NumberPickerPreference extends CustomDialogPreference
 {
     private static final int DEFAULT_MIN_VALUE = 0;
     private static final int DEFAULT_MAX_VALUE = 100;

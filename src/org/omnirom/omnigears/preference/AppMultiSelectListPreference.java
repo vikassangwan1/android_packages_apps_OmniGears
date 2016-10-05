@@ -28,7 +28,6 @@ import android.content.pm.ResolveInfo;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.preference.DialogPreference;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,6 +40,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.settings.R;
+import com.android.settings.CustomDialogPreference;
 
 import java.text.Collator;
 import java.util.ArrayList;
@@ -51,7 +51,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class AppMultiSelectListPreference extends DialogPreference {
+public class AppMultiSelectListPreference extends CustomDialogPreference {
     private final List<MyApplicationInfo> mPackageInfoList = new ArrayList<MyApplicationInfo>();
     private AppListAdapter mAdapter;
     private Set<String> mValues = new HashSet<String>();
