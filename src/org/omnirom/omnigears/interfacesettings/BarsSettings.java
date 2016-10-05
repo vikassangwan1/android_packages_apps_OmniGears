@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
-
+*/
 package org.omnirom.omnigears.interfacesettings;
 
 import android.app.AlertDialog;
@@ -28,12 +28,12 @@ import android.content.res.Resources;
 import android.net.TrafficStats;
 import android.os.Bundle;
 import android.os.RemoteException;
-import android.preference.CheckBoxPreference;
-import android.preference.ListPreference;
-import android.preference.Preference;
-import android.preference.PreferenceGroup;
-import android.preference.PreferenceScreen;
-import android.preference.PreferenceCategory;
+import android.support.v7.preference.CheckBoxPreference;
+import android.support.v7.preference.ListPreference;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceGroup;
+import android.support.v7.preference.PreferenceScreen;
+import android.support.v7.preference.PreferenceCategory;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
@@ -41,16 +41,17 @@ import android.util.Log;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
-import com.android.internal.logging.MetricsLogger;
+import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.internal.util.omni.DeviceUtils;
 import com.android.settings.Utils;
-import com.android.settings.preference.SeekBarPreference;
-import com.android.settings.preference.SystemCheckBoxPreference;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
 import java.util.List;
 import java.util.ArrayList;
+
+import org.omnirom.omnigears.preference.SystemCheckBoxPreference;
+import org.omnirom.omnigears.preference.SeekBarPreference;
 
 public class BarsSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
@@ -72,7 +73,7 @@ public class BarsSettings extends SettingsPreferenceFragment implements
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsLogger.OMNI_SETTINGS;
+        return MetricsEvent.OMNI_SETTINGS;
     }
 
     @Override
@@ -84,93 +85,93 @@ public class BarsSettings extends SettingsPreferenceFragment implements
 
         // Navigationbar catagory will not be displayed when the device is not a tablet
         // or the device has physical keys
-        if ((!DeviceUtils.deviceSupportNavigationBar(getActivity())) || DeviceUtils.isPhone(getActivity())) {
-            prefScreen.removePreference(findPreference(NAVIGATIONBAR_ROOT));
-        }
+        //if ((!DeviceUtils.deviceSupportNavigationBar(getActivity())) || DeviceUtils.isPhone(getActivity())) {
+        //    prefScreen.removePreference(findPreference(NAVIGATIONBAR_ROOT));
+        //}
 
         // TrafficStats will return UNSUPPORTED if the device does not support it.
-        if (TrafficStats.getTotalTxBytes() == TrafficStats.UNSUPPORTED ||
-                TrafficStats.getTotalRxBytes() == TrafficStats.UNSUPPORTED) {
-            prefScreen.removePreference(findPreference(NETWORK_TRAFFIC_ROOT));
-        }
+        //if (TrafficStats.getTotalTxBytes() == TrafficStats.UNSUPPORTED ||
+        //        TrafficStats.getTotalRxBytes() == TrafficStats.UNSUPPORTED) {
+        //    prefScreen.removePreference(findPreference(NETWORK_TRAFFIC_ROOT));
+        //}
 
-        final boolean customHeaderImage = Settings.System.getInt(getContentResolver(),
-                Settings.System.STATUS_BAR_CUSTOM_HEADER, 0) == 1;
-        mCustomHeaderImage = (CheckBoxPreference) findPreference(CUSTOM_HEADER_IMAGE);
-        mCustomHeaderImage.setChecked(customHeaderImage);
+        //final boolean customHeaderImage = Settings.System.getInt(getContentResolver(),
+        //        Settings.System.STATUS_BAR_CUSTOM_HEADER, 0) == 1;
+        //mCustomHeaderImage = (CheckBoxPreference) findPreference(CUSTOM_HEADER_IMAGE);
+        //mCustomHeaderImage.setChecked(customHeaderImage);
 
-        String settingHeaderPackage = Settings.System.getString(getContentResolver(),
-                Settings.System.STATUS_BAR_DAYLIGHT_HEADER_PACK);
-        if (settingHeaderPackage == null) {
-            settingHeaderPackage = DEFAULT_HEADER_PACKAGE;
-        }
-        mDaylightHeaderPack = (ListPreference) findPreference(DAYLIGHT_HEADER_PACK);
+        //String settingHeaderPackage = Settings.System.getString(getContentResolver(),
+        //        Settings.System.STATUS_BAR_DAYLIGHT_HEADER_PACK);
+        //if (settingHeaderPackage == null) {
+        //    settingHeaderPackage = DEFAULT_HEADER_PACKAGE;
+        //}
+        //mDaylightHeaderPack = (ListPreference) findPreference(DAYLIGHT_HEADER_PACK);
 
-        List<String> entries = new ArrayList<String>();
-        List<String> values = new ArrayList<String>();
-        getAvailableHeaderPacks(entries, values);
-        mDaylightHeaderPack.setEntries(entries.toArray(new String[entries.size()]));
-        mDaylightHeaderPack.setEntryValues(values.toArray(new String[values.size()]));
+        //List<String> entries = new ArrayList<String>();
+        //List<String> values = new ArrayList<String>();
+        //getAvailableHeaderPacks(entries, values);
+        //mDaylightHeaderPack.setEntries(entries.toArray(new String[entries.size()]));
+        //mDaylightHeaderPack.setEntryValues(values.toArray(new String[values.size()]));
 
-        int valueIndex = mDaylightHeaderPack.findIndexOfValue(settingHeaderPackage);
-        if (valueIndex == -1) {
+        //int valueIndex = mDaylightHeaderPack.findIndexOfValue(settingHeaderPackage);
+        //if (valueIndex == -1) {
             // no longer found
-            settingHeaderPackage = DEFAULT_HEADER_PACKAGE;
-            Settings.System.putString(getContentResolver(),
-                    Settings.System.STATUS_BAR_DAYLIGHT_HEADER_PACK, settingHeaderPackage);
-            valueIndex = mDaylightHeaderPack.findIndexOfValue(settingHeaderPackage);
-        }
-        mDaylightHeaderPack.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
-        mDaylightHeaderPack.setSummary(mDaylightHeaderPack.getEntry());
-        mDaylightHeaderPack.setOnPreferenceChangeListener(this);
+        //    settingHeaderPackage = DEFAULT_HEADER_PACKAGE;
+        //    Settings.System.putString(getContentResolver(),
+        //            Settings.System.STATUS_BAR_DAYLIGHT_HEADER_PACK, settingHeaderPackage);
+        //    valueIndex = mDaylightHeaderPack.findIndexOfValue(settingHeaderPackage);
+        //}
+        //mDaylightHeaderPack.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
+        //mDaylightHeaderPack.setSummary(mDaylightHeaderPack.getEntry());
+        //mDaylightHeaderPack.setOnPreferenceChangeListener(this);
 
-        mHeaderShadow = (SeekBarPreference) findPreference(CUSTOM_HEADER_IMAGE_SHADOW);
-        final int headerShadow = Settings.System.getInt(getContentResolver(),
-                Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
-        mHeaderShadow.setValue((int)(((double) headerShadow / 255) * 100));
-        mHeaderShadow.setOnPreferenceChangeListener(this);
+        //mHeaderShadow = (SeekBarPreference) findPreference(CUSTOM_HEADER_IMAGE_SHADOW);
+        //final int headerShadow = Settings.System.getInt(getContentResolver(),
+        //        Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
+        //mHeaderShadow.setValue((int)(((double) headerShadow / 255) * 100));
+        //mHeaderShadow.setOnPreferenceChangeListener(this);
 
-        mQuickPulldown = (ListPreference) findPreference(QUICK_SETTTINGS_PULLDOWN);
-        mQuickPulldown.setOnPreferenceChangeListener(this);
-        int quickPullDownValue = Settings.System.getInt(getContentResolver(), Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0);
-        mQuickPulldown.setValue(String.valueOf(quickPullDownValue));
-        updatePulldownSummary(quickPullDownValue);
+        //mQuickPulldown = (ListPreference) findPreference(QUICK_SETTTINGS_PULLDOWN);
+        //mQuickPulldown.setOnPreferenceChangeListener(this);
+        //int quickPullDownValue = Settings.System.getInt(getContentResolver(), Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0);
+        //mQuickPulldown.setValue(String.valueOf(quickPullDownValue));
+        //updatePulldownSummary(quickPullDownValue);
     }
 
     @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mCustomHeaderImage) {
-            final boolean value = ((CheckBoxPreference)preference).isChecked();
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.STATUS_BAR_CUSTOM_HEADER, value ? 1 : 0);
-            return true;
-        }
+    public boolean onPreferenceTreeClick(Preference preference) {
+        //if (preference == mCustomHeaderImage) {
+        //    final boolean value = ((CheckBoxPreference)preference).isChecked();
+        //    Settings.System.putInt(getContentResolver(),
+        //            Settings.System.STATUS_BAR_CUSTOM_HEADER, value ? 1 : 0);
+        //    return true;
+        //}
         // If we didn't handle it, let preferences handle it.
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
+        return super.onPreferenceTreeClick(preference);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mDaylightHeaderPack) {
-            String value = (String) newValue;
-            Settings.System.putString(getContentResolver(),
-                    Settings.System.STATUS_BAR_DAYLIGHT_HEADER_PACK, value);
-            int valueIndex = mDaylightHeaderPack.findIndexOfValue(value);
-            mDaylightHeaderPack.setSummary(mDaylightHeaderPack.getEntries()[valueIndex]);
-         } else if (preference == mHeaderShadow) {
-            Integer headerShadow = (Integer) newValue;
-            int realHeaderValue = (int) (((double) headerShadow / 100) * 255);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, realHeaderValue);
-        } else if (preference == mQuickPulldown) {
-            int quickPullDownValue = Integer.valueOf((String) newValue);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, quickPullDownValue);
-            updatePulldownSummary(quickPullDownValue);
-        }
+        //if (preference == mDaylightHeaderPack) {
+        //    String value = (String) newValue;
+        //    Settings.System.putString(getContentResolver(),
+        //            Settings.System.STATUS_BAR_DAYLIGHT_HEADER_PACK, value);
+        //    int valueIndex = mDaylightHeaderPack.findIndexOfValue(value);
+        //    mDaylightHeaderPack.setSummary(mDaylightHeaderPack.getEntries()[valueIndex]);
+        // } else if (preference == mHeaderShadow) {
+        //    Integer headerShadow = (Integer) newValue;
+        //    int realHeaderValue = (int) (((double) headerShadow / 100) * 255);
+        //    Settings.System.putInt(getContentResolver(),
+        //            Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, realHeaderValue);
+        //} else if (preference == mQuickPulldown) {
+        //    int quickPullDownValue = Integer.valueOf((String) newValue);
+        //    Settings.System.putInt(getContentResolver(),
+         //           Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, quickPullDownValue);
+         //   updatePulldownSummary(quickPullDownValue);
+        //}
         return true;
     }
-
+/*
     private void getAvailableHeaderPacks(List<String> entries, List<String> values) {
         Intent i = new Intent();
         PackageManager packageManager = getPackageManager();
@@ -218,7 +219,7 @@ public class BarsSettings extends SettingsPreferenceFragment implements
             mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_summary, direction));
         }
     }
-
+*/
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
                 @Override
@@ -244,4 +245,4 @@ public class BarsSettings extends SettingsPreferenceFragment implements
                     return result;
                 }
             };
-}*/
+}
