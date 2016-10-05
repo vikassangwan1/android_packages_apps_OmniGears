@@ -77,12 +77,12 @@
         android:key="button_keys"
         android:title="@string/button_keys_title" >
 
-        <!--<SwitchPreference
+        <SwitchPreference
             android:key="navigation_bar_show"
             android:title="@string/navigation_bar_show_title"
             android:summary="@string/navigation_bar_show_summary"
             android:persistent="false" />
-
+<!--
         <SwitchPreference
             android:key="hardware_keys_disable"
             android:title="@string/hardware_keys_disable_title"

@@ -89,7 +89,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
 //    private static final String VIRTUAL_KEY_HAPTIC_FEEDBACK = "virtual_key_haptic_feedback";
 //    private static final String FORCE_SHOW_OVERFLOW_MENU = "force_show_overflow_menu";
     private static final String KEYS_BRIGHTNESS_KEY = "button_brightness";
-//    private static final String KEYS_SHOW_NAVBAR_KEY = "navigation_bar_show";
+    private static final String KEYS_SHOW_NAVBAR_KEY = "navigation_bar_show";
 //    private static final String KEYS_DISABLE_HW_KEY = "hardware_keys_disable";
 //    private static final String NAVIGATION_BAR_RECENTS_STYLE = "navbar_recents_style";
 //    private static final String BUTTON_BACK_KILL_TIMEOUT = "button_back_kill_timeout";
@@ -139,7 +139,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
 //    private CheckBoxPreference mVirtualKeyHapticFeedback;
 //    private CheckBoxPreference mForceShowOverflowMenu;
     private boolean mButtonBrightnessSupport;
-//    private SwitchPreference mEnableNavBar;
+    private SwitchPreference mEnableNavBar;
 //    private SwitchPreference mDisabkeHWKeys;
     private PreferenceScreen mButtonBrightness;
     private PreferenceCategory mKeysBackCategory;
@@ -274,8 +274,10 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
 //                    VIRTUAL_KEY_HAPTIC_FEEDBACK);
 //            mForceShowOverflowMenu = (CheckBoxPreference) prefScreen.findPreference(
 //                    FORCE_SHOW_OVERFLOW_MENU);
+*/
             mEnableNavBar = (SwitchPreference) prefScreen.findPreference(
                    KEYS_SHOW_NAVBAR_KEY);
+/*
             mDisabkeHWKeys = (SwitchPreference) prefScreen.findPreference(
                     KEYS_DISABLE_HW_KEY);
 
@@ -515,12 +517,12 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
 //            Settings.System.putInt(getContentResolver(),
 //                    Settings.System.FORCE_SHOW_OVERFLOW_MENU, checked ? 1:0);
 //            return true;
-/*        }  else if (preference == mEnableNavBar) {
+        }  else if (preference == mEnableNavBar) {
             boolean checked = ((SwitchPreference)preference).isChecked();
             Settings.System.putInt(getContentResolver(),
                     Settings.System.NAVIGATION_BAR_SHOW, checked ? 1:0);
             return true;
-        } else if (preference == mDisabkeHWKeys) {
+/*        } else if (preference == mDisabkeHWKeys) {
             boolean checked = ((SwitchPreference)preference).isChecked();
             Settings.System.putInt(getContentResolver(),
                     Settings.System.HARDWARE_KEYS_DISABLE, checked ? 1:0);
