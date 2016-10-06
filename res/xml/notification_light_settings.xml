@@ -25,6 +25,13 @@
             android:key="notification_light_pulse"
             android:title="@string/notification_light_title" />
 
+        <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+            android:key="notification_light_color_auto"
+            android:title="@string/notification_light_automagic"
+            android:summary="@string/notification_light_automagic_summary"
+            android:dependency="notification_light_pulse"
+            android:defaultValue="true" />
+
         <org.omnirom.omnigears.batterylight.NotificationLightPreference
             android:key="default"
             android:title="@string/notification_light_default_value"
