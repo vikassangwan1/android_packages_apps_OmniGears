@@ -19,7 +19,7 @@
     android:key="more_settings"
     android:title="@string/more_settings_title">
 
-    <CheckBoxPreference
+    <org.omnirom.omnigears.preference.HostnamePreference
         android:key="device_hostname"
         android:title="@string/device_hostname"
         android:dialogTitle="@string/device_hostname"
