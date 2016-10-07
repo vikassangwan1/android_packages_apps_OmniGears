@@ -90,7 +90,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
 //    private static final String FORCE_SHOW_OVERFLOW_MENU = "force_show_overflow_menu";
     private static final String KEYS_BRIGHTNESS_KEY = "button_brightness";
     private static final String KEYS_SHOW_NAVBAR_KEY = "navigation_bar_show";
-//    private static final String KEYS_DISABLE_HW_KEY = "hardware_keys_disable";
+    private static final String KEYS_DISABLE_HW_KEY = "hardware_keys_disable";
 //    private static final String NAVIGATION_BAR_RECENTS_STYLE = "navbar_recents_style";
 //    private static final String BUTTON_BACK_KILL_TIMEOUT = "button_back_kill_timeout";
 
@@ -140,9 +140,9 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
 //    private CheckBoxPreference mForceShowOverflowMenu;
     private boolean mButtonBrightnessSupport;
     private SwitchPreference mEnableNavBar;
-//    private SwitchPreference mDisabkeHWKeys;
+    private SwitchPreference mDisabkeHWKeys;
     private PreferenceScreen mButtonBrightness;
-    private PreferenceCategory mKeysBackCategory;
+//    private PreferenceCategory mKeysBackCategory;
 //    private PreferenceCategory mKeysHomeCategory;
 //    private PreferenceCategory mKeysMenuCategory;
 //    private PreferenceCategory mKeysAppSwitchCategory;
@@ -208,20 +208,11 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
             prefScreen.removePreference(volumeCategory);
         }
 
-        // TODO once config_deviceHardwareKeys is back this must be moved back below
-        final PreferenceCategory keysCategory =
-                (PreferenceCategory) prefScreen.findPreference(CATEGORY_KEYS);
-        mButtonBrightness = (PreferenceScreen) prefScreen.findPreference(
-                KEYS_BRIGHTNESS_KEY);
-        if (!mButtonBrightnessSupport) {
-            prefScreen.removePreference(keysCategory);
-            keysCategory.removePreference(mButtonBrightness);
-        }
-
-/*
         final int deviceKeys = res.getInteger(
                 com.android.internal.R.integer.config_deviceHardwareKeys);
-        final boolean hasBackKey = false; //(deviceKeys & KEY_MASK_BACK) != 0;
+        final PreferenceCategory keysCategory =
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_KEYS);
+        /*final boolean hasBackKey = false; //(deviceKeys & KEY_MASK_BACK) != 0;
         final boolean hasHomeKey = false; //(deviceKeys & KEY_MASK_HOME) != 0;
         final boolean hasMenuKey = false; //(deviceKeys & KEY_MASK_MENU) != 0;
         final boolean hasAssistKey = false; //(deviceKeys & KEY_MASK_ASSIST) != 0;
@@ -236,17 +227,17 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
         mKeysAssistCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_ASSIST);
         mKeysAppSwitchCategory =
-                (PreferenceCategory) prefScreen.findPreference(CATEGORY_APPSWITCH);
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_APPSWITCH);*/
 
         if (deviceKeys == 0) {
             prefScreen.removePreference(keysCategory);
-            prefScreen.removePreference(mKeysBackCategory);
+            /*prefScreen.removePreference(mKeysBackCategory);
             prefScreen.removePreference(mKeysHomeCategory);
             prefScreen.removePreference(mKeysMenuCategory);
             prefScreen.removePreference(mKeysAssistCategory);
-            prefScreen.removePreference(mKeysAppSwitchCategory);
+            prefScreen.removePreference(mKeysAppSwitchCategory);*/
         } else {
-            mEnableCustomBindings = (SwitchPreference) prefScreen.findPreference(
+            /*mEnableCustomBindings = (SwitchPreference) prefScreen.findPreference(
                     KEYS_ENABLE_CUSTOM);
             mBackPressAction = (ListPreference) prefScreen.findPreference(
                     KEYS_BACK_PRESS);
@@ -274,14 +265,9 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
 //                    VIRTUAL_KEY_HAPTIC_FEEDBACK);
 //            mForceShowOverflowMenu = (CheckBoxPreference) prefScreen.findPreference(
 //                    FORCE_SHOW_OVERFLOW_MENU);
-*/
-            mEnableNavBar = (SwitchPreference) prefScreen.findPreference(
-                   KEYS_SHOW_NAVBAR_KEY);
-/*
-            mDisabkeHWKeys = (SwitchPreference) prefScreen.findPreference(
-                    KEYS_DISABLE_HW_KEY);
 
-            if (hasBackKey) {
+
+            /*if (hasBackKey) {
                 int backPressAction = Settings.System.getInt(resolver,
                         Settings.System.KEY_BACK_ACTION, ACTION_BACK);
 
@@ -451,11 +437,23 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
 //                mVirtualKeyHapticFeedback.setChecked(Settings.System.getInt(resolver,
 //                        Settings.System.VIRTUAL_KEYS_HAPTIC_FEEDBACK, 1) == 1);
 //            }
-//
-            boolean hasNavBar = res.getBoolean(com.android.internal.R.bool.config_showNavigationBar);
-//            mForceShowOverflowMenu.setChecked(Settings.System.getInt(resolver,
-//                    Settings.System.FORCE_SHOW_OVERFLOW_MENU, (!hasNavBar && hasMenuKey) ? 0 : 1) == 1);
-//
+
+
+            updateDisableHWKeyEnablement(harwareKeysDisable); */
+
+
+            mButtonBrightness = (PreferenceScreen) prefScreen.findPreference(
+                KEYS_BRIGHTNESS_KEY);
+            if (!mButtonBrightnessSupport) {
+                keysCategory.removePreference(mButtonBrightness);
+            }
+
+            mEnableNavBar = (SwitchPreference) prefScreen.findPreference(
+                   KEYS_SHOW_NAVBAR_KEY);
+
+            mDisabkeHWKeys = (SwitchPreference) prefScreen.findPreference(
+                    KEYS_DISABLE_HW_KEY);
+
             boolean showNavBarDefault = DeviceUtils.deviceSupportNavigationBar(getActivity());
             boolean showNavBar = Settings.System.getInt(resolver,
                         Settings.System.NAVIGATION_BAR_SHOW, showNavBarDefault ? 1:0) == 1;
@@ -464,11 +462,9 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
             boolean harwareKeysDisable = Settings.System.getInt(resolver,
                         Settings.System.HARDWARE_KEYS_DISABLE, 0) == 1;
             mDisabkeHWKeys.setChecked(harwareKeysDisable);
-
-            updateDisableHWKeyEnablement(harwareKeysDisable);
         }
 
-        mNavbarRecentsStyle = (ListPreference) findPreference(NAVIGATION_BAR_RECENTS_STYLE);
+        /*mNavbarRecentsStyle = (ListPreference) findPreference(NAVIGATION_BAR_RECENTS_STYLE);
         int recentsStyle = Settings.System.getInt(resolver,
                 Settings.System.NAVIGATION_BAR_RECENTS, 0);
 
@@ -483,7 +479,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
 
         mBackKillTimeout.setValue(Integer.toString(backKillTimeout));
         mBackKillTimeout.setSummary(mBackKillTimeout.getEntry());
-        mBackKillTimeout.setOnPreferenceChangeListener(this);
+        mBackKillTimeout.setOnPreferenceChangeListener(this);*/
 
 //        final PreferenceCategory headsethookCategory =
 //                (PreferenceCategory) prefScreen.findPreference(CATEGORY_HEADSETHOOK);
@@ -491,7 +487,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
 //        mHeadsetHookLaunchVoice = (CheckBoxPreference) findPreference(BUTTON_HEADSETHOOK_LAUNCH_VOICE);
 //        mHeadsetHookLaunchVoice.setChecked(Settings.System.getInt(resolver,
 //                Settings.System.HEADSETHOOK_LAUNCH_VOICE, 1) == 1);
-*/
     }
 
     @Override
@@ -522,13 +517,12 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
             Settings.System.putInt(getContentResolver(),
                     Settings.System.NAVIGATION_BAR_SHOW, checked ? 1:0);
             return true;
-/*        } else if (preference == mDisabkeHWKeys) {
+        } else if (preference == mDisabkeHWKeys) {
             boolean checked = ((SwitchPreference)preference).isChecked();
             Settings.System.putInt(getContentResolver(),
                     Settings.System.HARDWARE_KEYS_DISABLE, checked ? 1:0);
-            updateDisableHWKeyEnablement(checked);
+            //updateDisableHWKeyEnablement(checked);
             return true;
-*/
          } else if (preference == mSwapVolumeButtons) {
             boolean checked = ((CheckBoxPreference)preference).isChecked();
             Settings.System.putInt(getContentResolver(),
