@@ -409,4 +409,7 @@
     <!-- Summaries -->
     <string name="bars_brightness_summary">Brightness control is</string>
     <string name="bars_dt2s_summary">DT2S is</string>
+
+    <string name="volume_dialog_headers_title">Volume dialog headers</string>
+    <string name="volume_dialog_headers_summary">Show stream name headers in volume dialog</string>
 </resources>
