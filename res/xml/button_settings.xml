@@ -253,13 +253,13 @@
     <PreferenceCategory
         android:key="button_other"
         android:title="@string/button_other_title" >
-<!--        <ListPreference
+        <ListPreference
             android:key="navbar_recents_style"
             android:title="@string/navbar_recents_style_title"
             android:entries="@array/navbar_recents_style_entries"
             android:entryValues="@array/navbar_recents_style_values"
             android:persistent="false"/>
--->
+
         <org.omnirom.omnigears.preference.SystemCheckBoxPreference
             android:key="button_back_kill_enable"
             android:title="@string/button_back_kill_enable_title"

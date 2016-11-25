@@ -95,7 +95,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
     private static final String KEYS_BRIGHTNESS_KEY = "button_brightness";
     private static final String KEYS_SHOW_NAVBAR_KEY = "navigation_bar_show";
     private static final String KEYS_DISABLE_HW_KEY = "hardware_keys_disable";
-//    private static final String NAVIGATION_BAR_RECENTS_STYLE = "navbar_recents_style";
+    private static final String NAVIGATION_BAR_RECENTS_STYLE = "navbar_recents_style";
     private static final String BUTTON_BACK_KILL_TIMEOUT = "button_back_kill_timeout";
 
     // Available custom actions to perform on a key press.
@@ -110,7 +110,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
 //    private static final int ACTION_LAST_APP = 8;
 //    private static final int ACTION_KILL_APP = 9;
 //    private static final int ACTION_SLEEP = 10;
-//    private static final int ACTION_OMNISWITCH = 11;
+    private static final int ACTION_OMNISWITCH = 11;
 
     // Masks for checking presence of hardware keys.
     // Must match values in frameworks/base/core/res/res/values/config.xml
@@ -137,7 +137,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
 //    private ListPreference mAssistLongPressAction;
 //    private ListPreference mAppSwitchPressAction;
 //    private ListPreference mAppSwitchLongPressAction;
-//    private Map<String, Integer> mKeySettings = new HashMap<String, Integer>();
+    private Map<String, Integer> mKeySettings = new HashMap<String, Integer>();
 //    private ListPreference mVolumeDefault;
 //    private CheckBoxPreference mHeadsetHookLaunchVoice;
 //    private CheckBoxPreference mVirtualKeyHapticFeedback;
@@ -151,7 +151,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
 //    private PreferenceCategory mKeysMenuCategory;
 //    private PreferenceCategory mKeysAppSwitchCategory;
 //    private PreferenceCategory mKeysAssistCategory;
-//    private ListPreference mNavbarRecentsStyle;
+    private ListPreference mNavbarRecentsStyle;
     private ListPreference mBackKillTimeout;
 
     @Override
@@ -468,14 +468,14 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
             mDisabkeHWKeys.setChecked(harwareKeysDisable);
         }
 
-        /*mNavbarRecentsStyle = (ListPreference) findPreference(NAVIGATION_BAR_RECENTS_STYLE);
+        mNavbarRecentsStyle = (ListPreference) findPreference(NAVIGATION_BAR_RECENTS_STYLE);
         int recentsStyle = Settings.System.getInt(resolver,
                 Settings.System.NAVIGATION_BAR_RECENTS, 0);
 
         mNavbarRecentsStyle.setValue(Integer.toString(recentsStyle));
         mNavbarRecentsStyle.setSummary(mNavbarRecentsStyle.getEntry());
         mNavbarRecentsStyle.setOnPreferenceChangeListener(this);
-*/
+
         mBackKillTimeout = (ListPreference) findPreference(BUTTON_BACK_KILL_TIMEOUT);
         final int backKillTimeoutDefault = res.getInteger(com.android.internal.R.integer.config_backKillTimeout);
         final int backKillTimeout = Settings.System.getInt(resolver,
@@ -696,7 +696,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
 //        } else if (preference == mVolumeDefault) {
 //            int value = Integer.valueOf((String) newValue);
 //            Settings.System.putInt(getContentResolver(), Settings.System.VOLUME_KEYS_DEFAULT, value);
-//            return true;
+//            return true; */
         } else if (preference == mNavbarRecentsStyle) {
             int value = Integer.valueOf((String) newValue);
             if (value == 1) {
@@ -709,7 +709,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
             int index = mNavbarRecentsStyle.findIndexOfValue((String) newValue);
             mNavbarRecentsStyle.setSummary(mNavbarRecentsStyle.getEntries()[index]);
             Settings.System.putInt(getContentResolver(), Settings.System.NAVIGATION_BAR_RECENTS, value);
-            return true;*/
+            return true;
         } else if (preference == mBackKillTimeout) {
             int value = Integer.valueOf((String) newValue);
             int index = mBackKillTimeout.findIndexOfValue((String) newValue);
@@ -735,7 +735,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
         }
         return false;
     }
-
+*/
     private boolean hasOmniSwitchKey() {
         Iterator<Integer> nextAction = mKeySettings.values().iterator();
         while (nextAction.hasNext()) {
@@ -746,7 +746,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
         }
         return false;
     }
-
+/*
     private void checkForHomeKey() {
         if (!hasHomeKey()) {
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
@@ -762,7 +762,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
             alertDialog.show();
         }
     }
-
+*/
     private void checkForOmniSwitchRecents() {
         if (hasOmniSwitchKey()) {
             if (!isOmniSwitchInstalled()){
@@ -830,7 +830,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
     private boolean isOmniSwitchInstalled() {
         return PackageUtils.isAvailableApp(OmniSwitchConstants.APP_PACKAGE_NAME, getActivity());
     }
-*/
+
 
     private static class SummaryProvider implements SummaryLoader.SummaryProvider {
         private final Context mContext;
