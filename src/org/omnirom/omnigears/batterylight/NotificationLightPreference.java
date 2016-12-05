@@ -154,9 +154,10 @@ public class NotificationLightPreference extends Preference implements DialogInt
         TextView tView = (TextView) holder.findViewById(android.R.id.summary);
         tView.setVisibility(View.GONE);
 
-        if (!getContext().getResources().getBoolean(com.android.internal.R.bool.config_multiColorNotificationLed)) {
+        // always show color even if we cannot change it
+        /*if (!getContext().getResources().getBoolean(com.android.internal.R.bool.config_multiColorNotificationLed)) {
             mLightColorView.setVisibility(View.GONE);
-        }
+        }*/
 
         updatePreferenceViews();
         holder.itemView.setOnLongClickListener(this);

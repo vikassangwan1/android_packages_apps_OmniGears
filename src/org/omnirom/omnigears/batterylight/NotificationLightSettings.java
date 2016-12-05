@@ -502,7 +502,7 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
                         result.add(BATTERY_LIGHT_PREF);
                         result.add(BATTERY_PULSE_PREF);
                     }
-                    if (!res.getBoolean(com.android.internal.R.bool.config_multiColorBatteryLed)) {
+                    if (!res.getBoolean(com.android.internal.R.bool.config_multiColorNotificationLed)) {
                         result.add(LOW_COLOR_PREF);
                         result.add(MEDIUM_COLOR_PREF);
                         result.add(FULL_COLOR_PREF);
