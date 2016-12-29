@@ -412,4 +412,7 @@
 
     <string name="volume_dialog_headers_title">Volume dialog headers</string>
     <string name="volume_dialog_headers_summary">Show stream name headers in volume dialog</string>
+
+    <string name="lockscreen_hide_media_title">Disable media wallpaper</string>
+    <string name="lockscreen_hide_media_summary">Do not show media metadata as lock screen wallpaper</string>
 </resources>

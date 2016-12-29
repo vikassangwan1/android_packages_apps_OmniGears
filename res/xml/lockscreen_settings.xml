@@ -70,6 +70,11 @@
             android:title="@string/lockscreen_qs_disabled_title"
             android:summary="@string/lockscreen_qs_summary"/>
 
+        <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+            android:key="lockscreen_hide_media"
+            android:title="@string/lockscreen_hide_media_title"
+            android:summary="@string/lockscreen_hide_media_summary" />
+
     </PreferenceCategory>
 <!--
     <PreferenceCategory
