@@ -13,7 +13,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
+ */
 
 package org.omnirom.omnigears.interfacesettings;
 
@@ -25,27 +25,28 @@ import android.content.res.Resources;
 import android.net.TrafficStats;
 import android.os.Bundle;
 import android.os.RemoteException;
-import android.preference.ListPreference;
-import android.preference.Preference;
-import android.preference.PreferenceGroup;
-import android.preference.PreferenceScreen;
-import android.preference.PreferenceCategory;
+import android.support.v7.preference.ListPreference;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceGroup;
+import android.support.v7.preference.PreferenceScreen;
+import android.support.v7.preference.PreferenceCategory;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
-import com.android.internal.logging.MetricsLogger;
+import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.internal.util.omni.DeviceUtils;
 import com.android.settings.Utils;
-import com.android.settings.preference.SeekBarPreference;
-import com.android.settings.preference.SystemCheckBoxPreference;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
 import java.util.List;
 import java.util.ArrayList;
+
+import org.omnirom.omnigears.preference.SeekBarPreference;
+import org.omnirom.omnigears.preference.SystemCheckBoxPreference;
 
 public class NetworkTraffic extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
@@ -71,7 +72,7 @@ public class NetworkTraffic extends SettingsPreferenceFragment implements
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsLogger.OMNI_SETTINGS;
+        return MetricsEvent.OMNI_SETTINGS;
     }
 
     @Override
@@ -120,12 +121,6 @@ public class NetworkTraffic extends SettingsPreferenceFragment implements
             mNetTrafficAutohide.setEnabled(intIndex != 0);
             mNetTrafficAutohideThreshold.setEnabled(intIndex != 0);
         }
-    }
-
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        // If we didn't handle it, let preferences handle it.
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     @Override
@@ -204,4 +199,4 @@ public class NetworkTraffic extends SettingsPreferenceFragment implements
                     return result;
                 }
             };
-}*/
+}

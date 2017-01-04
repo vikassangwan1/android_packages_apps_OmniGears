@@ -116,6 +116,7 @@ public class SeekBarPreference extends Preference implements OnSeekBarChangeList
         mSeekBar = (SeekBar) holder.findViewById(R.id.seekbar);
         mSeekBar.setMax(mMaxValue - mMinValue);
         mSeekBar.setOnSeekBarChangeListener(this);
+        mSeekBar.setEnabled(isEnabled());
 
         mStatusText = (TextView)holder.findViewById(R.id.seekBarPrefValue);
         mStatusText.setText(String.valueOf(mCurrentValue));
@@ -194,13 +195,11 @@ public class SeekBarPreference extends Preference implements OnSeekBarChangeList
         mMinValue = value;
     }
 
-    public void updateSeekValue() {
-        mSeekBar.setMax(mMaxValue - mMinValue);
-    }
-
     @Override
     public void setEnabled (boolean enabled) {
-        mSeekBar.setEnabled(enabled);
+        if (mSeekBar != null) {
+            mSeekBar.setEnabled(enabled);
+        }
         super.setEnabled(enabled);
     }
 }

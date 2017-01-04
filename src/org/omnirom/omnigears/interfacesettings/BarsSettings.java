@@ -95,10 +95,10 @@ public class BarsSettings extends SettingsPreferenceFragment implements
         //}
 
         // TrafficStats will return UNSUPPORTED if the device does not support it.
-        //if (TrafficStats.getTotalTxBytes() == TrafficStats.UNSUPPORTED ||
-        //        TrafficStats.getTotalRxBytes() == TrafficStats.UNSUPPORTED) {
-        //    prefScreen.removePreference(findPreference(NETWORK_TRAFFIC_ROOT));
-        //}
+        if (TrafficStats.getTotalTxBytes() == TrafficStats.UNSUPPORTED ||
+                TrafficStats.getTotalRxBytes() == TrafficStats.UNSUPPORTED) {
+            prefScreen.removePreference(findPreference(NETWORK_TRAFFIC_ROOT));
+        }
 
         //final boolean customHeaderImage = Settings.System.getInt(getContentResolver(),
         //        Settings.System.STATUS_BAR_CUSTOM_HEADER, 0) == 1;
