@@ -86,16 +86,15 @@
                 android:defaultValue="false" />-->
         </PreferenceCategory>
 
-        <!--<PreferenceCategory
+        <PreferenceCategory
             android:key="notification_category"
             android:title="@string/notification_title" >
 
-            <CheckBoxPreference
+            <org.omnirom.omnigears.preference.SystemCheckBoxPreference
                 android:key="status_bar_custom_header"
                 android:title="@string/status_bar_custom_header_title"
                 android:summary="@string/status_bar_custom_header_summary"
-                android:defaultValue="false"
-                android:persistent="false" />
+                android:defaultValue="false" />
 
             <ListPreference
                 android:key="daylight_header_pack"
@@ -103,11 +102,10 @@
                 android:persistent="false"
                 android:dependency="status_bar_custom_header" />
 
-            <com.android.settings.preference.SeekBarPreference
+            <org.omnirom.omnigears.preference.SeekBarPreference
                 android:key="status_bar_custom_header_shadow"
                 android:title="@string/status_bar_custom_header_shadow_title"
                 android:summary="@string/status_bar_custom_header_shadow_summary"
-                android:defaultValue="0"
                 android:max="100"
                 settings:min="0"
                 settings:unitsLeft=""
@@ -115,13 +113,5 @@
                 android:persistent="false"
                 android:dependency="status_bar_custom_header" />
 
-            <PreferenceScreen
-                    android:title="@string/quick_settings_title"
-                    android:summary="@string/quick_settings_summary" >
-                <intent android:action="android.intent.action.MAIN"
-                        android:targetPackage="com.android.systemui"
-                        android:targetClass="com.android.systemui.tuner.QsTunerActivity" />
-            </PreferenceScreen>
         </PreferenceCategory>
--->
 </PreferenceScreen>
