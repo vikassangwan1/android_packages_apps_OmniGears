@@ -257,6 +257,7 @@
     <string name="custom_header_provider_title">Header provider</string>
     <string name="custom_header_browse_title">Browse installed headers</string>
     <string name="custom_header_browse_summary">Long press on any image to use for static mode</string>
+    <string name="style_summary">Custom header image is</string>
 
     <!-- Network traffic -->
     <string name="network_traffic_title">Network traffic</string>
