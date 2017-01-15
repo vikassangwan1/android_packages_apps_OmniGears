@@ -83,8 +83,11 @@
   <string name="doze_list_mode_summary">Možnost za nastavitev načina dremeža</string>
   <string name="doze_pulse_title">Časovne nastavitve</string>
   <string name="doze_pulse_duration_in_title">Prikazovanje</string>
+  <string name="doze_pulse_duration_in_summary"></string>
   <string name="doze_pulse_duration_visible_title">Trajanje vidnosti</string>
+  <string name="doze_pulse_duration_visible_summary"></string>
   <string name="doze_pulse_duration_out_title">Pojemanje</string>
+  <string name="doze_pulse_duration_out_summary"></string>
   <string name="doze_pulse_on_notifications_title">Utripaj ob obvestilih</string>
   <string name="doze_pulse_on_notifications_summary">Sproži omogočanje samo ob obvestilih na čakanju</string>
   <string name="doze_shake_title">Nastavitve tresenja</string>
@@ -155,6 +158,7 @@
   <string name="statusbar_charging_image_summary">Prikaži strelo med polnjenjem.  Skrije odstotek</string>
   <string name="statusbar_battery_charging_color_title">Barva</string>
   <string name="statusbar_battery_charging_color_enable_title">Obarvaj med polnjenjem</string>
+  <string name="statusbar_battery_charging_color_enable_summary"></string>
   <string name="battery_enable_title">Prikaži baterijo</string>
   <string name="button_backlight_title">Osvetlitev gumbov</string>
   <string name="button_timeout_title">Časovna omejitev osvetlitve</string>
@@ -242,9 +246,12 @@
   <string name="status_bar_icon_blacklist_summary">Nastavi ikone za prikaz v vrstici stanja</string>
   <string name="recents_category">Nedavno</string>
   <string name="recents_search_bar_title">Prikaži iskalno vrstico</string>
+  <string name="recents_search_bar_summary"></string>
   <string name="recents_fullscreen_title">Celozaslonski način</string>
+  <string name="recents_fullscreen_summary"></string>
   <string name="weather_title">Vreme</string>
   <string name="weather_config_title">Nastavitve storitve</string>
+  <string name="weather_config_summary"></string>
   <string name="header_weather_title">Glavni podatki o vremenu</string>
   <string name="header_weather_summary">Omogoči prikaz glavnih podatkov o vremenu na plošči obvestil</string>
   <string name="weather_icon_pack_title">Paket ikon stanja vremena</string>
@@ -264,6 +271,7 @@
   <string name="dashboard_colums_resize_title">Prilagoditev usmerjenosti</string>
   <string name="dashboard_colums_resize_summary">Samodejno prilagodi stolpce nastavitev glede na usmerjenost.</string>
   <string name="dashboard_divider_show_title">Prikaži ločilo stolpcev</string>
+  <string name="dashboard_divider_show_summary"></string>
   <!-- global acions config -->
   <string name="global_actions_power_title">Napajanje</string>
   <string name="global_actions_reboot_title">Pon. zaženi</string>
@@ -286,7 +294,6 @@
   <!--<string name="screenshot_crop_behavior_title"></string>
     <string name="screenshot_crop_behavior_summary"></string>-->
   <string name="lockscreen_qs_disabled_title">Onemogoči hitre nastavitve, ko je zaklenjeno</string>
-  <string name="lockscreen_qs_disabled_summary">Onemogoči razširljive hitre nastavitve na varnih zaklepanjih zaslona</string>
   <string name="status_bar_quick_qs_pulldown_title">Hitri spustni seznam</string>
   <string name="status_bar_quick_qs_pulldown_summary">%1$s rob vrstice stanja spusti Hitre nastavitve</string>
   <string name="status_bar_quick_qs_pulldown_summary_left">Levi</string>
@@ -294,4 +301,12 @@
   <string name="status_bar_quick_qs_pulldown_off">Izk.</string>
   <string name="status_bar_quick_qs_pulldown_left">Levi</string>
   <string name="status_bar_quick_qs_pulldown_right">Desni</string>
+  <!-- Power menu Animations  -->
+  <!-- Notification light dialogs -->
+  <!-- Values for the notification light pulse spinners -->
+  <!-- Lights settings screen, notification light settings -->
+  <string name="notification_light_general_title">Splošno</string>
+  <!-- Lights settings, LED notification -->
+  <!-- Hostname setting -->
+  <!-- Summaries -->
 </resources>

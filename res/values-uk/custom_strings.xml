@@ -69,8 +69,11 @@
   <string name="doze_list_mode_summary">Налаштування режиму Doze</string>
   <string name="doze_pulse_title">Налаштування часу</string>
   <string name="doze_pulse_duration_in_title">Проявляти</string>
+  <string name="doze_pulse_duration_in_summary"></string>
   <string name="doze_pulse_duration_visible_title">Тривалість відображення</string>
+  <string name="doze_pulse_duration_visible_summary"></string>
   <string name="doze_pulse_duration_out_title">Затухати</string>
+  <string name="doze_pulse_duration_out_summary"></string>
   <string name="doze_pulse_on_notifications_title">Імпульс при надходженні сповіщення</string>
   <string name="doze_pulse_on_notifications_summary">Зміна може активувати тільки повідомлення про події в очікуванні</string>
   <string name="doze_shake_title">Налаштування cтрусу</string>
@@ -138,6 +141,7 @@
   <string name="statusbar_charging_image_title">Індикатор зарядки</string>
   <string name="statusbar_category_charging_title">Зарядка</string>
   <string name="statusbar_charging_image_summary">Показати значок блискавки під час зарядки. Приховує відсотки над акумулятором</string>
+  <string name="statusbar_battery_charging_color_enable_summary"></string>
   <string name="button_timeout_title">Тайм-аут підсвічування</string>
   <string name="button_timeout_summary">Вимикається при нульовому значенні</string>
   <string name="button_link_brightness">У відповідності з екраном</string>
@@ -186,10 +190,22 @@
   <!-- Status Bar Activity Indicators -->
   <string name="status_bar_network_activity_title">Індикатори активності</string>
   <string name="status_bar_network_activity_summary">Відобразити індикатори в статус барі</string>
+  <string name="recents_search_bar_summary"></string>
+  <string name="recents_fullscreen_summary"></string>
+  <string name="weather_config_summary"></string>
   <!-- Navigationbar settings -->
   <!-- Enable Tablet Style navigation bar -->
   <!-- Dashboard columns -->
+  <string name="dashboard_divider_show_summary"></string>
   <!-- global acions config -->
   <!--<string name="screenshot_crop_behavior_title"></string>
     <string name="screenshot_crop_behavior_summary"></string>-->
+  <!-- Power menu Animations  -->
+  <!-- Notification light dialogs -->
+  <!-- Values for the notification light pulse spinners -->
+  <!-- Lights settings screen, notification light settings -->
+  <string name="notification_light_general_title">Загальні</string>
+  <!-- Lights settings, LED notification -->
+  <!-- Hostname setting -->
+  <!-- Summaries -->
 </resources>

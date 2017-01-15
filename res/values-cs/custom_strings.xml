@@ -83,8 +83,11 @@
   <string name="doze_list_mode_summary">Nastavení režimu doze</string>
   <string name="doze_pulse_title">Nastavení času</string>
   <string name="doze_pulse_duration_in_title">Postupné zesílení</string>
+  <string name="doze_pulse_duration_in_summary"></string>
   <string name="doze_pulse_duration_visible_title">Viditelné trvání</string>
+  <string name="doze_pulse_duration_visible_summary"></string>
   <string name="doze_pulse_duration_out_title">Postupné zeslabení</string>
+  <string name="doze_pulse_duration_out_summary"></string>
   <string name="doze_pulse_on_notifications_title">Blikání při upozornění</string>
   <string name="doze_pulse_on_notifications_summary">Použít pouze na čekající upozornění</string>
   <string name="doze_shake_title">Nastavení zatřesení</string>
@@ -155,6 +158,7 @@
   <string name="statusbar_charging_image_summary">Zobrazit indikátor během nabíjení. Nezobrazovat procenta</string>
   <string name="statusbar_battery_charging_color_title">Barva</string>
   <string name="statusbar_battery_charging_color_enable_title">Barva při nabíjení</string>
+  <string name="statusbar_battery_charging_color_enable_summary"></string>
   <string name="battery_enable_title">Zobrazit baterii</string>
   <string name="button_backlight_title">Tlačítko podsvícení</string>
   <string name="button_timeout_title">Prodleva vypnutí podsvětlení</string>
@@ -242,9 +246,12 @@
   <string name="status_bar_icon_blacklist_summary">Nastavit, jaké ikony jsou zobrazeny na stavové liště</string>
   <string name="recents_category">Nedávné</string>
   <string name="recents_search_bar_title">Zobrazit vyhledávací lištu</string>
+  <string name="recents_search_bar_summary"></string>
   <string name="recents_fullscreen_title">Celá obrazovka</string>
+  <string name="recents_fullscreen_summary"></string>
   <string name="weather_title">Počasí</string>
   <string name="weather_config_title">Nastavení služby</string>
+  <string name="weather_config_summary"></string>
   <string name="header_weather_title">Zobrazení počasí v záhlaví</string>
   <string name="header_weather_summary">Povolí zobrazení počasí v záhlaví na panelu upozornění</string>
   <string name="weather_icon_pack_title">Balík ikon počasí</string>
@@ -264,6 +271,7 @@
   <string name="dashboard_colums_resize_title">Úprava orientace</string>
   <string name="dashboard_colums_resize_summary">Automaticky upravit nastavení sloupců založené na orientaci.</string>
   <string name="dashboard_divider_show_title">Zobrazit oddělovač doku</string>
+  <string name="dashboard_divider_show_summary"></string>
   <!-- global acions config -->
   <string name="global_actions_power_title">Vypnout</string>
   <string name="global_actions_reboot_title">Restartovat</string>
@@ -285,4 +293,20 @@
   <string name="screenshot_crop_and_share_summary">Zobrazit okno editoru po sejmutí displeje, s cílem provést některé operace jako je oříznutí, ukládání nebo sdílení</string>
   <!--<string name="screenshot_crop_behavior_title"></string>
     <string name="screenshot_crop_behavior_summary"></string>-->
+  <string name="lockscreen_qs_disabled_title">Zakázat rychlé nastavení při uzamčení</string>
+  <string name="status_bar_quick_qs_pulldown_title">Rychlé vysunutí nabídky</string>
+  <string name="status_bar_quick_qs_pulldown_summary">Tažením dolů z %1$s strany stavového řádku bude vysunuta rychlá nabídka nastavení</string>
+  <string name="status_bar_quick_qs_pulldown_summary_left">Vlevo</string>
+  <string name="status_bar_quick_qs_pulldown_summary_right">Vpravo</string>
+  <string name="status_bar_quick_qs_pulldown_off">Vypnuto</string>
+  <string name="status_bar_quick_qs_pulldown_left">Vlevo</string>
+  <string name="status_bar_quick_qs_pulldown_right">Vpravo</string>
+  <!-- Power menu Animations  -->
+  <!-- Notification light dialogs -->
+  <!-- Values for the notification light pulse spinners -->
+  <!-- Lights settings screen, notification light settings -->
+  <string name="notification_light_general_title">Obecné</string>
+  <!-- Lights settings, LED notification -->
+  <!-- Hostname setting -->
+  <!-- Summaries -->
 </resources>

@@ -83,8 +83,11 @@
   <string name="doze_list_mode_summary">Opcje konfiguracji trybu drzemki</string>
   <string name="doze_pulse_title">Ustawienia czasu</string>
   <string name="doze_pulse_duration_in_title">Zanikanie</string>
+  <string name="doze_pulse_duration_in_summary"></string>
   <string name="doze_pulse_duration_visible_title">Widoczny czas trwania</string>
+  <string name="doze_pulse_duration_visible_summary"></string>
   <string name="doze_pulse_duration_out_title">Zanikanie</string>
+  <string name="doze_pulse_duration_out_summary"></string>
   <string name="doze_pulse_on_notifications_title">Pulsowanie podczas otrzymywania powiadomienia</string>
   <string name="doze_pulse_on_notifications_summary">Wywoływanie akcji tylko przy oczekujących powiadomieniach</string>
   <string name="doze_shake_title">Ustawienia wstrząśnięcia</string>
@@ -155,6 +158,7 @@
   <string name="statusbar_charging_image_summary">Wyświetlaj ikonę pioruna podczas ładowania. Ukrywa procentowy stan baterii</string>
   <string name="statusbar_battery_charging_color_title">Kolor</string>
   <string name="statusbar_battery_charging_color_enable_title">Kolor podczas ładowania</string>
+  <string name="statusbar_battery_charging_color_enable_summary"></string>
   <string name="battery_enable_title">Pokaż baterię</string>
   <string name="button_backlight_title">Podświetlenie przycisków</string>
   <string name="button_timeout_title">Opóźnienie podświetlenia</string>
@@ -242,9 +246,12 @@
   <string name="status_bar_icon_blacklist_summary">Skonfiguruj jakie ikony będą wyświetlane na pasku stanu</string>
   <string name="recents_category">Ostatnie</string>
   <string name="recents_search_bar_title">Pokaż pasek wyszukiwania</string>
+  <string name="recents_search_bar_summary"></string>
   <string name="recents_fullscreen_title">Pełny ekran</string>
+  <string name="recents_fullscreen_summary"></string>
   <string name="weather_title">Pogoda</string>
   <string name="weather_config_title">Ustawienia usługi</string>
+  <string name="weather_config_summary"></string>
   <string name="header_weather_title">Pogoda w nagłówku</string>
   <string name="header_weather_summary">Włącz wyświetlanie pogody w nagłówku panelu powiadomień</string>
   <string name="weather_icon_pack_title">Pakiet ikon warunków zewnętrznych</string>
@@ -264,6 +271,7 @@
   <string name="dashboard_colums_resize_title">Dopasowanie orientacji ekranu</string>
   <string name="dashboard_colums_resize_summary">Automatycznie dopasuj ustawienia kolumn bazując na orientacji ekranu.</string>
   <string name="dashboard_divider_show_title">Pokaż rozdzielacz kolumn</string>
+  <string name="dashboard_divider_show_summary"></string>
   <!-- global acions config -->
   <string name="global_actions_power_title">Zasilanie</string>
   <string name="global_actions_reboot_title">Uruchom ponownie</string>
@@ -281,6 +289,17 @@
   <string name="global_actions_summary">Akcje wyświetlane w menu zasilania</string>
   <string name="global_actions_header">Niektóre akcje są widoczne w zależności od konfiguracji lub tylko wtedy, gdy urządzenie jest odblokowane</string>
   <string name="font_sample_text">11:57</string>
+  <string name="screenshot_crop_and_share_title">Przytnij zrzut ekranu &amp; udostępnij</string>
+  <string name="screenshot_crop_and_share_summary">Pokaż okno edytora po wykonaniu zrzutu ekranu, aby wykonać pewnie operacji, takie jak przycinanie, zapisywanie lub udostępnianie</string>
   <!--<string name="screenshot_crop_behavior_title"></string>
     <string name="screenshot_crop_behavior_summary"></string>-->
+  <string name="lockscreen_qs_disabled_title">Wyłącz szybkie ustawienia, gdy urządzenie jest zablokowane</string>
+  <!-- Power menu Animations  -->
+  <!-- Notification light dialogs -->
+  <!-- Values for the notification light pulse spinners -->
+  <!-- Lights settings screen, notification light settings -->
+  <string name="notification_light_general_title">Ogólne</string>
+  <!-- Lights settings, LED notification -->
+  <!-- Hostname setting -->
+  <!-- Summaries -->
 </resources>

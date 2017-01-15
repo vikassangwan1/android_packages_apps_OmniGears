@@ -83,8 +83,11 @@
   <string name="doze_list_mode_summary">Schlummern-Modus konfigurieren</string>
   <string name="doze_pulse_title">Zeiteinstellungen</string>
   <string name="doze_pulse_duration_in_title">Einblenden</string>
+  <string name="doze_pulse_duration_in_summary"></string>
   <string name="doze_pulse_duration_visible_title">Sichtbare Dauer</string>
+  <string name="doze_pulse_duration_visible_summary"></string>
   <string name="doze_pulse_duration_out_title">Ausblenden</string>
+  <string name="doze_pulse_duration_out_summary"></string>
   <string name="doze_pulse_on_notifications_title">Pulsieren bei Benachrichtigungen</string>
   <string name="doze_pulse_on_notifications_summary">Aktivierung nur bei anstehenden Benachrichtigungen auslösen</string>
   <string name="doze_shake_title">Schütteln-Einstellungen</string>
@@ -155,6 +158,7 @@
   <string name="statusbar_charging_image_summary">Blitz Indikator beim Laden anzeigen. Versteckt die Prozent Anzeige</string>
   <string name="statusbar_battery_charging_color_title">Farbe</string>
   <string name="statusbar_battery_charging_color_enable_title">Farbe während des Ladevorgangs</string>
+  <string name="statusbar_battery_charging_color_enable_summary"></string>
   <string name="battery_enable_title">Akku anzeigen</string>
   <string name="button_backlight_title">Schaltflächen-Hintergrundbeleuchtung</string>
   <string name="button_timeout_title">Hintergrundbeleuchtungszeit</string>
@@ -242,9 +246,12 @@
   <string name="status_bar_icon_blacklist_summary">Lege fest, welche Symbole auf der Statusleiste angezeigt werden</string>
   <string name="recents_category">Zuletzt benutzt</string>
   <string name="recents_search_bar_title">Suche-Leiste anzeigen</string>
+  <string name="recents_search_bar_summary"></string>
   <string name="recents_fullscreen_title">Vollbild</string>
+  <string name="recents_fullscreen_summary"></string>
   <string name="weather_title">Wetter</string>
   <string name="weather_config_title">Diensteinstellungen</string>
+  <string name="weather_config_summary"></string>
   <string name="header_weather_title">Wetteranzeige in Kopfzeile</string>
   <string name="header_weather_summary">Wetteranzeige in Benachrichtigungsfeld-Kopfzeile aktivieren</string>
   <string name="weather_icon_pack_title">Wetter Symbol-Paket</string>
@@ -264,6 +271,7 @@
   <string name="dashboard_colums_resize_title">Ausrichtung anpassen</string>
   <string name="dashboard_colums_resize_summary">Schnelleinstellungen automatisch an die Ausrichtung anpassen.</string>
   <string name="dashboard_divider_show_title">Spaltenabtrennung anzeigen</string>
+  <string name="dashboard_divider_show_summary"></string>
   <!-- global acions config -->
   <string name="global_actions_power_title">Ein/Aus</string>
   <string name="global_actions_reboot_title">Neustart</string>
@@ -286,7 +294,6 @@
   <!--<string name="screenshot_crop_behavior_title"></string>
     <string name="screenshot_crop_behavior_summary"></string>-->
   <string name="lockscreen_qs_disabled_title">Schnelleinstellungen bei gesperrtem Bildschirm deaktivieren</string>
-  <string name="lockscreen_qs_disabled_summary">Zugriff auf die Schnelleinstellungen bei gesichertem Sperrbildschirm deaktivieren</string>
   <string name="status_bar_quick_qs_pulldown_title">Schnelles Öffnen</string>
   <string name="status_bar_quick_qs_pulldown_summary">Die %1$s Ecke der Benachrichtigungsleiste öffnet die Schnelleinstellungen</string>
   <string name="status_bar_quick_qs_pulldown_summary_left">linke</string>
@@ -294,4 +301,12 @@
   <string name="status_bar_quick_qs_pulldown_off">Deaktiviert</string>
   <string name="status_bar_quick_qs_pulldown_left">Links</string>
   <string name="status_bar_quick_qs_pulldown_right">Rechts</string>
+  <!-- Power menu Animations  -->
+  <!-- Notification light dialogs -->
+  <!-- Values for the notification light pulse spinners -->
+  <!-- Lights settings screen, notification light settings -->
+  <string name="notification_light_general_title">Allgemein</string>
+  <!-- Lights settings, LED notification -->
+  <!-- Hostname setting -->
+  <!-- Summaries -->
 </resources>

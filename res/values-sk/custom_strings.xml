@@ -83,8 +83,11 @@
   <string name="doze_list_mode_summary">Nastavenie podriemkávacieho režimu</string>
   <string name="doze_pulse_title">Nastavenie času</string>
   <string name="doze_pulse_duration_in_title">Pozvoľna zosilniť</string>
+  <string name="doze_pulse_duration_in_summary"></string>
   <string name="doze_pulse_duration_visible_title">Zobraziť trvanie</string>
+  <string name="doze_pulse_duration_visible_summary"></string>
   <string name="doze_pulse_duration_out_title">Pozvoľna zoslabiť</string>
+  <string name="doze_pulse_duration_out_summary"></string>
   <string name="doze_pulse_on_notifications_title">Blikanie pri upozornení</string>
   <string name="doze_pulse_on_notifications_summary">Použíť len v prípade neprečítaných upozornení</string>
   <string name="doze_shake_title">Nastavenia zatrasenia</string>
@@ -155,6 +158,7 @@
   <string name="statusbar_charging_image_summary">Zobraziť indikátor počas nabíjania. Nezobrazovať percentá</string>
   <string name="statusbar_battery_charging_color_title">Farba</string>
   <string name="statusbar_battery_charging_color_enable_title">Pri nabíjaní zmeniť farbu</string>
+  <string name="statusbar_battery_charging_color_enable_summary"></string>
   <string name="battery_enable_title">Zobraziť batériu</string>
   <string name="button_backlight_title">Podsvietenie tlačidiel</string>
   <string name="button_timeout_title">Oneskorenie vypnutia podsvietenia</string>
@@ -242,9 +246,12 @@
   <string name="status_bar_icon_blacklist_summary">Nastaviť, aké ikony sa budú zobrazovať v stavovej lište</string>
   <string name="recents_category">Nedávne</string>
   <string name="recents_search_bar_title">Zobrazovať vyhľadávaciu lištu</string>
+  <string name="recents_search_bar_summary"></string>
   <string name="recents_fullscreen_title">Celá obrazovka</string>
+  <string name="recents_fullscreen_summary"></string>
   <string name="weather_title">Počasie</string>
   <string name="weather_config_title">Nastavenia služby</string>
+  <string name="weather_config_summary"></string>
   <string name="header_weather_title">Zobrazenie počasia v záhlaví</string>
   <string name="header_weather_summary">Povoliť zobrazenie počasia v záhlaví na notifikačnom paneli</string>
   <string name="weather_icon_pack_title">Balíček ikon počasia</string>
@@ -264,6 +271,7 @@
   <string name="dashboard_colums_resize_title">Úprava orientácie</string>
   <string name="dashboard_colums_resize_summary">Automaticky upraviť stĺpce nastavení na základe orientácie.</string>
   <string name="dashboard_divider_show_title">Zobraziť oddeľovač stĺpcov</string>
+  <string name="dashboard_divider_show_summary"></string>
   <!-- global acions config -->
   <string name="global_actions_power_title">Napájanie</string>
   <string name="global_actions_reboot_title">Reštart</string>
@@ -286,7 +294,6 @@
   <!--<string name="screenshot_crop_behavior_title"></string>
     <string name="screenshot_crop_behavior_summary"></string>-->
   <string name="lockscreen_qs_disabled_title">Pri uzamknutí zakázať rýchle nastavenia</string>
-  <string name="lockscreen_qs_disabled_summary">Pri uzamknutej obrazovke zakáže vyvolanie rýchlych nastavení</string>
   <string name="status_bar_quick_qs_pulldown_title">Rýchle nastavenie</string>
   <string name="status_bar_quick_qs_pulldown_summary">%1$s šírky stavovej lišty aktivuje Rýchle nastavenia</string>
   <string name="status_bar_quick_qs_pulldown_summary_left">Vľavo</string>
@@ -294,4 +301,12 @@
   <string name="status_bar_quick_qs_pulldown_off">Vyp</string>
   <string name="status_bar_quick_qs_pulldown_left">Vľavo</string>
   <string name="status_bar_quick_qs_pulldown_right">Vpravo</string>
+  <!-- Power menu Animations  -->
+  <!-- Notification light dialogs -->
+  <!-- Values for the notification light pulse spinners -->
+  <!-- Lights settings screen, notification light settings -->
+  <string name="notification_light_general_title">Všeobecné</string>
+  <!-- Lights settings, LED notification -->
+  <!-- Hostname setting -->
+  <!-- Summaries -->
 </resources>

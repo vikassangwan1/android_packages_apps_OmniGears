@@ -21,17 +21,32 @@
   <!-- Hardware keys -->
   <!-- Double tap to sleep -->
   <!-- Doze pulse (ambient display) options -->
+  <string name="doze_pulse_duration_in_summary"></string>
+  <string name="doze_pulse_duration_visible_summary"></string>
+  <string name="doze_pulse_duration_out_summary"></string>
   <!-- Swap volume buttons when the screen is rotated -->
   <!-- Battery light settings  -->
+  <string name="statusbar_battery_charging_color_enable_summary"></string>
   <!-- Lock screen wallpaper -->
   <!-- Lock screen config -->
   <!-- Network traffic -->
   <!-- statusbar brightness -->
   <!-- Status Bar Activity Indicators -->
+  <string name="recents_search_bar_summary"></string>
+  <string name="recents_fullscreen_summary"></string>
+  <string name="weather_config_summary"></string>
   <!-- Navigationbar settings -->
   <!-- Enable Tablet Style navigation bar -->
   <!-- Dashboard columns -->
+  <string name="dashboard_divider_show_summary"></string>
   <!-- global acions config -->
   <!--<string name="screenshot_crop_behavior_title"></string>
     <string name="screenshot_crop_behavior_summary"></string>-->
+  <!-- Power menu Animations  -->
+  <!-- Notification light dialogs -->
+  <!-- Values for the notification light pulse spinners -->
+  <!-- Lights settings screen, notification light settings -->
+  <!-- Lights settings, LED notification -->
+  <!-- Hostname setting -->
+  <!-- Summaries -->
 </resources>

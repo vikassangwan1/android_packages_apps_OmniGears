@@ -83,8 +83,11 @@
   <string name="doze_list_mode_summary">Opció per configurar el mode becaina</string>
   <string name="doze_pulse_title">Configuració de l\'hora</string>
   <string name="doze_pulse_duration_in_title">Esvair</string>
+  <string name="doze_pulse_duration_in_summary"></string>
   <string name="doze_pulse_duration_visible_title">Durada de la visibilitat</string>
+  <string name="doze_pulse_duration_visible_summary"></string>
   <string name="doze_pulse_duration_out_title">Desapareix</string>
+  <string name="doze_pulse_duration_out_summary"></string>
   <string name="doze_pulse_on_notifications_title">Parpelleig per als avisos</string>
   <string name="doze_pulse_on_notifications_summary">Inicia l\'activació només per als avisos pendents</string>
   <string name="doze_shake_title">Configuració de sacseig</string>
@@ -155,6 +158,7 @@
   <string name="statusbar_charging_image_summary">Mostra l\'indicador de voltatge durant la càrrega. Oculta el percentatge superposat</string>
   <string name="statusbar_battery_charging_color_title">Color</string>
   <string name="statusbar_battery_charging_color_enable_title">Color durant la càrrega</string>
+  <string name="statusbar_battery_charging_color_enable_summary"></string>
   <string name="battery_enable_title">Mostra la bateria</string>
   <string name="button_backlight_title">Botó de retroil·luminació</string>
   <string name="button_timeout_title">Temps d\'espera de la retroil·luminació</string>
@@ -241,9 +245,12 @@
   <string name="status_bar_icon_blacklist_summary">Configuració de quines icones es mostren a la barra d\'estat</string>
   <string name="recents_category">Recents</string>
   <string name="recents_search_bar_title">Mostra la barra de cerca</string>
+  <string name="recents_search_bar_summary"></string>
   <string name="recents_fullscreen_title">Pantalla completa</string>
+  <string name="recents_fullscreen_summary"></string>
   <string name="weather_title">El temps</string>
   <string name="weather_config_title">Configuració del servei</string>
+  <string name="weather_config_summary"></string>
   <string name="header_weather_title">Visualització del temps a la capçalera</string>
   <string name="header_weather_summary">Habilita la visualització del temps a la capçalera del tauler d\'avisos</string>
   <string name="weather_icon_pack_title">Paquet d\'icones per al temps</string>
@@ -263,6 +270,7 @@
   <string name="dashboard_colums_resize_title">Ajustament de l\'orientació</string>
   <string name="dashboard_colums_resize_summary">Ajusta la configuració de les columnes automàticament segons l\'orientació.</string>
   <string name="dashboard_divider_show_title">Mostra el divisor de columnes</string>
+  <string name="dashboard_divider_show_summary"></string>
   <!-- global acions config -->
   <string name="global_actions_power_title">Energia</string>
   <string name="global_actions_reboot_title">Reinici</string>
@@ -282,4 +290,12 @@
   <string name="font_sample_text">11:57</string>
   <!--<string name="screenshot_crop_behavior_title"></string>
     <string name="screenshot_crop_behavior_summary"></string>-->
+  <!-- Power menu Animations  -->
+  <!-- Notification light dialogs -->
+  <!-- Values for the notification light pulse spinners -->
+  <!-- Lights settings screen, notification light settings -->
+  <string name="notification_light_general_title">General</string>
+  <!-- Lights settings, LED notification -->
+  <!-- Hostname setting -->
+  <!-- Summaries -->
 </resources>
