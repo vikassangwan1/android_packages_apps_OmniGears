@@ -19,6 +19,7 @@ package org.omnirom.omnigears.interfacesettings;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.UiModeManager;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -69,12 +70,14 @@ public class StyleSettings extends SettingsPreferenceFragment implements
     private static final String CUSTOM_HEADER_PROVIDER = "custom_header_provider";
     private static final String CUSTOM_HEADER_BROWSE = "custom_header_browse";
     private static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
+    private static final String KEY_NIGHT_MODE = "night_mode";
 
     private ListPreference mDaylightHeaderPack;
     private SeekBarPreference mHeaderShadow;
     private ListPreference mHeaderProvider;
     private String mDaylightHeaderProvider;
     private PreferenceScreen mHeaderBrowse;
+    private ListPreference mNightModePreference;
 
     @Override
     protected int getMetricsCategory() {
@@ -134,6 +137,15 @@ public class StyleSettings extends SettingsPreferenceFragment implements
 
         mHeaderBrowse = (PreferenceScreen) findPreference(CUSTOM_HEADER_BROWSE);
         mHeaderBrowse.setEnabled(isBrowseHeaderAvailable());
+
+        mNightModePreference = (ListPreference) findPreference(KEY_NIGHT_MODE);
+        if (mNightModePreference != null) {
+            final UiModeManager uiManager = (UiModeManager) getSystemService(
+                    Context.UI_MODE_SERVICE);
+            final int currentNightMode = uiManager.getNightMode();
+            mNightModePreference.setValue(String.valueOf(currentNightMode));
+            mNightModePreference.setOnPreferenceChangeListener(this);
+        }
     }
 
     @Override
@@ -156,6 +168,15 @@ public class StyleSettings extends SettingsPreferenceFragment implements
             int valueIndex = mHeaderProvider.findIndexOfValue(value);
             mHeaderProvider.setSummary(mHeaderProvider.getEntries()[valueIndex]);
             mDaylightHeaderPack.setEnabled(value.equals(mDaylightHeaderProvider));
+        } else if (preference == mNightModePreference) {
+            try {
+                final int value = Integer.parseInt((String) newValue);
+                final UiModeManager uiManager = (UiModeManager) getSystemService(
+                        Context.UI_MODE_SERVICE);
+                uiManager.setNightMode(value);
+            } catch (NumberFormatException e) {
+                Log.e(TAG, "could not persist night mode setting", e);
+            }
         }
         return true;
     }

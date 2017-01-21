@@ -423,4 +423,9 @@
 
     <string name="lockscreen_hide_media_title">Disable media wallpaper</string>
     <string name="lockscreen_hide_media_summary">Do not show media metadata as lock screen wallpaper</string>
+
+    <string name="night_mode_title">Theme</string>
+    <string name="night_mode_summary">%s</string>
+    <string name="night_mode_no">Light</string>
+    <string name="night_mode_yes">Dark</string>
 </resources>
