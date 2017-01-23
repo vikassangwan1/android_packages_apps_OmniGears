@@ -40,7 +40,23 @@
                 android:title="@string/volume_dialog_headers_title"
                 android:summary="@string/volume_dialog_headers_summary"
                 android:defaultValue="true" />
+        </PreferenceCategory>
 
+        <PreferenceCategory
+            android:key="category_system"
+            android:title="@string/system_category">
+
+            <PreferenceScreen
+                android:key="time_in_state"
+                android:title="@string/time_in_state_title"
+                android:summary="@string/time_in_state_summary"
+                android:fragment="org.omnirom.omnigears.system.TimeInState" />
+
+            <PreferenceScreen
+                android:key="wakelocks"
+                android:title="@string/wakelocks_title"
+                android:summary="@string/wakelocks_summary"
+                android:fragment="org.omnirom.omnigears.system.Wakelocks" />
         </PreferenceCategory>
 
 </PreferenceScreen>
