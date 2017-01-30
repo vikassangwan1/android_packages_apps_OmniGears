@@ -476,4 +476,6 @@
     <string name="wakelocks_title">Wakelocks</string>
     <string name="wakelocks_summary">Show wakelock statistics</string>
     <string name="system_category">System</string>
+    <string name="custom_wall_browse_title">OMNI Wallpapers</string>
+    <string name="custom_wall_browse_summary"></string>
 </resources>

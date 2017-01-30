@@ -25,6 +25,16 @@
             android:entries="@array/night_mode_entries"
             android:entryValues="@array/night_mode_values" />
 
+        <PreferenceScreen
+            android:key="custom_wall_browse"
+            android:title="@string/custom_wall_browse_title"
+            android:summary="@string/custom_wall_browse_summary"
+            android:persistent="false" >
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="org.omnirom.omnistyle"
+                    android:targetClass="org.omnirom.omnistyle.BrowseWallsActivity" />
+            </PreferenceScreen>
+
         <PreferenceCategory
             android:key="category_statusbar"
             android:title="@string/statusbar_title">
