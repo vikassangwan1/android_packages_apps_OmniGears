@@ -31,4 +31,8 @@
          a fixed set of led colors -->
     <bool name="config_has_multi_color_led">true</bool>
 
+    <!-- config which cpus should be should scanned and shown
+    e.g. 0,2 means it will show only cpu 0 and cpu 2-->
+    <string name="config_cpufreq_show_cpus">0</string>
+
 </resources>

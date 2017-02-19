@@ -2,7 +2,8 @@
  * Performance Control - An Android CPU Control application Copyright (C)
  * Brandon Valosek, 2011 <bvalosek@gmail.com> Copyright (C) Modified by 2012
  * James Roberts
- * 
+ * Copyright (C) 2017 The OmniROM Project
+ *
  * This program is free software: you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
@@ -34,9 +35,13 @@ public class CPUStateMonitor {
     private Map<Integer, Map<Integer, Long>> mOffsets;
     private boolean mOverallStats;
     private int mCpuNum;
+    private List<Integer> mFrequencies;
+    private List<Integer> mShowCpus;
 
-    public CPUStateMonitor() {
+    public CPUStateMonitor(List<Integer> showCpus) {
+        mShowCpus = showCpus;
         mCpuNum = Helpers.getNumOfCpus();
+        mFrequencies = new ArrayList<Integer>();
         mStates = new HashMap<Integer, ArrayList<CpuState>>();
         mOffsets = new HashMap<Integer, Map<Integer, Long>>();
         for (int i = 0; i < mCpuNum; i++) {
@@ -95,6 +100,10 @@ public class CPUStateMonitor {
 
     public List<CpuState> getStates(int cpu) {
         return mStates.get(cpu);
+    }
+
+    public List<Integer> getFrequencies() {
+        return mFrequencies;
     }
 
     public CpuState getFreqState(int cpu, int freq) {
@@ -170,15 +179,14 @@ public class CPUStateMonitor {
     }
 
     public void clear() {
-        int cpuNum = Helpers.getNumOfCpus();
-        for (int i = 0; i < cpuNum; i++) {
+        for (int i = 0; i < mCpuNum; i++) {
             List<CpuState> cpuStates = mStates.get(i);
             cpuStates.clear();
         }
     }
 
     public void updateStates() throws CPUStateMonitorException {
-
+        mFrequencies.clear();
         if (mOverallStats) {
             try {
                 InputStream is = new FileInputStream(TIME_IN_STATE_OVERALL_PATH);
@@ -192,14 +200,21 @@ public class CPUStateMonitor {
                         "Problem opening time-in-states file");
             }
         } else {
-            List<CpuState> cpuStates = mStates.get(0);
             try {
-                InputStream is = new FileInputStream(TIME_IN_STATE_PATH);
-                InputStreamReader ir = new InputStreamReader(is);
-                BufferedReader br = new BufferedReader(ir);
                 clear();
-                readInStates(br, 0, cpuStates);
-                is.close();
+                for (int i = 0; i < mCpuNum; i++) {
+                    if (mShowCpus != null) {
+                        if (!mShowCpus.contains(i)) {
+                            continue;
+                        }
+                    }
+                    List<CpuState> cpuStates = mStates.get(i);
+                    InputStream is = new FileInputStream(getCpuFreqPathFor(i));
+                    InputStreamReader ir = new InputStreamReader(is);
+                    BufferedReader br = new BufferedReader(ir);
+                    readInStates(br, i, cpuStates);
+                    is.close();
+                }
             } catch (IOException e) {
                 throw new CPUStateMonitorException(
                         "Problem opening time-in-states file");
@@ -210,6 +225,7 @@ public class CPUStateMonitor {
         long sleepTime = Math.max((SystemClock.elapsedRealtime() - SystemClock
                 .uptimeMillis()) / 10, 0);
         cpuStates.add(new CpuState(0, 0, sleepTime));
+        Collections.sort(mFrequencies);
     }
 
     private void readInStates(BufferedReader br, int cpu,
@@ -218,8 +234,12 @@ public class CPUStateMonitor {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] nums = line.split(" ");
-                cpuStates.add(new CpuState(cpu, Integer.parseInt(nums[0]), Long
+                int freq = Integer.parseInt(nums[0]);
+                cpuStates.add(new CpuState(cpu, freq, Long
                         .parseLong(nums[1])));
+                if (!mFrequencies.contains(freq)) {
+                    mFrequencies.add(freq);
+                }
             }
             Collections.sort(cpuStates, Collections.reverseOrder());
         } catch (IOException e) {
@@ -249,6 +269,9 @@ public class CPUStateMonitor {
                 }
                 cpuStates = mStates.get(cpu);
                 cpuStates.add(new CpuState(cpu, freq, Long.parseLong(nums[1])));
+                if (!mFrequencies.contains(freq)) {
+                    mFrequencies.add(freq);
+                }
             }
         } catch (IOException e) {
             throw new CPUStateMonitorException(
@@ -258,5 +281,9 @@ public class CPUStateMonitor {
 
     public void dump() {
         Log.d("PC", "states = " + mStates + "\noffsets = " + mOffsets);
+    }
+
+    private String getCpuFreqPathFor(int cpu) {
+        return TIME_IN_STATE_PATH.replace("cpu0", "cpu" + cpu);
     }
 }

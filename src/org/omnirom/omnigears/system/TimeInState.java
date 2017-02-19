@@ -24,12 +24,15 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.*;
 import android.widget.*;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -50,19 +53,19 @@ public class TimeInState extends SettingsPreferenceFragment {
     private TextView mStatesWarning;
     private CheckBox mStateMode;
     private boolean mUpdatingData = false;
-    private CPUStateMonitor monitor = new CPUStateMonitor();
+    private CPUStateMonitor monitor;
     private Context mContext;
     private SharedPreferences mPreferences;
-    private boolean mOverallStats;
     private int mCpuNum;
     private boolean mActiveStateMode;
-    private boolean mActiveCoreMode = true;
+    private boolean mActiveCoreMode;
     private Spinner mPeriodTypeSelect;
     private LinearLayout mProgress;
     private CheckBox mCoreMode;
     private int mPeriodType = 1;
     private boolean sHasRefData;
     private Intent mShareIntent;
+    private List<Integer> mShowCpus;
 
     private static final int MENU_REFRESH = Menu.FIRST;
     private static final int MENU_SHARE = MENU_REFRESH + 1;
@@ -71,7 +74,17 @@ public class TimeInState extends SettingsPreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = getActivity();
-        mOverallStats = monitor.hasOverallStats();
+        mShowCpus = new ArrayList<Integer>();
+        String showCpus = getResources().getString(R.string.config_cpufreq_show_cpus);
+        if (!TextUtils.isEmpty(showCpus)) {
+            String[] parts = showCpus.split(",");
+            for (String cpu : parts) {
+                mShowCpus.add(Integer.valueOf(cpu));
+            }
+        }
+        monitor = new CPUStateMonitor(mShowCpus);
+        mActiveCoreMode = mShowCpus.size() > 1;
+
         mCpuNum = Helpers.getNumOfCpus();
         mPreferences = PreferenceManager.getDefaultSharedPreferences(mContext);
         mPeriodType = mPreferences.getInt("which", 1);
@@ -124,23 +137,7 @@ public class TimeInState extends SettingsPreferenceFragment {
         });
 
         mCoreMode = (CheckBox) view.findViewById(R.id.ui_core_switch);
-        if (mOverallStats) {
-            mActiveCoreMode = mPreferences.getBoolean(PREF_CORE_MODE, true);
-            mCoreMode.setChecked(mActiveCoreMode);
-            mCoreMode.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView,
-                        boolean isChecked) {
-                    mActiveCoreMode = isChecked;
-                    SharedPreferences.Editor editor = mPreferences.edit();
-                    editor.putBoolean(PREF_CORE_MODE, mActiveCoreMode).commit();
-                    updateView();
-                }
-            });
-        } else {
-            mCoreMode.setVisibility(View.GONE);
-            mActiveCoreMode = false;
-        }
+        mCoreMode.setVisibility(View.GONE);
 
         mPeriodTypeSelect = (Spinner) view
                 .findViewById(R.id.period_type_select);
@@ -261,18 +258,33 @@ public class TimeInState extends SettingsPreferenceFragment {
                 long totTime = getStateTime(mActiveStateMode);
                 data.append(totTime + "\n");
                 totTime = totTime / 100;
+                if (!mActiveStateMode) {
+                    CpuState deepSleepState = monitor.getDeepSleepState();
+                    if (deepSleepState != null) {
+                        generateStateRowHeader(deepSleepState, mStatesView);
+                        generateStateRow(deepSleepState, mStatesView);
+                        data.append(deepSleepState.freq + " "
+                                + deepSleepState.getDuration() + "\n");
+                    }
+                }
                 if (mActiveCoreMode) {
                     int cpu = 0;
-                    for (CpuState state : monitor.getStates(0)) {
-                        if (state.freq == 0) {
-                            continue;
-                        }
-                        data.append(state.mCpu + " " + state.freq + " "
-                                + state.getDuration() + "\n");
-                        generateStateRowHeader(state, mStatesView);
-                        generateStateRow(state, mStatesView);
-                        for (cpu = 1; cpu < mCpuNum; cpu++) {
-                            state = monitor.getFreqState(cpu, state.freq);
+                    for (int freq : monitor.getFrequencies()) {
+                        boolean headerCreated = false;
+                        for (cpu = 0; cpu < mCpuNum; cpu++) {
+                            if (mShowCpus != null) {
+                                if (!mShowCpus.contains(cpu)) {
+                                    continue;
+                                }
+                            }
+                            CpuState state = monitor.getFreqState(cpu, freq);
+                            if (state == null) {
+                                continue;
+                            }
+                            if (!headerCreated) {
+                                generateStateRowHeader(state, mStatesView);
+                                headerCreated = true;
+                            }
                             generateStateRow(state, mStatesView);
                             data.append(state.mCpu + " " + state.freq + " "
                                     + state.getDuration() + "\n");
@@ -289,15 +301,6 @@ public class TimeInState extends SettingsPreferenceFragment {
                     }
                 }
 
-                if (!mActiveStateMode) {
-                    CpuState deepSleepState = monitor.getDeepSleepState();
-                    if (deepSleepState != null) {
-                        generateStateRowHeader(deepSleepState, mStatesView);
-                        generateStateRow(deepSleepState, mStatesView);
-                        data.append(deepSleepState.freq + " "
-                                + deepSleepState.getDuration() + "\n");
-                    }
-                }
                 mTotalStateTime.setText(getResources().getString(R.string.total_time)
                         + " " + toString(totTime));
             }
