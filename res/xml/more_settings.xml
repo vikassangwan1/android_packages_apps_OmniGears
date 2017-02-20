@@ -43,6 +43,16 @@
         </PreferenceCategory>
 
         <PreferenceCategory
+            android:key="category_display"
+            android:title="@string/category_display">
+
+            <PreferenceScreen
+                android:key="display_rotation"
+                android:title="@string/display_rotation_title"
+                android:fragment="org.omnirom.omnigears.DisplayRotation" />
+        </PreferenceCategory>
+
+        <PreferenceCategory
             android:key="category_system"
             android:title="@string/system_category">
 
