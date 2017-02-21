@@ -211,12 +211,6 @@
 
     <string name="doze_brightness_level_title">Brightness level</string>
 
-    <!-- Lock screen wallpaper -->
-    <string name="lockscreen_wallpaper_title">Wallpaper</string>
-    <string name="lockscreen_wallpaper_set_title">Set lock screen wallpaper</string>
-    <string name="lockscreen_wallpaper_clear_title">Clear lock screen wallpaper</string>
-    <string name="reset_lockscreen_wallpaper">Set to default</string>
-
     <!-- Lock screen config -->
     <string name="lockscreen_shortcut_title">Shortcuts</string>
     <string name="lockscreen_voice_shortcut_title">Voice assist shortcut</string>
@@ -237,7 +231,7 @@
     <string name="lockscreen_shortcut_apps_title">Shortcuts</string>
     <string name="lockscreen_shortcut_add">Add\u2026</string>
     <string name="lockscreen_indicator_display_title">Show bottom status text</string>
-    <string name="lockscreen_indicator_display_summary">Note: custom shortcuts will hide text</string>
+    <string name="lockscreen_indicator_display_summary"></string>
     <string name="lockscreen_camera_shortcut_enable_title">Show camera shortcut</string>
     <string name="lockscreen_camera_shortcut_enable_summary">Visibility depends on system setup</string>
     <string name="lockscreen_left_shortcut_enable_title">Show dialer or voice assist shortcut</string>

@@ -59,10 +59,7 @@ import java.util.List;
 
 public class LockscreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
-/*    public static final int IMAGE_PICK = 1;
-
-    private static final String KEY_WALLPAPER_SET = "lockscreen_wallpaper_set";
-    private static final String KEY_WALLPAPER_CLEAR = "lockscreen_wallpaper_clear";
+/*
     private static final String KEY_CLOCK_FONT = "lockscreen_clock_font";
     private static final String KEY_CLOCK_COLOR = "lockscreen_clock_color";
     private static final String KEY_CLOCK_SIZE = "lockscreen_clock_size";
@@ -72,8 +69,6 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
     private static final String KEY_CLOCK_DISPLAY_ALARM = "lockscreen_clock_display_alarm";
     private static final String KEY_SHORTCUTS = "lockscreen_shortcuts";
 
-    private Preference mSetWallpaper;
-    private Preference mClearWallpaper;
     private FontPreference mClockFont;
     private NumberPickerPreference mClockSize;
     private ColorPickerPreference mClockColor;
@@ -92,9 +87,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.lockscreen_settings);
 
-/*        mSetWallpaper = (Preference) findPreference(KEY_WALLPAPER_SET);
-        mClearWallpaper = (Preference) findPreference(KEY_WALLPAPER_CLEAR);
-
+/*
         mClockFont = (FontPreference) findPreference(KEY_CLOCK_FONT);
         mClockFont.setOnPreferenceChangeListener(this);
         mClockColor = (ColorPickerPreference) findPreference(KEY_CLOCK_COLOR);
@@ -143,15 +136,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
 /*        ContentResolver resolver = getContentResolver();
-        if (preference == mSetWallpaper) {
-            setKeyguardWallpaper();
-            return true;
-        } else if (preference == mClearWallpaper) {
-            clearKeyguardWallpaper();
-            Toast.makeText(getView().getContext(), getString(R.string.reset_lockscreen_wallpaper),
-            Toast.LENGTH_LONG).show();
-            return true;
-        } else if (preference == mClockDisplayTime) {
+        if (preference == mClockDisplayTime) {
             Settings.System.putInt(resolver,
                     Settings.System.LOCK_CLOCK_DISPLAY, getCurrentClockDisplayValue());
             return true;
@@ -198,34 +183,6 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
 */
         return true;
     }
-/*
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == IMAGE_PICK && resultCode == Activity.RESULT_OK) {
-            if (data != null && data.getData() != null) {
-                Uri uri = data.getData();
-                Intent intent = new Intent();
-                intent.setClassName("com.android.wallpapercropper", "com.android.wallpapercropper.WallpaperCropActivity");
-                intent.putExtra("keyguardMode", "1");
-                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                intent.setData(uri);
-                startActivity(intent);
-            }
-        }
-    }
-
-    private void setKeyguardWallpaper() {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.setType("image/*");
-        startActivityForResult(intent, IMAGE_PICK);
-    }
-
-    private void clearKeyguardWallpaper() {
-        WallpaperManager wallpaperManager = null;
-        wallpaperManager = WallpaperManager.getInstance(getActivity());
-        wallpaperManager.clearKeyguardWallpaper();
-    }
-*/
 
     private static class SummaryProvider implements SummaryLoader.SummaryProvider {
         private final Context mContext;
