@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--  Copyright (C) 2013 The OmniROM Project
+<!--  Copyright (C) 2017 The OmniROM Project
 
   Parts Copyright (C) 2012-2013 The CyanogenMod Project
 
@@ -384,6 +384,10 @@
     <string name="pulse_speed_slow">Slow</string>
     <string name="pulse_speed_very_slow">Very slow</string>
     <!-- Lights settings screen, notification light settings -->
+    <string name="omni_battery_light_settings">Battery charging</string>
+    <string name="omni_notification_light_settings">Applications LED notifications</string>
+    <string name="omni_leds">LED Lights</string>
+    <string name="omni_lights_title">Notification LED</string>
     <string name="notification_light_title">Notification light</string>
     <string name="notificationlight_title">Notification LED settings</string>
     <string name="notification_light_general_title">General</string>
@@ -417,6 +421,9 @@
 
     <string name="lockscreen_hide_media_title">Disable media wallpaper</string>
     <string name="lockscreen_hide_media_summary">Do not show media metadata as lock screen wallpaper</string>
+
+    <string name="omni_notification_light_settings_summary">Customization of notification led lights for applications</string>
+    <string name="omni_battery_light_settings_summary">Customization of notification led lights for battery</string>
 
     <string name="night_mode_title">Theme</string>
     <string name="night_mode_summary">%s</string>
