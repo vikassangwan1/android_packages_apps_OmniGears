@@ -45,14 +45,17 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
+import org.omnirom.omnigears.preference.SecureSettingSwitchPreference;
+
 public class GlobalActionsSettings extends SettingsPreferenceFragment implements
-        OnPreferenceChangeListener, Indexable {
+        Preference.OnPreferenceChangeListener, Indexable {
     private static final String TAG = "GlobalActionsSettings";
     private static final String POWER_MENU_ANIMATIONS = "power_menu_animations";
     private static final String GLOBAL_ACTIONS_LIST = "global_actions_list";
 
     private LinkedHashMap<String, Boolean> mGlobalActionsMap;
-    ListPreference mPowerMenuAnimations;
+    private ListPreference mPowerMenuAnimations;
+    private SecureSettingSwitchPreference mAdvancedReboot;
 
     @Override
     protected int getMetricsCategory() {
@@ -83,6 +86,10 @@ public class GlobalActionsSettings extends SettingsPreferenceFragment implements
                 getContentResolver(), Settings.System.POWER_MENU_ANIMATIONS, 0)));
         mPowerMenuAnimations.setSummary(mPowerMenuAnimations.getEntry());
         mPowerMenuAnimations.setOnPreferenceChangeListener(this);
+
+        mAdvancedReboot = (SecureSettingSwitchPreference)
+                findPreference(Settings.Secure.ADVANCED_REBOOT);
+        mAdvancedReboot.setOnPreferenceChangeListener(this);
 
         List<String> enabledActionsList = null;
         if (enabledActions != null) {
@@ -151,16 +158,26 @@ public class GlobalActionsSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-         ContentResolver resolver = getActivity().getContentResolver();
          boolean result = false;
-         if (preference == mPowerMenuAnimations) {
-            Settings.System.putInt(getContentResolver(), Settings.System.POWER_MENU_ANIMATIONS,
-                    Integer.valueOf((String) objValue));
-            mPowerMenuAnimations.setValue(String.valueOf(objValue));
-            mPowerMenuAnimations.setSummary(mPowerMenuAnimations.getEntry());
-            return true;
-          }
-          return result;
+         if (preference instanceof ListPreference) {
+             if (preference == mPowerMenuAnimations) {
+                Settings.System.putInt(getContentResolver(), Settings.System.POWER_MENU_ANIMATIONS,
+                        Integer.valueOf((String) objValue));
+                mPowerMenuAnimations.setValue(String.valueOf(objValue));
+                mPowerMenuAnimations.setSummary(mPowerMenuAnimations.getEntry());
+                return true;
+             }
+         } else if (preference instanceof SecureSettingSwitchPreference) {
+             if (preference == mAdvancedReboot) {
+                boolean value = (Boolean) objValue;
+                Settings.Secure.putInt(getContentResolver(), Settings.Secure.ADVANCED_REBOOT,
+                        value ? 1:0);
+                Settings.Secure.putInt(getContentResolver(), Settings.Secure.GLOBAL_ACTION_DNAA,
+                        value ? 1:0);
+             }
+             return true;
+         }
+         return result;
     }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

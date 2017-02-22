@@ -22,7 +22,12 @@
     <PreferenceCategory
         android:key="global_actions_anim"
         android:title="@string/global_actions_anim" >
-         <ListPreference
+
+       <org.omnirom.omnigears.preference.SecureSettingSwitchPreference
+            android:key="advanced_reboot"
+            android:title="@string/global_actions_advanced_reboot_title"
+            android:summary="@string/global_actions_advanced_reboot_summary" />
+       <ListPreference
             android:key="power_menu_animations"
             android:title="@string/power_menu_animation_title"
             android:dialogTitle="@string/power_menu_animation_dialog_title"

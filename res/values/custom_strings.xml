@@ -337,6 +337,8 @@
     <string name="global_actions_summary">Actions shown in power menu</string>
     <string name="global_actions_header">Some actions are only visible depending on the setup or only if the device is unlocked</string>
     <string name="global_actions_anim">Appearance</string>
+    <string name="global_actions_advanced_reboot_summary">Show more options in reboot menu</string>
+    <string name="global_actions_advanced_reboot_title">Enable advanced reboot</string>
 
     <string name="font_sample_text">11:57</string>
 
