@@ -65,11 +65,15 @@
             android:entries="@array/volume_key_cursor_control_entries"
             android:entryValues="@array/volume_key_cursor_control_values" /> -->
 
-        <CheckBoxPreference
+        <org.omnirom.omnigears.preference.SystemCheckBoxPreference
             android:key="swap_volume_buttons"
             android:title="@string/swap_volume_buttons_title"
-            android:summary="@string/swap_volume_buttons_summary"
-            android:persistent="false"/>
+            android:summary="@string/swap_volume_buttons_summary" />
+
+        <org.omnirom.omnigears.preference.SystemCheckBoxPreference
+            android:key="volume_button_force_media"
+            android:title="@string/volume_button_force_media_title"
+            android:summary="@string/volume_button_force_media_summary" />
 
     </PreferenceCategory>
 

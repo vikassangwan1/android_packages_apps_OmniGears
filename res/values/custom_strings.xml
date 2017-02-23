@@ -453,7 +453,6 @@
     <string name="app_details">App details</string>
     <string name="no_stat_because_reset">Create reset</string>
     <string name="no_stat_because_plugged">Unplug power</string>
-    <string name="no_stat_because_error">Error loading battery stats</string>
     <string name="no_states_file_found">No states file found. Are you sure your phone is
         compatible?\n\nIf you are running a custom ROM or kernel, try
         contacting its developer to inform him that the states file is not
@@ -481,4 +480,7 @@
     <string name="display_rotation_180_title">180 degrees</string>
     <string name="display_rotation_270_title">270 degrees</string>
     <string name="display_lockscreen_rotation_title">Lock screen</string>
+
+    <string name="volume_button_force_media_title">Force media volume</string>
+    <string name="volume_button_force_media_summary">Media volume will be changed by default</string>
 </resources>
