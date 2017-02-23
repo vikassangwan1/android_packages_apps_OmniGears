@@ -76,6 +76,11 @@
             android:title="@string/lockscreen_hide_media_title"
             android:summary="@string/lockscreen_hide_media_summary" />
 
+        <org.omnirom.omnigears.preference.SecureSettingSwitchPreference
+            android:key="lockscreen_hide_status_bar"
+            android:title="@string/lockscreen_hide_status_bar_title"
+            android:summary="@string/lockscreen_hide_status_bar_summary"/>
+
     </PreferenceCategory>
 <!--
 
