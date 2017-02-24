@@ -61,10 +61,9 @@
         android:title="@string/other_category" >
 
         <org.omnirom.omnigears.preference.SecureSettingSwitchPreference
-            android:key="lockscreen_indicator_display"
-            android:title="@string/lockscreen_indicator_display_title"
-            android:summary="@string/lockscreen_indicator_display_summary"
-            android:defaultValue="true" />
+            android:key="lockscreen_hide_indicator_display"
+            android:title="@string/lockscreen_hide_indicator_display_title"
+            android:summary="@string/lockscreen_hide_indicator_display_summary" />
 
         <org.omnirom.omnigears.preference.SecureSettingSwitchPreference
             android:key="lockscreen_qs_disabled"
