@@ -18,7 +18,10 @@
 
 package org.omnirom.omnigears.lightssettings;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v7.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.support.v7.preference.PreferenceCategory;
@@ -29,6 +32,9 @@ import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.dashboard.SummaryLoader;
+
+import static android.provider.Settings.System.NOTIFICATION_LIGHT_PULSE;
 
 public class LightsSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -72,4 +78,38 @@ public class LightsSettings extends SettingsPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         return true;
     }
+
+    private static class SummaryProvider implements SummaryLoader.SummaryProvider {
+        private final Context mContext;
+        private final SummaryLoader mLoader;
+
+        private SummaryProvider(Context context, SummaryLoader loader) {
+            mContext = context;
+            mLoader = loader;
+        }
+
+        @Override
+        public void setListening(boolean listening) {
+            if (listening) {
+                updateSummary();
+            }
+        }
+
+        private void updateSummary() {
+            boolean enabled = Settings.System.getInt(mContext.getContentResolver(),
+                    NOTIFICATION_LIGHT_PULSE, 0) == 1;
+            mLoader.setSummary(this, mContext.getString( enabled ? R.string.led_category_summary_on
+                        : R.string.led_category_summary_off));
+        }
+    }
+
+    public static final SummaryLoader.SummaryProviderFactory SUMMARY_PROVIDER_FACTORY
+            = new SummaryLoader.SummaryProviderFactory() {
+        @Override
+        public SummaryLoader.SummaryProvider createSummaryProvider(Activity activity,
+                                                                   SummaryLoader summaryLoader) {
+            return new SummaryProvider(activity, summaryLoader);
+        }
+    };
+
 }

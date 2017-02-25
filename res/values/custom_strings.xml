@@ -386,8 +386,8 @@
     <string name="pulse_speed_slow">Slow</string>
     <string name="pulse_speed_very_slow">Very slow</string>
     <!-- Lights settings screen, notification light settings -->
-    <string name="omni_battery_light_settings">Battery charging</string>
-    <string name="omni_notification_light_settings">Applications LED notifications</string>
+    <string name="omni_battery_light_settings">Battery pulse</string>
+    <string name="omni_notification_light_settings">Applications pulse</string>
     <string name="omni_leds">LED Lights</string>
     <string name="omni_lights_title">Notification LED</string>
     <string name="notification_light_title">Notification light</string>
@@ -406,6 +406,8 @@
     <!-- Lights settings, LED notification -->
     <string name="led_notification_title">Light settings</string>
     <string name="led_notification_text">LED light enabled by settings</string>
+    <string name="led_category_summary_on">Notification LED is ON</string>
+    <string name="led_category_summary_off">Notification LED is OFF</string>
     <string name="notification_light_no_apps_summary">To add per app control, activate \'%1$s\' and press \'\u002b\' on the menu bar</string>
     <!-- Hostname setting -->
     <string name="device_hostname">Device hostname</string>
