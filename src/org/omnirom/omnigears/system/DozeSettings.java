@@ -54,7 +54,6 @@ public class DozeSettings extends SettingsPreferenceFragment {
     private static final String TAG = "DozeSettings";
 
     private static final String SHARED_PREFERENCES_NAME = "doze_settings";
-    private static final String DEVICE_IDLE_CONSTANTS = "device_idle_constants";
     private static final String KEY_LIGHT_IDLE_FACTOR = "light_idle_factor";
     private static final String KEY_LOCATION_ACCURACY = "location_accuracy";
     private static final String KEY_IDLE_PENDING_FACTOR = "idle_pending_factor";
@@ -219,7 +218,7 @@ public class DozeSettings extends SettingsPreferenceFragment {
 
 
     private void getSettings() {
-        String line = Settings.Global.getString(getContentResolver(), DEVICE_IDLE_CONSTANTS);
+        String line = Settings.Global.getString(getContentResolver(), Settings.Global.DEVICE_IDLE_CONSTANTS);
         Log.d(TAG, "getSettings = " + line);
 
         KeyValueListParser parser = new KeyValueListParser(',');
@@ -269,20 +268,20 @@ public class DozeSettings extends SettingsPreferenceFragment {
             sb.deleteCharAt(sb.length() - 1);
         }
         Log.d(TAG, "save = " + sb.toString());
-        Settings.Global.putString(getContentResolver(), DEVICE_IDLE_CONSTANTS, sb.toString());
+        Settings.Global.putString(getContentResolver(), Settings.Global.DEVICE_IDLE_CONSTANTS, sb.toString());
         showApplyToast();
     }
 
     private void restoreDefaults() {
         Log.d(TAG, "restoreDefaults");
-        Settings.Global.putString(getContentResolver(), DEVICE_IDLE_CONSTANTS, null);
+        Settings.Global.putString(getContentResolver(), Settings.Global.DEVICE_IDLE_CONSTANTS, null);
         getSettings();
         showApplyToast();
     }
 
     private void applyProfile(String settings) {
         Log.d(TAG, "apply = " + settings);
-        Settings.Global.putString(getContentResolver(), DEVICE_IDLE_CONSTANTS, settings);
+        Settings.Global.putString(getContentResolver(), Settings.Global.DEVICE_IDLE_CONSTANTS, settings);
         getSettings();
         showApplyToast();
     }
