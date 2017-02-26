@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2015 The OmniROM Project
+ *  Copyright (C) 2017 The OmniROM Project
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,72 +14,58 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
+*/
 
-package org.omnirom.omnigears.interfacesettings;
+package org.omnirom.omnigears.moresettings;
 
-import android.app.AlertDialog;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
-import android.preference.ListPreference;
-import android.preference.Preference;
-import android.preference.PreferenceGroup;
-import android.preference.PreferenceManager;
-import android.preference.PreferenceScreen;
-import android.preference.PreferenceCategory;
+import android.support.v7.preference.ListPreference;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceCategory;
+import android.support.v7.preference.PreferenceScreen;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.util.Log;
 
-import com.android.internal.logging.MetricsLogger;
+import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.internal.util.omni.PackageUtils;
-import com.android.internal.util.omni.DeviceUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
 import java.util.List;
 import java.util.ArrayList;
 
-public class MoreInterfaceSettings extends SettingsPreferenceFragment implements
+public class OmniJawsSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
-    private static final String TAG = "MoreInterfaceSettings";
-
+    private static final String TAG = "OmniJawsSettings";
     private static final String CATEGORY_WEATHER = "weather_category";
     private static final String WEATHER_ICON_PACK = "weather_icon_pack";
-    private static final String STATUS_BAR_HEADER_WEATHER = "status_bar_header_weather";
     private static final String DEFAULT_WEATHER_ICON_PACKAGE = "org.omnirom.omnijaws";
     private static final String WEATHER_SERVICE_PACKAGE = "org.omnirom.omnijaws";
     private static final String CHRONUS_ICON_PACK_INTENT = "com.dvtonder.chronus.ICON_PACK";
-    private static final String LOCK_CLOCK_PACKAGE="com.cyanogenmod.lockclock";
-    private static final String DASHBOARD_COLUMNS = "dashboard_columns";
-    private static final String DASHBOARD_DIVIDER_SHOW = "dashboard_divider_show";
 
     private PreferenceCategory mWeatherCategory;
     private ListPreference mWeatherIconPack;
-    private CheckBoxPreference mHeaderWeather;
-    private ListPreference mDashboardColumns;
-    private CheckBoxPreference mDashBoardDividerShow;
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsLogger.OMNI_SETTINGS;
+        return MetricsEvent.OMNI_SETTINGS;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.more_interface_settings);
-
+        addPreferencesFromResource(R.xml.omnijaws_settings);
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
         mWeatherCategory = (PreferenceCategory) prefScreen.findPreference(CATEGORY_WEATHER);
@@ -87,7 +73,7 @@ public class MoreInterfaceSettings extends SettingsPreferenceFragment implements
             prefScreen.removePreference(mWeatherCategory);
         } else {
             String settingHeaderPackage = Settings.System.getString(getContentResolver(),
-                    Settings.System.STATUS_BAR_WEATHER_ICON_PACK);
+                    Settings.System.OMNIJAWS_WEATHER_ICON_PACK);
             if (settingHeaderPackage == null) {
                 settingHeaderPackage = DEFAULT_WEATHER_ICON_PACKAGE;
             }
@@ -104,77 +90,28 @@ public class MoreInterfaceSettings extends SettingsPreferenceFragment implements
                 // no longer found
                 settingHeaderPackage = DEFAULT_WEATHER_ICON_PACKAGE;
                 Settings.System.putString(getContentResolver(),
-                        Settings.System.STATUS_BAR_WEATHER_ICON_PACK, settingHeaderPackage);
+                        Settings.System.OMNIJAWS_WEATHER_ICON_PACK, settingHeaderPackage);
                 valueIndex = mWeatherIconPack.findIndexOfValue(settingHeaderPackage);
             }
             mWeatherIconPack.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
             mWeatherIconPack.setSummary(mWeatherIconPack.getEntry());
             mWeatherIconPack.setOnPreferenceChangeListener(this);
-
-            mHeaderWeather = (CheckBoxPreference) findPreference(STATUS_BAR_HEADER_WEATHER);
-        }
-        mDashboardColumns = (ListPreference) findPreference(DASHBOARD_COLUMNS);
-        int dashboardValue = getResources().getInteger(R.integer.dashboard_num_columns);
-
-        final boolean isPhone = DeviceUtils.isPhone(getActivity());
-        if (isPhone) {
-            // layout-land has a value of 2 but we dont want this to be the default
-            // for phones so set 1 as the default to display
-            dashboardValue = 1;
-        }
-        mDashboardColumns.setEntries(getResources().getStringArray(!isPhone ?
-                R.array.dashboard_columns_tablet_entries : R.array.dashboard_columns_phone_entries));
-        mDashboardColumns.setEntryValues(getResources().getStringArray(!isPhone ?
-                R.array.dashboard_columns_tablet_values : R.array.dashboard_columns_phone_values));
-
-        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        if (!prefs.contains(DASHBOARD_COLUMNS)) {
-            mDashboardColumns.setValue(Integer.toString(dashboardValue));
-        }
-        mDashboardColumns.setSummary(mDashboardColumns.getEntry());
-        mDashboardColumns.setOnPreferenceChangeListener(this);
-
-        mDashBoardDividerShow = (CheckBoxPreference) findPreference(DASHBOARD_DIVIDER_SHOW);
-        if (!prefs.contains(DASHBOARD_DIVIDER_SHOW)) {
-            mDashBoardDividerShow.setChecked(true);
         }
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        updateWeatherSettings();
-    }
-
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
-    }
-
-    @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         if (preference == mWeatherIconPack) {
             String value = (String) objValue;
             Settings.System.putString(getContentResolver(),
-                    Settings.System.STATUS_BAR_WEATHER_ICON_PACK, value);
+                    Settings.System.OMNIJAWS_WEATHER_ICON_PACK, value);
             int valueIndex = mWeatherIconPack.findIndexOfValue(value);
             mWeatherIconPack.setSummary(mWeatherIconPack.getEntries()[valueIndex]);
-            return true;
-        } else if (preference == mDashboardColumns) {
-            String value = (String) objValue;
-            int valueIndex = mDashboardColumns.findIndexOfValue(value);
-            mDashboardColumns.setSummary(mDashboardColumns.getEntries()[valueIndex]);
-            return true;
         }
-        return false;
+        return true;
     }
 
     private boolean isOmniJawsServiceInstalled() {
         return PackageUtils.isAvailableApp(WEATHER_SERVICE_PACKAGE, getActivity());
-    }
-
-    private boolean isLockClockInstalled() {
-        return PackageUtils.isAvailableApp(LOCK_CLOCK_PACKAGE, getActivity());
     }
 
     private void getAvailableWeatherIconPacks(List<String> entries, List<String> values) {
@@ -209,26 +146,6 @@ public class MoreInterfaceSettings extends SettingsPreferenceFragment implements
             }
             entries.add(label);
         }
-        if (isLockClockInstalled()) {
-            values.add(LOCK_CLOCK_PACKAGE + ".weather");
-            values.add(LOCK_CLOCK_PACKAGE + ".weather_color");
-            values.add(LOCK_CLOCK_PACKAGE + ".weather_vclouds");
-
-            entries.add("LockClock (white)");
-            entries.add("LockClock (color)");
-            entries.add("LockClock (vclouds)");
-        }
-    }
-
-    private void updateWeatherSettings() {
-        final boolean weatherEnabled = isOmniJawsEnabled();
-        if (mHeaderWeather.isChecked() && !weatherEnabled) {
-            // disable if service got disabled
-            Settings.System.putInt(getContentResolver(), Settings.System.STATUS_BAR_HEADER_WEATHER, 0);
-            mHeaderWeather.setChecked(false);
-        }
-        mHeaderWeather.setEnabled(weatherEnabled);
-        mWeatherIconPack.setEnabled(weatherEnabled);
     }
 
     private boolean isOmniJawsEnabled() {
@@ -261,7 +178,7 @@ public class MoreInterfaceSettings extends SettingsPreferenceFragment implements
                             new ArrayList<SearchIndexableResource>();
 
                     SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.more_interface_settings;
+                    sir.xmlResId = R.xml.omnijaws_settings;
                     result.add(sir);
 
                     return result;
@@ -272,6 +189,5 @@ public class MoreInterfaceSettings extends SettingsPreferenceFragment implements
                     ArrayList<String> result = new ArrayList<String>();
                     return result;
                 }
-            };
+    };
 }
-*/
