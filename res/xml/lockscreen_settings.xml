@@ -81,15 +81,15 @@
             android:summary="@string/lockscreen_hide_status_bar_summary"/>
 
     </PreferenceCategory>
-<!--
 
     <PreferenceCategory
         android:key="lockscreen_clock"
         android:title="@string/lockscreen_clock" >
 
-        <com.android.settings.preference.SystemSettingSwitchPreference
+        <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
             android:key="lockscreen_clock_enable"
             android:title="@string/lockscreen_clock_enable_title"
+            android:summary="@string/lockscreen_clock_enable_summary"
             android:defaultValue="true" />
 
         <CheckBoxPreference
@@ -131,12 +131,12 @@
             android:persistent="false"
             android:dependency="lockscreen_clock_enable" />
 
-        <com.android.settings.preference.SystemCheckBoxPreference
+        <CheckBoxPreference
             android:key="lockscreen_clock_shadow"
             android:title="@string/lockscreen_clock_shadow_title"
+            android:persistent="false"
             android:defaultValue="false"
             android:dependency="lockscreen_clock_enable" />
 
     </PreferenceCategory>
--->
 </PreferenceScreen>

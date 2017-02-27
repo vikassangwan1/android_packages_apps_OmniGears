@@ -33,6 +33,7 @@ import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
 import android.provider.SearchIndexableResource;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.android.internal.logging.MetricsProto.MetricsEvent;
@@ -59,15 +60,16 @@ import java.util.List;
 
 public class LockscreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
-/*
+
     private static final String KEY_CLOCK_FONT = "lockscreen_clock_font";
     private static final String KEY_CLOCK_COLOR = "lockscreen_clock_color";
     private static final String KEY_CLOCK_SIZE = "lockscreen_clock_size";
+    private static final String KEY_CLOCK_SHADOW = "lockscreen_clock_shadow";
     private static final String KEY_CLOCK_DISPLAY = "lockscreen_clock_display";
     private static final String KEY_CLOCK_DISPLAY_TIME = "lockscreen_clock_display_time";
     private static final String KEY_CLOCK_DISPLAY_DATE = "lockscreen_clock_display_date";
     private static final String KEY_CLOCK_DISPLAY_ALARM = "lockscreen_clock_display_alarm";
-    private static final String KEY_SHORTCUTS = "lockscreen_shortcuts";
+    //private static final String KEY_SHORTCUTS = "lockscreen_shortcuts";
 
     private FontPreference mClockFont;
     private NumberPickerPreference mClockSize;
@@ -75,8 +77,10 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mClockDisplayTime;
     private CheckBoxPreference mClockDisplayDate;
     private CheckBoxPreference mClockDisplayAlarm;
-    private Preference mShortcuts;
-*/
+    private CheckBoxPreference mClockShadow;
+
+    //private Preference mShortcuts;
+
     @Override
     protected int getMetricsCategory() {
         return MetricsEvent.OMNI_SETTINGS;
@@ -87,7 +91,6 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.lockscreen_settings);
 
-/*
         mClockFont = (FontPreference) findPreference(KEY_CLOCK_FONT);
         mClockFont.setOnPreferenceChangeListener(this);
         mClockColor = (ColorPickerPreference) findPreference(KEY_CLOCK_COLOR);
@@ -99,6 +102,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
         mClockDisplayTime = (CheckBoxPreference) findPreference(KEY_CLOCK_DISPLAY_TIME);
         mClockDisplayDate = (CheckBoxPreference) findPreference(KEY_CLOCK_DISPLAY_DATE);
         mClockDisplayAlarm = (CheckBoxPreference) findPreference(KEY_CLOCK_DISPLAY_ALARM);
+        mClockShadow = (CheckBoxPreference) findPreference(KEY_CLOCK_SHADOW);
 
         ContentResolver resolver = getActivity().getContentResolver();
         int color = Settings.System.getInt(resolver, Settings.System.LOCK_CLOCK_COLOR, Color.WHITE);
@@ -106,8 +110,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
         String hexColor = String.format("#%08X", color);
         mClockColor.setSummary(hexColor);
 
-        int defaultSize = (int) (getResources().getDimension(com.android.internal.R.dimen.lock_clock_time_font_size)
-                / getResources().getDisplayMetrics().density);
+        int defaultSize = Settings.System.getInt(resolver, Settings.System.LOCK_CLOCK_DEFAULT_SIZE, 80);
         int size = Settings.System.getInt(resolver, Settings.System.LOCK_CLOCK_SIZE, defaultSize);
         mClockSize.setValue(size);
         mClockSize.setSummary(String.valueOf(size));
@@ -120,7 +123,8 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
                 mClockFont.setSummary(mClockFont.getEntries()[valueIndex]);
             }
         } else {
-            mClockFont.setSummary("sans-serif-light");
+            // default for "sans-serif-light"
+            mClockFont.setSummary("Roboto Light");
         }
 
         final int clockDisplay = Settings.System.getInt(resolver,
@@ -128,14 +132,13 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
         mClockDisplayTime.setChecked((clockDisplay & Settings.System.LOCK_CLOCK_TIME) == Settings.System.LOCK_CLOCK_TIME);
         mClockDisplayDate.setChecked((clockDisplay & Settings.System.LOCK_CLOCK_DATE) == Settings.System.LOCK_CLOCK_DATE);
         mClockDisplayAlarm.setChecked((clockDisplay & Settings.System.LOCK_CLOCK_ALARM) == Settings.System.LOCK_CLOCK_ALARM);
-
-        mShortcuts = findPreference(KEY_SHORTCUTS);
-*/
+        mClockShadow.setChecked((clockDisplay & Settings.System.LOCK_CLOCK_SHADOW) == Settings.System.LOCK_CLOCK_SHADOW);
+        //mShortcuts = findPreference(KEY_SHORTCUTS);
     }
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
-/*        ContentResolver resolver = getContentResolver();
+        ContentResolver resolver = getContentResolver();
         if (preference == mClockDisplayTime) {
             Settings.System.putInt(resolver,
                     Settings.System.LOCK_CLOCK_DISPLAY, getCurrentClockDisplayValue());
@@ -148,24 +151,29 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(resolver,
                     Settings.System.LOCK_CLOCK_DISPLAY, getCurrentClockDisplayValue());
             return true;
-        } else if (preference == mShortcuts) {
+        } else if (preference == mClockShadow) {
+            Settings.System.putInt(resolver,
+                    Settings.System.LOCK_CLOCK_DISPLAY, getCurrentClockDisplayValue());
+            return true;
+        } /*else if (preference == mShortcuts) {
             ShortcutDialog d = new ShortcutDialog(getContext());
             d.show();
             return true;
-        }
-*/
+        }*/
+
         return super.onPreferenceTreeClick(preference);
     }
-/*
+
     private int getCurrentClockDisplayValue() {
         return (mClockDisplayTime.isChecked() ? Settings.System.LOCK_CLOCK_TIME : 0) +
             (mClockDisplayDate.isChecked() ? Settings.System.LOCK_CLOCK_DATE : 0) +
-            (mClockDisplayAlarm.isChecked() ? Settings.System.LOCK_CLOCK_ALARM : 0);
+            (mClockDisplayAlarm.isChecked() ? Settings.System.LOCK_CLOCK_ALARM : 0) +
+            (mClockShadow.isChecked() ? Settings.System.LOCK_CLOCK_SHADOW : 0);
     }
-*/
+
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-/*        ContentResolver resolver = getContentResolver();
+        ContentResolver resolver = getContentResolver();
         if (preference == mClockFont) {
             String value = (String) newValue;
             int valueIndex = mClockFont.findIndexOfValue(value);
@@ -180,7 +188,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
             mClockSize.setSummary(String.valueOf(value));
             Settings.System.putInt(resolver, Settings.System.LOCK_CLOCK_SIZE, value);
         }
-*/
+
         return true;
     }
 

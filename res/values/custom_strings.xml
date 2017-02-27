@@ -224,6 +224,7 @@
     <string name="lockscreen_clock_color_title">Time and date color</string>
     <string name="lockscreen_clock_size_title">Time size</string>
     <string name="lockscreen_clock_enable_title">Enable</string>
+    <string name="lockscreen_clock_enable_summary">Status bar clock will be displayed if disabled</string>
     <string name="lockscreen_clock_shadow_title">Shadow</string>
     <string name="lockscreen_shortcuts_title">Custom application shortcuts</string>
     <string name="lockscreen_shortcuts_summary">Applications shown on the lock screen for quick access. Long press to hide.</string>
