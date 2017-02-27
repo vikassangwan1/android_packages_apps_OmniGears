@@ -25,7 +25,8 @@ import java.util.List;
 import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.graphics.Typeface;
-import android.preference.ListPreference;
+import android.support.v7.preference.ListPreference;
+import android.support.v7.preference.PreferenceViewHolder;
 import android.util.Log;
 import android.util.AttributeSet;
 import android.view.View;
@@ -61,9 +62,9 @@ public class FontPreference extends ListPreference {
     }
 
     @Override
-    protected void onBindView(View view) {
-        super.onBindView(view);
-        mFontSample = (TextView) view.findViewById(R.id.font_sample);
+    public void onBindViewHolder(PreferenceViewHolder holder) {
+        super.onBindViewHolder(holder);
+        mFontSample = (TextView) holder.findViewById(R.id.font_sample);
         if (getValue() != null) {
             Typeface tface = Typeface.createFromFile(getValue());
             if (tface != null) {
