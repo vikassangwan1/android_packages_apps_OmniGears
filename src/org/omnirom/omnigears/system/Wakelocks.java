@@ -92,7 +92,6 @@ public class Wakelocks extends SettingsPreferenceFragment {
     private static final int MAX_KERNEL_LIST_ITEMS = 10;
     private static final int MAX_USER_LIST_ITEMS = 7;
     private static final int TIME_PERIOD_RESET = 43;
-    private static final int TIME_PERIOD_UNPLUG = 44;
     private LinearLayout mStatesView;
     private LinearLayout mTimeView;
     private LinearLayout mStateTimeView;
@@ -115,11 +114,9 @@ public class Wakelocks extends SettingsPreferenceFragment {
     private static ArrayList<WakelockStats> sUnplugKernelWakelocks = new ArrayList<WakelockStats>();
     private static long sRefRealTimestamp = 0;
     private static long sRefUpTimestamp = 0;
-    private static int sWhich = TIME_PERIOD_UNPLUG;
+    private static int sWhich = TIME_PERIOD_RESET;
     private static int sRefBatteryLevel = -1;
     private static int sRefUnplugBatteryLevel = -1;
-    private int mPeriodType = 1;
-    private Spinner mPeriodTypeSelect;
     private int mListType;
     private Spinner mListTypeSelect;
     private static boolean sKernelWakelockData = false;
@@ -293,13 +290,11 @@ public class Wakelocks extends SettingsPreferenceFragment {
         super.onCreate(savedInstanceState);
         mContext = getActivity();
         mPreferences = PreferenceManager.getDefaultSharedPreferences(mContext);
-        mPeriodType = mPreferences.getInt("which", 1);
         mListType = mPreferences.getInt("listType", 0);
         mStateTimeMode = mPreferences.getInt("stateTime", 0);
 
         if (savedInstanceState != null) {
             mUpdatingData = savedInstanceState.getBoolean("updatingData");
-            mPeriodType = savedInstanceState.getInt("which");
             mListType = savedInstanceState.getInt("listType");
             mStateTimeMode = savedInstanceState.getInt("stateTime");
         }
@@ -328,40 +323,10 @@ public class Wakelocks extends SettingsPreferenceFragment {
                 .findViewById(R.id.state_time_select_group);
         mTotalStateTime = (TextView) view
                 .findViewById(R.id.ui_total_state_time);
-        mTotalStateTime.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                if (mIsOnBattery && !sHasRefData) {
-                    createResetPoint();
-                }
-            }
-        });
 
         mTotalWakelockTime = (TextView) view
                 .findViewById(R.id.ui_total_wakelock_time);
-        mPeriodTypeSelect = (Spinner) view
-                .findViewById(R.id.period_type_select);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                mContext, R.array.wakelock_period_type_entries,
-                R.layout.spinner_item);
-        mPeriodTypeSelect.setAdapter(adapter);
-        mPeriodTypeSelect
-                .setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent,
-                            View view, int position, long id) {
-                        mPeriodType = position;
-                        if (position == 0) {
-                            sWhich = TIME_PERIOD_RESET;
-                        } else if (position == 1) {
-                            sWhich = TIME_PERIOD_UNPLUG;
-                        }
-                        refreshData();
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> arg0) {
-                    }
-                });
+        sWhich = TIME_PERIOD_RESET;
 
         mListTypeSelect = (Spinner) view.findViewById(R.id.list_type_select);
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(
@@ -402,7 +367,6 @@ public class Wakelocks extends SettingsPreferenceFragment {
                     }
                 });
 
-        mPeriodTypeSelect.setSelection(mPeriodType);
         mListTypeSelect.setSelection(mListType);
         mStateTimeSelect.setSelection(mStateTimeMode);
 
@@ -417,7 +381,6 @@ public class Wakelocks extends SettingsPreferenceFragment {
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putBoolean("updatingData", mUpdatingData);
-        outState.putInt("which", mPeriodType);
         outState.putInt("listType", mListType);
         outState.putInt("stateTime", mStateTimeMode);
     }
@@ -433,7 +396,6 @@ public class Wakelocks extends SettingsPreferenceFragment {
         if (mPopup != null) {
             mPopup.dismiss();
         }
-        mPreferences.edit().putInt("which", mPeriodType).commit();
         mPreferences.edit().putInt("listType", mListType).commit();
         mPreferences.edit().putInt("stateTime", mStateTimeMode).commit();
         super.onPause();
@@ -495,19 +457,16 @@ public class Wakelocks extends SettingsPreferenceFragment {
 
         if (!sKernelWakelockData) {
             mKernelWakelockWarning.setVisibility(View.VISIBLE);
-            mTimeView.setVisibility(View.GONE);
             mStatesView.setVisibility(View.GONE);
         } else {
-            mKernelWakelockWarning.setVisibility(View.GONE);
-            mTimeView.setVisibility(View.VISIBLE);
             mStatesView.setVisibility(View.VISIBLE);
-
             long totalTimeInSecs = 0;
             long totalUptimeInSecs = 0;
             String batteryLevelText = null;
             boolean showStats = false;
             mTotalWakelockTime.setText("");
-
+            mTotalStateTime.setText(getResources().getString(
+                    R.string.total_time) + " " + toString(totalTimeInSecs));
             if (sWhich == TIME_PERIOD_RESET) {
                 if (mIsOnBattery) {
                     if (sHasRefData) {
@@ -530,46 +489,20 @@ public class Wakelocks extends SettingsPreferenceFragment {
                                 batteryLevelText = "0% 0.00%/h";
                             }
                         }
+                        mKernelWakelockWarning.setVisibility(View.GONE);
                         mTotalStateTime.setText(getResources().getString(
                                 R.string.total_time)
                                 + " " + toString(totalTimeInSecs));
                         showStats = true;
                     } else {
-                        totalTimeInSecs = 0;
-                        totalUptimeInSecs = 0;
-                        mTotalStateTime.setText(getResources().getString(
-                                R.string.no_stat_because_reset));
+                        mKernelWakelockWarning.setText(getResources().getString(
+                                R.string.no_stat_because_reset_wakelock));
+                        mKernelWakelockWarning.setVisibility(View.VISIBLE);
                     }
                 } else {
-                    totalTimeInSecs = 0;
-                    totalUptimeInSecs = 0;
-                    mTotalStateTime.setText(getResources().getString(
+                    mKernelWakelockWarning.setText(getResources().getString(
                             R.string.no_stat_because_plugged));
-                }
-            } else if (sWhich == TIME_PERIOD_UNPLUG) {
-                if (mIsOnBattery) {
-                    totalTimeInSecs = microToSecs(mUnplugBatteryRealtime);
-                    totalUptimeInSecs = microToSecs(mUnplugBatteryUptime);
-                    int batteryLevelDiff = mBatteryLevel - mUnplugBatteryLevel;
-                    if (batteryLevelDiff != 0) {
-                        float hours = (float) totalTimeInSecs / 3600;
-                        batteryLevelText = String.valueOf(batteryLevelDiff)
-                                + "% "
-                                + String.format("%.2f",
-                                        (float) batteryLevelDiff / hours)
-                                + "%/h";
-                    } else {
-                        batteryLevelText = "0% 0.00%/h";
-                    }
-                    mTotalStateTime.setText(getResources().getString(
-                            R.string.total_time)
-                            + " " + toString(totalTimeInSecs));
-                    showStats = true;
-                } else {
-                    totalTimeInSecs = 0;
-                    totalUptimeInSecs = 0;
-                    mTotalStateTime.setText(getResources().getString(
-                            R.string.no_stat_because_plugged));
+                    mKernelWakelockWarning.setVisibility(View.VISIBLE);
                 }
             }
             sleepTime = Math.max(totalTimeInSecs - totalUptimeInSecs, 0);
@@ -748,7 +681,6 @@ public class Wakelocks extends SettingsPreferenceFragment {
         @Override
         protected void onPreExecute() {
             mProgress.setVisibility(View.VISIBLE);
-            mStatesView.setVisibility(View.GONE);
             mUpdatingData = true;
         }
 
@@ -756,7 +688,6 @@ public class Wakelocks extends SettingsPreferenceFragment {
         protected void onPostExecute(Void v) {
             try {
                 mProgress.setVisibility(View.GONE);
-                mStatesView.setVisibility(View.VISIBLE);
                 mUpdatingData = false;
                 updateView();
             } catch (Exception e) {
@@ -1451,11 +1382,6 @@ public class Wakelocks extends SettingsPreferenceFragment {
                     mKernelWakelocks.addAll(diffToWakelockStatus(
                             sRefKernelWakelocks, allKernelWakelocks));
                 }
-            } else if (sWhich == TIME_PERIOD_UNPLUG) {
-                if (mIsOnBattery) {
-                    mKernelWakelocks.addAll(diffToWakelockStatus(
-                            sUnplugKernelWakelocks, allKernelWakelocks));
-                }
             } else {
                 mKernelWakelocks.addAll(allKernelWakelocks);
             }
@@ -1473,10 +1399,6 @@ public class Wakelocks extends SettingsPreferenceFragment {
                 if (mIsOnBattery) {
                     mUserWakelocks.addAll(diffToWakelockStatus(
                             sRefUserWakelocks, allUserWakelocks));
-                }
-            } else if (sWhich == TIME_PERIOD_UNPLUG) {
-                if (mIsOnBattery) {
-                    mUserWakelocks.addAll(allUserWakelocks);
                 }
             } else {
                 mUserWakelocks.addAll(allUserWakelocks);

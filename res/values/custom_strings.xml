@@ -463,8 +463,9 @@
     <string name="copy_as_text">Copy as text</string>
     <string name="google_it">Google for it</string>
     <string name="app_details">App details</string>
-    <string name="no_stat_because_reset">Create reset</string>
-    <string name="no_stat_because_plugged">Unplug power</string>
+    <string name="no_stat_because_reset_state">Press reset to start collecting time in state data</string>
+    <string name="no_stat_because_reset_wakelock">Press reset to start collecting wakelock data</string>
+    <string name="no_stat_because_plugged">Please unplug power to get wakelock data</string>
     <string name="no_states_file_found">No states file found. Are you sure your phone is
         compatible?\n\nIf you are running a custom ROM or kernel, try
         contacting its developer to inform him that the states file is not

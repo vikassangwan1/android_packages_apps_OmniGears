@@ -114,13 +114,6 @@ public class TimeInState extends SettingsPreferenceFragment {
         mStatesWarning = (TextView) view.findViewById(R.id.ui_states_warning);
         mTotalStateTime = (TextView) view
                 .findViewById(R.id.ui_total_state_time);
-        mTotalStateTime.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                if (mPeriodType == 0 && !sHasRefData) {
-                    createResetPoint();
-                }
-            }
-        });
 
         mStateMode = (CheckBox) view.findViewById(R.id.ui_mode_switch);
         mActiveStateMode = mPreferences.getBoolean(PREF_STATE_MODE, false);
@@ -249,12 +242,19 @@ public class TimeInState extends SettingsPreferenceFragment {
 
         if (monitor.getStates(0).size() == 0) {
             mStatesWarning.setVisibility(View.VISIBLE);
-            mTotalStateTime.setVisibility(View.GONE);
+            mTotalStateTime.setText(getResources().getString(R.string.total_time)
+                    + " " + toString(0));
             mStatesView.setVisibility(View.GONE);
         } else {
             if (mPeriodType == 0 && !sHasRefData) {
-                mTotalStateTime.setText(getResources().getString(R.string.no_stat_because_reset));
+                mStatesWarning.setVisibility(View.VISIBLE);
+                mStatesWarning.setText(getResources().getString(R.string.no_stat_because_reset_state));
+                mTotalStateTime.setText(getResources().getString(R.string.total_time)
+                        + " " + toString(0));
+                mStatesView.setVisibility(View.VISIBLE);
             } else {
+                mStatesWarning.setVisibility(View.GONE);
+                mStatesView.setVisibility(View.VISIBLE);
                 long totTime = getStateTime(mActiveStateMode);
                 data.append(totTime + "\n");
                 totTime = totTime / 100;
@@ -404,7 +404,6 @@ public class TimeInState extends SettingsPreferenceFragment {
         @Override
         protected void onPreExecute() {
             mProgress.setVisibility(View.VISIBLE);
-            mStatesView.setVisibility(View.GONE);
             mUpdatingData = true;
         }
 
@@ -412,7 +411,6 @@ public class TimeInState extends SettingsPreferenceFragment {
         protected void onPostExecute(Void v) {
             try {
                 mProgress.setVisibility(View.GONE);
-                mStatesView.setVisibility(View.VISIBLE);
                 mUpdatingData = false;
                 updateView();
             } catch(Exception e) {
