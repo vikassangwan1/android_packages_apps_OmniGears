@@ -252,7 +252,8 @@
     <string name="custom_header_provider_title">Header provider</string>
     <string name="custom_header_browse_title">Browse installed headers</string>
     <string name="custom_header_browse_summary">Long press on any image to use for static mode</string>
-    <string name="style_summary">Custom header image is</string>
+    <string name="style_enabled_summary">Custom header image is ON</string>
+    <string name="style_disabled_summary">Custom header image is OFF</string>
 
     <!-- Network traffic -->
     <string name="network_traffic_title">Network traffic</string>
@@ -419,8 +420,10 @@
     <string name="navigation_bar_ime_button_title">Show IME navigation bar button</string>
     <string name="navigation_bar_ime_button_summary">Input switcher in navigation bar</string>
     <!-- Summaries -->
-    <string name="bars_brightness_summary">Brightness control is</string>
-    <string name="bars_dt2s_summary">DT2S is</string>
+    <string name="bars_brightness_enabled_summary">Brightness control is ON</string>
+    <string name="bars_brightness_disabled_summary">Brightness control is OFF</string>
+    <string name="bars_dt2s_enabled_summary">DT2S is ON</string>
+    <string name="bars_dt2s_disabled_summary">DT2S is OFF</string>
 
     <string name="volume_dialog_headers_title">Volume dialog headers</string>
     <string name="volume_dialog_headers_summary">Show stream name headers in volume dialog</string>

@@ -127,10 +127,6 @@ public class BarsSettings extends SettingsPreferenceFragment implements
     }
 */
 
-    public static String toStringOnOff(boolean bool) {
-        return toString(bool, "ON", "OFF");
-    }
-
     public static String toString(boolean bool, String trueString, String falseString) {
         return bool ? trueString : falseString;
     }
@@ -152,14 +148,16 @@ public class BarsSettings extends SettingsPreferenceFragment implements
         }
 
         private void updateSummary() {
-            final String summary_text;
+            final String summary_text, brightness_summary, dt2s_summary;
             boolean brightnessEnabled = Settings.System.getInt(mContext.getContentResolver(),
                     STATUS_BAR_BRIGHTNESS_CONTROL, 0) == 1;
             boolean dt2sEnabled = Settings.System.getInt(mContext.getContentResolver(),
                     DOUBLE_TAP_SLEEP_GESTURE, 0) == 1;
-            summary_text = String.format("%s%s%s%s%s%s%s", mContext.getString(R.string.bars_brightness_summary)
-                           , " ", toStringOnOff(brightnessEnabled), " / ", mContext.getString(R.string.bars_dt2s_summary)
-                           , " ", toStringOnOff(dt2sEnabled));
+            brightness_summary = brightnessEnabled ? mContext.getString(R.string.bars_brightness_enabled_summary)
+                    : mContext.getString(R.string.bars_brightness_disabled_summary);
+            dt2s_summary = dt2sEnabled ? mContext.getString(R.string.bars_dt2s_enabled_summary)
+                    : mContext.getString(R.string.bars_dt2s_disabled_summary);
+            summary_text = String.format("%s%s%s", brightness_summary, " / ", dt2s_summary);
             mLoader.setSummary(this, summary_text);
         }
     }

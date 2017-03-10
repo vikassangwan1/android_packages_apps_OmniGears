@@ -229,10 +229,6 @@ public class StyleSettings extends SettingsPreferenceFragment implements
         return pm.resolveActivity(browse, 0) != null;
     }
 
-    public static String toStringOnOff(boolean bool) {
-        return toString(bool, "ON", "OFF");
-    }
-
     public static String toString(boolean bool, String trueString, String falseString) {
         return bool ? trueString : falseString;
     }
@@ -257,9 +253,8 @@ public class StyleSettings extends SettingsPreferenceFragment implements
             final String summary_text;
             boolean customHeaderEnabled = Settings.System.getInt(mContext.getContentResolver(),
                     STATUS_BAR_CUSTOM_HEADER, 0) == 1;
-            summary_text = String.format("%s%s%s", mContext.getString(R.string.style_summary)
-                           , " ", toStringOnOff(customHeaderEnabled));
-            mLoader.setSummary(this, summary_text);
+            mLoader.setSummary(this, customHeaderEnabled ? mContext.getString(R.string.style_enabled_summary)
+                    : mContext.getString(R.string.style_disabled_summary));
         }
     }
 
