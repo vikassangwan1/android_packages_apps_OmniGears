@@ -173,8 +173,8 @@ public class StatusbarBatterySettings extends SettingsPreferenceFragment impleme
     }
 
     private void updateEnablement() {
-        mPercentInside.setEnabled(mShowBattery != 0 && mBatteryStyleValue < 3 && mShowPercent != 0);
-        mShowBolt.setEnabled(mBatteryStyleValue < 3);
+        mPercentInside.setEnabled(mShowBattery != 0 && mBatteryStyleValue != 3 && mBatteryStyleValue != 4 && mShowPercent != 0);
+        mShowBolt.setEnabled(mBatteryStyleValue != 3 && mBatteryStyleValue != 4);
         mBatteryStyle.setEnabled(mShowBattery != 0);
         mBatteryPercent.setEnabled(mShowBattery != 0 && mBatteryStyleValue != 3);
         mChargingCategory.setEnabled(mShowBattery != 0);
