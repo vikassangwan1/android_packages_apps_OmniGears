@@ -854,7 +854,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
             return new SummaryProvider(activity, summaryLoader);
         }
     };
-/*
+
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
                 @Override
@@ -874,7 +874,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
                 public List<String> getNonIndexableKeys(Context context) {
                     ArrayList<String> result = new ArrayList<String>();
                     final Resources res = context.getResources();
-                    final int deviceKeys = res.getInteger(
+                    /*final int deviceKeys = res.getInteger(
                             com.android.internal.R.integer.config_deviceHardwareKeys);
                     final boolean hasBackKey = (deviceKeys & KEY_MASK_BACK) != 0;
                     final boolean hasHomeKey = (deviceKeys & KEY_MASK_HOME) != 0;
@@ -911,17 +911,17 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
                         result.add(KEYS_APP_SWITCH_PRESS);
                         result.add(KEYS_APP_SWITCH_PRESS);
                         result.add(CATEGORY_APPSWITCH);
-                    }
+                    }*/
                     if (!res.getBoolean(R.bool.config_show_volumeRockerWake)) {
                         result.add(BUTTON_VOLUME_WAKE);
                     }
-                    if (!res.getBoolean(R.bool.config_show_homeWake)) {
+                    /*if (!res.getBoolean(R.bool.config_show_homeWake)) {
                         result.add(BUTTON_HOME_WAKE);
                     }
                     if (!Utils.isVoiceCapable(context)) {
                         result.add(BUTTON_HOME_ANSWERS_CALL);
-                    }
+                    }*/
                     return result;
                 }
-            }; */
+            };
 }
