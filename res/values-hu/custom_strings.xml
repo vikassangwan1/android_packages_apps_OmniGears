@@ -349,6 +349,7 @@
   <!-- Lights settings, LED notification -->
   <string name="led_notification_title">LED beállítások</string>
   <string name="led_notification_text">LED engedélyezve a beállítások által</string>
+  <string name="led_category_summary_off">Értesítési LED kikapcsolva</string>
   <string name="notification_light_no_apps_summary">Alkalmazásonkénti vezérléshez, aktiválja: \'%1$s\' majd \'\u002b\' megnyomása a menüsoron</string>
   <!-- Hostname setting -->
   <string name="device_hostname">Eszköz elérési neve</string>

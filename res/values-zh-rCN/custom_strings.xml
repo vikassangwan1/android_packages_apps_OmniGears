@@ -197,12 +197,15 @@
   <string name="lockscreen_clock_color_title">时间和日期颜色</string>
   <string name="lockscreen_clock_size_title">时间字体大小</string>
   <string name="lockscreen_clock_enable_title">启用</string>
+  <string name="lockscreen_clock_enable_summary">如果禁用，则将显示状态栏时钟</string>
   <string name="lockscreen_clock_shadow_title">阴影</string>
   <string name="lockscreen_shortcuts_title">自定义快捷方式</string>
   <string name="lockscreen_shortcuts_summary">应用程序将会在锁屏界面上显示用以快速访问。长按隐藏。</string>
   <string name="lockscreen_shortcut_add_dialog_title">添加快捷方式</string>
   <string name="lockscreen_shortcut_apps_title">快捷方式</string>
   <string name="lockscreen_shortcut_add">新增\u2026</string>
+  <string name="lockscreen_hide_indicator_display_title">隐藏底部状态文本</string>
+  <string name="lockscreen_hide_indicator_display_summary">隐藏充电信息和解锁提示</string>
   <string name="lockscreen_camera_shortcut_enable_title">显示相机快捷方式</string>
   <string name="lockscreen_camera_shortcut_enable_summary">可见性取决于系统设置</string>
   <string name="lockscreen_left_shortcut_enable_title">显示拨号程序或语音助手快捷方式</string>
@@ -219,6 +222,8 @@
   <string name="custom_header_provider_title">标题来源</string>
   <string name="custom_header_browse_title">浏览已安装的标题</string>
   <string name="custom_header_browse_summary">长按任何图片以用于静态模式</string>
+  <string name="style_enabled_summary">自定义标题图片已开启</string>
+  <string name="style_disabled_summary">自定义标题图片已关闭</string>
   <!-- Network traffic -->
   <string name="network_traffic_title">网速指示器</string>
   <string name="show_network_traffic_state">状态栏网速指示器</string>
@@ -288,6 +293,8 @@
   <string name="global_actions_summary">电源菜单选项</string>
   <string name="global_actions_header">部分选项根据设置仅在解锁后出现</string>
   <string name="global_actions_anim">布局</string>
+  <string name="global_actions_advanced_reboot_summary">在重新启动菜单中显示更多选项</string>
+  <string name="global_actions_advanced_reboot_title">启用高级重启</string>
   <string name="font_sample_text">11:57</string>
   <string name="screenshot_crop_and_share_title">屏幕截图 裁剪 &amp; 分享</string>
   <string name="screenshot_crop_and_share_summary">截图后显示编辑窗口以提供如裁剪、 保存或共享等操作</string>
@@ -331,6 +338,10 @@
   <string name="pulse_speed_slow">慢</string>
   <string name="pulse_speed_very_slow">非常慢</string>
   <!-- Lights settings screen, notification light settings -->
+  <string name="omni_battery_light_settings">电量提示灯</string>
+  <string name="omni_notification_light_settings">应用提示灯</string>
+  <string name="omni_leds">LED 灯</string>
+  <string name="omni_lights_title">通知灯</string>
   <string name="notification_light_title">通知指示灯</string>
   <string name="notificationlight_title">通知 LED 设置</string>
   <string name="notification_light_general_title">常规</string>
@@ -346,6 +357,8 @@
   <!-- Lights settings, LED notification -->
   <string name="led_notification_title">灯光设置</string>
   <string name="led_notification_text">通过设置启用LED灯光</string>
+  <string name="led_category_summary_on">启用通知灯</string>
+  <string name="led_category_summary_off">禁用通知灯</string>
   <string name="notification_light_no_apps_summary">添加分应用控制，通过菜单栏上的“\ u002b”激活“％1 $ s”</string>
   <!-- Hostname setting -->
   <string name="device_hostname">设备主机名</string>
@@ -354,10 +367,16 @@
   <string name="navigation_bar_ime_button_title">显示输入法通知按钮</string>
   <string name="navigation_bar_ime_button_summary">导航栏中输入法切换</string>
   <!-- Summaries -->
+  <string name="bars_brightness_enabled_summary">亮度调节开启</string>
+  <string name="bars_brightness_disabled_summary">亮度调节关闭</string>
+  <string name="bars_dt2s_enabled_summary">双击开屏开启</string>
+  <string name="bars_dt2s_disabled_summary">双击开屏关闭</string>
   <string name="volume_dialog_headers_title">音量对话框标题</string>
   <string name="volume_dialog_headers_summary">在音量对话框显示流名称标题</string>
   <string name="lockscreen_hide_media_title">停用媒体壁纸</string>
   <string name="lockscreen_hide_media_summary">不显示媒体元数据在锁屏壁纸中</string>
+  <string name="omni_notification_light_settings_summary">自定义应用的LED通知灯</string>
+  <string name="omni_battery_light_settings_summary">自定义电池的LED通知灯</string>
   <string name="night_mode_title">主题</string>
   <string name="night_mode_summary">%s</string>
   <string name="night_mode_no">亮色</string>
@@ -390,6 +409,9 @@
   <string name="copy_as_text">以文本方式复制</string>
   <string name="google_it">Google搜索</string>
   <string name="app_details">应用详情</string>
+  <string name="no_stat_because_reset_state">按复位键开始收集状态数据</string>
+  <string name="no_stat_because_reset_wakelock">按复位键开始收集 wakelock 数据</string>
+  <string name="no_stat_because_plugged">请拔下电源以获取 wakelock 数据</string>
   <string name="no_states_file_found">没有找到状态文件。确认你的手机是否兼容？ \n\nIf 你正在运行一个自定义的 ROM 或内核，试着联系开发者并通知他状态文件不可读。</string>
   <string name="deep_sleep">"深度休眠"</string>
   <string name="mt_refresh">刷新</string>
@@ -403,4 +425,18 @@
   <string name="custom_wall_browse_title">Omni壁纸</string>
   <string name="custom_wall_browse_summary">浏览和设置Omni壁纸</string>
   <!-- Display : Rotation -->
+  <string name="category_display">显示</string>
+  <string name="display_rotation_title">旋转</string>
+  <string name="display_rotation_disabled">禁用</string>
+  <string name="display_rotation_unit">度</string>
+  <string name="display_rotation_category_title">旋转模式</string>
+  <string name="display_rotation_0_title">0 度</string>
+  <string name="display_rotation_90_title">90 度</string>
+  <string name="display_rotation_180_title">180 度</string>
+  <string name="display_rotation_270_title">270 度</string>
+  <string name="display_lockscreen_rotation_title">锁定屏幕</string>
+  <string name="volume_button_force_media_title">使用媒体音量</string>
+  <string name="volume_button_force_media_summary">默认情况下会更改媒体音量</string>
+  <string name="lockscreen_hide_status_bar_title">隐藏状态栏</string>
+  <string name="lockscreen_hide_status_bar_summary">触摸状态栏以显示状态栏</string>
 </resources>
