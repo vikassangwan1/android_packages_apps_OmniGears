@@ -59,17 +59,22 @@ Copyright (C) 2012  James Roberts
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="10dp"
-        android:paddingTop="10dp" >
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp" >
         <TextView
             android:id="@+id/ui_total_state_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical" />
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
         <TextView
             android:id="@+id/ui_total_wakelock_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|end" />
+            android:layout_gravity="center_vertical" />
     </LinearLayout>
 
     <ScrollView
