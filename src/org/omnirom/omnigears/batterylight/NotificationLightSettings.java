@@ -480,7 +480,7 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
 
     }
 
-/*    public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+    public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
                 @Override
                 public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
@@ -489,7 +489,7 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
                             new ArrayList<SearchIndexableResource>();
 
                     SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.battery_light_settings;
+                    sir.xmlResId = R.xml.notification_light_settings;
                     result.add(sir);
                     return result;
                 }
@@ -497,18 +497,7 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     ArrayList<String> result = new ArrayList<String>();
-                    final Resources res = context.getResources();
-                    if (!res.getBoolean(com.android.internal.R.bool.config_intrusiveBatteryLed)) {
-                        result.add(BATTERY_LIGHT_PREF);
-                        result.add(BATTERY_PULSE_PREF);
-                    }
-                    if (!res.getBoolean(com.android.internal.R.bool.config_multiColorNotificationLed)) {
-                        result.add(LOW_COLOR_PREF);
-                        result.add(MEDIUM_COLOR_PREF);
-                        result.add(FULL_COLOR_PREF);
-                        result.add(REALLY_FULL_COLOR_PREF);
-                    }
                     return result;
                 }
-            }; */
+            };
 }
