@@ -19,15 +19,15 @@
     android:key="more_settings"
     android:title="@string/more_settings_title">
 
-    <org.omnirom.omnigears.preference.HostnamePreference
-        android:key="device_hostname"
-        android:title="@string/device_hostname"
-        android:dialogTitle="@string/device_hostname"
-        android:persistent="false" />
-
         <PreferenceCategory
             android:key="category_other"
             android:title="@string/other_category">
+
+            <org.omnirom.omnigears.preference.HostnamePreference
+                android:key="device_hostname"
+                android:title="@string/device_hostname"
+                android:dialogTitle="@string/device_hostname"
+                android:persistent="false" />
 
             <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
                 android:key="screenshot_crop_and_share"
