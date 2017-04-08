@@ -40,6 +40,12 @@
                 android:title="@string/volume_dialog_headers_title"
                 android:summary="@string/volume_dialog_headers_summary"
                 android:defaultValue="true" />
+
+            <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+                android:key="headset_plugged_notification"
+                android:title="@string/headset_plugged_notification_title"
+                android:summary="@string/headset_plugged_notification_summary"
+                android:defaultValue="true" />
         </PreferenceCategory>
 
         <PreferenceCategory

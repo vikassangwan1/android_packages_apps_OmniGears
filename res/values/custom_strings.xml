@@ -487,6 +487,8 @@
     <string name="custom_wall_browse_summary">Browse and set Omni branded wallpapers</string>
     <string name="show_cpu_title">Show CPU info</string>
     <string name="show_cpu_summary">Screen overlay showing current CPU info</string>
+    <string name="headset_plugged_notification_title">Headset notification</string>
+    <string name="headset_plugged_notification_summary">Show notification when connecting wired headsets</string>
 
     <!-- Display : Rotation -->
     <string name="category_display">Display</string>
