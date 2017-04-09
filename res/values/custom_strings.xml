@@ -74,8 +74,9 @@
     <string name="button_home_answers_call_title">Button answers call</string>
     <string name="button_home_answers_call_summary">Pressing the home button will answer incoming call</string>
     <string name="button_other_title">Other</string>
-    <string name="keys_action_app_switch_short">Default</string>
+    <string name="keys_action_app_switch_card">AOSP (card)</string>
     <string name="keys_action_omniswitch_short">OmniSwitch</string>
+    <string name="keys_action_app_switch_grid">AOSP (grid)</string>
     <string name="button_back_kill_enable_title">Kill app back button</string>
     <string name="button_back_kill_enable_summary">Kill the foreground app by long-pressing the back button</string>
     <string name="button_back_kill_timeout_title">Kill app timeout</string>
