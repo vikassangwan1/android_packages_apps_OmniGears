@@ -315,9 +315,9 @@ public class TimeInState extends SettingsPreferenceFragment {
     }
 
     private static String toString(long tSec) {
-        long h = (long) Math.floor(tSec / (60 * 60));
-        long m = (long) Math.floor((tSec - h * 60 * 60) / 60);
-        long s = tSec % 60;
+        long h = (long) Math.max(0, Math.floor(tSec / (60 * 60)));
+        long m = (long) Math.max(0, Math.floor((tSec - h * 60 * 60) / 60));
+        long s = Math.max(0, tSec % 60);
         String sDur;
         sDur = h + ":";
         if (m < 10)
@@ -346,6 +346,9 @@ public class TimeInState extends SettingsPreferenceFragment {
             if (duration != 0) {
                 per = (float) duration * 100 / getStateTime(mActiveStateMode);
                 if (per > 100f) {
+                    per = 0f;
+                }
+                if (per < 0f) {
                     per = 0f;
                 }
                 tSec = duration / 100;
