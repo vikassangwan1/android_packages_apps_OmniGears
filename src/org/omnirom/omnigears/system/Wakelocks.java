@@ -100,7 +100,6 @@ public class Wakelocks extends SettingsPreferenceFragment {
     private TextView mKernelWakelockWarning;
     private boolean mUpdatingData;
     private Context mContext;
-    private SharedPreferences mPreferences;
     private static BatteryStats sBatteryStats;
     private long rawUptime;
     private long rawRealtime;
@@ -136,6 +135,7 @@ public class Wakelocks extends SettingsPreferenceFragment {
 
     private static final int MENU_REFRESH = Menu.FIRST;
     private static final int MENU_SHARE = MENU_REFRESH + 1;
+    private static final String SHARED_PREFERENCES_NAME = "wakelocks";
 
     private static final int[] WAKEUP_SOURCES_FORMAT = new int[] {
             Process.PROC_TAB_TERM | Process.PROC_OUT_STRING, // 0: name
@@ -285,13 +285,16 @@ public class Wakelocks extends SettingsPreferenceFragment {
         }
     };
 
+    private SharedPreferences getPrefs() {
+        return mContext.getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = getActivity();
-        mPreferences = PreferenceManager.getDefaultSharedPreferences(mContext);
-        mListType = mPreferences.getInt("listType", 0);
-        mStateTimeMode = mPreferences.getInt("stateTime", 0);
+        mListType = getPrefs().getInt("listType", 0);
+        mStateTimeMode = getPrefs().getInt("stateTime", 0);
 
         if (savedInstanceState != null) {
             mUpdatingData = savedInstanceState.getBoolean("updatingData");
@@ -396,8 +399,8 @@ public class Wakelocks extends SettingsPreferenceFragment {
         if (mPopup != null) {
             mPopup.dismiss();
         }
-        mPreferences.edit().putInt("listType", mListType).commit();
-        mPreferences.edit().putInt("stateTime", mStateTimeMode).commit();
+        getPrefs().edit().putInt("listType", mListType).commit();
+        getPrefs().edit().putInt("stateTime", mStateTimeMode).commit();
         super.onPause();
     }
 

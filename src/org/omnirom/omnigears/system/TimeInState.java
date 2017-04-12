@@ -55,7 +55,6 @@ public class TimeInState extends SettingsPreferenceFragment {
     private boolean mUpdatingData = false;
     private CPUStateMonitor monitor;
     private Context mContext;
-    private SharedPreferences mPreferences;
     private int mCpuNum;
     private boolean mActiveStateMode;
     private boolean mActiveCoreMode;
@@ -66,9 +65,11 @@ public class TimeInState extends SettingsPreferenceFragment {
     private boolean sHasRefData;
     private Intent mShareIntent;
     private List<Integer> mShowCpus;
+    private static boolean sResetStats;
 
     private static final int MENU_REFRESH = Menu.FIRST;
     private static final int MENU_SHARE = MENU_REFRESH + 1;
+    private static final String SHARED_PREFERENCES_NAME = "time_in_state";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -86,16 +87,23 @@ public class TimeInState extends SettingsPreferenceFragment {
         mActiveCoreMode = mShowCpus.size() > 1;
 
         mCpuNum = Helpers.getNumOfCpus();
-        mPreferences = PreferenceManager.getDefaultSharedPreferences(mContext);
-        mPeriodType = mPreferences.getInt("which", 1);
+        mPeriodType = getPrefs().getInt("which", 1);
         if (savedInstanceState != null) {
             mUpdatingData = savedInstanceState.getBoolean("updatingData");
             mPeriodType = savedInstanceState.getInt("which");
         }
 
+        if (sResetStats) {
+            sResetStats = false;
+            clearOffsets();
+        }
         loadOffsets();
 
         setHasOptionsMenu(true);
+    }
+
+    private SharedPreferences getPrefs() {
+        return mContext.getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
     }
 
     @Override
@@ -116,14 +124,14 @@ public class TimeInState extends SettingsPreferenceFragment {
                 .findViewById(R.id.ui_total_state_time);
 
         mStateMode = (CheckBox) view.findViewById(R.id.ui_mode_switch);
-        mActiveStateMode = mPreferences.getBoolean(PREF_STATE_MODE, false);
+        mActiveStateMode = getPrefs().getBoolean(PREF_STATE_MODE, false);
         mStateMode.setChecked(mActiveStateMode);
         mStateMode.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView,
                     boolean isChecked) {
                 mActiveStateMode = isChecked;
-                SharedPreferences.Editor editor = mPreferences.edit();
+                SharedPreferences.Editor editor = getPrefs().edit();
                 editor.putBoolean(PREF_STATE_MODE, mActiveStateMode).commit();
                 updateView();
             }
@@ -175,7 +183,7 @@ public class TimeInState extends SettingsPreferenceFragment {
 
     @Override
     public void onPause() {
-        mPreferences.edit().putInt("which", mPeriodType).commit();
+        getPrefs().edit().putInt("which", mPeriodType).commit();
         super.onPause();
     }
 
@@ -421,9 +429,9 @@ public class TimeInState extends SettingsPreferenceFragment {
         }
     }
 
-    public void loadOffsets() {
-        String prefs = mPreferences.getString(PREF_OFFSETS, "");
-        if (prefs == null || prefs.length() < 1) {
+    private void loadOffsets() {
+        String prefs = getPrefs().getString(PREF_OFFSETS, "");
+        if (TextUtils.isEmpty(prefs)) {
             return;
         }
         String[] cpus = prefs.split(":");
@@ -431,11 +439,16 @@ public class TimeInState extends SettingsPreferenceFragment {
             return;
         }
         for (int cpu = 0; cpu < mCpuNum; cpu++) {
+            if (mShowCpus != null) {
+                if (!mShowCpus.contains(cpu)) {
+                    continue;
+                }
+            }
             String cpuData = cpus[cpu];
             Map<Integer, Long> offsets = new HashMap<Integer, Long>();
             String[] sOffsets = cpuData.split(",");
             for (String offset : sOffsets) {
-                String[] parts = offset.split(" ");
+                String[] parts = offset.split(";");
                 offsets.put(Integer.parseInt(parts[0]),
                         Long.parseLong(parts[1]));
             }
@@ -444,23 +457,39 @@ public class TimeInState extends SettingsPreferenceFragment {
         sHasRefData = true;
     }
 
-    public void saveOffsets() {
-        SharedPreferences.Editor editor = mPreferences.edit();
-        String str = "";
+    private void saveOffsets() {
+        StringBuffer str = new StringBuffer();
         for (int cpu = 0; cpu < mCpuNum; cpu++) {
-            for (Map.Entry<Integer, Long> entry : monitor.getOffsets(cpu)
-                    .entrySet()) {
-                str += entry.getKey() + " " + entry.getValue() + ",";
+            boolean saveCpu = true;
+            if (mShowCpus != null) {
+                if (!mShowCpus.contains(cpu)) {
+                    // just placeholder
+                    str.append("cpu");
+                    saveCpu = false;
+                }
             }
-            str += ":";
+            if (saveCpu) {
+                int size = monitor.getOffsets(cpu).entrySet().size();
+                int i = 0;
+                for (Map.Entry<Integer, Long> entry : monitor.getOffsets(cpu)
+                        .entrySet()) {
+                    str.append(entry.getKey() + ";" + entry.getValue());
+                    if (i < size - 1) {
+                        str.append(",");
+                    }
+                    i++;
+                }
+            }
+            if (cpu < mCpuNum - 1) {
+                str.append(":");
+            }
         }
-        editor.putString(PREF_OFFSETS, str).commit();
+        getPrefs().edit().putString(PREF_OFFSETS, str.toString()).commit();
         sHasRefData = true;
     }
 
-    public void clarOffsets() {
-        SharedPreferences.Editor editor = mPreferences.edit();
-        editor.putString(PREF_OFFSETS, "").commit();
+    private void clearOffsets() {
+        getPrefs().edit().putString(PREF_OFFSETS, "").commit();
         sHasRefData = false;
     }
 
@@ -473,15 +502,15 @@ public class TimeInState extends SettingsPreferenceFragment {
         return total;
     }
 
-    public void clearOffsets() {
-        monitor.removeOffsets();
-        saveOffsets();
-    }
-
     private void updateShareIntent(String data) {
         mShareIntent = new Intent();
         mShareIntent.setAction(Intent.ACTION_SEND);
         mShareIntent.setType("text/plain");
         mShareIntent.putExtra(Intent.EXTRA_TEXT, data);
+    }
+
+    public static void triggerResetStats() {
+        // on reboot
+        sResetStats = true;
     }
 }

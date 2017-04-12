@@ -153,6 +153,11 @@ public class CPUStateMonitor {
     public void setOffsets() throws CPUStateMonitorException {
         updateStates();
         for (int i = 0; i < mCpuNum; i++) {
+            if (mShowCpus != null) {
+                if (!mShowCpus.contains(i)) {
+                    continue;
+                }
+            }
             setOffsets(i);
         }
     }

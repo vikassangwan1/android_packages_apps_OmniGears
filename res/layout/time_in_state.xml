@@ -44,7 +44,8 @@ Copyright (C) 2012  James Roberts
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingBottom="10dp"
-        android:paddingTop="10dp" >
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp" >
         <TextView
             android:id="@+id/ui_total_state_time"
             android:layout_width="0dp"
