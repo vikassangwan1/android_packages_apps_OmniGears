@@ -416,6 +416,11 @@
     <!-- Hostname setting -->
     <string name="device_hostname">Device hostname</string>
 
+    <!-- OMS -->
+    <string name="theming_title">Theming</string>
+    <string name="oms_app_title">Substratum theme engine</string>
+    <string name="oms_app_summary">Start Substratum experience</string>
+
     <string name="status_bar_ime_notification_title">Show IME notification</string>
     <string name="status_bar_ime_notification_summary">If navigation bar is not available</string>
     <string name="navigation_bar_ime_button_title">Show IME navigation bar button</string>
@@ -435,7 +440,7 @@
     <string name="omni_notification_light_settings_summary">Customization of notification led lights for applications</string>
     <string name="omni_battery_light_settings_summary">Customization of notification led lights for battery</string>
 
-    <string name="night_mode_title">Theme</string>
+    <string name="night_mode_title">Light/Dark theme</string>
     <string name="night_mode_summary">%s</string>
     <string name="night_mode_no">Light</string>
     <string name="night_mode_yes">Dark</string>

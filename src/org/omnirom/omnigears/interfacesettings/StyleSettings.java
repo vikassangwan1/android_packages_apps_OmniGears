@@ -28,6 +28,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.net.TrafficStats;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.support.v7.preference.CheckBoxPreference;
@@ -74,6 +75,8 @@ public class StyleSettings extends SettingsPreferenceFragment implements
     private static final String CUSTOM_HEADER_BROWSE = "custom_header_browse";
     private static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
     private static final String KEY_NIGHT_MODE = "night_mode";
+    private static final String KEY_OMS_APP = "oms_app";
+
 
     private ListPreference mDaylightHeaderPack;
     private SeekBarPreference mHeaderShadow;
@@ -81,6 +84,7 @@ public class StyleSettings extends SettingsPreferenceFragment implements
     private String mDaylightHeaderProvider;
     private PreferenceScreen mHeaderBrowse;
     private ListPreference mNightModePreference;
+    private Preference mOmsApp;
 
     @Override
     protected int getMetricsCategory() {
@@ -149,6 +153,20 @@ public class StyleSettings extends SettingsPreferenceFragment implements
             mNightModePreference.setValue(String.valueOf(currentNightMode));
             mNightModePreference.setOnPreferenceChangeListener(this);
         }
+        mOmsApp = (Preference) findPreference(KEY_OMS_APP);
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        if (preference == mOmsApp) {
+            Intent omsIntent = getPackageManager().getLaunchIntentForPackage("projekt.substratum");
+            if (omsIntent != null) {
+                startActivity(omsIntent);
+            } else {
+                downloadOmsApp();
+            }
+        }
+        return super.onPreferenceTreeClick(preference);
     }
 
     @Override
@@ -287,4 +305,10 @@ public class StyleSettings extends SettingsPreferenceFragment implements
                     return result;
                 }
             };
+
+    private void downloadOmsApp(){
+        Intent omsDownloadIntent = new Intent(Intent.ACTION_VIEW);
+        omsDownloadIntent.setData(Uri.parse("https://play.google.com/store/apps/details?id=projekt.substratum"));
+        startActivity(omsDownloadIntent);
+    }
 }
