@@ -18,6 +18,12 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="more_settings_title">OmniGears Детальніше...</string>
+  <string name="ok">OK</string>
+  <string name="advanced">Розширені налаштування</string>
+  <string name="profiles_add">Додати...</string>
+  <string name="profile_choose_app">Вибрати додаток</string>
+  <string name="reset">Очистити</string>
   <!-- Hardware keys -->
   <string name="button_keys_title">Кнопки</string>
   <string name="keys_bindings_title">Дії кнопок</string>
@@ -55,6 +61,7 @@
   <string name="button_volume_keys_title">Гучність</string>
   <string name="button_volume_wake_title">Пробудження кнопками гучності</string>
   <string name="button_volume_wake_summary">Натискання на кнопки гучності пробуджує пристрій</string>
+  <string name="volume_button_music_control_title">Керування музикою</string>
   <string name="keys_action_sleep">Вимкнути екран</string>
   <string name="keys_action_omniswitch">Панель останніх додатків Omni</string>
   <string name="button_home_wake_title">Пробудження кнопками гучності</string>
@@ -194,6 +201,7 @@
   <string name="notification_light_general_title">Загальні</string>
   <!-- Lights settings, LED notification -->
   <!-- Hostname setting -->
+  <!-- OMS -->
   <!-- Summaries -->
   <!-- Display : Rotation -->
 </resources>

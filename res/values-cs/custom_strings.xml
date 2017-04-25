@@ -73,7 +73,6 @@
   <string name="button_home_answers_call_title">Tlačítko příjmu volání</string>
   <string name="button_home_answers_call_summary">Tlačítko Domů zvedne příchozí hovor</string>
   <string name="button_other_title">Ostatní</string>
-  <string name="keys_action_app_switch_short">Výchozí</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
   <string name="button_back_kill_enable_title">Vynucené ukončení aplikace tlačítkem Zpět</string>
   <string name="button_back_kill_enable_summary">Ukončit aplikaci v popředí dlouhým podržením tlačítka zpět</string>
@@ -203,6 +202,7 @@
   <string name="lockscreen_shortcut_add_dialog_title">Přidat zástupce</string>
   <string name="lockscreen_shortcut_apps_title">Zástupci</string>
   <string name="lockscreen_shortcut_add">Přidat\u2026</string>
+  <string name="lockscreen_hide_indicator_display_title">Skrýt dolní stavový text</string>
   <string name="lockscreen_camera_shortcut_enable_title">Zobrazit zástupce fotoaparátu</string>
   <string name="lockscreen_camera_shortcut_enable_summary">Viditelnost závisí na nastavení systému</string>
   <string name="lockscreen_left_shortcut_enable_title">Zobrazit zástupce vytáčení nebo hlasového asistenta</string>
@@ -349,14 +349,19 @@
   <string name="notification_light_automagic">Automatická barva</string>
   <string name="notification_light_automagic_summary">Automaticky nastaví správnou barvu LED oznámení, pokud aplikace nemá žádné vlastní hodnoty</string>
   <!-- Lights settings, LED notification -->
+  <string name="led_category_summary_on">Notifikační LED dioda zapnuta</string>
+  <string name="led_category_summary_off">Notifikační LED dioda vypnuta</string>
   <!-- Hostname setting -->
   <string name="device_hostname">Jméno zařízení</string>
+  <!-- OMS -->
   <string name="status_bar_ime_notification_summary">Není-li navigační panel k dispozici</string>
   <string name="navigation_bar_ime_button_summary">Vstupní přepínač v navigačním panelu</string>
   <!-- Summaries -->
+  <string name="bars_brightness_enabled_summary">Ovládání jasu zapnuto</string>
+  <string name="bars_brightness_disabled_summary">Ovládání jasu vypnuto</string>
   <string name="bars_dt2s_enabled_summary">DT2S je zapnuto</string>
   <string name="bars_dt2s_disabled_summary">DT2S je vypnuto</string>
-  <string name="night_mode_title">Motiv</string>
+  <string name="lockscreen_hide_media_title">Zakázat mediální tapety</string>
   <string name="night_mode_summary">%s</string>
   <string name="night_mode_no">Světlý</string>
   <string name="night_mode_yes">Tmavý</string>
@@ -377,8 +382,21 @@
   <string name="state_core_mode">Jádra</string>
   <string name="spinner_state_time_title">Čas</string>
   <string name="total_time">Celkem</string>
+  <string name="wakelock_time">Wakelocks</string>
   <string name="copy_as_text">Kopírovat jako text</string>
+  <string name="app_details">Podrobnosti o aplikaci</string>
+  <string name="deep_sleep">"Hluboký spánek"</string>
+  <string name="mt_refresh">Znovu načíst</string>
+  <string name="mt_share">Sdílet</string>
+  <string name="mt_reset">Resetovat</string>
+  <string name="time_in_state_summary">Zobrazit statistiky frekvence procesoru</string>
+  <string name="wakelocks_title">Wakelocks</string>
+  <string name="wakelocks_summary">Zobrazit statistiky wakelocks</string>
+  <string name="system_category">Systém</string>
+  <string name="custom_wall_browse_title">Omni tapety</string>
+  <string name="custom_wall_browse_summary">Procházejte a nastavte si Omni značkové tapety</string>
   <!-- Display : Rotation -->
+  <string name="category_display">Obrazovka</string>
   <string name="display_rotation_title">Rotace</string>
   <string name="display_rotation_disabled">Zakázáno</string>
   <string name="display_rotation_unit">stupně</string>
@@ -388,5 +406,7 @@
   <string name="display_rotation_180_title">180 stupňů</string>
   <string name="display_rotation_270_title">270 stupňů</string>
   <string name="display_lockscreen_rotation_title">Zamykací obrazovka</string>
+  <string name="volume_button_force_media_title">Použít hlasitost médií</string>
+  <string name="volume_button_force_media_summary">Hlasitost médií bude změněna na výchozí</string>
   <string name="lockscreen_hide_status_bar_title">Skrýt stavový řádek</string>
 </resources>

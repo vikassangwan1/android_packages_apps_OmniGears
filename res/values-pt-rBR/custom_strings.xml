@@ -73,7 +73,6 @@
   <string name="button_home_answers_call_title">Botão atende chamada</string>
   <string name="button_home_answers_call_summary">Pressionar o botão home irá responder a chamada recebida</string>
   <string name="button_other_title">Outros</string>
-  <string name="keys_action_app_switch_short">Padrão</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
   <string name="button_back_kill_enable_title">Finalizar app com o botão voltar</string>
   <string name="button_back_kill_enable_summary">Encerrar aplicação de primeiro plano com o botão voltar</string>
@@ -331,6 +330,8 @@
   <string name="pulse_speed_slow">Lento</string>
   <string name="pulse_speed_very_slow">Muito lento</string>
   <!-- Lights settings screen, notification light settings -->
+  <string name="omni_leds">Luzes LED</string>
+  <string name="omni_lights_title">Notificação com LED</string>
   <string name="notification_light_title">Luz de notificação</string>
   <string name="notificationlight_title">Configurações de notificação LED</string>
   <string name="notification_light_general_title">Geral</string>
@@ -346,9 +347,12 @@
   <!-- Lights settings, LED notification -->
   <string name="led_notification_title">Configurações de luz</string>
   <string name="led_notification_text">Luz de LED ativado nas configurações</string>
+  <string name="led_category_summary_on">Notificação com LED habilitadas</string>
+  <string name="led_category_summary_off">Notificação de LED desabilitadas</string>
   <string name="notification_light_no_apps_summary">Para adicionar por controle por aplicativo, ative o \'%1$s\' e pressione \'\u002b\' na barra de menus</string>
   <!-- Hostname setting -->
   <string name="device_hostname">Nome do dispositivo</string>
+  <!-- OMS -->
   <string name="status_bar_ime_notification_title">Mostrar notificação</string>
   <string name="status_bar_ime_notification_summary">Se a barra de navegação não estiver disponível</string>
   <string name="navigation_bar_ime_button_title">Mostrar o seletor IME na barra de navegação</string>
@@ -358,5 +362,28 @@
   <string name="volume_dialog_headers_summary">Mostrar rótulo na caixa de diálogo de volume</string>
   <string name="lockscreen_hide_media_title">Desabilitar o papel de parede de mídia</string>
   <string name="lockscreen_hide_media_summary">Não mostrar metadados de mídia como papel de parede na tela de bloqueio</string>
+  <string name="night_mode_summary">%s</string>
+  <string name="kernel_wakelock_time">Kernel wakelocks</string>
+  <string name="wakelock_time">Wakelocks</string>
+  <string name="google_it">Buscar no Google</string>
+  <string name="app_details">Detalhes da aplicação</string>
+  <string name="mt_refresh">Atualizar</string>
+  <string name="mt_share">Compartilhar</string>
+  <string name="mt_reset">Redefinir</string>
+  <string name="wakelocks_title">Wakelocks</string>
+  <string name="system_category">Sistema</string>
+  <string name="custom_wall_browse_title">Papeis de parede Omni</string>
   <!-- Display : Rotation -->
+  <string name="category_display">Tela</string>
+  <string name="display_rotation_title">Rotação</string>
+  <string name="display_rotation_disabled">Desabilitar</string>
+  <string name="display_rotation_unit">graus</string>
+  <string name="display_rotation_category_title">Modos de Rotação</string>
+  <string name="display_rotation_0_title">0 grau</string>
+  <string name="display_rotation_90_title">90 graus</string>
+  <string name="display_rotation_180_title">180 graus</string>
+  <string name="display_rotation_270_title">270 graus</string>
+  <string name="display_lockscreen_rotation_title">Tela de bloqueio</string>
+  <string name="lockscreen_hide_status_bar_title">Ocultar barra de status</string>
+  <string name="lockscreen_hide_status_bar_summary">Toque na barra de estado para alternar a visibilidade</string>
 </resources>

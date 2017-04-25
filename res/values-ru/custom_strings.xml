@@ -18,6 +18,7 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="more_settings_title">Больше OmniGears...</string>
   <string name="ok">ОК</string>
   <string name="advanced">Дополнительно</string>
   <string name="profiles_add">Добавить...</string>
@@ -72,7 +73,6 @@
   <string name="button_home_answers_call_title">Кнопка отвечает на вызов</string>
   <string name="button_home_answers_call_summary">Нажатие кнопки домой ответит на входящий вызов</string>
   <string name="button_other_title">Другие</string>
-  <string name="keys_action_app_switch_short">По умолчанию</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
   <string name="button_back_kill_enable_title">Кнопка \"Назад\" закроет приложение</string>
   <string name="button_back_kill_enable_summary">Закрытие текущего приложения удерживанием кнопки «назад»</string>
@@ -248,6 +248,7 @@
   <string name="notification_light_general_title">Основные</string>
   <!-- Lights settings, LED notification -->
   <!-- Hostname setting -->
+  <!-- OMS -->
   <!-- Summaries -->
   <!-- Display : Rotation -->
 </resources>

@@ -65,7 +65,6 @@
   <string name="button_home_answers_call_title">使用按鍵接聽電話</string>
   <string name="button_home_answers_call_summary">按Home鍵接聽電話</string>
   <string name="button_other_title">其他</string>
-  <string name="keys_action_app_switch_short">預設</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
   <string name="button_back_kill_enable_title">長按返回鍵終止應用程式</string>
   <string name="button_back_kill_enable_summary">長按返回鍵終止當前應用程式</string>
@@ -126,6 +125,7 @@
   <string name="notification_light_general_title">一般</string>
   <!-- Lights settings, LED notification -->
   <!-- Hostname setting -->
+  <!-- OMS -->
   <!-- Summaries -->
   <!-- Display : Rotation -->
 </resources>

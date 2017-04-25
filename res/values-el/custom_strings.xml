@@ -62,7 +62,6 @@
   <string name="button_home_wake_summary">Πατώντας το κουμπί αρχικής οθόνης θα ενεργοποιείτε τη συσκευή</string>
   <string name="button_home_answers_call_title">Το κουμπί απαντά την κλήση</string>
   <string name="button_home_answers_call_summary">Πατώντας το κουμπί αρχικής οθόνης θα απαντήσετε στην εισερχόμενη κλήση</string>
-  <string name="keys_action_app_switch_short">Προεπιλογή</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
   <!-- Double tap to sleep -->
   <string name="double_tap_to_sleep_title">Διπλό χτύπημα για αναστολή</string>
@@ -106,6 +105,7 @@
   <string name="notification_light_general_title">Γενικά</string>
   <!-- Lights settings, LED notification -->
   <!-- Hostname setting -->
+  <!-- OMS -->
   <!-- Summaries -->
   <!-- Display : Rotation -->
 </resources>

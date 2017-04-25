@@ -73,7 +73,6 @@
   <string name="button_home_answers_call_title">Düğme aramaya yanıt verir</string>
   <string name="button_home_answers_call_summary">Ana ekran düğmesine basmak aramayı cevaplayacak</string>
   <string name="button_other_title">Diğer</string>
-  <string name="keys_action_app_switch_short">Varsayılan</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
   <string name="button_back_kill_enable_title">Geri tuşu ile uygulamaları sonladır</string>
   <string name="button_back_kill_enable_summary">Geri tuşuna uzun basarak ön plandaki uygulamarı sonlandır</string>
@@ -363,6 +362,7 @@
   <string name="notification_light_no_apps_summary">Uygulamaya has denetim eklemek için, \"%1$s\" etkinleştirin ve menü çubuğunda \'\u002b\' basın</string>
   <!-- Hostname setting -->
   <string name="device_hostname">Cihaz ana makine adı</string>
+  <!-- OMS -->
   <string name="status_bar_ime_notification_title">IME bildirimini göster</string>
   <string name="status_bar_ime_notification_summary">Gezinti çubuğu kullanılabilir değilse</string>
   <string name="navigation_bar_ime_button_title">IME gezinti çubuğu düğmesini göster</string>
@@ -378,7 +378,6 @@
   <string name="lockscreen_hide_media_summary">Ortam meta verilerini kilit ekranı duvar kağıdı olarak gösterme</string>
   <string name="omni_notification_light_settings_summary">Uygulamalar için bildirim led ışıklarını özelleştir</string>
   <string name="omni_battery_light_settings_summary">Pil için bildirim led ışıklarını özelleştir</string>
-  <string name="night_mode_title">Tema</string>
   <string name="night_mode_summary">%s</string>
   <string name="night_mode_no">Açık</string>
   <string name="night_mode_yes">Koyu</string>
@@ -393,6 +392,7 @@
   <string name="partial_wakelocks">Kısmi uyandırma kilitleri</string>
   <string name="app_wakelocks">Uygulama uyandırma kilitleri</string>
   <string name="create_ref">Sıfırla</string>
+  <string name="spinner_period_title">İtibaren</string>
   <string name="spinner_type_title">Göster</string>
   <string name="screen_on_time">Ekran açık</string>
   <string name="awake_time">Uyanık</string>

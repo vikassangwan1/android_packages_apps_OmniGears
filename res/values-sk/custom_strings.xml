@@ -65,7 +65,6 @@
   <string name="button_home_answers_call_title">Tlačidlo prijme hovor</string>
   <string name="button_home_answers_call_summary">Stlačenie tlačidla domov zodvihne prichádzajúci hovor</string>
   <string name="button_other_title">Iné</string>
-  <string name="keys_action_app_switch_short">Predvolené</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
   <string name="button_back_kill_enable_title">Tlačidlom naspäť zabiť aplikáciu</string>
   <string name="button_back_kill_enable_summary">Dlhým stlačením tlačidla naspäť zabiť aplikáciu v popredí</string>
@@ -293,6 +292,7 @@
   <string name="notification_light_general_title">Všeobecné</string>
   <!-- Lights settings, LED notification -->
   <!-- Hostname setting -->
+  <!-- OMS -->
   <!-- Summaries -->
   <!-- Display : Rotation -->
 </resources>

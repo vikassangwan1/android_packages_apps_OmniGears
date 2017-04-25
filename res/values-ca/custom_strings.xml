@@ -65,7 +65,6 @@
   <string name="button_home_answers_call_title">Resposta de trucades amb el botó</string>
   <string name="button_home_answers_call_summary">En prémer el botó inici es respondrà la trucada entrant</string>
   <string name="button_other_title">Altres</string>
-  <string name="keys_action_app_switch_short">Per defecte</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
   <string name="button_back_kill_enable_title">Mata l\'app amb el botó enrere</string>
   <string name="button_back_kill_enable_summary">Mata l\'app en primer pla fent pressió llarga al botó enrere</string>
@@ -282,6 +281,7 @@
   <string name="notification_light_general_title">General</string>
   <!-- Lights settings, LED notification -->
   <!-- Hostname setting -->
+  <!-- OMS -->
   <!-- Summaries -->
   <!-- Display : Rotation -->
 </resources>

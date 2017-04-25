@@ -73,7 +73,6 @@
   <string name="button_home_answers_call_title">Gomb fogadja a hívást</string>
   <string name="button_home_answers_call_summary">A kezdőlap gomb megnyomásával fogadja a bejövő hívást</string>
   <string name="button_other_title">Egyéb</string>
-  <string name="keys_action_app_switch_short">Alapértelmezett</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
   <string name="button_back_kill_enable_title">Alkalmazás bezárás</string>
   <string name="button_back_kill_enable_summary">Előtérben lévő alkalmazás bezárása a vissza gomb hosszú megnyomásával</string>
@@ -197,12 +196,15 @@
   <string name="lockscreen_clock_color_title">Idő és dátum színe</string>
   <string name="lockscreen_clock_size_title">Idő mérete</string>
   <string name="lockscreen_clock_enable_title">Engedélyezés</string>
+  <string name="lockscreen_clock_enable_summary">Állapotsori óra megjelenik, ha le van tiltva</string>
   <string name="lockscreen_clock_shadow_title">Árnyék</string>
   <string name="lockscreen_shortcuts_title">Egyéni alkalmazás parancsikonok</string>
   <string name="lockscreen_shortcuts_summary">Alkalmazások megjelenítése a gyors hozzáférésért a zárképernyőn. Hosszan nyomva elrejti.</string>
   <string name="lockscreen_shortcut_add_dialog_title">Parancsikon hozzáadása</string>
   <string name="lockscreen_shortcut_apps_title">Parancsikonok</string>
   <string name="lockscreen_shortcut_add">Hozzáad\u2026</string>
+  <string name="lockscreen_hide_indicator_display_title">Alsó állapotszöveg elrejtése</string>
+  <string name="lockscreen_hide_indicator_display_summary">Töltési információk és feloldási tippek elrejtése</string>
   <string name="lockscreen_camera_shortcut_enable_title">Kamera parancsikon megjelenítése</string>
   <string name="lockscreen_camera_shortcut_enable_summary">Láthatóság a rendszerbeállításoktól függ</string>
   <string name="lockscreen_left_shortcut_enable_title">Tárcsázó, vagy hangsegéd parancsikon megjelenítése</string>
@@ -257,6 +259,7 @@
   <string name="header_weather_title">Időjárás a fejlécen</string>
   <string name="header_weather_summary">Értesítési panel fejlécén az időjárás megjelenítésének engedélyezése</string>
   <string name="weather_icon_pack_title">Állapot ikoncsomag</string>
+  <string name="weather_icon_pack_note">Megjegyzés\u003a új ikoncsomagokat telepíthet a Play Áruházból a \"Chronus ikonok\"-ra való kereséssel</string>
   <!-- Navigationbar settings -->
   <string name="navigationbar_title">Navigációs sáv</string>
   <!-- Enable Tablet Style navigation bar -->
@@ -290,6 +293,8 @@
   <string name="global_actions_summary">Kikapcsoló menüben látható műveletek</string>
   <string name="global_actions_header">Egyes tevékenységek csak a beállításai függvényében láthatóak, vagy csak akkor, ha a készülék fel van oldva</string>
   <string name="global_actions_anim">Megjelenés</string>
+  <string name="global_actions_advanced_reboot_summary">További lehetőségek megjelenítése az újraindítási menüben</string>
+  <string name="global_actions_advanced_reboot_title">Speciális újraindítás engedélyezése</string>
   <string name="font_sample_text">11:57</string>
   <string name="screenshot_crop_and_share_title">Képernyőmentés vágása és megosztása</string>
   <string name="screenshot_crop_and_share_summary">Képernyőmentés után szerkesztő ablak megjelenítése annak érdekében, hogy bizonyos műveleteket, mint a vágás, mentés és megosztás megtehessen</string>
@@ -333,7 +338,10 @@
   <string name="pulse_speed_slow">Lassú</string>
   <string name="pulse_speed_very_slow">Nagyon lassú</string>
   <!-- Lights settings screen, notification light settings -->
+  <string name="omni_battery_light_settings">Akkumulátor értesítési LED</string>
+  <string name="omni_notification_light_settings">Alkalmazások értesítési LED</string>
   <string name="omni_leds">LED fények</string>
+  <string name="omni_lights_title">Értesítési LED</string>
   <string name="notification_light_title">Értesítési fény</string>
   <string name="notificationlight_title">Értesítési LED beállítások</string>
   <string name="notification_light_general_title">Általános</string>
@@ -349,20 +357,27 @@
   <!-- Lights settings, LED notification -->
   <string name="led_notification_title">LED beállítások</string>
   <string name="led_notification_text">LED engedélyezve a beállítások által</string>
+  <string name="led_category_summary_on">Értesítési LED bekapcsolva</string>
   <string name="led_category_summary_off">Értesítési LED kikapcsolva</string>
   <string name="notification_light_no_apps_summary">Alkalmazásonkénti vezérléshez, aktiválja: \'%1$s\' majd \'\u002b\' megnyomása a menüsoron</string>
   <!-- Hostname setting -->
   <string name="device_hostname">Eszköz elérési neve</string>
+  <!-- OMS -->
   <string name="status_bar_ime_notification_title">IME értesítés megjelenítése</string>
   <string name="status_bar_ime_notification_summary">Ha a navigációs sáv nem elérhető</string>
   <string name="navigation_bar_ime_button_title">IME navigációs sáv gomb megjelenítése</string>
   <string name="navigation_bar_ime_button_summary">Beviteli váltó a navigációs sávon</string>
   <!-- Summaries -->
+  <string name="bars_brightness_enabled_summary">Fényerő vezérlés bekapcsolva</string>
+  <string name="bars_brightness_disabled_summary">Fényerő vezérlés kikapcsolva</string>
+  <string name="bars_dt2s_enabled_summary">DT2S bekapcsolva</string>
+  <string name="bars_dt2s_disabled_summary">DT2S kikapcsolva</string>
   <string name="volume_dialog_headers_title">Hangerő párbeszédpanel fejlécei</string>
   <string name="volume_dialog_headers_summary">Hangfolyamat-név fejlécek megjelenítése a hangerő párbeszédpanelon</string>
   <string name="lockscreen_hide_media_title">Média háttérkép letiltása</string>
   <string name="lockscreen_hide_media_summary">Nem jeleníti meg a média metaadatát háttérképként a zárképernyőn</string>
-  <string name="night_mode_title">Téma</string>
+  <string name="omni_notification_light_settings_summary">Értesítés led testreszabása az alkalmazásokhoz</string>
+  <string name="omni_battery_light_settings_summary">Értesítés led testreszabása az akkumulátorhoz</string>
   <string name="night_mode_summary">%s</string>
   <string name="night_mode_no">Világos</string>
   <string name="night_mode_yes">Sötét</string>
@@ -394,6 +409,9 @@
   <string name="copy_as_text">Másolás szövegként</string>
   <string name="google_it">Guglizz rá</string>
   <string name="app_details">Az alkalmazás adatai</string>
+  <string name="no_stat_because_reset_state">Nyomja meg a visszaállítást az állapot-adatok gyűjtésének indításához</string>
+  <string name="no_stat_because_reset_wakelock">Nyomja meg a visszaállítást a wakelock adatok gyűjtésének indításához</string>
+  <string name="no_stat_because_plugged">Válassza le a töltőröl a wakelock adatokért</string>
   <string name="no_states_file_found">Állapot fájl nem található. Készüléke biztosan
         kompatibilis?\n\nHa egyedi ROM-ot vagy kernelt használ, próbáljon
         kapcsolatba lépni annak fejlesztőjével, hogy jelezze felé: az állapot fájl

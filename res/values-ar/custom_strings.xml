@@ -62,7 +62,6 @@
   <string name="button_home_answers_call_title">الزر يرد على المكالمات</string>
   <string name="button_home_answers_call_summary">الضغط على زر الشاشة الرئيسية يرد على المكالمات</string>
   <string name="button_other_title">آخر</string>
-  <string name="keys_action_app_switch_short">الإفتراضي</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
   <string name="button_back_kill_enable_title">زر العودة لإغلاق التطبيق</string>
   <string name="button_back_kill_enable_summary">الضغط لمدة طويلة على زر العودة يغلق التطبيق الأمامي</string>
@@ -236,6 +235,7 @@
   <string name="notification_light_general_title">عام</string>
   <!-- Lights settings, LED notification -->
   <!-- Hostname setting -->
+  <!-- OMS -->
   <!-- Summaries -->
   <!-- Display : Rotation -->
 </resources>

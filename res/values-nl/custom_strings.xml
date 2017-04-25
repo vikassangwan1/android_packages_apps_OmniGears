@@ -65,7 +65,6 @@
   <string name="button_home_answers_call_title">Knop beantwoordt oproep</string>
   <string name="button_home_answers_call_summary">Beantwoord een inkomende oproep door op de home-knop te drukken</string>
   <string name="button_other_title">Overig</string>
-  <string name="keys_action_app_switch_short">Standaard</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
   <string name="button_back_kill_enable_title">Terugknop forceert afsluiten</string>
   <string name="button_back_kill_enable_summary">App op de voorgrond afsluiten door de terugknop lang ingedrukt te houden</string>
@@ -294,6 +293,7 @@ Schakel het tonen van het weer in het notificatiepaneel in</string>
   <string name="notification_light_general_title">Algemeen</string>
   <!-- Lights settings, LED notification -->
   <!-- Hostname setting -->
+  <!-- OMS -->
   <!-- Summaries -->
   <!-- Display : Rotation -->
 </resources>

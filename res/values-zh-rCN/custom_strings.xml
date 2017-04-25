@@ -73,7 +73,6 @@
   <string name="button_home_answers_call_title">按钮接听电话</string>
   <string name="button_home_answers_call_summary">按下主页键将接听来电</string>
   <string name="button_other_title">其他</string>
-  <string name="keys_action_app_switch_short">默认</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
   <string name="button_back_kill_enable_title">使用返回键强制关闭程序</string>
   <string name="button_back_kill_enable_summary">长按返回键关闭前台所有App</string>
@@ -362,6 +361,7 @@
   <string name="notification_light_no_apps_summary">添加分应用控制，通过菜单栏上的“\ u002b”激活“％1 $ s”</string>
   <!-- Hostname setting -->
   <string name="device_hostname">设备主机名</string>
+  <!-- OMS -->
   <string name="status_bar_ime_notification_title">显示输入法通知</string>
   <string name="status_bar_ime_notification_summary">如果导航栏不可用</string>
   <string name="navigation_bar_ime_button_title">显示输入法通知按钮</string>
@@ -377,7 +377,6 @@
   <string name="lockscreen_hide_media_summary">不显示媒体元数据在锁屏壁纸中</string>
   <string name="omni_notification_light_settings_summary">自定义应用的LED通知灯</string>
   <string name="omni_battery_light_settings_summary">自定义电池的LED通知灯</string>
-  <string name="night_mode_title">主题</string>
   <string name="night_mode_summary">%s</string>
   <string name="night_mode_no">亮色</string>
   <string name="night_mode_yes">暗色</string>

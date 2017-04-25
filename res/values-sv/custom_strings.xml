@@ -40,7 +40,6 @@
   <string name="keys_action_kill_app">Döda app</string>
   <string name="button_volume_keys_title">Volym</string>
   <string name="volume_button_music_control_title">Musikkontroll</string>
-  <string name="keys_action_app_switch_short">Standard</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
   <string name="button_back_kill_timeout_500ms">500 ms</string>
   <string name="button_back_kill_timeout_1000ms">1000 ms</string>
@@ -172,6 +171,7 @@
   <!-- Lights settings, LED notification -->
   <string name="led_notification_title">Ljusinställningar</string>
   <!-- Hostname setting -->
+  <!-- OMS -->
   <!-- Summaries -->
   <!-- Display : Rotation -->
 </resources>

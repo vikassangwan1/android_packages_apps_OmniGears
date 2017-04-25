@@ -73,7 +73,6 @@
   <string name="button_home_answers_call_title">Répondre à l\'appel</string>
   <string name="button_home_answers_call_summary">Un appui sur le bouton Accueil répondra à l\'appel entrant</string>
   <string name="button_other_title">Autre</string>
-  <string name="keys_action_app_switch_short">Par défaut</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
   <string name="button_back_kill_enable_title">Tuer l\'application avec la touche retour</string>
   <string name="button_back_kill_enable_summary">Tuer l\'application avec un appui long sur le bouton Retour</string>
@@ -363,6 +362,7 @@
   <string name="notification_light_no_apps_summary">Pour ajouter le contrôle par application, activer \'%1$s\' et appuyer sur \'\u002b\' dans la barre de menu</string>
   <!-- Hostname setting -->
   <string name="device_hostname">Nom d’hôte de l’appareil</string>
+  <!-- OMS -->
   <string name="status_bar_ime_notification_title">Afficher la notification du mode de saisie</string>
   <string name="status_bar_ime_notification_summary">Si la barre de navigation n\'est pas disponible</string>
   <string name="navigation_bar_ime_button_title">Afficher le bouton du mode de saisie dans la barre de navigation</string>
@@ -374,20 +374,19 @@
   <string name="bars_dt2s_disabled_summary">DT2S est désactivé</string>
   <string name="volume_dialog_headers_title">En-têtes de la boîte de dialogue du volume</string>
   <string name="volume_dialog_headers_summary">Afficher le nom des flux en En-têtes dans la boîte de dialogue du volume</string>
-  <string name="lockscreen_hide_media_title">Désactiver le fond d’écran multimédia</string>
+  <string name="lockscreen_hide_media_title">Désactiver l\'affichage des tags de fichiers musicaux</string>
   <string name="lockscreen_hide_media_summary">Ne pas utiliser les métadonnées des médias comme fond d’écran de verrouillage</string>
   <string name="omni_notification_light_settings_summary">Personnalise les éclairages led de notification pour les applications</string>
   <string name="omni_battery_light_settings_summary">Personnalise la couleur de la Led de notification de la batterie</string>
-  <string name="night_mode_title">Thème</string>
   <string name="night_mode_summary">%s</string>
   <string name="night_mode_no">Clair</string>
   <string name="night_mode_yes">Sombre</string>
   <string name="state_time_mode">Activité</string>
-  <string name="since_boot">Le Démarrage</string>
+  <string name="since_boot">Le démarrage</string>
   <string name="since_charged">Chargé</string>
   <string name="since_unplugged">Débranché</string>
-  <string name="since_reset">Réinitialiser</string>
-  <string name="since_unplug">La Déconnexion</string>
+  <string name="since_reset">La réinitialisation</string>
+  <string name="since_unplug">La déconnexion</string>
   <string name="other">Activité</string>
   <string name="spinner_period_title">Depuis</string>
   <string name="spinner_type_title">Afficher</string>

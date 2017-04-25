@@ -72,7 +72,6 @@
   <string name="button_home_answers_call_title">버튼 눌러 전화받기</string>
   <string name="button_home_answers_call_summary">홈 버튼을 눌러 걸려온 전화를 받습니다</string>
   <string name="button_other_title">기타</string>
-  <string name="keys_action_app_switch_short">기본값</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
   <string name="button_back_kill_enable_title">뒤로 가기 버튼으로 앱 종료</string>
   <string name="button_back_kill_enable_summary">뒤로 가기 버튼을 길게 눌러 사용중인 앱 종료</string>
@@ -290,6 +289,7 @@
   <string name="notification_light_general_title">일반</string>
   <!-- Lights settings, LED notification -->
   <!-- Hostname setting -->
+  <!-- OMS -->
   <!-- Summaries -->
   <!-- Display : Rotation -->
 </resources>

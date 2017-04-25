@@ -18,6 +18,12 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="more_settings_title">Zaawansowane ustawienia OmniGears</string>
+  <string name="ok">OK</string>
+  <string name="advanced">Zaawansowane</string>
+  <string name="profiles_add">Dodaj...</string>
+  <string name="profile_choose_app">Wybierz aplikację</string>
+  <string name="reset">Zresetuj</string>
   <!-- Hardware keys -->
   <string name="button_keys_title">Przyciski</string>
   <string name="keys_bindings_title">Akcje przycisków</string>
@@ -56,6 +62,8 @@
   <string name="button_volume_keys_title">Głośność</string>
   <string name="button_volume_wake_title">Wybudź przyciskiem</string>
   <string name="button_volume_wake_summary">Naciśnięcie przycisku głośności wybudzi urządzenie</string>
+  <string name="button_volume_wake_enabled_summary">Wybudzanie przyciskiem głośności jest WŁĄCZONE</string>
+  <string name="button_volume_wake_disabled_summary">Wybudzanie przyciskiem głośności jest WYŁĄCZONE</string>
   <string name="volume_button_music_control_title">Kontrola muzyki</string>
   <string name="volume_button_music_control_summary">Długie przytrzymanie przycisku głośności zmieni utwór, gdy ekran jest wyłączony</string>
   <string name="keys_action_sleep">Uśpij</string>
@@ -65,7 +73,6 @@
   <string name="button_home_answers_call_title">Przycisk odbiera połączenie</string>
   <string name="button_home_answers_call_summary">Naciśnięcie przycisku Home odbierze połączenie</string>
   <string name="button_other_title">Inne</string>
-  <string name="keys_action_app_switch_short">Domyślne</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
   <string name="button_back_kill_enable_title">Zamykanie aplikacji przyciskiem Wstecz</string>
   <string name="button_back_kill_enable_summary">Zamknij pierwszoplanową aplikację przez przytrzymanie przycisku wstecz</string>
@@ -128,6 +135,7 @@
   <string name="swap_volume_buttons_summary">Dostosuj działanie przycisków głośności do obecnej pozycji urządzenia</string>
   <string name="color_picker_dialog_title">Kolor</string>
   <!-- Battery light settings  -->
+  <string name="batterylight_title">Ustawienia diody LED baterii</string>
   <string name="battery_light_enable">Włącz</string>
   <string name="battery_low_pulse_title">Pulsuj, jeśli poziom baterii jest niski</string>
   <string name="battery_light_list_title">Kolory</string>
@@ -286,6 +294,7 @@
   <string name="notification_light_general_title">Ogólne</string>
   <!-- Lights settings, LED notification -->
   <!-- Hostname setting -->
+  <!-- OMS -->
   <!-- Summaries -->
   <!-- Display : Rotation -->
 </resources>

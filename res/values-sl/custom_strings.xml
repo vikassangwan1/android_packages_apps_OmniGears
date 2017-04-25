@@ -73,7 +73,6 @@
   <string name="button_home_answers_call_title">Gumb odgovori na klic</string>
   <string name="button_home_answers_call_summary">Pritisk na gumb Domov bo odgovoril na klic</string>
   <string name="button_other_title">Drugo</string>
-  <string name="keys_action_app_switch_short">Privzeto</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
   <string name="button_back_kill_enable_title">Gumb Nazaj uniči program</string>
   <string name="button_back_kill_enable_summary">Uniči program v ospredju z dolgim pritiskom na gumb Nazaj</string>
@@ -349,6 +348,7 @@
   <string name="notification_light_no_apps_summary">Za dodajanja nadzora za posamezni program omogočite \'%1$s\' in pritisnite \'\u002b\' v menijski vrstici</string>
   <!-- Hostname setting -->
   <string name="device_hostname">Gostiteljsko ime naprave</string>
+  <!-- OMS -->
   <string name="status_bar_ime_notification_title">Prikaži obvestilo IME</string>
   <string name="status_bar_ime_notification_summary">Če vrstica za krmarjenje ni na voljo</string>
   <string name="navigation_bar_ime_button_title">Prikaži gumb vrstice za krmarjenje IME</string>
@@ -358,7 +358,6 @@
   <string name="volume_dialog_headers_summary">Prikaži glave imena pretoka v pogovornem oknu za glasnost</string>
   <string name="lockscreen_hide_media_title">Onemogoči sliko ozadja predstavnosti</string>
   <string name="lockscreen_hide_media_summary">Ne prikaži metapodatkov predstavnosti kot sliko ozadja zaklenjenega zaslona</string>
-  <string name="night_mode_title">Tema</string>
   <string name="night_mode_summary">%s</string>
   <string name="night_mode_no">Svetla</string>
   <string name="night_mode_yes">Temna</string>

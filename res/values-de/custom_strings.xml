@@ -73,7 +73,6 @@
   <string name="button_home_answers_call_title">Rufannahme mit Home-Taste</string>
   <string name="button_home_answers_call_summary">Drücken der Home-Taste nimmt eingehenden Anruf an</string>
   <string name="button_other_title">Andere</string>
-  <string name="keys_action_app_switch_short">Standard</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
   <string name="button_back_kill_enable_title">App beenden Zurück-Taste</string>
   <string name="button_back_kill_enable_summary">Beenden der laufenden Anwendung durch langes Drücken der \"Zurück\"-Taste erzwingen</string>
@@ -204,6 +203,8 @@
   <string name="lockscreen_shortcut_add_dialog_title">Verknüpfung erstellen</string>
   <string name="lockscreen_shortcut_apps_title">Verknüpfungen</string>
   <string name="lockscreen_shortcut_add">Hinzufügen\u2026</string>
+  <string name="lockscreen_hide_indicator_display_title">Unteren Statustext ausblenden</string>
+  <string name="lockscreen_hide_indicator_display_summary">Lade-Informationen und Hinweise zum Entsperren ausblenden</string>
   <string name="lockscreen_camera_shortcut_enable_title">Kamera Verknüpfung anzeigen</string>
   <string name="lockscreen_camera_shortcut_enable_summary">Sichtbarkeit hängt von Systemeinstellungen ab</string>
   <string name="lockscreen_left_shortcut_enable_title">Wählhilfe- oder Sprachassistent-Verknüpfung anzeigen</string>
@@ -220,6 +221,8 @@
   <string name="custom_header_provider_title">Header-Anbieter</string>
   <string name="custom_header_browse_title">Durchsuche installierte Header</string>
   <string name="custom_header_browse_summary">Langer Druck auf ein beliebiges Bild für statischen Modus verwenden</string>
+  <string name="style_enabled_summary">Benutzerdefiniertes Header-Bild ist AN</string>
+  <string name="style_disabled_summary">Benutzerdefiniertes Header-Bild ist AUS</string>
   <!-- Network traffic -->
   <string name="network_traffic_title">Netzwerkverkehr</string>
   <string name="show_network_traffic_state">Statusleisten Netzwerkverkehrsanzeige</string>
@@ -256,6 +259,7 @@
   <string name="header_weather_title">Wetteranzeige in Kopfzeile</string>
   <string name="header_weather_summary">Wetteranzeige in Benachrichtigungsfeld-Kopfzeile aktivieren</string>
   <string name="weather_icon_pack_title">Wetter Symbol-Paket</string>
+  <string name="weather_icon_pack_note">Note\u003a Sie können neue Icon-Packs aus dem Playstore installieren, mit der Suche nach \"Chronus Icons\"</string>
   <!-- Navigationbar settings -->
   <string name="navigationbar_title">Navigationsleiste</string>
   <!-- Enable Tablet Style navigation bar -->
@@ -289,6 +293,8 @@
   <string name="global_actions_summary">Im Ein/Aus-Menü angezeigte Aktionen</string>
   <string name="global_actions_header">Einige Aktionen sind nur abhängig von den Einstellungen oder wenn das Gerät entsperrt ist sichtbar</string>
   <string name="global_actions_anim">Aussehen</string>
+  <string name="global_actions_advanced_reboot_summary">Zeigen weitere Optionen im Neustart-Menü</string>
+  <string name="global_actions_advanced_reboot_title">Erweiterten Neustart aktivieren</string>
   <string name="font_sample_text">11:57</string>
   <string name="screenshot_crop_and_share_title">Bildschirmfoto zuschneiden &amp; teilen</string>
   <string name="screenshot_crop_and_share_summary">Nach der Aufnahme eines Bildschirmfotos einen Editor zur weiteren Bearbeitung anzeigen</string>
@@ -332,6 +338,10 @@
   <string name="pulse_speed_slow">Langsam</string>
   <string name="pulse_speed_very_slow">Sehr langsam</string>
   <!-- Lights settings screen, notification light settings -->
+  <string name="omni_battery_light_settings">Akku-Puls</string>
+  <string name="omni_notification_light_settings">Anwendungen-Puls</string>
+  <string name="omni_leds">LED-Leuchten</string>
+  <string name="omni_lights_title">Benachrichtigungs-LED</string>
   <string name="notification_light_title">Benachrichtigungs-LED</string>
   <string name="notificationlight_title">Benachrichtigungs-LED-Einstellungen</string>
   <string name="notification_light_general_title">Allgemein</string>
@@ -347,21 +357,27 @@
   <!-- Lights settings, LED notification -->
   <string name="led_notification_title">LED-Einstellungen</string>
   <string name="led_notification_text">LED von Einstellungen aktiviert</string>
+  <string name="led_category_summary_on">Benachrichtigungs-LED ist AN</string>
+  <string name="led_category_summary_off">Benachrichtigungs-LED ist AUS</string>
   <string name="notification_light_no_apps_summary">Um per App gesteuert hinzuzufügen, aktivieren Sie \"%1$s\" und Presse \"\u002b\" in der Menüleiste</string>
   <!-- Hostname setting -->
   <string name="device_hostname">Hostname des Geräts</string>
+  <!-- OMS -->
   <string name="status_bar_ime_notification_title">IME-Benachrichtigung anzeigen</string>
   <string name="status_bar_ime_notification_summary">Wenn die Navigationsleiste nicht zur Verfügung steht</string>
   <string name="navigation_bar_ime_button_title">IME-Navigationsleistentaste anzeigen</string>
   <string name="navigation_bar_ime_button_summary">Eingabemethode Umschalter in Navigationsleiste</string>
   <!-- Summaries -->
+  <string name="bars_brightness_enabled_summary">Helligkeitskontrolle ist AN</string>
+  <string name="bars_brightness_disabled_summary">Helligkeitskontrolle ist AUS</string>
   <string name="bars_dt2s_enabled_summary">DT2S ist eingeschaltet</string>
   <string name="bars_dt2s_disabled_summary">DT2S ist ausgeschaltet</string>
   <string name="volume_dialog_headers_title">Volumen-Dialog-Titel</string>
   <string name="volume_dialog_headers_summary">Zeige Stream-Namen-Titel im Volumen-Dialogfeld</string>
   <string name="lockscreen_hide_media_title">Medien-Hintergrund deaktivieren</string>
   <string name="lockscreen_hide_media_summary">Medien-Metadaten nicht als Sperrbildschirmhintergrund zeigen</string>
-  <string name="night_mode_title">Theme</string>
+  <string name="omni_notification_light_settings_summary">Anpassung der Benachrichtigungs-LED für Anwendungen</string>
+  <string name="omni_battery_light_settings_summary">Anpassung der Benachrichtigungs-LED für Akku</string>
   <string name="night_mode_summary">%s</string>
   <string name="night_mode_no">Hell</string>
   <string name="night_mode_yes">Dunkel</string>
@@ -392,6 +408,8 @@
   <string name="copy_as_text">Als Text kopieren</string>
   <string name="google_it">Google es</string>
   <string name="app_details">Anwendungs-Details</string>
+  <string name="no_stat_because_reset_wakelock">Drücke zurücksetzen, um Wakelock Daten zusammeln</string>
+  <string name="no_stat_because_plugged">Bitte Netzstecker ziehen, um Wakelock Daten abzurufen</string>
   <string name="no_states_file_found">Keine States-Datei gefunden. Sind Sie sicher, dass Ihr Handy kompatibel ist?\n\nWenn Sie ein Custom-ROM oder Kernel benutzen, versuchen Sie den Entwickler zu kontaktieren, um ihn zu informieren, dass die States-Datei nicht lesbar ist.</string>
   <string name="deep_sleep">"Tiefschlaf"</string>
   <string name="mt_refresh">Aktualisieren</string>
@@ -415,5 +433,8 @@
   <string name="display_rotation_180_title">180 Grad</string>
   <string name="display_rotation_270_title">270 Grad</string>
   <string name="display_lockscreen_rotation_title">Sperrbildschirm</string>
+  <string name="volume_button_force_media_title">Medien-Lautstärke verwenden</string>
+  <string name="volume_button_force_media_summary">Medienlautstärke wird standardmäßig geändert</string>
   <string name="lockscreen_hide_status_bar_title">Statusleiste ausblenden</string>
+  <string name="lockscreen_hide_status_bar_summary">Tippe auf die Statusleiste, um die Sichtbarkeit umzuschalten</string>
 </resources>
