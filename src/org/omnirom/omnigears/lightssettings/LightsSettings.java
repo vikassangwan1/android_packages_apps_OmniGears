@@ -22,6 +22,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.provider.SearchIndexableResource;
 import android.support.v7.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.support.v7.preference.PreferenceCategory;
@@ -33,11 +34,17 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 import com.android.settings.dashboard.SummaryLoader;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Index;
+import com.android.settings.search.Indexable;
+
+import java.util.Arrays;
+import java.util.List;
 
 import static android.provider.Settings.System.NOTIFICATION_LIGHT_PULSE;
 
 public class LightsSettings extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener {
+        Preference.OnPreferenceChangeListener, Indexable {
     private static final String TAG = "ligths_settings";
 
      private boolean mChargingLedsEnabled;
@@ -112,4 +119,18 @@ public class LightsSettings extends SettingsPreferenceFragment implements
         }
     };
 
+    /**
+     * For Search.
+     */
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+        new BaseSearchIndexProvider() {
+
+            @Override
+            public List<SearchIndexableResource> getXmlResourcesToIndex(
+                    Context context, boolean enabled) {
+                final SearchIndexableResource sir = new SearchIndexableResource(context);
+                sir.xmlResId = R.xml.lights_settings;
+                return Arrays.asList(sir);
+            }
+	};
 }
