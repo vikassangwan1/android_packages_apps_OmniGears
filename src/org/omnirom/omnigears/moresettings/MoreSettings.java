@@ -42,12 +42,14 @@ import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
+import org.omnirom.omnigears.TelephonyUtils;
 
 import java.util.List;
 import java.util.ArrayList;
 
 public class MoreSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener, Indexable {
     private static final String TAG = "MoreSettings";
+    private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String KEY_SHOW_DASHBOARD_COLUMNS = "show_dashboard_columns";
     private static final String KEY_HIDE_DASHBOARD_SUMMARY = "hide_dashboard_summary";
     private static final String KEY_SCREEN_OFF_ANIMATION = "screen_off_animation";
@@ -64,6 +66,8 @@ public class MoreSettings extends SettingsPreferenceFragment implements OnPrefer
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.more_settings);
+
+        final PreferenceScreen prefSet = getPreferenceScreen();
 
         mAppPreferences = getActivity().getSharedPreferences(SettingsActivity.APP_PREFERENCES_NAME,
                 Context.MODE_PRIVATE);
@@ -97,6 +101,11 @@ public class MoreSettings extends SettingsPreferenceFragment implements OnPrefer
         mScreenOffAnimation.setValue(Integer.toString(screenOffAnimation));
         mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
         mScreenOffAnimation.setOnPreferenceChangeListener(this);
+
+        PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
+        if (!TelephonyUtils.isVoiceCapable(getActivity())) {
+            prefSet.removePreference(incallVibCategory);
+        }
     }
 
     @Override

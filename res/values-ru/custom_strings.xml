@@ -739,4 +739,9 @@
   <string name="lockscreen_items_aod_info_title">Эта настройка так же применяется к активному экрану</string>
   <string name="system_proxi_check_enabled_title">Проверка приближения</string>
   <string name="system_proxi_check_enabled_summary">Проверять датчик приближения перед началом работы с кнопками питания и громкости</string>
+  <!-- Incall vibrate options -->
+  <string name="incall_vibration_category">Параметры вибрации во время разговора</string>
+  <string name="incall_vibrate_connect_title">Вибрировать при соединении</string>
+  <string name="incall_vibrate_call_wait_title">Вибрировать при ожидании</string>
+  <string name="incall_vibrate_disconnect_title">Вибрировать при отключении</string>
 </resources>
