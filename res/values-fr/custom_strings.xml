@@ -73,7 +73,9 @@
   <string name="button_home_answers_call_title">Répondre à l\'appel</string>
   <string name="button_home_answers_call_summary">Un appui sur le bouton Accueil répondra à l\'appel entrant</string>
   <string name="button_other_title">Autre</string>
+  <string name="keys_action_app_switch_card">AOSP (Empiler)</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
+  <string name="keys_action_app_switch_grid">AOSP (Liste)</string>
   <string name="button_back_kill_enable_title">Tuer l\'application avec la touche retour</string>
   <string name="button_back_kill_enable_summary">Tuer l\'application avec un appui long sur le bouton Retour</string>
   <string name="button_back_kill_timeout_title">Délai avant de tuer l\'application</string>
@@ -255,7 +257,7 @@
   <string name="recents_search_bar_title">Afficher la barre de recherche</string>
   <string name="recents_fullscreen_title">Plein écran</string>
   <string name="weather_title">Météo</string>
-  <string name="weather_config_title">Paramètres de service</string>
+  <string name="weather_config_title">Paramètres du service</string>
   <string name="header_weather_title">Image météo de l\'en-tête</string>
   <string name="header_weather_summary">Activer l\'affichage météo de l\'en-tête sur le panneau de notification</string>
   <string name="weather_icon_pack_title">Pack d\'icône des conditions météo</string>
@@ -363,6 +365,7 @@
   <!-- Hostname setting -->
   <string name="device_hostname">Nom d’hôte de l’appareil</string>
   <!-- OMS -->
+  <string name="oms_app_title">Substratum theme engine</string>
   <string name="status_bar_ime_notification_title">Afficher la notification du mode de saisie</string>
   <string name="status_bar_ime_notification_summary">Si la barre de navigation n\'est pas disponible</string>
   <string name="navigation_bar_ime_button_title">Afficher le bouton du mode de saisie dans la barre de navigation</string>
@@ -416,7 +419,12 @@
   <string name="system_category">Système</string>
   <string name="custom_wall_browse_title">Fonds d\'écran «Omni»</string>
   <string name="custom_wall_browse_summary">Parcourir et définir les Fonds d\'écran siglé Omni</string>
+  <string name="show_cpu_title">Afficher les infos CPU</string>
+  <string name="show_cpu_summary">Affiche les stats et les ressources utilisées par le CPU</string>
+  <string name="headset_plugged_notification_title">Notification de connexion des écouteurs</string>
+  <string name="headset_plugged_notification_summary">Affiche une notification lorsque des écouteurs filaires sont connectés</string>
   <!-- Display : Rotation -->
+  <string name="category_display">Affichage</string>
   <string name="display_rotation_title">Rotation</string>
   <string name="display_rotation_disabled">Désactivée</string>
   <string name="display_rotation_unit">degrés</string>

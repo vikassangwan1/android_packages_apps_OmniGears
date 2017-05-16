@@ -73,7 +73,9 @@
   <string name="button_home_answers_call_title">Tlačítko příjmu volání</string>
   <string name="button_home_answers_call_summary">Tlačítko Domů zvedne příchozí hovor</string>
   <string name="button_other_title">Ostatní</string>
+  <string name="keys_action_app_switch_card">AOSP (zásobník)</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
+  <string name="keys_action_app_switch_grid">AOSP (mřížka)</string>
   <string name="button_back_kill_enable_title">Vynucené ukončení aplikace tlačítkem Zpět</string>
   <string name="button_back_kill_enable_summary">Ukončit aplikaci v popředí dlouhým podržením tlačítka zpět</string>
   <string name="button_back_kill_timeout_title">Časový limit ukončení aplikace</string>
@@ -196,6 +198,7 @@
   <string name="lockscreen_clock_color_title">Barva data a času</string>
   <string name="lockscreen_clock_size_title">Velikost času</string>
   <string name="lockscreen_clock_enable_title">Zapnout</string>
+  <string name="lockscreen_clock_enable_summary">Hodiny budou zobrazeny ve stavové liště, pokud je zakázáno</string>
   <string name="lockscreen_clock_shadow_title">Stínování</string>
   <string name="lockscreen_shortcuts_title">Vlastní zkratky aplikací</string>
   <string name="lockscreen_shortcuts_summary">Ikony aplikací se zobrazí na zamčeném displeji pro rychlejší přístup. Skrytí dlouhým stiskem.</string>
@@ -203,6 +206,7 @@
   <string name="lockscreen_shortcut_apps_title">Zástupci</string>
   <string name="lockscreen_shortcut_add">Přidat\u2026</string>
   <string name="lockscreen_hide_indicator_display_title">Skrýt dolní stavový text</string>
+  <string name="lockscreen_hide_indicator_display_summary">Skrýt informace o nabíjení a tipy odemknutí</string>
   <string name="lockscreen_camera_shortcut_enable_title">Zobrazit zástupce fotoaparátu</string>
   <string name="lockscreen_camera_shortcut_enable_summary">Viditelnost závisí na nastavení systému</string>
   <string name="lockscreen_left_shortcut_enable_title">Zobrazit zástupce vytáčení nebo hlasového asistenta</string>
@@ -257,6 +261,7 @@
   <string name="header_weather_title">Zobrazení počasí v záhlaví</string>
   <string name="header_weather_summary">Povolí zobrazení počasí v záhlaví na panelu upozornění</string>
   <string name="weather_icon_pack_title">Balík ikon počasí</string>
+  <string name="weather_icon_pack_note">Poznámka\u003a nové balíčky ikon můžete instalovat z Obchodu Play po hledání \"Chronus icons\"</string>
   <!-- Navigationbar settings -->
   <string name="navigationbar_title">Navigační lišta</string>
   <!-- Enable Tablet Style navigation bar -->
@@ -290,6 +295,7 @@
   <string name="global_actions_summary">Akce v nabídce tlačítka Vypnout</string>
   <string name="global_actions_header">Některé akce jsou viditelné v závislosti na nastavení nebo pouze v případě, že zařízení je odemčené</string>
   <string name="global_actions_anim">Vzhled</string>
+  <string name="global_actions_advanced_reboot_summary">Zobrazit další možnosti v nabídce restartu</string>
   <string name="global_actions_advanced_reboot_title">Povolit rozšířené restartování</string>
   <string name="font_sample_text">11:57</string>
   <string name="screenshot_crop_and_share_title">Oříznout snímek displeje &amp; sdílet</string>
@@ -334,6 +340,8 @@
   <string name="pulse_speed_slow">Pomalu</string>
   <string name="pulse_speed_very_slow">Velmi pomalu</string>
   <!-- Lights settings screen, notification light settings -->
+  <string name="omni_battery_light_settings">LED oznámení baterie</string>
+  <string name="omni_notification_light_settings">LED oznámení aplikací</string>
   <string name="omni_leds">LED světla</string>
   <string name="omni_lights_title">Notifikační LED</string>
   <string name="notification_light_title">Podsvětlení upozornění</string>
@@ -349,12 +357,17 @@
   <string name="notification_light_automagic">Automatická barva</string>
   <string name="notification_light_automagic_summary">Automaticky nastaví správnou barvu LED oznámení, pokud aplikace nemá žádné vlastní hodnoty</string>
   <!-- Lights settings, LED notification -->
+  <string name="led_notification_title">Nastavení LED</string>
+  <string name="led_notification_text">Povolit LED upozornění v nastavení</string>
   <string name="led_category_summary_on">Notifikační LED dioda zapnuta</string>
   <string name="led_category_summary_off">Notifikační LED dioda vypnuta</string>
+  <string name="notification_light_no_apps_summary">Chcete-li přidat ovládací prvek aplikace, aktivujte \'%1$s\' a stiskněte \'\u002b\' na panelu nabídky</string>
   <!-- Hostname setting -->
   <string name="device_hostname">Jméno zařízení</string>
   <!-- OMS -->
+  <string name="status_bar_ime_notification_title">Zobrazit upozornění IME</string>
   <string name="status_bar_ime_notification_summary">Není-li navigační panel k dispozici</string>
+  <string name="navigation_bar_ime_button_title">Zobrazit tlačítko IME na navigačním panelu</string>
   <string name="navigation_bar_ime_button_summary">Vstupní přepínač v navigačním panelu</string>
   <!-- Summaries -->
   <string name="bars_brightness_enabled_summary">Ovládání jasu zapnuto</string>

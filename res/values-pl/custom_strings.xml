@@ -73,7 +73,9 @@
   <string name="button_home_answers_call_title">Przycisk odbiera połączenie</string>
   <string name="button_home_answers_call_summary">Naciśnięcie przycisku Home odbierze połączenie</string>
   <string name="button_other_title">Inne</string>
+  <string name="keys_action_app_switch_card">AOSP (stos kart)</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
+  <string name="keys_action_app_switch_grid">AOSP (krata)</string>
   <string name="button_back_kill_enable_title">Zamykanie aplikacji przyciskiem Wstecz</string>
   <string name="button_back_kill_enable_summary">Zamknij pierwszoplanową aplikację przez przytrzymanie przycisku wstecz</string>
   <string name="button_back_kill_timeout_title">Opóźnienie zamknięcia</string>

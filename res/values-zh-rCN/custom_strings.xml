@@ -73,7 +73,9 @@
   <string name="button_home_answers_call_title">按钮接听电话</string>
   <string name="button_home_answers_call_summary">按下主页键将接听来电</string>
   <string name="button_other_title">其他</string>
+  <string name="keys_action_app_switch_card">AOSP（堆叠）</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
+  <string name="keys_action_app_switch_grid">AOSP（网格）</string>
   <string name="button_back_kill_enable_title">使用返回键强制关闭程序</string>
   <string name="button_back_kill_enable_summary">长按返回键关闭前台所有App</string>
   <string name="button_back_kill_timeout_title">强制关闭程序超时</string>
@@ -259,6 +261,7 @@
   <string name="header_weather_title">标题栏显示天气</string>
   <string name="header_weather_summary">在通知面板标题栏显示天气</string>
   <string name="weather_icon_pack_title">天气状态图标包</string>
+  <string name="weather_icon_pack_note">注意\u003a 您可以安装新的图标包从play商店搜索“Chronus icons”</string>
   <!-- Navigationbar settings -->
   <string name="navigationbar_title">导航栏</string>
   <!-- Enable Tablet Style navigation bar -->
@@ -362,6 +365,9 @@
   <!-- Hostname setting -->
   <string name="device_hostname">设备主机名</string>
   <!-- OMS -->
+  <string name="theming_title">主题</string>
+  <string name="oms_app_title">底层主题引擎</string>
+  <string name="oms_app_summary">开始基础体验</string>
   <string name="status_bar_ime_notification_title">显示输入法通知</string>
   <string name="status_bar_ime_notification_summary">如果导航栏不可用</string>
   <string name="navigation_bar_ime_button_title">显示输入法通知按钮</string>
@@ -377,6 +383,7 @@
   <string name="lockscreen_hide_media_summary">不显示媒体元数据在锁屏壁纸中</string>
   <string name="omni_notification_light_settings_summary">自定义应用的LED通知灯</string>
   <string name="omni_battery_light_settings_summary">自定义电池的LED通知灯</string>
+  <string name="night_mode_title">明亮/黑暗 主题</string>
   <string name="night_mode_summary">%s</string>
   <string name="night_mode_no">亮色</string>
   <string name="night_mode_yes">暗色</string>
@@ -423,6 +430,10 @@
   <string name="system_category">系统</string>
   <string name="custom_wall_browse_title">Omni壁纸</string>
   <string name="custom_wall_browse_summary">浏览和设置Omni壁纸</string>
+  <string name="show_cpu_title">显示 CPU 信息</string>
+  <string name="show_cpu_summary">在屏幕上显示当前 CPU 信息</string>
+  <string name="headset_plugged_notification_title">耳机通知</string>
+  <string name="headset_plugged_notification_summary">当连接有线耳机时显示通知</string>
   <!-- Display : Rotation -->
   <string name="category_display">显示</string>
   <string name="display_rotation_title">旋转</string>

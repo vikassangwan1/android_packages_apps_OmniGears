@@ -18,7 +18,45 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="more_settings_title">OmniGears Daha Çox...</string>
+  <string name="ok">Oldu</string>
+  <string name="advanced">Ətraflı</string>
+  <string name="profiles_add">Əlavə Et...</string>
+  <string name="profile_choose_app">Tətbiq seç</string>
+  <string name="reset">Sıfırla</string>
   <!-- Hardware keys -->
+  <string name="button_keys_title">Klavişlər</string>
+  <string name="keys_bindings_title">Klaviş əməlləri</string>
+  <string name="button_keys_back_title">Geri düyməsi</string>
+  <string name="button_keys_home_title">Ana ekran klavişi</string>
+  <string name="button_keys_menu_title">Menyu klavişi</string>
+  <string name="button_keys_assist_title">Axtarış klavişi</string>
+  <string name="button_keys_appSwitch_title">Tətbiq seçmə klavişi</string>
+  <string name="keys_enable_custom_title">Fərdi əməllər</string>
+  <string name="keys_back_press_title">Geri düyməsi</string>
+  <string name="keys_back_long_press_title">Geri düyməsi (uzun bas)</string>
+  <string name="keys_home_press_title">Ana ekran klavişi</string>
+  <string name="keys_home_long_press_title">Ana ekran klavişi (uzun bas)</string>
+  <string name="keys_home_double_tap_title">Ana ekran klavişi (iki dəfə bas)</string>
+  <string name="keys_menu_press_title">Menyu klavişi</string>
+  <string name="keys_menu_long_press_title">Menyu klavişi (uzun bas)</string>
+  <string name="keys_assist_press_title">Axtarış klavişi</string>
+  <string name="keys_assist_long_press_title">Axtarış klavişi (uzun bas)</string>
+  <string name="keys_app_switch_press_title">Tətbiq seçmə klavişi</string>
+  <string name="keys_app_switch_long_press_title">Tətbiq seçmə klavişi (uzun bas)</string>
+  <string name="keys_action_nothing">Əməl yoxdur</string>
+  <string name="keys_action_menu">Menyunu aç/qapa</string>
+  <string name="keys_action_app_switch">Varsayılan sonuncu tətbiqlər</string>
+  <string name="keys_action_search">Axtarış Köməkçisi</string>
+  <string name="keys_action_voice_search">Səsli axtarış</string>
+  <string name="keys_action_in_app_search">Tətbiq içi axtarış</string>
+  <string name="keys_action_home">Ana ekran düyməsi</string>
+  <string name="keys_action_back">Geri düyməsi</string>
+  <string name="keys_action_last_app">Sonuncu tətbiqə qayıt</string>
+  <string name="keys_action_kill_app">Tətbiqi bağla</string>
+  <string name="keys_action_normal">Normal basma</string>
+  <string name="keys_action_long">Uzun basma</string>
+  <string name="keys_action_double">İki dəfə basma</string>
   <!-- Double tap to sleep -->
   <!-- Doze pulse (ambient display) options -->
   <!-- Swap volume buttons when the screen is rotated -->

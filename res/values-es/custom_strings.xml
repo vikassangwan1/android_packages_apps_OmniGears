@@ -73,7 +73,9 @@
   <string name="button_home_answers_call_title">Botón responderá la llamada</string>
   <string name="button_home_answers_call_summary">Presionar el botón de inicio contestará las llamadas entrantes</string>
   <string name="button_other_title">Otros</string>
+  <string name="keys_action_app_switch_card">AOSP (pila)</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
+  <string name="keys_action_app_switch_grid">AOSP (rejilla)</string>
   <string name="button_back_kill_enable_title">Finalizar aplicación con el botón atrás</string>
   <string name="button_back_kill_enable_summary">Finalizar la aplicación en primer plano dejando pulsado el botón atrás</string>
   <string name="button_back_kill_timeout_title">Tiempo de espera para cerrar aplicación</string>
@@ -363,6 +365,9 @@
   <!-- Hostname setting -->
   <string name="device_hostname">Nombre host del dispositivo</string>
   <!-- OMS -->
+  <string name="theming_title">Tematización</string>
+  <string name="oms_app_title">Motor de temas Substratum</string>
+  <string name="oms_app_summary">Iniciar la experiencia Substratum</string>
   <string name="status_bar_ime_notification_title">Mostrar notificación IME</string>
   <string name="status_bar_ime_notification_summary">Si la barra de navegación no está disponible</string>
   <string name="navigation_bar_ime_button_title">Mostrar botón IME de la barra de navegación</string>
@@ -378,6 +383,7 @@
   <string name="lockscreen_hide_media_summary">No mostrar los medios de comunicación metadatos como fondo de pantalla de bloqueo</string>
   <string name="omni_notification_light_settings_summary">Personalización de notificación led luces para aplicaciones</string>
   <string name="omni_battery_light_settings_summary">Personalización de notificación led luces para batería</string>
+  <string name="night_mode_title">Tema claro/oscuro</string>
   <string name="night_mode_summary">%s</string>
   <string name="night_mode_no">Claro</string>
   <string name="night_mode_yes">Oscuro</string>
@@ -424,6 +430,10 @@
   <string name="system_category">Sistema</string>
   <string name="custom_wall_browse_title">Fondos de pantalla de Omni</string>
   <string name="custom_wall_browse_summary">Buscar y establecer fondos de pantalla de la marca Omni</string>
+  <string name="show_cpu_title">Mostrar información de la CPU</string>
+  <string name="show_cpu_summary">Pantalla superpuesta que muestra información actual de la CPU</string>
+  <string name="headset_plugged_notification_title">Notificación de auricular</string>
+  <string name="headset_plugged_notification_summary">Mostrar notificación al conectar los auriculares por cable</string>
   <!-- Display : Rotation -->
   <string name="category_display">Visualizar</string>
   <string name="display_rotation_title">Rotación</string>

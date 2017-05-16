@@ -73,7 +73,9 @@
   <string name="button_home_answers_call_title">Gomb fogadja a hívást</string>
   <string name="button_home_answers_call_summary">A kezdőlap gomb megnyomásával fogadja a bejövő hívást</string>
   <string name="button_other_title">Egyéb</string>
+  <string name="keys_action_app_switch_card">AOSP (pakli)</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
+  <string name="keys_action_app_switch_grid">AOSP (rács)</string>
   <string name="button_back_kill_enable_title">Alkalmazás bezárás</string>
   <string name="button_back_kill_enable_summary">Előtérben lévő alkalmazás bezárása a vissza gomb hosszú megnyomásával</string>
   <string name="button_back_kill_timeout_title">Alkalmazás bezárás időkorlátja</string>
@@ -363,6 +365,9 @@
   <!-- Hostname setting -->
   <string name="device_hostname">Eszköz elérési neve</string>
   <!-- OMS -->
+  <string name="theming_title">Témák</string>
+  <string name="oms_app_title">Substratum témamotor</string>
+  <string name="oms_app_summary">Substratum felfedezése</string>
   <string name="status_bar_ime_notification_title">IME értesítés megjelenítése</string>
   <string name="status_bar_ime_notification_summary">Ha a navigációs sáv nem elérhető</string>
   <string name="navigation_bar_ime_button_title">IME navigációs sáv gomb megjelenítése</string>
@@ -378,6 +383,7 @@
   <string name="lockscreen_hide_media_summary">Nem jeleníti meg a média metaadatát háttérképként a zárképernyőn</string>
   <string name="omni_notification_light_settings_summary">Értesítés led testreszabása az alkalmazásokhoz</string>
   <string name="omni_battery_light_settings_summary">Értesítés led testreszabása az akkumulátorhoz</string>
+  <string name="night_mode_title">Világos/Sötét téma</string>
   <string name="night_mode_summary">%s</string>
   <string name="night_mode_no">Világos</string>
   <string name="night_mode_yes">Sötét</string>
@@ -427,6 +433,10 @@
   <string name="system_category">Rendszer</string>
   <string name="custom_wall_browse_title">Omni háttérképek</string>
   <string name="custom_wall_browse_summary">Tallózás és Omni márkájú háttérképek beállítása</string>
+  <string name="show_cpu_title">CPU info megjelenítése</string>
+  <string name="show_cpu_summary">Jelenlegi CPU info mutatása képernyő átfedésben</string>
+  <string name="headset_plugged_notification_title">Fejhallgató értesítés</string>
+  <string name="headset_plugged_notification_summary">Értesítés megjelenítése vezetékes fejhallgató csatlakoztatásakor</string>
   <!-- Display : Rotation -->
   <string name="category_display">Kijelző</string>
   <string name="display_rotation_title">Elforgatás</string>
