@@ -140,6 +140,7 @@
   <string name="batterylight_title">Akku-LED-Einstellungen</string>
   <string name="battery_light_enable">Aktivieren</string>
   <string name="battery_low_pulse_title">Bei schwachem Akku blinken</string>
+  <string name="battery_light_only_full_charge_title">Erst bei voll geladenem Akku leuchten</string>
   <string name="battery_light_list_title">Farben</string>
   <string name="battery_light_low_color_title">Akku schwach</string>
   <string name="battery_light_medium_color_title">Akku wird geladen</string>
