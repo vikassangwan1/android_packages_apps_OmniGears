@@ -74,6 +74,12 @@
                 android:summary="@string/wakelocks_summary"
                 android:fragment="org.omnirom.omnigears.system.Wakelocks" />
 
+            <PreferenceScreen
+                android:key="doze_settings"
+                android:title="@string/doze_settings_title"
+                android:summary="@string/doze_settings_summary"
+                android:fragment="org.omnirom.omnigears.system.DozeSettings" />
+
             <org.omnirom.omnigears.preference.GlobalSettingSwitchPreference
                 android:key="show_cpu"
                 android:title="@string/show_cpu_title"
