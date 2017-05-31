@@ -73,7 +73,9 @@
   <string name="button_home_answers_call_title">Gumb odgovori na klic</string>
   <string name="button_home_answers_call_summary">Pritisk na gumb Domov bo odgovoril na klic</string>
   <string name="button_other_title">Drugo</string>
+  <string name="keys_action_app_switch_card">AOSP (sveženj)</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
+  <string name="keys_action_app_switch_grid">AOSP (mreža)</string>
   <string name="button_back_kill_enable_title">Gumb Nazaj uniči program</string>
   <string name="button_back_kill_enable_summary">Uniči program v ospredju z dolgim pritiskom na gumb Nazaj</string>
   <string name="button_back_kill_timeout_title">Časovna omejitev uničenja programa</string>
@@ -196,12 +198,15 @@
   <string name="lockscreen_clock_color_title">Barva časa in datuma</string>
   <string name="lockscreen_clock_size_title">Velikost časa</string>
   <string name="lockscreen_clock_enable_title">Omogoči</string>
+  <string name="lockscreen_clock_enable_summary">Ura v statusni vrstici bo prikazana</string>
   <string name="lockscreen_clock_shadow_title">Senčenje</string>
   <string name="lockscreen_shortcuts_title">Programske bližnjice po meri</string>
   <string name="lockscreen_shortcuts_summary">Programi, ki so prikazani na zaklenjenem zaslonu za hiter dostop.  Dolg pritisk jih skrije.</string>
   <string name="lockscreen_shortcut_add_dialog_title">Dodaj bližnjico</string>
   <string name="lockscreen_shortcut_apps_title">Bližnjice</string>
   <string name="lockscreen_shortcut_add">Dodaj \u2026</string>
+  <string name="lockscreen_hide_indicator_display_title">Skrij obvestila na dnu</string>
+  <string name="lockscreen_hide_indicator_display_summary">Skrij obvestila o poljnjenju in odklepanju</string>
   <string name="lockscreen_camera_shortcut_enable_title">Prikaži bližnjico fotoaparata</string>
   <string name="lockscreen_camera_shortcut_enable_summary">Vidnost je odvisna od sistemskih nastavitev</string>
   <string name="lockscreen_left_shortcut_enable_title">Prikaži bližnjico klicalnika ali glasovne pomoči</string>
@@ -218,6 +223,8 @@
   <string name="custom_header_provider_title">Ponudnik glav</string>
   <string name="custom_header_browse_title">Brskaj po nameščenih glavah</string>
   <string name="custom_header_browse_summary">Dolg pritisk na katerokoli sliko uporabi statični način</string>
+  <string name="style_enabled_summary">Slika glave po meri je vkl.</string>
+  <string name="style_disabled_summary">Slika glave po meri je izkl.</string>
   <!-- Network traffic -->
   <string name="network_traffic_title">Omrežni promet</string>
   <string name="show_network_traffic_state">Nadzornik prometa vrstice stanja</string>
@@ -254,6 +261,7 @@
   <string name="header_weather_title">Glavni podatki o vremenu</string>
   <string name="header_weather_summary">Omogoči prikaz glavnih podatkov o vremenu na plošči obvestil</string>
   <string name="weather_icon_pack_title">Paket ikon stanja vremena</string>
+  <string name="weather_icon_pack_note">Opomba\u003a Poiščite \"Chronus icons\" v trgovini Play, za dodatne ikone</string>
   <!-- Navigationbar settings -->
   <string name="navigationbar_title">Vrstica za krmarjenje</string>
   <!-- Enable Tablet Style navigation bar -->
@@ -287,6 +295,8 @@
   <string name="global_actions_summary">Dejanja menija gumba za vklop/izklop</string>
   <string name="global_actions_header">Nekatera dejanja so vidna glede na nastavitev ali samo, če je naprava odklenjena</string>
   <string name="global_actions_anim">Videz</string>
+  <string name="global_actions_advanced_reboot_summary">Prikaži več možnosti v meniju zagon</string>
+  <string name="global_actions_advanced_reboot_title">Omogoči napreden zagonski meni</string>
   <string name="font_sample_text">11:57</string>
   <string name="screenshot_crop_and_share_title">Obrezovanje in deljenje zaslonske slike</string>
   <string name="screenshot_crop_and_share_summary">Prikaži okno urejevalnika po zajemu zaslonske slike za nekatera opravila, kot so obrezovanje, shranjevanje ali deljenje</string>
@@ -330,6 +340,10 @@
   <string name="pulse_speed_slow">Počasna</string>
   <string name="pulse_speed_very_slow">Zelo počasna</string>
   <!-- Lights settings screen, notification light settings -->
+  <string name="omni_battery_light_settings">Utrip baterije</string>
+  <string name="omni_notification_light_settings">Utrip aplikacij</string>
+  <string name="omni_leds">LED luči</string>
+  <string name="omni_lights_title">Lučka za obvestila</string>
   <string name="notification_light_title">Lučka za obvestila</string>
   <string name="notificationlight_title">Nastavitve lučke LED za obvestila</string>
   <string name="notification_light_general_title">Splošno</string>
@@ -345,19 +359,29 @@
   <!-- Lights settings, LED notification -->
   <string name="led_notification_title">Nastavitve lučke</string>
   <string name="led_notification_text">Nastavitve omogočajo lučko LED</string>
+  <string name="led_category_summary_on">Lučka za obvestila je VKL.</string>
+  <string name="led_category_summary_off">Lučka za obvestila je IZKL.</string>
   <string name="notification_light_no_apps_summary">Za dodajanja nadzora za posamezni program omogočite \'%1$s\' in pritisnite \'\u002b\' v menijski vrstici</string>
   <!-- Hostname setting -->
   <string name="device_hostname">Gostiteljsko ime naprave</string>
   <!-- OMS -->
+  <string name="theming_title">Izgled</string>
   <string name="status_bar_ime_notification_title">Prikaži obvestilo IME</string>
   <string name="status_bar_ime_notification_summary">Če vrstica za krmarjenje ni na voljo</string>
   <string name="navigation_bar_ime_button_title">Prikaži gumb vrstice za krmarjenje IME</string>
   <string name="navigation_bar_ime_button_summary">Preklopnik vnosa v vrstici za krmarjenje</string>
   <!-- Summaries -->
+  <string name="bars_brightness_enabled_summary">Nadzor svetlosti je VKL.</string>
+  <string name="bars_brightness_disabled_summary">Nadzor svetlosti je IZKL.</string>
+  <string name="bars_dt2s_enabled_summary">DT2S je VKL.</string>
+  <string name="bars_dt2s_disabled_summary">D2TS je IZKL.</string>
   <string name="volume_dialog_headers_title">Glave pogovornega okna za glasnost</string>
   <string name="volume_dialog_headers_summary">Prikaži glave imena pretoka v pogovornem oknu za glasnost</string>
   <string name="lockscreen_hide_media_title">Onemogoči sliko ozadja predstavnosti</string>
   <string name="lockscreen_hide_media_summary">Ne prikaži metapodatkov predstavnosti kot sliko ozadja zaklenjenega zaslona</string>
+  <string name="omni_notification_light_settings_summary">Prilagoditev led luči za obvestila aplikacij</string>
+  <string name="omni_battery_light_settings_summary">Prilagoditev led luči za obvestila baterije</string>
+  <string name="night_mode_title">Svetel/Temen izgled</string>
   <string name="night_mode_summary">%s</string>
   <string name="night_mode_no">Svetla</string>
   <string name="night_mode_yes">Temna</string>
@@ -389,6 +413,9 @@
   <string name="copy_as_text">Kopiraj kot besedilo</string>
   <string name="google_it">Poišči na Googlu</string>
   <string name="app_details">Podrobnosti programa</string>
+  <string name="no_stat_because_reset_state">Pritisnite reset za pričetek zbiranja podatkov o frekvencah</string>
+  <string name="no_stat_because_reset_wakelock">Pritisnite reset za pričetek zbiranja podatkov o budnosti</string>
+  <string name="no_stat_because_plugged">Za pridobivanje statistik o budnosti izklopite napajanje</string>
   <string name="no_states_file_found">Stanj ni bilo mogoče najti. Ali ste prepričani, da je
         vaš telefon združljiv?\n\nČe uporabljate ROM ali jedro po meri,
         poizkusite obvestiti njegovega razvijalca, da datoteke stanj
@@ -404,5 +431,12 @@
   <string name="system_category">Sistem</string>
   <string name="custom_wall_browse_title">Slike ozadja Omni</string>
   <string name="custom_wall_browse_summary">Brskaj in nastavi sliko ozadja blagovne znamke Omni</string>
+  <string name="show_cpu_title">Prikaži frekvence CPE</string>
+  <string name="show_cpu_summary">Prikazuj tren. uporabo CPE-ja z prekrivanjem</string>
+  <string name="headset_plugged_notification_title">Obvestilo o slušalkah</string>
+  <string name="headset_plugged_notification_summary">Prikaži obvestilo, ko so priklopljene slušalke</string>
   <!-- Display : Rotation -->
+  <string name="category_display">Zaslon</string>
+  <string name="display_rotation_title">Obračanje</string>
+  <string name="display_rotation_disabled">Onemogoči</string>
 </resources>

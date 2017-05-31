@@ -293,10 +293,15 @@
   <!-- Notification light dialogs -->
   <!-- Values for the notification light pulse spinners -->
   <!-- Lights settings screen, notification light settings -->
+  <string name="omni_lights_title">Dioda LED powiadomień</string>
   <string name="notification_light_general_title">Ogólne</string>
   <!-- Lights settings, LED notification -->
+  <string name="led_category_summary_on">Dioda LED dla powiadomień jest WŁĄCZONA</string>
+  <string name="led_category_summary_off">Dioda LED dla powiadomień jest WYŁĄCZONA</string>
   <!-- Hostname setting -->
   <!-- OMS -->
   <!-- Summaries -->
+  <string name="bars_brightness_enabled_summary">Regulacja jasności jest WŁĄCZONA</string>
+  <string name="bars_brightness_disabled_summary">Regulacja jasności jest WYŁĄCZONA</string>
   <!-- Display : Rotation -->
 </resources>

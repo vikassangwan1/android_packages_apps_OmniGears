@@ -73,7 +73,9 @@
   <string name="button_home_answers_call_title">Botão atende chamada</string>
   <string name="button_home_answers_call_summary">Pressionar o botão home para atender a chamada recebida</string>
   <string name="button_other_title">Outro</string>
+  <string name="keys_action_app_switch_card">AOSP (Empilhado)</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
+  <string name="keys_action_app_switch_grid">AOSP (grelha)</string>
   <string name="button_back_kill_enable_title">Encerrar aplicação com o botão voltar</string>
   <string name="button_back_kill_enable_summary">Encerrar aplicação de primeiro plano com o botão voltar</string>
   <string name="button_back_kill_timeout_title">Tempo limite para encerrar aplicação</string>
@@ -330,9 +332,32 @@
   <string name="pulse_length_very_short">Muito curto</string>
   <string name="pulse_length_short">Curto</string>
   <string name="pulse_length_normal">Normal</string>
+  <string name="pulse_length_long">Longo</string>
+  <string name="pulse_length_very_long">Muito longo</string>
+  <string name="pulse_speed_very_fast">Muito rápido</string>
+  <string name="pulse_speed_fast">Rápido</string>
+  <string name="pulse_speed_normal">Normal</string>
+  <string name="pulse_speed_slow">Lento</string>
+  <string name="pulse_speed_very_slow">Muito lento</string>
   <!-- Lights settings screen, notification light settings -->
+  <string name="omni_battery_light_settings">Led de notificação da bateria</string>
+  <string name="omni_notification_light_settings">Led de notificação das aplicações</string>
+  <string name="omni_leds">Luzes LED</string>
+  <string name="omni_lights_title">LED de notificação</string>
+  <string name="notification_light_title">Luz de notificação</string>
+  <string name="notificationlight_title">Configuração do LED das notificações</string>
   <string name="notification_light_general_title">Geral</string>
+  <string name="notification_light_applist_title">Aplicações</string>
+  <string name="notification_light_use_custom">Usar valores personalizados</string>
+  <string name="notification_light_default_value">Padrão</string>
+  <string name="notification_light_screen_on">Led com o ecrão activo</string>
+  <string name="notification_light_zen_mode">Led no modo Não Incomodar</string>
+  <string name="notification_light_use_multiple_leds">Leds múltiplos</string>
+  <string name="keywords_lights_brightness_level">diminuir a intensidade do led</string>
+  <string name="notification_light_automagic">Cor automática</string>
+  <string name="notification_light_automagic_summary">Definir automaticamente a cor mais adequada para a notificação led se a aplicação não tem valores personalizados</string>
   <!-- Lights settings, LED notification -->
+  <string name="led_notification_title">Configurações de luz</string>
   <!-- Hostname setting -->
   <!-- OMS -->
   <!-- Summaries -->

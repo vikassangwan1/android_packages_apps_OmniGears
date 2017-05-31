@@ -65,26 +65,44 @@
   <string name="button_volume_wake_disabled_summary">Volumknapp vekking er AV</string>
   <string name="volume_button_music_control_title">Musikk-kontroll</string>
   <string name="volume_button_music_control_summary">Langt trykk på volumknappene bytter spor når skjermen er av</string>
-  <string name="keys_action_sleep">Sovne</string>
+  <string name="keys_action_sleep">Aktiver dvale</string>
   <string name="button_home_wake_title">Knapp-vekking</string>
   <string name="button_home_wake_summary">Trykk på hjemknapp vil vekke enheten</string>
   <string name="button_home_answers_call_summary">Trykk på Hjem-knappen vil besvare innkommende anrop</string>
   <string name="button_other_title">Annet</string>
+  <string name="keys_action_omniswitch_short">OmniSwitch</string>
+  <string name="button_back_kill_enable_title">Avslutt app med tilbakeknappen</string>
+  <string name="button_back_kill_enable_summary">Avslutte aktiv app med langt trykk på tilbakeknappen</string>
+  <string name="button_back_kill_timeout_title">Avslutt app ved tidsavbrudd</string>
   <string name="button_back_kill_timeout_500ms">500 ms</string>
   <string name="button_back_kill_timeout_1000ms">1000 ms</string>
   <string name="button_back_kill_timeout_1500ms">1500 ms</string>
   <!-- Double tap to sleep -->
+  <string name="double_tap_to_sleep_title">Dobbeltrykk for å aktivere dvale</string>
+  <string name="double_tap_to_sleep_summary">Dobbelttrykk på statuslinjen for å sette enheten i dvale</string>
   <!-- Doze pulse (ambient display) options -->
+  <string name="doze_overwrite_value_title">Overskrivingsverdi</string>
+  <string name="doze_overwrite_value_summary">Tillat overskriving av standard med brukerkonfigurasjon</string>
   <!-- Swap volume buttons when the screen is rotated -->
   <!-- Battery light settings  -->
   <!-- Lock screen config -->
+  <string name="daylight_header_pack_title">Topplinje bildepakke</string>
+  <string name="status_bar_custom_header_shadow_title">Topplinje bildeskygge</string>
+  <string name="custom_header_provider_title">Topplinje leverandør</string>
+  <string name="custom_header_browse_title">Bla gjennom topplinjer</string>
   <!-- Network traffic -->
   <!-- statusbar brightness -->
   <!-- Status Bar Activity Indicators -->
+  <string name="status_bar_icon_blacklist_title">Statuslinje ikoner</string>
+  <string name="status_bar_icon_blacklist_summary">Konfigurere hvilke ikoner på statuslinje</string>
+  <string name="header_weather_title">Topplinje se vær</string>
+  <string name="weather_icon_pack_title">Tilstand ikonpakke</string>
+  <string name="weather_icon_pack_note">Merknad\u003a du kan installere nye ikonpakker fra Play Store ved å søke etter \"Chronus ikoner\"</string>
   <!-- Navigationbar settings -->
   <!-- Enable Tablet Style navigation bar -->
   <!-- Dashboard columns -->
   <!-- global acions config -->
+  <string name="global_actions_torch_title">Lommelykt</string>
   <!--<string name="screenshot_crop_behavior_title"></string>
     <string name="screenshot_crop_behavior_summary"></string>-->
   <!-- Power menu Animations  -->
@@ -97,5 +115,7 @@
   <!-- Summaries -->
   <string name="night_mode_title">Lyst/Mørkt tema</string>
   <string name="night_mode_yes">Mørk</string>
+  <string name="deep_sleep_time">Dyp dvale</string>
+  <string name="deep_sleep">"Dyp dvale"</string>
   <!-- Display : Rotation -->
 </resources>

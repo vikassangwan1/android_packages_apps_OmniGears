@@ -365,6 +365,9 @@
   <!-- Hostname setting -->
   <string name="device_hostname">Jméno zařízení</string>
   <!-- OMS -->
+  <string name="theming_title">Motivy</string>
+  <string name="oms_app_title">Prostředí Substratum</string>
+  <string name="oms_app_summary">Spustit prostředí Substratum</string>
   <string name="status_bar_ime_notification_title">Zobrazit upozornění IME</string>
   <string name="status_bar_ime_notification_summary">Není-li navigační panel k dispozici</string>
   <string name="navigation_bar_ime_button_title">Zobrazit tlačítko IME na navigačním panelu</string>
@@ -374,7 +377,13 @@
   <string name="bars_brightness_disabled_summary">Ovládání jasu vypnuto</string>
   <string name="bars_dt2s_enabled_summary">DT2S je zapnuto</string>
   <string name="bars_dt2s_disabled_summary">DT2S je vypnuto</string>
+  <string name="volume_dialog_headers_title">Záhlaví dialogu hlasitosti</string>
+  <string name="volume_dialog_headers_summary">Zobrazit název datového proudu v záhlaví dialogu</string>
   <string name="lockscreen_hide_media_title">Zakázat mediální tapety</string>
+  <string name="lockscreen_hide_media_summary">Nezobrazovat metadata médií na uzamčeném displeji</string>
+  <string name="omni_notification_light_settings_summary">Vlastní nastavení led upozornění pro aplikace</string>
+  <string name="omni_battery_light_settings_summary">Vlastní nastavení led upozornění pro baterii</string>
+  <string name="night_mode_title">Světlý/tmavý motiv</string>
   <string name="night_mode_summary">%s</string>
   <string name="night_mode_no">Světlý</string>
   <string name="night_mode_yes">Tmavý</string>
@@ -385,29 +394,49 @@
   <string name="since_reset">Obnovit výchozí</string>
   <string name="since_unplug">Odpojit</string>
   <string name="other">Aktivita</string>
+  <string name="kernel_wakelocks">Wakelocks jádra</string>
+  <string name="partial_wakelocks">Částečné wakelocks</string>
+  <string name="app_wakelocks">Wakelocks aplikací</string>
   <string name="create_ref">Obnovit výchozí</string>
   <string name="spinner_period_title">Od</string>
   <string name="spinner_type_title">Zobrazit</string>
   <string name="screen_on_time">Obrazovka zapnutá</string>
   <string name="awake_time">Probudit</string>
   <string name="deep_sleep_time">Hluboký spánek</string>
+  <string name="no_kernel_wakelock_file_found">Nenalezen žádný soubor s protokolem /proc/wakelocks nebo /sys/kernel/debug/wakeup_sources.</string>
   <string name="more_line_text">další\u2026</string>
   <string name="state_core_mode">Jádra</string>
+  <string name="kernel_wakelock_time">Wakelocks jádra</string>
+  <string name="user_wakelock_time">Částečné wakelocks</string>
+  <string name="battery_change">Výměna baterie</string>
   <string name="spinner_state_time_title">Čas</string>
   <string name="total_time">Celkem</string>
   <string name="wakelock_time">Wakelocks</string>
   <string name="copy_as_text">Kopírovat jako text</string>
+  <string name="google_it">Google for it</string>
   <string name="app_details">Podrobnosti o aplikaci</string>
+  <string name="no_stat_because_reset_state">Stiskem tlačítka reset začnete sbírat data</string>
+  <string name="no_stat_because_reset_wakelock">Stiskem tlačítka reset začnete sbírat data</string>
+  <string name="no_stat_because_plugged">Odpojte prosím nabíječku, abyste mohli sbírat wakelock data</string>
+  <string name="no_states_file_found">Soubor nenalezen. Je váš telefon
+        kompatibilní?\n\nPokud používáte upravenou ROM nebo jádro, 
+        zkuste kontaktovat vývojáře, proč není soubor s protokolem
+        čitelný.</string>
   <string name="deep_sleep">"Hluboký spánek"</string>
   <string name="mt_refresh">Znovu načíst</string>
   <string name="mt_share">Sdílet</string>
   <string name="mt_reset">Resetovat</string>
+  <string name="time_in_state_title">Stavový čas</string>
   <string name="time_in_state_summary">Zobrazit statistiky frekvence procesoru</string>
   <string name="wakelocks_title">Wakelocks</string>
   <string name="wakelocks_summary">Zobrazit statistiky wakelocks</string>
   <string name="system_category">Systém</string>
   <string name="custom_wall_browse_title">Omni tapety</string>
   <string name="custom_wall_browse_summary">Procházejte a nastavte si Omni značkové tapety</string>
+  <string name="show_cpu_title">Zobrazit informace o CPU</string>
+  <string name="show_cpu_summary">Překrytí displeje zobrazující aktuální informace CPU</string>
+  <string name="headset_plugged_notification_title">Upozornění na připojení headsetu</string>
+  <string name="headset_plugged_notification_summary">Zobrazit upozornění, pokud je připojen drátový headset</string>
   <!-- Display : Rotation -->
   <string name="category_display">Obrazovka</string>
   <string name="display_rotation_title">Rotace</string>
@@ -422,4 +451,5 @@
   <string name="volume_button_force_media_title">Použít hlasitost médií</string>
   <string name="volume_button_force_media_summary">Hlasitost médií bude změněna na výchozí</string>
   <string name="lockscreen_hide_status_bar_title">Skrýt stavový řádek</string>
+  <string name="lockscreen_hide_status_bar_summary">Dotykem na stavový řádek přepnete viditelnost</string>
 </resources>

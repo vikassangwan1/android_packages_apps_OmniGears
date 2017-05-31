@@ -18,6 +18,12 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="more_settings_title">OmniGears Meer...</string>
+  <string name="ok">OK</string>
+  <string name="advanced">Uitgebreid</string>
+  <string name="profiles_add">Voeg toe...</string>
+  <string name="profile_choose_app">Kies app</string>
+  <string name="reset">Wissen</string>
   <!-- Hardware keys -->
   <string name="button_keys_title">Knoppen</string>
   <string name="keys_bindings_title">Knop acties</string>
@@ -56,6 +62,8 @@
   <string name="button_volume_keys_title">Volume</string>
   <string name="button_volume_wake_title">Volumeknop ontwaken</string>
   <string name="button_volume_wake_summary">Maak je apparaat wakker door op de volumeknop te drukken</string>
+  <string name="button_volume_wake_enabled_summary">Volumeknop ontwaken staat AAN</string>
+  <string name="button_volume_wake_disabled_summary">Volumeknop ontwaken staat UIT</string>
   <string name="volume_button_music_control_title">Muziek bediening</string>
   <string name="volume_button_music_control_summary">Volume knoppen lang indrukken om tussen nummers te wisselen als het scherm uit is</string>
   <string name="keys_action_sleep">Slapen</string>
@@ -65,7 +73,9 @@
   <string name="button_home_answers_call_title">Knop beantwoordt oproep</string>
   <string name="button_home_answers_call_summary">Beantwoord een inkomende oproep door op de home-knop te drukken</string>
   <string name="button_other_title">Overig</string>
+  <string name="keys_action_app_switch_card">AOSP (stapel)</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
+  <string name="keys_action_app_switch_grid">AOSP (raster)</string>
   <string name="button_back_kill_enable_title">Terugknop forceert afsluiten</string>
   <string name="button_back_kill_enable_summary">App op de voorgrond afsluiten door de terugknop lang ingedrukt te houden</string>
   <string name="button_back_kill_timeout_title">App geforceert sluiten timeout</string>
@@ -127,6 +137,7 @@
   <string name="swap_volume_buttons_summary">Actie van volumeknoppen aanpassen aan huidige rotatie</string>
   <string name="color_picker_dialog_title">Kleur</string>
   <!-- Battery light settings  -->
+  <string name="batterylight_title">Batterij-LED-instellingen</string>
   <string name="battery_light_enable">Inschakelen</string>
   <string name="battery_low_pulse_title">Knipper indien de batterij bijna leeg is</string>
   <string name="battery_light_list_title">Kleuren</string>
@@ -187,12 +198,15 @@
   <string name="lockscreen_clock_color_title">Kleur van datum en tijd</string>
   <string name="lockscreen_clock_size_title">Tijd grootte</string>
   <string name="lockscreen_clock_enable_title">Inschakelen</string>
+  <string name="lockscreen_clock_enable_summary">Status balk klok wordt getoond indien uitgeschakeld</string>
   <string name="lockscreen_clock_shadow_title">Schaduw</string>
   <string name="lockscreen_shortcuts_title">Aangepaste snelkoppelingen</string>
   <string name="lockscreen_shortcuts_summary">Applicaties weergeven op het vergrendelscherm voor snelle toegang. Lang indrukkem om te verbergen.</string>
   <string name="lockscreen_shortcut_add_dialog_title">Snelkoppeling toevoegen</string>
   <string name="lockscreen_shortcut_apps_title">Snelkoppelingen</string>
   <string name="lockscreen_shortcut_add">Voeg toe\u2026</string>
+  <string name="lockscreen_hide_indicator_display_title">Verberg status tekst onderaan</string>
+  <string name="lockscreen_hide_indicator_display_summary">Informatie over opladen en tips over ontgrendelen verbergen</string>
   <string name="lockscreen_camera_shortcut_enable_title">Toon camera snelkoppeling</string>
   <string name="lockscreen_camera_shortcut_enable_summary">Zichtbaarheid hangt af van systeeminstellingen</string>
   <string name="lockscreen_left_shortcut_enable_title">Weergeef telefoon of voice assist snelkoppeling</string>
@@ -204,6 +218,13 @@
   <string name="status_bar_custom_header_shadow_title">Header image schaduw</string>
   <string name="status_bar_custom_header_shadow_summary">Voor betere zichtbaarheid op heldere beelden</string>
   <string name="unit_percent">\u0025</string>
+  <string name="static_header_provider_title">Statisch</string>
+  <string name="daylight_header_provider_title">Dynamisch</string>
+  <string name="custom_header_provider_title">Header provider</string>
+  <string name="custom_header_browse_title">Bladeren door geïnstalleerde headers</string>
+  <string name="custom_header_browse_summary">Lang indrukken op een afbeelding om te gebruiken voor de statische modus</string>
+  <string name="style_enabled_summary">Aangepaste header afbeelding staat AAN</string>
+  <string name="style_disabled_summary">Aangepaste header afbeelding staat UIT</string>
   <!-- Network traffic -->
   <string name="network_traffic_title">Netwerkverkeer</string>
   <string name="show_network_traffic_state">Dataverkeer weergave in statusbalk</string>
@@ -241,6 +262,7 @@
   <string name="header_weather_summary">Schakel de weergave van het weer in het notificatiepaneel in
 Schakel het tonen van het weer in het notificatiepaneel in</string>
   <string name="weather_icon_pack_title">Weer icon pack</string>
+  <string name="weather_icon_pack_note">Note\u003a u kunt nieuwe icon-packs uit de play store installeren kunt door te zoeken naar \"Chronus icons\"</string>
   <!-- Navigationbar settings -->
   <string name="navigationbar_title">Navigatiebalk</string>
   <!-- Enable Tablet Style navigation bar -->
@@ -273,12 +295,17 @@ Schakel het tonen van het weer in het notificatiepaneel in</string>
   <string name="global_actions_title">Afsluit-menu</string>
   <string name="global_actions_summary">Acties weergeven in het afsluit-menu</string>
   <string name="global_actions_header">Sommige acties zijn weergeven afhankelijk van de instellingen of alleen als het apparaat is ontgrendeld</string>
+  <string name="global_actions_anim">Uiterlijk</string>
+  <string name="global_actions_advanced_reboot_summary">Toon meer opties in het opstart menu</string>
+  <string name="global_actions_advanced_reboot_title">Activeer geavanceerd herstarten</string>
   <string name="font_sample_text">11:57</string>
   <string name="screenshot_crop_and_share_title">Screenshot crop &amp; delen</string>
   <string name="screenshot_crop_and_share_summary">Toon een bewerk scherm na het nemen van een screenshot om deze te kunnen bewerken, opslaan of te delen</string>
   <!--<string name="screenshot_crop_behavior_title"></string>
     <string name="screenshot_crop_behavior_summary"></string>-->
   <string name="lockscreen_qs_disabled_title">Snelle instellingen uitschakelen als apparaat vergrendeld is</string>
+  <string name="lockscreen_qs_disabled_summary">Toegang tot snelle instellingen op het vergrendelscherm is INGESCHAKELD</string>
+  <string name="lockscreen_qs_enabled_summary">Toegang tot snelle instellingen op het vergrendelscherm is UITGESCHAKELD</string>
   <string name="status_bar_quick_qs_pulldown_title">Snel openen</string>
   <string name="status_bar_quick_qs_pulldown_summary">%1$s van statusbalk opent het snelle instellingenpaneel</string>
   <string name="status_bar_quick_qs_pulldown_summary_left">Links</string>
@@ -287,13 +314,57 @@ Schakel het tonen van het weer in het notificatiepaneel in</string>
   <string name="status_bar_quick_qs_pulldown_left">Links</string>
   <string name="status_bar_quick_qs_pulldown_right">Rechts</string>
   <!-- Power menu Animations  -->
+  <string name="power_menu_animation_title">Animatie Powermenu</string>
+  <string name="power_menu_animation_summary">Verander de in/uit animatie van het Powermenu</string>
+  <string name="power_menu_animation_dialog_title">Selecteer Powermenu animatie</string>
+  <string name="power_menu_animation_enter">Omni (standaard)</string>
+  <string name="power_menu_animation_bottom">Onderkant</string>
+  <string name="power_menu_animation_top">Bovenkant</string>
   <!-- Notification light dialogs -->
+  <string name="edit_light_settings">Notificatie-led instellingen</string>
+  <string name="pulse_speed_title">Notificatie-led lengte en snelheid</string>
+  <string name="default_time">Normaal</string>
+  <string name="custom_time">Aangepast</string>
+  <string name="dialog_delete_title">Verwijder</string>
+  <string name="dialog_delete_message">Verwijder geselecteerde item?</string>
   <!-- Values for the notification light pulse spinners -->
+  <string name="pulse_length_always_on">Altijd aan</string>
+  <string name="pulse_length_very_short">Zeer kort</string>
+  <string name="pulse_length_short">Kort</string>
+  <string name="pulse_length_normal">Normaal</string>
+  <string name="pulse_length_long">Lang</string>
+  <string name="pulse_length_very_long">Zeer lang</string>
+  <string name="pulse_speed_very_fast">Zeer snel</string>
+  <string name="pulse_speed_fast">Snel</string>
+  <string name="pulse_speed_normal">Normaal</string>
+  <string name="pulse_speed_slow">Langzaam</string>
+  <string name="pulse_speed_very_slow">Zeer langzaam</string>
   <!-- Lights settings screen, notification light settings -->
+  <string name="omni_battery_light_settings">Accu pulsering</string>
+  <string name="omni_notification_light_settings">Applicatie pulsering</string>
+  <string name="omni_leds">LED-verlichting</string>
+  <string name="omni_lights_title">Notificatie LED</string>
+  <string name="notification_light_title">Notificatie licht</string>
+  <string name="notificationlight_title">Notificatie LED instellingen</string>
   <string name="notification_light_general_title">Algemeen</string>
+  <string name="notification_light_applist_title">Apps</string>
+  <string name="notification_light_use_custom">Gebruik aangepaste waardes</string>
+  <string name="notification_light_default_value">Standaard</string>
+  <string name="notification_light_screen_on">Notificatie-led met scherm aan</string>
+  <string name="notification_light_zen_mode">Oplichten in niet storen modus</string>
+  <string name="notification_light_use_multiple_leds">Meerdere LEDs</string>
+  <string name="keywords_lights_brightness_level">dimmen van helderheid leds</string>
+  <string name="notification_light_automagic">AutoColor</string>
+  <string name="notification_light_automagic_summary">Automatisch een goede kleur geven voor de Led notificatie als de app geen aangepaste waarden heeft</string>
   <!-- Lights settings, LED notification -->
+  <string name="led_notification_title">Lichtinstellingen</string>
+  <string name="led_notification_text">LED-verlichting ingeschakeld door instellingen</string>
+  <string name="led_category_summary_on">Notificatie LED is AAN</string>
+  <string name="led_category_summary_off">Notificatie LED is UIT</string>
   <!-- Hostname setting -->
   <!-- OMS -->
   <!-- Summaries -->
+  <string name="google_it">Google er naar</string>
+  <string name="app_details">App informatie</string>
   <!-- Display : Rotation -->
 </resources>
