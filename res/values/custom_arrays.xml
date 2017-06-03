@@ -371,6 +371,7 @@
         <item>max_temp_app_whitelist_duration</item>
         <item>mms_temp_app_whitelist_duration</item>
         <item>sms_temp_app_whitelist_duration</item>
+        <item>notification_whitelist_duration</item>
     </string-array>
 
     <string-array name="idle_config_keys_basic" translatable="false">
@@ -384,8 +385,6 @@
         <item>idle_after_inactive_to</item>
         <item>idle_pending_to</item>
         <item>idle_to</item>
-        <item>min_time_to_alarm</item>
-        <item>max_temp_app_whitelist_duration</item>
     </string-array>
 
     <string-array name="idle_config_desc" translatable="false">
@@ -414,6 +413,7 @@
         <item>@string/DESC_MAX_TEMP_APP_WHITELIST_DURATION</item>
         <item>@string/DESC_MMS_TEMP_APP_WHITELIST_DURATION</item>
         <item>@string/DESC_SMS_TEMP_APP_WHITELIST_DURATION</item>
+        <item>@string/DESC_KEY_NOTIFICATION_WHITELIST_DURATION</item>
     </string-array>
 
     <string-array name="idle_config_short" translatable="false">
@@ -442,5 +442,6 @@
         <item>@string/SHORT_MAX_TEMP_APP_WHITELIST_DURATION</item>
         <item>@string/SHORT_MMS_TEMP_APP_WHITELIST_DURATION</item>
         <item>@string/SHORT_SMS_TEMP_APP_WHITELIST_DURATION</item>
+        <item>@string/SHORT_KEY_NOTIFICATION_WHITELIST_DURATION</item>
     </string-array>
 </resources>
