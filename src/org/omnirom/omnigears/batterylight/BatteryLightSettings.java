@@ -117,6 +117,9 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
             prefSet.removePreference(prefSet.findPreference("colors_list"));
             resetColors();
         }
+        boolean showOnlyWhenFull = Settings.System.getInt(resolver,
+                Settings.System.BATTERY_LIGHT_ONLY_FULLY_CHARGED, 0) != 0;
+        updateEnablement(showOnlyWhenFull);
     }
 
     @Override
@@ -229,20 +232,25 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
         } else if (preference == mOnlyFullPref) {
             boolean value = (Boolean) objValue;
             // If enabled, disable all but really full color preference.
-            if (mLowColorPref != null) {
-                mLowColorPref.setEnabled(!value);
-            }
-            if (mMediumColorPref != null) {
-                mMediumColorPref.setEnabled(!value);
-            }
-            if (mFullColorPref != null) {
-                mFullColorPref.setEnabled(!value);
-            }
+            updateEnablement(value);
         } else {
             BatteryLightPreference lightPref = (BatteryLightPreference) preference;
             updateValues(lightPref.getKey(), lightPref.getColor());
         }
         return true;
+    }
+
+    private void updateEnablement(boolean showOnlyWhenFull) {
+        // If enabled, disable all but really full color preference.
+        if (mLowColorPref != null) {
+            mLowColorPref.setEnabled(!showOnlyWhenFull);
+        }
+        if (mMediumColorPref != null) {
+            mMediumColorPref.setEnabled(!showOnlyWhenFull);
+        }
+        if (mFullColorPref != null) {
+            mFullColorPref.setEnabled(!showOnlyWhenFull);
+        }
     }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
