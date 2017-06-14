@@ -264,7 +264,7 @@
             android:entryValues="@array/navbar_recents_style_values"
             android:persistent="false"/>
 
-        <org.omnirom.omnigears.preference.SystemCheckBoxPreference
+        <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
             android:key="button_back_kill_enable"
             android:title="@string/button_back_kill_enable_title"
             android:summary="@string/button_back_kill_enable_summary"
