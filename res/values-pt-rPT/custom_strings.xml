@@ -358,9 +358,26 @@
   <string name="notification_light_automagic_summary">Definir automaticamente a cor mais adequada para a notificação led se a aplicação não tem valores personalizados</string>
   <!-- Lights settings, LED notification -->
   <string name="led_notification_title">Configurações de luz</string>
+  <string name="led_notification_text">LED de notificação activado pelas definições</string>
+  <string name="led_category_summary_on">LED de notificação está desligado</string>
+  <string name="led_category_summary_off">LED de notificação está desligado</string>
+  <string name="notification_light_no_apps_summary">Para adicionar controlo por aplicação, activar \'%1$s\' e presssionar \'\u002b\' na barra de menu</string>
   <!-- Hostname setting -->
+  <string name="device_hostname">Hostname do dispositivo</string>
   <!-- OMS -->
+  <string name="theming_title">Temas</string>
+  <string name="oms_app_title">Motor de temas Substratum</string>
+  <string name="oms_app_summary">Iniciar a experiência Substratum</string>
+  <string name="status_bar_ime_notification_title">Mostrar a notificação de teclado</string>
+  <string name="status_bar_ime_notification_summary">Se a barra de navegação não estiver disponível</string>
+  <string name="navigation_bar_ime_button_title">Mostrar o selector de teclado na barra de navegação</string>
+  <string name="navigation_bar_ime_button_summary">Selector de entrada na barra de navegação</string>
   <!-- Summaries -->
+  <string name="bars_brightness_enabled_summary">Controlo de brilho está ligado</string>
+  <string name="bars_brightness_disabled_summary">Controlo de brilho está desligado</string>
+  <string name="bars_dt2s_enabled_summary">DT2S está ligado</string>
+  <string name="bars_dt2s_disabled_summary">DT2S está desligado</string>
+  <string name="volume_dialog_headers_title">Cabeçalhos do diálogos de volume</string>
   <string name="since_unplugged">Desligado da corrente</string>
   <string name="since_reset">Reiniciar</string>
   <string name="since_unplug">Desligar da corrente</string>
@@ -404,4 +421,5 @@
   <string name="custom_wall_browse_title">Papéis de parede Omni</string>
   <string name="custom_wall_browse_summary">Escolher e definir papeis de parede Omni</string>
   <!-- Display : Rotation -->
+  <!-- Doze settings editor -->
 </resources>

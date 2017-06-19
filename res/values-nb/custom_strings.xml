@@ -18,6 +18,7 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="more_settings_title">OmniGears mer...</string>
   <string name="ok">OK</string>
   <string name="advanced">Avansert</string>
   <string name="profiles_add">Legg til...</string>
@@ -70,7 +71,9 @@
   <string name="button_home_wake_summary">Trykk på hjemknapp vil vekke enheten</string>
   <string name="button_home_answers_call_summary">Trykk på Hjem-knappen vil besvare innkommende anrop</string>
   <string name="button_other_title">Annet</string>
+  <string name="keys_action_app_switch_card">AOSP (stakk)</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
+  <string name="keys_action_app_switch_grid">AOSP (rutenett)</string>
   <string name="button_back_kill_enable_title">Avslutt app med tilbakeknappen</string>
   <string name="button_back_kill_enable_summary">Avslutte aktiv app med langt trykk på tilbakeknappen</string>
   <string name="button_back_kill_timeout_title">Avslutt app ved tidsavbrudd</string>
@@ -83,15 +86,71 @@
   <!-- Doze pulse (ambient display) options -->
   <string name="doze_overwrite_value_title">Overskrivingsverdi</string>
   <string name="doze_overwrite_value_summary">Tillat overskriving av standard med brukerkonfigurasjon</string>
+  <string name="doze_list_mode_title">Døse modus</string>
+  <string name="doze_list_mode_summary">Alternativ for å konfigurere døse-modus</string>
+  <string name="doze_pulse_title">Tidsinnstillinger</string>
+  <string name="doze_pulse_duration_visible_title">Synlig varighet</string>
+  <string name="doze_pulse_duration_out_title">Fade ut</string>
+  <string name="doze_shake_title">Risteinnstillinger</string>
+  <string name="doze_shake_mode_title">Ristemodus</string>
+  <string name="doze_shake_mode_summary">Bruk ristesensorverdi for å utløse aktivisering</string>
+  <string name="doze_shake_mode_test_summary">Ønsker du å teste ristesensor?</string>
+  <string name="doze_shake_mode_test_result">Bruke gjeldende verdi?</string>
+  <string name="doze_shake_test">Rist enheten nå</string>
+  <string name="doze_shake_it">Risting oppdaget!</string>
+  <string name="doze_shake_acc_threshold_title">Risteterskel</string>
+  <string name="doze_shake_acc_threshold_summary">Konfigurere ristestyrke for å utløse aktivisering</string>
+  <string name="doze_time_mode_title">Vis klokke og dato</string>
+  <string name="doze_time_mode_summary">Tvinge visningstid uten varsel</string>
+  <string name="twohundred_ms">200 ms</string>
+  <string name="fivehundred_ms">500 ms</string>
+  <string name="one_second">1 s</string>
+  <string name="one_second_default">1 s (standard)</string>
+  <string name="onehalf_second">1.5 s</string>
+  <string name="two_second">2 s</string>
+  <string name="twohalf_second">2.5 s</string>
+  <string name="three_second">3 s</string>
+  <string name="three_second_default">3 s (standard)</string>
+  <string name="threehalf_second">3.5 s</string>
+  <string name="four_second">4 s</string>
+  <string name="fourhalf_second">4.5 s</string>
+  <string name="five_second">5 s</string>
+  <string name="veryeasy_shake">Veldig lett</string>
+  <string name="easy_shake">Lett</string>
+  <string name="medium_shake">Standard</string>
+  <string name="hard_shake">Vanskelig</string>
+  <string name="veryhard_shake">Svært vanskelig</string>
+  <string name="strong_shake">Sterk</string>
+  <string name="fully_mode">Fullmodus</string>
+  <string name="pocket_shake_mode">Lomme og riste</string>
+  <string name="pocket_pulse_mode">Lomme og puls</string>
+  <string name="pocket_only_mode">Lomme</string>
+  <string name="shake_pulse_mode">Riste og puls</string>
+  <string name="pulse_only_mode">Puls (standard)</string>
   <!-- Swap volume buttons when the screen is rotated -->
+  <string name="swap_volume_buttons_title">Tilpass rotasjon</string>
+  <string name="swap_volume_buttons_summary">Juster volumknapper basert på gjeldende rotasjon</string>
   <!-- Battery light settings  -->
+  <string name="led_color_green">Grønn</string>
+  <string name="led_color_red">Rød</string>
+  <string name="led_color_blue">Blå</string>
+  <string name="statusbar_charging_image_title">Ladeindikator</string>
+  <string name="statusbar_category_charging_title">Lader</string>
+  <string name="statusbar_battery_charging_color_title">Farge</string>
+  <string name="unit_sec">sek</string>
+  <string name="button_backlight_enable_title">Aktiver</string>
   <!-- Lock screen config -->
   <string name="daylight_header_pack_title">Topplinje bildepakke</string>
   <string name="status_bar_custom_header_shadow_title">Topplinje bildeskygge</string>
   <string name="custom_header_provider_title">Topplinje leverandør</string>
   <string name="custom_header_browse_title">Bla gjennom topplinjer</string>
   <!-- Network traffic -->
+  <string name="show_network_traffic_500">500 ms</string>
+  <string name="show_network_traffic_1000">1000 ms</string>
+  <string name="show_network_traffic_1500">1500 ms</string>
+  <string name="show_network_traffic_2000">2000 ms</string>
   <!-- statusbar brightness -->
+  <string name="status_bar_brightness_control_title">Lysstyrkekontroll</string>
   <!-- Status Bar Activity Indicators -->
   <string name="status_bar_icon_blacklist_title">Statuslinje ikoner</string>
   <string name="status_bar_icon_blacklist_summary">Konfigurere hvilke ikoner på statuslinje</string>
@@ -101,6 +160,10 @@
   <!-- Navigationbar settings -->
   <!-- Enable Tablet Style navigation bar -->
   <!-- Dashboard columns -->
+  <string name="dashboard_columns_two">2</string>
+  <string name="dashboard_columns_tablet_default">Standard</string>
+  <string name="dashboard_columns_three">3</string>
+  <string name="dashboard_columns_four">4</string>
   <!-- global acions config -->
   <string name="global_actions_torch_title">Lommelykt</string>
   <!--<string name="screenshot_crop_behavior_title"></string>
@@ -118,4 +181,5 @@
   <string name="deep_sleep_time">Dyp dvale</string>
   <string name="deep_sleep">"Dyp dvale"</string>
   <!-- Display : Rotation -->
+  <!-- Doze settings editor -->
 </resources>

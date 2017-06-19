@@ -436,4 +436,14 @@
   <string name="display_lockscreen_rotation_title">Écran de verrouillage</string>
   <string name="lockscreen_hide_status_bar_title">Masquer la barre d\'État</string>
   <string name="lockscreen_hide_status_bar_summary">Toucher la barre d\'état pour le faire apparaitre ou disparaitre</string>
+  <!-- Doze settings editor -->
+  <string name="action_restoredefault">Rétablir les paramètres par défaut</string>
+  <string name="action_profile">Profils</string>
+  <string name="action_save_as_profile">Enregistrer en tant que profil</string>
+  <string name="delete_profile">Supprimer le profil</string>
+  <string name="profile_name">Nom</string>
+  <string name="string_seconds">secondes</string>
+  <string name="string_default">Par défaut</string>
+  <string name="action_filter">Filtre</string>
+  <string name="DESC_INACTIVE_TIMEOUT">C\'est le temps, après un délai d\'inactivité, à partir duquel on commence à vérifier le capteur de mouvement pour déterminer si l\'appareil n\'est pas porté et est immobile. Nous ne le faisons pas immédiatement après un temps d\'inactivité car nous ne voulons pas continuer à utiliser le capteur de mouvement à chaque fois que l\'écran s\'éteint</string>
 </resources>

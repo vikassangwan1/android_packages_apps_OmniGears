@@ -449,4 +449,5 @@
   <string name="volume_button_force_media_summary">El volumen de los medios se cambiará por defecto</string>
   <string name="lockscreen_hide_status_bar_title">Ocultar la barra de estado</string>
   <string name="lockscreen_hide_status_bar_summary">Toca la barra de estado para cambiar la visibilidad</string>
+  <!-- Doze settings editor -->
 </resources>

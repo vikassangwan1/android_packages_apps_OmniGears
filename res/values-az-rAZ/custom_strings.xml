@@ -309,4 +309,9 @@
   <string name="display_rotation_180_title">180 dərəcə</string>
   <string name="display_rotation_270_title">270 dərəcə</string>
   <string name="display_lockscreen_rotation_title">Kilid ekranı</string>
+  <!-- Doze settings editor -->
+  <string name="profile_name">Ad</string>
+  <string name="string_seconds">saniyələr</string>
+  <string name="string_default">Standart</string>
+  <string name="action_filter">Filtr</string>
 </resources>

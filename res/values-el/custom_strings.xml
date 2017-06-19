@@ -18,6 +18,11 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="ok">Εντάξει</string>
+  <string name="advanced">Σύνθετες επιλογές</string>
+  <string name="profiles_add">Προσθήκη...</string>
+  <string name="profile_choose_app">Επιλογή εφαρμογής</string>
+  <string name="reset">Επαναφορά</string>
   <!-- Hardware keys -->
   <string name="button_keys_title">Πλήκτρα</string>
   <string name="keys_bindings_title">Ενέργειες πλήκτρων</string>
@@ -56,6 +61,8 @@
   <string name="button_volume_keys_title">Ένταση ήχου</string>
   <string name="button_volume_wake_title">Ενεργοποίηση με κουμπί</string>
   <string name="button_volume_wake_summary">Πατώντας ένα κουμπί έντασης, θα ενεργοποιείτε τη συσκευή</string>
+  <string name="volume_button_music_control_title">Πλήκτρα ελέγχου μουσικής</string>
+  <string name="volume_button_music_control_summary">Πιέστε παρατεταμένα τα κουμπιά έντασης για αλλαγή κομματιών όταν η οθόνη είναι ανενεργή</string>
   <string name="keys_action_sleep">Αναστολή λειτουργίας</string>
   <string name="keys_action_omniswitch">Πρόσφατα του OmniSwitch</string>
   <string name="button_home_wake_title">Ενεργοποίηση με κουμπί</string>
@@ -108,4 +115,5 @@
   <!-- OMS -->
   <!-- Summaries -->
   <!-- Display : Rotation -->
+  <!-- Doze settings editor -->
 </resources>

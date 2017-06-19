@@ -386,4 +386,5 @@
   <string name="display_lockscreen_rotation_title">Tela de bloqueio</string>
   <string name="lockscreen_hide_status_bar_title">Ocultar barra de status</string>
   <string name="lockscreen_hide_status_bar_summary">Toque na barra de estado para alternar a visibilidade</string>
+  <!-- Doze settings editor -->
 </resources>

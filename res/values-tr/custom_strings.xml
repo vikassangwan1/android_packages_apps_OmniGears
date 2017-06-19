@@ -18,9 +18,9 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="more_settings_title">OmniGears Daha fazla...</string>
+  <string name="more_settings_title">Daha fazla ayar...</string>
   <string name="ok">Tamam</string>
-  <string name="advanced">Gelişmiş</string>
+  <string name="advanced">İleri seviye</string>
   <string name="profiles_add">Ekle...</string>
   <string name="profile_choose_app">Uygulama seçin</string>
   <string name="reset">Sıfırla</string>
@@ -140,6 +140,7 @@
   <string name="batterylight_title">Pil LED ışığı ayarları</string>
   <string name="battery_light_enable">Etkin</string>
   <string name="battery_low_pulse_title">Pil düşükse yanıp sön</string>
+  <string name="battery_light_only_full_charge_title">Sadece tamamen şarj olduğunda yan</string>
   <string name="battery_light_list_title">Renkler</string>
   <string name="battery_light_low_color_title">Pil düşük</string>
   <string name="battery_light_medium_color_title">Şarj ediliyor</string>
@@ -415,7 +416,7 @@
   <string name="copy_as_text">Metin olarak kopyala</string>
   <string name="google_it">Google\'da ara</string>
   <string name="app_details">Uygulama ayrıntıları</string>
-  <string name="no_stat_because_reset_state">Time in state verisini toplamaya başlamak için sıfırlaya basın</string>
+  <string name="no_stat_because_reset_state">İşlemci faaliyeti verisini toplamaya başlamak için sıfırlaya basın</string>
   <string name="no_stat_because_reset_wakelock">Wakelock verisini toplamaya başlamak için sıfırlaya basın</string>
   <string name="no_stat_because_plugged">Wakelock verisini almak için lütfen telefonu şarjdan çıkarın</string>
   <string name="no_states_file_found">States dosyası bulunmadı. Telefonunuzun uyumlu olduğundan
@@ -426,8 +427,8 @@
   <string name="mt_refresh">Yenile</string>
   <string name="mt_share">Paylaş</string>
   <string name="mt_reset">Sıfırla</string>
-  <string name="time_in_state_title">Time in state</string>
-  <string name="time_in_state_summary">CPU frekans istatistiklerini göster</string>
+  <string name="time_in_state_title">İşlemci faaliyeti</string>
+  <string name="time_in_state_summary">İşlemci frekansı istatistiklerini göster</string>
   <string name="wakelocks_title">Wakelocklar</string>
   <string name="wakelocks_summary">Wakelock istatistiklerini göster</string>
   <string name="system_category">Sistem</string>
@@ -452,4 +453,27 @@
   <string name="volume_button_force_media_summary">Ortam sesi varsayılan olarak değiştirilecektir</string>
   <string name="lockscreen_hide_status_bar_title">Durum çubuğunu gizle</string>
   <string name="lockscreen_hide_status_bar_summary">Görünürlüğü değiştirmek için durum çubuğuna dokunun</string>
+  <string name="status_bar_logo_title">Durum çubuğu logosu</string>
+  <!-- Doze settings editor -->
+  <string name="doze_settings_title">Uyutma ayarları</string>
+  <string name="doze_settings_summary">Uyutma yapılandırması ayarlarını düzenle</string>
+  <string name="action_save">Kaydet</string>
+  <string name="action_restoredefault">Varsayılanlara dön</string>
+  <string name="action_profile">Profiller</string>
+  <string name="action_save_as_profile">Profil olarak kaydet</string>
+  <string name="delete_profile">Profili sil</string>
+  <string name="profile_name">İsim</string>
+  <string name="string_seconds">saniye</string>
+  <string name="string_default">Varsayılan</string>
+  <string name="action_filter">Filtre</string>
+  <string name="doze_settings_applied">Uygulanan ayarlar</string>
+  <string name="DESC_INACTIVE_TIMEOUT">Burası cihazın tek başına bırakılıp bırakılmadığını anlamak için cihaz gayri faal olduktan ne kadar süre sonra hareket sensörüne bakacağımızı belirlediğiniz yerdir. Bunu cihaz gayri faal olduktan sonra derhal yapmıyoruz çünkü hareket sensörünü her ekran kapandığında sürekli çalıştırmak istemiyoruz</string>
+  <string name="DESC_SENSING_TIMEOUT">Bu süre zarfında AnyMotion\'dan bir geri dönüş almazsak, STATE_SENSING durumunu STATE_INACTIVE olarak değiştireceğiz, ve STATE_SENSING durumunda olan AnyMotion geri dönüşlerini görmezden geleceğiz</string>
+  <string name="DESC_LOCATING_TIMEOUT">Bu, beklemede moduna geçmeden önce iyi bir konum düzeltmesi almak için ne kadar süre bekleyeceğimizdir</string>
+  <string name="DESC_MAX_IDLE_TIMEOUT">Kullanmamıza müsaade ettiğiniz azami boşta durma süresi</string>
+  <string name="SHORT_INACTIVE_TIMEOUT">Gayri faal zaman aşımı</string>
+  <string name="SHORT_SENSING_TIMEOUT">Sensör zaman aşımı</string>
+  <string name="SHORT_LOCATING_TIMEOUT">Konumlandırma zaman aşımı</string>
+  <string name="SHORT_LOCATION_ACCURACY">Konum hassasiyeti</string>
+  <string name="SHORT_MOTION_INACTIVE_TIMEOUT">Hareketsizlik zaman aşımı</string>
 </resources>

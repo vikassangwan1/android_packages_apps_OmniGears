@@ -304,4 +304,5 @@
   <string name="bars_brightness_enabled_summary">Regulacja jasności jest WŁĄCZONA</string>
   <string name="bars_brightness_disabled_summary">Regulacja jasności jest WYŁĄCZONA</string>
   <!-- Display : Rotation -->
+  <!-- Doze settings editor -->
 </resources>

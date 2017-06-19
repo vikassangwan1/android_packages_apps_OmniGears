@@ -439,4 +439,5 @@
   <string name="category_display">Zaslon</string>
   <string name="display_rotation_title">Obračanje</string>
   <string name="display_rotation_disabled">Onemogoči</string>
+  <!-- Doze settings editor -->
 </resources>

@@ -452,4 +452,19 @@
   <string name="volume_button_force_media_summary">Hlasitost médií bude změněna na výchozí</string>
   <string name="lockscreen_hide_status_bar_title">Skrýt stavový řádek</string>
   <string name="lockscreen_hide_status_bar_summary">Dotykem na stavový řádek přepnete viditelnost</string>
+  <string name="status_bar_logo_title">Logo stavové lišty</string>
+  <string name="status_bar_logo_summary">Bonus funkce</string>
+  <!-- Doze settings editor -->
+  <string name="doze_settings_title">Nastavení doze</string>
+  <string name="doze_settings_summary">Upravit nastavení konfigurace doze</string>
+  <string name="action_save">Uložit</string>
+  <string name="action_restoredefault">Obnovit výchozí nastavení</string>
+  <string name="action_profile">Profily</string>
+  <string name="action_save_as_profile">Uložit jako profil</string>
+  <string name="delete_profile">Smazat profil</string>
+  <string name="profile_name">Název</string>
+  <string name="string_seconds">sekund</string>
+  <string name="string_default">Výchozí</string>
+  <string name="action_filter">Filtr</string>
+  <string name="doze_settings_applied">Nastavení použito</string>
 </resources>
