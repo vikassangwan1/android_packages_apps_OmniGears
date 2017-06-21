@@ -45,6 +45,7 @@
             android:summary="@string/lockscreen_voice_shortcut_summary"
             android:defaultValue="true"
             android:dependency="lockscreen_left_shortcut_enable" />
+
         <!--
 
         <Preference
@@ -69,6 +70,11 @@
             android:key="lockscreen_qs_disabled"
             android:title="@string/lockscreen_qs_disabled_title"
             android:summary="@string/lockscreen_qs_summary"/>
+
+        <org.omnirom.omnigears.preference.SecureSettingSwitchPreference
+            android:key="lockscreen_power_menu_disabled"
+            android:title="@string/lockscreen_power_menu_disabled_title"
+            android:summary="@string/lockscreen_power_menu_disabled_summary" />
 
         <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
             android:key="lockscreen_hide_media"
