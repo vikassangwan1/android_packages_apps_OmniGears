@@ -26,7 +26,8 @@ Copyright (C) 2012  James Roberts
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:paddingTop="10dp" >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,46 +35,15 @@ Copyright (C) 2012  James Roberts
             android:text="@string/spinner_type_title"/>
         <Spinner
             android:id="@+id/list_type_select"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:gravity="center_vertical" />
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/state_time_select_group"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="@string/spinner_state_time_title"/>
-        <Spinner
-            android:id="@+id/state_time_select"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical" />
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/ui_state_time"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="10dp" >
         <TextView
             android:id="@+id/ui_total_state_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical" />
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-        <TextView
-            android:id="@+id/ui_total_wakelock_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
             android:layout_gravity="center_vertical" />
     </LinearLayout>
 
