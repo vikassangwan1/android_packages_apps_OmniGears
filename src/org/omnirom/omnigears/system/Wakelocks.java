@@ -88,8 +88,8 @@ import com.android.settings.SettingsPreferenceFragment;
 public class Wakelocks extends SettingsPreferenceFragment {
     private static final String TAG = "Wakelocks";
     private static String sRefFilename = "wakelockdata.ref";
-    private static final int MAX_KERNEL_LIST_ITEMS = 10;
-    private static final int MAX_USER_LIST_ITEMS = 7;
+    private static final int MAX_KERNEL_LIST_ITEMS = 15;
+    private static final int MAX_USER_LIST_ITEMS = 15;
     private LinearLayout mStatesView;
     private TextView mTotalStateTime;
     private TextView mKernelWakelockWarning;
@@ -99,8 +99,6 @@ public class Wakelocks extends SettingsPreferenceFragment {
     private BatteryStatsHelper mStatsHelper;
     private long rawUptime;
     private long rawRealtime;
-    private long sleepTime;
-    private int mBatteryLevel;
     private LinearLayout mProgress;
     private ArrayList<WakelockStats> mKernelWakelocks = new ArrayList<WakelockStats>();
     private ArrayList<WakelockStats> mUserWakelocks = new ArrayList<WakelockStats>();
@@ -115,9 +113,6 @@ public class Wakelocks extends SettingsPreferenceFragment {
     private boolean mShowAll;
     private StringBuffer mShareData;
     private PopupMenu mPopup;
-    private long mUnplugBatteryUptime;
-    private long mUnplugBatteryRealtime;
-    private int mUnplugBatteryLevel;
     private boolean mIsOnBattery;
     private List<WakelockAppStats> mAppWakelockList = new ArrayList<WakelockAppStats>();
     private Intent mShareIntent;
@@ -428,8 +423,11 @@ public class Wakelocks extends SettingsPreferenceFragment {
                 long now = System.currentTimeMillis();
                 long bootTime = now - rawRealtime;
                 long refDumpTime = getRefDataDumpTime();
-                if (refDumpTime == -1 || bootTime > refDumpTime) {
-                    // ref data was dumped before a reboot or no ref data at all
+                long timeSinceUnplugged = mBatteryStats.computeBatteryRealtime(
+                        rawRealtime * 1000, BatteryStats.STATS_SINCE_UNPLUGGED) / 1000;
+                long unplugTime = now - timeSinceUnplugged;
+                if (refDumpTime == -1 || bootTime > refDumpTime || unplugTime > refDumpTime) {
+                    // ref data was dumped before a reboot before last unplug or no ref data at all
                     // makes no sense to use require user to create new refpint
                     mKernelWakelockWarning.setText(getResources().getString(
                             R.string.no_stat_because_reset_wakelock));
@@ -449,7 +447,7 @@ public class Wakelocks extends SettingsPreferenceFragment {
                 mKernelWakelockWarning.setVisibility(View.VISIBLE);
             }
 
-            sleepTime = Math.max(totalTimeInSecs - totalUptimeInSecs, 0);
+            long sleepTime = Math.max(totalTimeInSecs - totalUptimeInSecs, 0);
 
             if (mListType == 0 && showStats) {
                 generateTimeRow(getResources().getString(R.string.awake_time),
@@ -1116,9 +1114,9 @@ public class Wakelocks extends SettingsPreferenceFragment {
                     if (partialWakeTimer != null) {
                         long totalTimeMillis = computeWakeLock(
                                 partialWakeTimer, rawRealtime * 1000,
-                                BatteryStats.STATS_SINCE_CHARGED);
+                                BatteryStats.STATS_CURRENT);
                         int count = partialWakeTimer
-                                .getCountLocked(BatteryStats.STATS_SINCE_CHARGED);
+                                .getCountLocked(BatteryStats.STATS_CURRENT);
                         if (totalTimeMillis > 0 && count > 0) {
                             WakelockStats foundEntry = indexList.get(ent
                                     .getKey());
@@ -1151,9 +1149,9 @@ public class Wakelocks extends SettingsPreferenceFragment {
                 BatteryStats.Timer wl = ent.getValue();
 
                 long totalTimeMillis = microToMillis(wl.getTotalTimeLocked(
-                        rawRealtime * 1000, BatteryStats.STATS_SINCE_CHARGED));
+                        rawRealtime * 1000, BatteryStats.STATS_CURRENT));
                 int count = wl
-                        .getCountLocked(BatteryStats.STATS_SINCE_CHARGED);
+                        .getCountLocked(BatteryStats.STATS_CURRENT);
 
                 if (totalTimeMillis > 0 && count > 0) {
                     WakelockStats entry = new WakelockStats(0, ent.getKey(),
@@ -1177,13 +1175,6 @@ public class Wakelocks extends SettingsPreferenceFragment {
 
         rawUptime = SystemClock.uptimeMillis();
         rawRealtime = SystemClock.elapsedRealtime();
-        mBatteryLevel = mBatteryStats.getDischargeCurrentLevel();
-        mUnplugBatteryLevel = mBatteryStats.getDischargeStartLevel();
-
-        mUnplugBatteryUptime = mBatteryStats.computeBatteryUptime(
-                rawUptime * 1000, BatteryStats.STATS_SINCE_CHARGED);
-        mUnplugBatteryRealtime = mBatteryStats.computeBatteryRealtime(
-                rawRealtime * 1000, BatteryStats.STATS_SINCE_CHARGED);
         mIsOnBattery = mBatteryStats.getIsOnBattery();
 
         mShareData.append("\n================\n");
