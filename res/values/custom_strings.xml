@@ -212,7 +212,10 @@
     <string name="omniswitch_dialog_running_new">OmniSwitch is currently not enabled. Please enable it in the app settings.</string>
     <string name="omniswitch_dialog_unavail">OmniSwitch is not installed.</string>
     <string name="omniswitch_title">Recents style</string>
-
+    <string name="long_press_recents_action_title">Long press recents action</string>
+    <string name="long_press_recents_action_split">Toggle splitscreen</string>
+    <string name="long_press_recents_action_lastapp">Toggle last app</string>
+    
     <string name="doze_brightness_level_title">Brightness level</string>
 
     <!-- Lock screen config -->

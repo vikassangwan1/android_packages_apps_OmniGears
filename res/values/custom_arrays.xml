@@ -444,4 +444,14 @@
         <item>@string/SHORT_SMS_TEMP_APP_WHITELIST_DURATION</item>
         <item>@string/SHORT_KEY_NOTIFICATION_WHITELIST_DURATION</item>
     </string-array>
+
+    <string-array name="long_press_recents_action_entries" translatable="false">
+        <item>@string/long_press_recents_action_split</item>
+        <item>@string/long_press_recents_action_lastapp</item>
+    </string-array>
+
+    <string-array name="long_press_recents_action_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
 </resources>

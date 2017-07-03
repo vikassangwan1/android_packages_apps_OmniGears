@@ -96,6 +96,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
     private static final String KEYS_DISABLE_HW_KEY = "hardware_keys_disable";
     private static final String NAVIGATION_BAR_RECENTS_STYLE = "navbar_recents_style";
     private static final String BUTTON_BACK_KILL_TIMEOUT = "button_back_kill_timeout";
+    private static final String LONG_PRESS_RECENTS_ACTION = "long_press_recents_action";
 
     // Available custom actions to perform on a key press.
 //    private static final int ACTION_NOTHING = 0;
@@ -151,6 +152,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
 //    private PreferenceCategory mKeysAssistCategory;
     private ListPreference mNavbarRecentsStyle;
     private ListPreference mBackKillTimeout;
+    private ListPreference mLongPressRecentsAction;
 
     @Override
     protected int getMetricsCategory() {
@@ -471,6 +473,14 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
         mNavbarRecentsStyle.setSummary(mNavbarRecentsStyle.getEntry());
         mNavbarRecentsStyle.setOnPreferenceChangeListener(this);
 
+        mLongPressRecentsAction = (ListPreference) findPreference(LONG_PRESS_RECENTS_ACTION);
+        int longPressRecentsAction = Settings.System.getInt(resolver,
+                Settings.System.BUTTON_LONG_PRESS_RECENTS, 0);
+
+        mLongPressRecentsAction.setValue(Integer.toString(longPressRecentsAction));
+        mLongPressRecentsAction.setSummary(mLongPressRecentsAction.getEntry());
+        mLongPressRecentsAction.setOnPreferenceChangeListener(this);
+
         mBackKillTimeout = (ListPreference) findPreference(BUTTON_BACK_KILL_TIMEOUT);
         final int backKillTimeoutDefault = res.getInteger(com.android.internal.R.integer.config_backKillTimeout);
         final int backKillTimeout = Settings.System.getInt(resolver,
@@ -705,6 +715,12 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
             int index = mBackKillTimeout.findIndexOfValue((String) newValue);
             mBackKillTimeout.setSummary(mBackKillTimeout.getEntries()[index]);
             Settings.System.putInt(getContentResolver(), Settings.System.BUTTON_BACK_KILL_TIMEOUT, value);
+            return true;
+        } else if (preference == mLongPressRecentsAction) {
+            int value = Integer.valueOf((String) newValue);
+            int index = mLongPressRecentsAction.findIndexOfValue((String) newValue);
+            mLongPressRecentsAction.setSummary(mLongPressRecentsAction.getEntries()[index]);
+            Settings.System.putInt(getContentResolver(), Settings.System.BUTTON_LONG_PRESS_RECENTS, value);
             return true;
         }
         return false;
