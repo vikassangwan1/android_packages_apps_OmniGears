@@ -20,6 +20,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceGroup;
 import android.support.v7.preference.PreferenceScreen;
@@ -49,22 +50,30 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
     private static final String MEDIUM_COLOR_PREF = "medium_color";
     private static final String FULL_COLOR_PREF = "full_color";
     private static final String REALLY_FULL_COLOR_PREF = "really_full_color";
+    private static final String KEY_CATEGORY_GENERAL = "general_section";
+    private static final String FAST_COLOR_PREF = "fast_color";
+    private static final String FAST_CHARGING_LED_PREF = "fast_charging_led_enabled";
     private static final String BATTERY_LIGHT_PREF = "battery_light_enabled";
     private static final String BATTERY_PULSE_PREF = "battery_light_pulse";
     private static final String BATTERY_LIGHT_ONLY_FULL_PREF = "battery_light_only_fully_charged";
+    private static final String KEY_CATEGORY_FAST_CHARGE = "fast_color_cat";
+    private static final String KEY_CATEGORY_CHARGE_COLORS = "colors_list";
 
     private boolean mMultiColorLed;
     private SystemSettingSwitchPreference mEnabledPref;
     private SystemSettingSwitchPreference mPulsePref;
     private SystemSettingSwitchPreference mOnlyFullPref;
+    private SystemSettingSwitchPreference mFastBatteryLightEnabledPref;
     private PreferenceGroup mColorPrefs;
     private BatteryLightPreference mLowColorPref;
     private BatteryLightPreference mMediumColorPref;
     private BatteryLightPreference mFullColorPref;
     private BatteryLightPreference mReallyFullColorPref;
+    private BatteryLightPreference mFastColorPref;
     private static final int MENU_RESET = Menu.FIRST;
     private int mLowBatteryWarningLevel;
     private boolean mBatteryLightEnabled;
+    private boolean mFastBatteryLightEnabled;
 
     @Override
     protected int getMetricsCategory() {
@@ -78,7 +87,6 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
 
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getContentResolver();
-
         mLowBatteryWarningLevel = getResources().getInteger(
                 com.android.internal.R.integer.config_lowBatteryWarningLevel);
         mBatteryLightEnabled = getResources().getBoolean(
@@ -113,9 +121,20 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
 
             mReallyFullColorPref = (BatteryLightPreference) prefSet.findPreference(REALLY_FULL_COLOR_PREF);
             mReallyFullColorPref.setOnPreferenceChangeListener(this);
+
+            mFastBatteryLightEnabledPref = (SystemSettingSwitchPreference)prefSet.findPreference(FAST_CHARGING_LED_PREF);
+
+            mFastColorPref = (BatteryLightPreference) prefSet.findPreference(FAST_COLOR_PREF);
+            mFastColorPref.setOnPreferenceChangeListener(this);
+
+            // Does the Device support fast charge ?
+            if (!getResources().getBoolean(com.android.internal.R.bool.config_FastChargingLedSupported)) {
+                prefSet.removePreference(prefSet.findPreference(KEY_CATEGORY_FAST_CHARGE));
+            }
         } else {
-            prefSet.removePreference(prefSet.findPreference("colors_list"));
-            resetColors();
+            prefSet.removePreference(prefSet.findPreference(KEY_CATEGORY_CHARGE_COLORS));
+            // not multi color cant have fast charge
+            prefSet.removePreference(prefSet.findPreference(KEY_CATEGORY_FAST_CHARGE));
         }
         boolean showOnlyWhenFull = Settings.System.getInt(resolver,
                 Settings.System.BATTERY_LIGHT_ONLY_FULLY_CHARGED, 0) != 0;
@@ -155,6 +174,12 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
                     res.getInteger(com.android.internal.R.integer.config_notificationsBatteryFullARGB));
             mReallyFullColorPref.setColor(reallyFullColor);
         }
+
+        if (mFastColorPref != null) {
+            int fastColor = Settings.System.getInt(resolver, Settings.System.FAST_BATTERY_LIGHT_COLOR,
+                    res.getInteger(com.android.internal.R.integer.config_notificationsFastBatteryARGB));
+            mFastColorPref.setColor(fastColor);
+        }
     }
 
     /**
@@ -174,6 +199,8 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(resolver, Settings.System.BATTERY_LIGHT_FULL_COLOR, color);
         } else if (key.equals(REALLY_FULL_COLOR_PREF)) {
             Settings.System.putInt(resolver, Settings.System.BATTERY_LIGHT_REALLY_FULL_COLOR, color);
+        } else if (key.equals(FAST_COLOR_PREF)) {
+            Settings.System.putInt(resolver, Settings.System.FAST_BATTERY_LIGHT_COLOR, color);
         }
     }
 
@@ -208,6 +235,8 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
                 res.getInteger(com.android.internal.R.integer.config_notificationsBatteryFullARGB));
         Settings.System.putInt(resolver, Settings.System.BATTERY_LIGHT_REALLY_FULL_COLOR,
                 res.getInteger(com.android.internal.R.integer.config_notificationsBatteryFullARGB));
+        Settings.System.putInt(resolver, Settings.System.FAST_BATTERY_LIGHT_COLOR,
+                res.getInteger(com.android.internal.R.integer.config_notificationsFastBatteryARGB));
         refreshDefault();
     }
 
@@ -215,7 +244,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
         if (mEnabledPref != null) mEnabledPref.setChecked(true);
         if (mPulsePref != null) mPulsePref.setChecked(false);
         if (mOnlyFullPref != null) mOnlyFullPref.setChecked(false);
-
+        if (mFastBatteryLightEnabledPref != null) mFastBatteryLightEnabledPref.setChecked(false);
         resetColors();
     }
 
@@ -251,6 +280,12 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
         if (mFullColorPref != null) {
             mFullColorPref.setEnabled(!showOnlyWhenFull);
         }
+        if (mFastColorPref != null) {
+            mFastColorPref.setEnabled(!showOnlyWhenFull);
+        }
+        if (mFastBatteryLightEnabledPref != null) {
+            mFastBatteryLightEnabledPref.setEnabled(!showOnlyWhenFull);
+        }
     }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
@@ -281,6 +316,10 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
                         result.add(MEDIUM_COLOR_PREF);
                         result.add(FULL_COLOR_PREF);
                         result.add(REALLY_FULL_COLOR_PREF);
+                    }
+                    if (!res.getBoolean(com.android.internal.R.bool.config_FastChargingLedSupported)) {
+                        result.add(FAST_CHARGING_LED_PREF);
+                        result.add(FAST_COLOR_PREF);
                     }
                     return result;
                 }
