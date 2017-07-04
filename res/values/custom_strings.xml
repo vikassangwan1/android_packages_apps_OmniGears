@@ -215,7 +215,7 @@
     <string name="long_press_recents_action_title">Long press recents action</string>
     <string name="long_press_recents_action_split">Toggle splitscreen</string>
     <string name="long_press_recents_action_lastapp">Toggle last app</string>
-    
+
     <string name="doze_brightness_level_title">Brightness level</string>
 
     <!-- Lock screen config -->
