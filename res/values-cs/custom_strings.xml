@@ -140,6 +140,7 @@
   <string name="batterylight_title">Nastavení LED indikátoru baterie</string>
   <string name="battery_light_enable">Povolit</string>
   <string name="battery_low_pulse_title">Blikat, pokud je baterie téměř vybitá</string>
+  <string name="battery_light_only_full_charge_title">Rozsvítit pouze při plném nabití</string>
   <string name="battery_light_list_title">Barvy</string>
   <string name="battery_light_low_color_title">Vybitá baterie</string>
   <string name="battery_light_medium_color_title">Nabíjení</string>
@@ -167,6 +168,8 @@
   <string name="statusbar_battery_charging_color_enable_title">Barva při nabíjení</string>
   <string name="battery_enable_title">Zobrazit baterii</string>
   <string name="button_backlight_title">Tlačítko podsvícení</string>
+  <string name="button_backlight_on_touch_only_title">Dotyk tlačítka</string>
+  <string name="button_backlight_on_touch_only_summary">Zapnout podsvícení s časovým omezením pouze po stisknutí tlačítka</string>
   <string name="button_timeout_title">Prodleva vypnutí podsvětlení</string>
   <string name="button_timeout_summary">Vypnuto na hodnotě 0</string>
   <string name="button_link_brightness">Odkaz na displej</string>
@@ -306,6 +309,8 @@
   <string name="lockscreen_qs_summary">Zakázat zástupce a rozšířené rychlé nastavení na zabezpečeném zámku displeje</string>
   <string name="lockscreen_qs_disabled_summary">Přístup k rychlému nastavení na zabezpečeném zámku displeje je povolen</string>
   <string name="lockscreen_qs_enabled_summary">Přístup k rychlému nastavení na zabezpečeném zámku displeje je zakázán</string>
+  <string name="lockscreen_power_menu_disabled_title">Zakázat nabídku tlačítka napájení při uzamčení</string>
+  <string name="lockscreen_power_menu_disabled_summary">Zakázat nabídku tlačítka napájení na zabezpečené zamykací obrazovce</string>
   <string name="status_bar_quick_qs_pulldown_title">Rychlé vysunutí nabídky</string>
   <string name="status_bar_quick_qs_pulldown_summary">Tažením dolů z %1$s strany stavového řádku bude vysunuta rychlá nabídka nastavení</string>
   <string name="status_bar_quick_qs_pulldown_summary_left">Vlevo</string>

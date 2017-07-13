@@ -73,7 +73,9 @@
   <string name="button_home_answers_call_title">Botão atende chamada</string>
   <string name="button_home_answers_call_summary">Pressionar o botão home irá responder a chamada recebida</string>
   <string name="button_other_title">Outros</string>
+  <string name="keys_action_app_switch_card">AOSP (Empilhado)</string>
   <string name="keys_action_omniswitch_short">OmniSwitch</string>
+  <string name="keys_action_app_switch_grid">AOSP (grade)</string>
   <string name="button_back_kill_enable_title">Finalizar app com o botão voltar</string>
   <string name="button_back_kill_enable_summary">Encerrar aplicação de primeiro plano com o botão voltar</string>
   <string name="button_back_kill_timeout_title">Tempo limite para encerrar aplicação</string>
@@ -138,6 +140,7 @@
   <string name="batterylight_title">Configurações do LED da bateria</string>
   <string name="battery_light_enable">Ativado</string>
   <string name="battery_low_pulse_title">Pulsar se a bateria estiver baixa</string>
+  <string name="battery_light_only_full_charge_title">Apenas acenda quando estiver completamente carregado</string>
   <string name="battery_light_list_title">Cores</string>
   <string name="battery_light_low_color_title">Bateria fraca</string>
   <string name="battery_light_medium_color_title">Carregando</string>
@@ -165,6 +168,8 @@
   <string name="statusbar_battery_charging_color_enable_title">Cor durante o carregamento</string>
   <string name="battery_enable_title">Mostrar bateria</string>
   <string name="button_backlight_title">Luz de fundo dos botões</string>
+  <string name="button_backlight_on_touch_only_title">Toque do botão</string>
+  <string name="button_backlight_on_touch_only_summary">Ativar retroiluminação com tempo limite apenas no toque do botão</string>
   <string name="button_timeout_title">Tempo limite da luz de fundo</string>
   <string name="button_timeout_summary">Desativado quando o valor é igual a 0</string>
   <string name="button_link_brightness">Ligação para a tela</string>
@@ -196,12 +201,15 @@
   <string name="lockscreen_clock_color_title">Data e hora de cor</string>
   <string name="lockscreen_clock_size_title">Tamanho de tempo</string>
   <string name="lockscreen_clock_enable_title">Ativado</string>
+  <string name="lockscreen_clock_enable_summary">O relógio da barra de status será exibido se desabilitado</string>
   <string name="lockscreen_clock_shadow_title">Sombra</string>
   <string name="lockscreen_shortcuts_title">Atalhos de aplicativo personalizado</string>
   <string name="lockscreen_shortcuts_summary">Aplicativos mostrados na tela do fechamento para acesso rápido. Pressione longamente a esconder.</string>
   <string name="lockscreen_shortcut_add_dialog_title">Adicionar atalho</string>
   <string name="lockscreen_shortcut_apps_title">Atalhos</string>
   <string name="lockscreen_shortcut_add">Adicionar\u2026</string>
+  <string name="lockscreen_hide_indicator_display_title">Ocultar texto de status inferior</string>
+  <string name="lockscreen_hide_indicator_display_summary">Ocultar a informação de carregamento e dicas de desbloqueio</string>
   <string name="lockscreen_camera_shortcut_enable_title">Mostrar o atalho da câmera</string>
   <string name="lockscreen_camera_shortcut_enable_summary">Visibilidade depende da configuração do sistema</string>
   <string name="lockscreen_left_shortcut_enable_title">Mostrar atalho de discagem ou voz assist</string>
@@ -218,6 +226,8 @@
   <string name="custom_header_provider_title">Provedor de cabeçalho</string>
   <string name="custom_header_browse_title">Procurar cabeçalhos instalados</string>
   <string name="custom_header_browse_summary">Toque longo em qualquer imagem para usar para o modo estático</string>
+  <string name="style_enabled_summary">A imagem de cabeçalho personalizada está ativada</string>
+  <string name="style_disabled_summary">A imagem de cabeçalho personalizada está desativada</string>
   <!-- Network traffic -->
   <string name="network_traffic_title">Tráfego da rede</string>
   <string name="show_network_traffic_state">Monitor de tráfego na barra de status</string>
@@ -254,6 +264,7 @@
   <string name="header_weather_title">Tempo de exibição de cabeçalho</string>
   <string name="header_weather_summary">Habilitar exibição de notificação do tempo no painel</string>
   <string name="weather_icon_pack_title">Condição pacote de ícone</string>
+  <string name="weather_icon_pack_note">Nota\u003a para instalar novos pacotes de ícones da play store basta procurar por \"Chronus Icons\"</string>
   <!-- Navigationbar settings -->
   <string name="navigationbar_title">Barra de navegação</string>
   <!-- Enable Tablet Style navigation bar -->
@@ -287,6 +298,8 @@
   <string name="global_actions_summary">Ações mostradas no menu de energia</string>
   <string name="global_actions_header">Algumas ações são apenas visíveis, dependendo da configuração ou somente se o dispositivo é desbloqueado</string>
   <string name="global_actions_anim">Aparência</string>
+  <string name="global_actions_advanced_reboot_summary">Mostrar mais opções no menu reiniciar</string>
+  <string name="global_actions_advanced_reboot_title">Ativar opções avançadas de reinicio</string>
   <string name="font_sample_text">11:57</string>
   <string name="screenshot_crop_and_share_title">Corte e compartilhamento da captura de tela</string>
   <string name="screenshot_crop_and_share_summary">Mostrar um editor depois de capturar uma tela para fazer algumas operações como corte, salvar ou compartilhar</string>
@@ -296,6 +309,8 @@
   <string name="lockscreen_qs_summary">Desativar a expansão de configurações rápida na tela de bloqueio</string>
   <string name="lockscreen_qs_disabled_summary">Acesso rápido de configurações na tela de bloqueio está HABILITADO</string>
   <string name="lockscreen_qs_enabled_summary">Acesso rápido de configurações na tela de bloqueio está DESABILITADO</string>
+  <string name="lockscreen_power_menu_disabled_title">Desativar o menu de energia com o dispositivo bloqueado</string>
+  <string name="lockscreen_power_menu_disabled_summary">Desativar o menu de energia em telas de bloqueio seguras</string>
   <string name="status_bar_quick_qs_pulldown_title">Puxar rápido para baixo</string>
   <string name="status_bar_quick_qs_pulldown_summary">Canto direito da barra de status faz baixar o painel de Configurações Rápidas</string>
   <string name="status_bar_quick_qs_pulldown_summary_left">Esquerda</string>
@@ -330,6 +345,8 @@
   <string name="pulse_speed_slow">Lento</string>
   <string name="pulse_speed_very_slow">Muito lento</string>
   <!-- Lights settings screen, notification light settings -->
+  <string name="omni_battery_light_settings">Luz de notificação da bateria</string>
+  <string name="omni_notification_light_settings">Luz de notificação das aplicações</string>
   <string name="omni_leds">Luzes LED</string>
   <string name="omni_lights_title">Notificação com LED</string>
   <string name="notification_light_title">Luz de notificação</string>
@@ -353,17 +370,52 @@
   <!-- Hostname setting -->
   <string name="device_hostname">Nome do dispositivo</string>
   <!-- OMS -->
+  <string name="theming_title">Temas</string>
+  <string name="oms_app_title">Motor de temas Substratum</string>
+  <string name="oms_app_summary">Iniciar a experiência Substratum</string>
   <string name="status_bar_ime_notification_title">Mostrar notificação</string>
   <string name="status_bar_ime_notification_summary">Se a barra de navegação não estiver disponível</string>
   <string name="navigation_bar_ime_button_title">Mostrar o seletor IME na barra de navegação</string>
   <string name="navigation_bar_ime_button_summary">Mostrar ícone de seleção do método de entrada na barra de navegação</string>
   <!-- Summaries -->
+  <string name="bars_brightness_enabled_summary">Controle de brilho está ligado</string>
+  <string name="bars_brightness_disabled_summary">Controle de brilho está desligado</string>
+  <string name="bars_dt2s_enabled_summary">DT2S está ligado</string>
+  <string name="bars_dt2s_disabled_summary">DT2S está desligado</string>
   <string name="volume_dialog_headers_title">Cabeçalhos da caixa de diálogo de volume</string>
   <string name="volume_dialog_headers_summary">Mostrar rótulo na caixa de diálogo de volume</string>
   <string name="lockscreen_hide_media_title">Desabilitar o papel de parede de mídia</string>
   <string name="lockscreen_hide_media_summary">Não mostrar metadados de mídia como papel de parede na tela de bloqueio</string>
+  <string name="omni_notification_light_settings_summary">Personalização da luz led de notificação para aplicações</string>
+  <string name="omni_battery_light_settings_summary">Personalização da luz led de notificação para bateria</string>
+  <string name="night_mode_title">Tema Escuro/Claro</string>
   <string name="night_mode_summary">%s</string>
+  <string name="night_mode_no">Claro</string>
+  <string name="night_mode_yes">Escuro</string>
+  <string name="state_time_mode">Ligado</string>
+  <string name="since_boot">Inicio</string>
+  <string name="since_charged">Carregado</string>
+  <string name="since_unplugged">Desplugado</string>
+  <string name="since_reset">Redefinir</string>
+  <string name="since_unplug">Desligue</string>
+  <string name="other">Actividade</string>
+  <string name="kernel_wakelocks">Kernel wakelocks</string>
+  <string name="partial_wakelocks">Wakelocks parciais</string>
+  <string name="app_wakelocks">Wakelocks das aplicações</string>
+  <string name="create_ref">Redefinir</string>
+  <string name="spinner_period_title">Desde</string>
+  <string name="spinner_type_title">Mostrar</string>
+  <string name="screen_on_time">Tela ligada</string>
+  <string name="awake_time">Acordado</string>
+  <string name="deep_sleep_time">Sono profundo</string>
+  <string name="no_kernel_wakelock_file_found">Nenhuma estatística de wakelock do kernel foi encontrada nos arquivos /proc/wakelocks ou /sys/kernel/debug/wakeup_sources.</string>
+  <string name="more_line_text">mais\u2026</string>
+  <string name="state_core_mode">Cores</string>
   <string name="kernel_wakelock_time">Kernel wakelocks</string>
+  <string name="user_wakelock_time">Wakelocks parciais</string>
+  <string name="battery_change">Mudança de bateria</string>
+  <string name="spinner_state_time_title">Tempo</string>
+  <string name="total_time">Total</string>
   <string name="wakelock_time">Wakelocks</string>
   <string name="google_it">Buscar no Google</string>
   <string name="app_details">Detalhes da aplicação</string>
@@ -387,4 +439,34 @@
   <string name="lockscreen_hide_status_bar_title">Ocultar barra de status</string>
   <string name="lockscreen_hide_status_bar_summary">Toque na barra de estado para alternar a visibilidade</string>
   <!-- Doze settings editor -->
+  <string name="DESC_LIGHT_PRE_IDLE_TIMEOUT">This is amount of time we will wait from the point where we decide we would like to go idle until we actually do, while waiting for jobs and other current activity to finish</string>
+  <string name="DESC_LIGHT_IDLE_TIMEOUT">This is the initial time that we will run in idle maintenance mode</string>
+  <string name="DESC_LIGHT_IDLE_FACTOR">Scaling factor to apply to the light idle mode time each time we complete a cycle</string>
+  <string name="DESC_LIGHT_MAX_IDLE_TIMEOUT">This is the maximum time we will run in idle maintenence mode</string>
+  <string name="DESC_LIGHT_IDLE_MAINTENANCE_MIN_BUDGET">This is the minimum amount of time we want to make available for maintenance mode when lightly idling</string>
+  <string name="DESC_LIGHT_IDLE_MAINTENANCE_MAX_BUDGET">This is the maximum amount of time we want to make available for maintenance mode when lightly idling</string>
+  <string name="DESC_MIN_LIGHT_MAINTENANCE_TIME">This is the minimum amount of time that we will stay in maintenance mode after a light doze</string>
+  <string name="DESC_MIN_DEEP_MAINTENANCE_TIME">This is the minimum amount of time that we will stay in maintenance mode after a full doze</string>
+  <string name="DESC_KEY_NOTIFICATION_WHITELIST_DURATION">Amount of time we would like to whitelist an app that is handling a notification</string>
+  <string name="SHORT_INACTIVE_TIMEOUT">Inactive timeout</string>
+  <string name="SHORT_SENSING_TIMEOUT">Sensing timeout</string>
+  <string name="SHORT_LOCATING_TIMEOUT">Locating timeout</string>
+  <string name="SHORT_LOCATION_ACCURACY">Precisão da localização</string>
+  <string name="SHORT_MOTION_INACTIVE_TIMEOUT">Motion inactive timeout</string>
+  <string name="SHORT_IDLE_AFTER_INACTIVE_TIMEOUT">Idle after inactive timeout</string>
+  <string name="SHORT_IDLE_FACTOR">Idle factor</string>
+  <string name="SHORT_MIN_TIME_TO_ALARM">Min time to alarm</string>
+  <string name="SHORT_MAX_TEMP_APP_WHITELIST_DURATION">Max temp app whitelist duration</string>
+  <string name="SHORT_MMS_TEMP_APP_WHITELIST_DURATION">Max MMS app whitelist duration</string>
+  <string name="SHORT_SMS_TEMP_APP_WHITELIST_DURATION">Max SMS app whitelist duration</string>
+  <string name="SHORT_LIGHT_IDLE_AFTER_INACTIVE_TIMEOUT">Light idle after inactive timeout</string>
+  <string name="SHORT_LIGHT_PRE_IDLE_TIMEOUT">Light pre idle timeout</string>
+  <string name="SHORT_LIGHT_IDLE_TIMEOUT">Light idle timeout</string>
+  <string name="SHORT_LIGHT_IDLE_FACTOR">Light idle factor</string>
+  <string name="SHORT_LIGHT_MAX_IDLE_TIMEOUT">Max light idle timeout</string>
+  <string name="SHORT_LIGHT_IDLE_MAINTENANCE_MIN_BUDGET">Maintenance mode light idle min timeout</string>
+  <string name="SHORT_LIGHT_IDLE_MAINTENANCE_MAX_BUDGET">Maintenance mode light idle max timeout</string>
+  <string name="SHORT_MIN_LIGHT_MAINTENANCE_TIME">Maintenance mode light doze min timeout</string>
+  <string name="SHORT_MIN_DEEP_MAINTENANCE_TIME">Maintenance mode full doze min timeout</string>
+  <string name="SHORT_KEY_NOTIFICATION_WHITELIST_DURATION">Max notification whitelist duration</string>
 </resources>

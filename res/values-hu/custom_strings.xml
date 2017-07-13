@@ -168,6 +168,8 @@
   <string name="statusbar_battery_charging_color_enable_title">Színek töltés közben</string>
   <string name="battery_enable_title">Akkumulátor megjelenítése</string>
   <string name="button_backlight_title">Gomb háttérvilágítás</string>
+  <string name="button_backlight_on_touch_only_title">Gomb érintése</string>
+  <string name="button_backlight_on_touch_only_summary">Csak a gomb megérintése esetén engedélyezze a háttérvilágítást</string>
   <string name="button_timeout_title">Háttérvilágítás időkorlátja</string>
   <string name="button_timeout_summary">A 0 érték esetén letiltva</string>
   <string name="button_link_brightness">Képernyőhöz csatolás</string>
@@ -307,6 +309,8 @@
   <string name="lockscreen_qs_summary">Parancsikonok és gyorsbeállítások kibontásának tiltása a biztonságos zárképernyőn</string>
   <string name="lockscreen_qs_disabled_summary">Gyorsbeállítások elérése zárképernyőn BEKAPCSOLVA</string>
   <string name="lockscreen_qs_enabled_summary">Gyorsbeállítások elérése zárképernyőn KIKAPCSOLVA</string>
+  <string name="lockscreen_power_menu_disabled_title">Kikapcsoló menü tiltása a zárolt képernyőn</string>
+  <string name="lockscreen_power_menu_disabled_summary">Kikapcsoló menü letiltása a biztonságos zárképernyőn</string>
   <string name="status_bar_quick_qs_pulldown_title">Gyors legördítés</string>
   <string name="status_bar_quick_qs_pulldown_summary">Gyors beállítások megjelenítése az állapotsáv %1$s oldalán történő lehúzásakor</string>
   <string name="status_bar_quick_qs_pulldown_summary_left">Bal</string>
@@ -493,6 +497,7 @@
   <string name="DESC_LIGHT_IDLE_MAINTENANCE_MAX_BUDGET">Ez az a maximális időtartam, amelyet a könnyű üresjáratban a karbantartási üzemmódnak elérhetővé kívánunk tenni</string>
   <string name="DESC_MIN_LIGHT_MAINTENANCE_TIME">Ez az a minimális időtartam, amíg a karbantartási üzemmódban kívánunk maradni egy könnyű doze után</string>
   <string name="DESC_MIN_DEEP_MAINTENANCE_TIME">Ez az a minimális időtartam, amíg a karbantartási üzemmódban kívánunk maradni egy teljes doze után</string>
+  <string name="DESC_KEY_NOTIFICATION_WHITELIST_DURATION">Azon idő mennyisége, ameddig szeretnénk egy alkalmazást engedélyezni, mely az értesítést kezeli</string>
   <string name="SHORT_INACTIVE_TIMEOUT">Inaktív időkorlát</string>
   <string name="SHORT_SENSING_TIMEOUT">Érzékelő időkorlát</string>
   <string name="SHORT_LOCATING_TIMEOUT">Hely időkorlát</string>
@@ -518,4 +523,5 @@
   <string name="SHORT_LIGHT_IDLE_MAINTENANCE_MAX_BUDGET">Karbantartási üzemmód könnyű üresjárat max időkorlát</string>
   <string name="SHORT_MIN_LIGHT_MAINTENANCE_TIME">Karbantartási üzemmód könnyű doze min időkorlát</string>
   <string name="SHORT_MIN_DEEP_MAINTENANCE_TIME">Karbantartási üzemmód teljes doze min időkorlát</string>
+  <string name="SHORT_KEY_NOTIFICATION_WHITELIST_DURATION">Max értesítés engedélyezési időtartam</string>
 </resources>

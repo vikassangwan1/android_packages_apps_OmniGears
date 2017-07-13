@@ -140,6 +140,7 @@
   <string name="batterylight_title">Configurações da luz de bateria</string>
   <string name="battery_light_enable">Activar</string>
   <string name="battery_low_pulse_title">Pulsar se a bateria estiver fraca</string>
+  <string name="battery_light_only_full_charge_title">Ligar apenas quando a bateria estiver completamente carregada</string>
   <string name="battery_light_list_title">Cores</string>
   <string name="battery_light_low_color_title">Bateria fraca</string>
   <string name="battery_light_medium_color_title">A carregar</string>
@@ -167,6 +168,7 @@
   <string name="statusbar_battery_charging_color_enable_title">Cor durante o carregamento</string>
   <string name="battery_enable_title">Mostrar bateria</string>
   <string name="button_backlight_title">Luz de fundo do botão</string>
+  <string name="button_backlight_on_touch_only_title">Toque de botão</string>
   <string name="button_timeout_title">Duração da retroiluminação</string>
   <string name="button_timeout_summary">Desactivado quando o valor é 0</string>
   <string name="button_link_brightness">Interligar com o ecrã</string>
@@ -181,7 +183,7 @@
   <string name="navbar_title">Barra de navegação</string>
   <string name="navbar_recents_style_title">Estilo de Recentes</string>
   <string name="omniswitch_settings">Definições</string>
-  <string name="omniswitch_dialog_running_new">O OmniSwitch não está ativado. Por favor, ative nas configurações da aplicação.</string>
+  <string name="omniswitch_dialog_running_new">O OmniSwitch não está activado. Por favor, active-o nas configurações da aplicação.</string>
   <string name="omniswitch_dialog_unavail">O OmniSwitch não está instalado.</string>
   <string name="omniswitch_title">Estilo de Recentes</string>
   <string name="doze_brightness_level_title">Nível de brilho</string>
@@ -276,8 +278,8 @@
   <string name="dashboard_columns_three">3</string>
   <string name="dashboard_columns_four">4</string>
   <string name="dashboard_colums_resize_title">Ajuste de orientação</string>
-  <string name="dashboard_colums_resize_summary">Ajustar automaticamente a definição das colunas com base na orientação.</string>
-  <string name="dashboard_divider_show_title">Mostrar divisão das colunas</string>
+  <string name="dashboard_colums_resize_summary">Ajustar automaticamente o tamanho das colunas com base na orientação.</string>
+  <string name="dashboard_divider_show_title">Mostrar o divisor de colunas</string>
   <!-- global acions config -->
   <string name="global_actions_power_title">Energia</string>
   <string name="global_actions_reboot_title">Reiniciar</string>
@@ -306,6 +308,8 @@
   <string name="lockscreen_qs_summary">Desactivar atalhes e expansão de configurações rápidas no ecrã de bloqueio</string>
   <string name="lockscreen_qs_disabled_summary">Os mosaicos de configuração no ecrão de bloqueio estão ACTIVADOS</string>
   <string name="lockscreen_qs_enabled_summary">Os mosaicos de configuração no ecrão de bloqueio estão DESACTIVADOS</string>
+  <string name="lockscreen_power_menu_disabled_title">Desactivar o menu de energia com o dispositivo bloqueado</string>
+  <string name="lockscreen_power_menu_disabled_summary">Desactivar o menu de energia se bloqueio de ecrã seguro estiver activado</string>
   <string name="status_bar_quick_qs_pulldown_title">Puxar para baixo</string>
   <string name="status_bar_quick_qs_pulldown_summary">Puxar o canto direito da barra de estado mostra o painel de Configurações Rápidas</string>
   <string name="status_bar_quick_qs_pulldown_summary_left">Esquerdo</string>
@@ -378,6 +382,17 @@
   <string name="bars_dt2s_enabled_summary">DT2S está ligado</string>
   <string name="bars_dt2s_disabled_summary">DT2S está desligado</string>
   <string name="volume_dialog_headers_title">Cabeçalhos do diálogos de volume</string>
+  <string name="volume_dialog_headers_summary">Mostrar nome da faixa na caixa de diálogo de volume</string>
+  <string name="lockscreen_hide_media_title">Desactivar o papel de parede dos álbuns de música</string>
+  <string name="omni_notification_light_settings_summary">Personalização da notificação das luzes led das aplicações</string>
+  <string name="omni_battery_light_settings_summary">Personalização da notificação das luzes led da bateria</string>
+  <string name="night_mode_title">Tema Escuro/Claro</string>
+  <string name="night_mode_summary">%s</string>
+  <string name="night_mode_no">Claro</string>
+  <string name="night_mode_yes">Escuro</string>
+  <string name="state_time_mode">Ligado</string>
+  <string name="since_boot">Boot</string>
+  <string name="since_charged">Carregado</string>
   <string name="since_unplugged">Desligado da corrente</string>
   <string name="since_reset">Reiniciar</string>
   <string name="since_unplug">Desligar da corrente</string>
@@ -420,6 +435,46 @@
   <string name="system_category">Sistema</string>
   <string name="custom_wall_browse_title">Papéis de parede Omni</string>
   <string name="custom_wall_browse_summary">Escolher e definir papeis de parede Omni</string>
+  <string name="show_cpu_title">Mostrar informação do CPU</string>
+  <string name="show_cpu_summary">Informação do CPU em sobreposição</string>
+  <string name="headset_plugged_notification_title">Notificação de auscultadores</string>
+  <string name="headset_plugged_notification_summary">Mostrar notificação quando ligar auscultadores de fio</string>
   <!-- Display : Rotation -->
+  <string name="category_display">Ecrã</string>
+  <string name="display_rotation_title">Rotação</string>
+  <string name="display_rotation_disabled">Desactivado</string>
+  <string name="display_rotation_unit">graus</string>
+  <string name="display_rotation_category_title">Modos de rotação</string>
+  <string name="display_rotation_0_title">0 graus</string>
+  <string name="display_rotation_90_title">90 graus</string>
+  <string name="display_rotation_180_title">180 graus</string>
+  <string name="display_rotation_270_title">270 graus</string>
+  <string name="display_lockscreen_rotation_title">Ecrã de bloqueio</string>
+  <string name="volume_button_force_media_title">Forçar o volume de media</string>
+  <string name="volume_button_force_media_summary">O volume multimedia será modificado por defeito</string>
+  <string name="lockscreen_hide_status_bar_title">Esconder a barra de estado</string>
+  <string name="lockscreen_hide_status_bar_summary">Tocar para mostrar a barra de estado</string>
+  <string name="status_bar_logo_title">Logotipo na barra de estado</string>
+  <string name="status_bar_logo_summary">Um pouco de swag</string>
   <!-- Doze settings editor -->
+  <string name="doze_settings_title">Definições Doze</string>
+  <string name="doze_settings_summary">Editar as configurações do modo doze</string>
+  <string name="action_save">Guardar</string>
+  <string name="action_restoredefault">Restaurar predefinições</string>
+  <string name="action_profile">Perfis</string>
+  <string name="action_save_as_profile">Salvar como perfil</string>
+  <string name="delete_profile">Apagar pefil</string>
+  <string name="profile_name">Nome</string>
+  <string name="string_seconds">segundos</string>
+  <string name="string_default">Padrão</string>
+  <string name="action_filter">Filtro</string>
+  <string name="doze_settings_applied">Configurações aplicadas</string>
+  <string name="DESC_INACTIVE_TIMEOUT">Depois de ficar inactivo, esta é a altura em que começamos a olhar para os sensores de movimento para determinar se o dispositivo está em movimento. Não fazemos isto imediatamente após ele ficar inactivo só porque não queremos estar continuamente a executar os sensores de movimento mal ecrã se desligue</string>
+  <string name="SHORT_INACTIVE_TIMEOUT">Timeout por inactividade</string>
+  <string name="SHORT_SENSING_TIMEOUT">Timeout dos sensores</string>
+  <string name="SHORT_LOCATING_TIMEOUT">Timeout da localização</string>
+  <string name="SHORT_LOCATION_ACCURACY">Precisão da localização</string>
+  <string name="SHORT_MOTION_INACTIVE_TIMEOUT">Timeout dos sensores de movimento</string>
+  <string name="SHORT_IDLE_AFTER_INACTIVE_TIMEOUT">Inactivo após timeout</string>
+  <string name="SHORT_IDLE_PENDING_TIMEOUT">Não mostrar metadados dos albuns de música como papel de parede</string>
 </resources>

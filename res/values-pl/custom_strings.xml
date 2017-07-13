@@ -204,6 +204,7 @@
   <string name="lockscreen_shortcut_add_dialog_title">Dodaj skrót</string>
   <string name="lockscreen_shortcut_apps_title">Skróty</string>
   <string name="lockscreen_shortcut_add">Dodaj\u2026</string>
+  <string name="lockscreen_hide_indicator_display_title">Ukryj tekst stanu</string>
   <string name="lockscreen_camera_shortcut_enable_title">Pokaż skrót aparatu</string>
   <string name="lockscreen_camera_shortcut_enable_summary">Dostępność zależy od konfiguracji systemu</string>
   <string name="lockscreen_left_shortcut_enable_title">Pokaż skrót dialera albo asystenta głosowego</string>
@@ -215,6 +216,13 @@
   <string name="status_bar_custom_header_shadow_title">Cień obrazu nagłówka</string>
   <string name="status_bar_custom_header_shadow_summary">Dla lepszej widoczności na jasnych obrazach</string>
   <string name="unit_percent">\u0025</string>
+  <string name="static_header_provider_title">Statyczny</string>
+  <string name="daylight_header_provider_title">Dynamiczny</string>
+  <string name="custom_header_provider_title">Dostawca nagłówka</string>
+  <string name="custom_header_browse_title">Przeglądaj zainstalowane nagłówki</string>
+  <string name="custom_header_browse_summary">Przytrzymaj dowolny obraz, by użyć go w trybie statycznym</string>
+  <string name="style_enabled_summary">Niestandardowe tło panelu powiadomień jest włączone</string>
+  <string name="style_disabled_summary">Niestandardowe tło panelu powiadomień jest wyłączone</string>
   <!-- Network traffic -->
   <string name="network_traffic_title">Ruch sieciowy</string>
   <string name="show_network_traffic_state">Monitor ruch sieciowego na pasku stanu</string>
@@ -283,21 +291,34 @@
   <string name="global_actions_title">Menu zasilania</string>
   <string name="global_actions_summary">Akcje wyświetlane w menu zasilania</string>
   <string name="global_actions_header">Niektóre akcje są widoczne w zależności od konfiguracji lub tylko wtedy, gdy urządzenie jest odblokowane</string>
+  <string name="global_actions_anim">Wygląd</string>
+  <string name="global_actions_advanced_reboot_summary">Pokaż więcej opcji w menu restartu</string>
+  <string name="global_actions_advanced_reboot_title">Włącz zaawansowany restart</string>
   <string name="font_sample_text">11:57</string>
   <string name="screenshot_crop_and_share_title">Przytnij zrzut ekranu &amp; udostępnij</string>
   <string name="screenshot_crop_and_share_summary">Pokaż okno edytora po wykonaniu zrzutu ekranu, aby wykonać pewnie operacji, takie jak przycinanie, zapisywanie lub udostępnianie</string>
   <!--<string name="screenshot_crop_behavior_title"></string>
     <string name="screenshot_crop_behavior_summary"></string>-->
   <string name="lockscreen_qs_disabled_title">Wyłącz szybkie ustawienia, gdy urządzenie jest zablokowane</string>
+  <string name="lockscreen_power_menu_disabled_summary">Wyłącz menu zasilania na zabezpieczonym ekranie blokady</string>
+  <string name="status_bar_quick_qs_pulldown_title">Szybkie rozwijanie</string>
+  <string name="status_bar_quick_qs_pulldown_summary">%1$s krawędź paska stanu rozwija szybkie ustawienia</string>
+  <string name="status_bar_quick_qs_pulldown_summary_left">Lewa</string>
+  <string name="status_bar_quick_qs_pulldown_summary_right">Prawa</string>
   <!-- Power menu Animations  -->
+  <string name="power_menu_animation_title">Animacja menu zasilania</string>
+  <string name="power_menu_animation_summary">Zmień animację włączenia/wyłączenia menu zasilania</string>
+  <string name="power_menu_animation_dialog_title">Wybierz animację menu zasilania</string>
   <!-- Notification light dialogs -->
   <!-- Values for the notification light pulse spinners -->
+  <string name="pulse_speed_very_fast">Bardzo szybkie</string>
   <!-- Lights settings screen, notification light settings -->
   <string name="omni_lights_title">Dioda LED powiadomień</string>
   <string name="notification_light_general_title">Ogólne</string>
   <!-- Lights settings, LED notification -->
   <string name="led_category_summary_on">Dioda LED dla powiadomień jest WŁĄCZONA</string>
   <string name="led_category_summary_off">Dioda LED dla powiadomień jest WYŁĄCZONA</string>
+  <string name="notification_light_no_apps_summary">Aby dodać kontrolę nad aplikacją, aktywuj \'%1$s\' i naciśnij \'\u002b\' na pasku menu</string>
   <!-- Hostname setting -->
   <!-- OMS -->
   <!-- Summaries -->
