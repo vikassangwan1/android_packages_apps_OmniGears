@@ -97,6 +97,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
     private static final String NAVIGATION_BAR_RECENTS_STYLE = "navbar_recents_style";
     private static final String BUTTON_BACK_KILL_TIMEOUT = "button_back_kill_timeout";
     private static final String LONG_PRESS_RECENTS_ACTION = "long_press_recents_action";
+    private static final String LONG_PRESS_HOME_ACTION = "long_press_home_action";
 
     // Available custom actions to perform on a key press.
 //    private static final int ACTION_NOTHING = 0;
@@ -153,6 +154,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
     private ListPreference mNavbarRecentsStyle;
     private ListPreference mBackKillTimeout;
     private ListPreference mLongPressRecentsAction;
+    private ListPreference mLongPressHomeAction;
 
     @Override
     protected int getMetricsCategory() {
@@ -463,6 +465,15 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
             boolean harwareKeysDisable = Settings.System.getInt(resolver,
                         Settings.System.HARDWARE_KEYS_DISABLE, 0) == 1;
             mDisabkeHWKeys.setChecked(harwareKeysDisable);
+
+            mBackKillTimeout = (ListPreference) findPreference(BUTTON_BACK_KILL_TIMEOUT);
+            final int backKillTimeoutDefault = res.getInteger(com.android.internal.R.integer.config_backKillTimeout);
+            final int backKillTimeout = Settings.System.getInt(resolver,
+                    Settings.System.BUTTON_BACK_KILL_TIMEOUT, backKillTimeoutDefault);
+
+            mBackKillTimeout.setValue(Integer.toString(backKillTimeout));
+            mBackKillTimeout.setSummary(mBackKillTimeout.getEntry());
+            mBackKillTimeout.setOnPreferenceChangeListener(this);
         }
 
         mNavbarRecentsStyle = (ListPreference) findPreference(NAVIGATION_BAR_RECENTS_STYLE);
@@ -481,14 +492,15 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
         mLongPressRecentsAction.setSummary(mLongPressRecentsAction.getEntry());
         mLongPressRecentsAction.setOnPreferenceChangeListener(this);
 
-        mBackKillTimeout = (ListPreference) findPreference(BUTTON_BACK_KILL_TIMEOUT);
-        final int backKillTimeoutDefault = res.getInteger(com.android.internal.R.integer.config_backKillTimeout);
-        final int backKillTimeout = Settings.System.getInt(resolver,
-                Settings.System.BUTTON_BACK_KILL_TIMEOUT, backKillTimeoutDefault);
+        // for navbar devices default is always assist LONG_PRESS_HOME_ASSIST = 2
+        int defaultLongPressOnHomeBehavior = (deviceKeys == 0) ? 2 : res.getInteger(com.android.internal.R.integer.config_longPressOnHomeBehavior);
+        mLongPressHomeAction = (ListPreference) findPreference(LONG_PRESS_HOME_ACTION);
+        int longPressHomeAction = Settings.System.getInt(resolver,
+                Settings.System.BUTTON_LONG_PRESS_HOME, defaultLongPressOnHomeBehavior);
 
-        mBackKillTimeout.setValue(Integer.toString(backKillTimeout));
-        mBackKillTimeout.setSummary(mBackKillTimeout.getEntry());
-        mBackKillTimeout.setOnPreferenceChangeListener(this);
+        mLongPressHomeAction.setValue(Integer.toString(longPressHomeAction));
+        mLongPressHomeAction.setSummary(mLongPressHomeAction.getEntry());
+        mLongPressHomeAction.setOnPreferenceChangeListener(this);
 
 //        final PreferenceCategory headsethookCategory =
 //                (PreferenceCategory) prefScreen.findPreference(CATEGORY_HEADSETHOOK);
@@ -721,6 +733,12 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
             int index = mLongPressRecentsAction.findIndexOfValue((String) newValue);
             mLongPressRecentsAction.setSummary(mLongPressRecentsAction.getEntries()[index]);
             Settings.System.putInt(getContentResolver(), Settings.System.BUTTON_LONG_PRESS_RECENTS, value);
+            return true;
+        } else if (preference == mLongPressHomeAction) {
+            int value = Integer.valueOf((String) newValue);
+            int index = mLongPressHomeAction.findIndexOfValue((String) newValue);
+            mLongPressHomeAction.setSummary(mLongPressHomeAction.getEntries()[index]);
+            Settings.System.putInt(getContentResolver(), Settings.System.BUTTON_LONG_PRESS_HOME, value);
             return true;
         }
         return false;
