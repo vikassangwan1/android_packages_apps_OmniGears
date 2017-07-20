@@ -465,15 +465,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
             boolean harwareKeysDisable = Settings.System.getInt(resolver,
                         Settings.System.HARDWARE_KEYS_DISABLE, 0) == 1;
             mDisabkeHWKeys.setChecked(harwareKeysDisable);
-
-            mBackKillTimeout = (ListPreference) findPreference(BUTTON_BACK_KILL_TIMEOUT);
-            final int backKillTimeoutDefault = res.getInteger(com.android.internal.R.integer.config_backKillTimeout);
-            final int backKillTimeout = Settings.System.getInt(resolver,
-                    Settings.System.BUTTON_BACK_KILL_TIMEOUT, backKillTimeoutDefault);
-
-            mBackKillTimeout.setValue(Integer.toString(backKillTimeout));
-            mBackKillTimeout.setSummary(mBackKillTimeout.getEntry());
-            mBackKillTimeout.setOnPreferenceChangeListener(this);
         }
 
         mNavbarRecentsStyle = (ListPreference) findPreference(NAVIGATION_BAR_RECENTS_STYLE);
@@ -501,6 +492,15 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
         mLongPressHomeAction.setValue(Integer.toString(longPressHomeAction));
         mLongPressHomeAction.setSummary(mLongPressHomeAction.getEntry());
         mLongPressHomeAction.setOnPreferenceChangeListener(this);
+
+        mBackKillTimeout = (ListPreference) findPreference(BUTTON_BACK_KILL_TIMEOUT);
+        final int backKillTimeoutDefault = res.getInteger(com.android.internal.R.integer.config_backKillTimeout);
+        final int backKillTimeout = Settings.System.getInt(resolver,
+                Settings.System.BUTTON_BACK_KILL_TIMEOUT, backKillTimeoutDefault);
+
+        mBackKillTimeout.setValue(Integer.toString(backKillTimeout));
+        mBackKillTimeout.setSummary(mBackKillTimeout.getEntry());
+        mBackKillTimeout.setOnPreferenceChangeListener(this);
 
 //        final PreferenceCategory headsethookCategory =
 //                (PreferenceCategory) prefScreen.findPreference(CATEGORY_HEADSETHOOK);
