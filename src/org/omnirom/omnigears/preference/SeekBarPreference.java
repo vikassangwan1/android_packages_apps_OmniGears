@@ -189,10 +189,16 @@ public class SeekBarPreference extends Preference implements OnSeekBarChangeList
 
     public void setMaxValue(int value) {
         mMaxValue = value;
+        if (mSeekBar != null) {
+            mSeekBar.setMax(mMaxValue - mMinValue);
+        }
     }
 
     public void setMinValue(int value) {
         mMinValue = value;
+        if (mSeekBar != null) {
+            mSeekBar.setMax(mMaxValue - mMinValue);
+        }
     }
 
     @Override
