@@ -28,6 +28,7 @@ import android.provider.SearchIndexableResource;
 import android.util.Log;
 
 import com.android.internal.logging.MetricsProto.MetricsEvent;
+import com.android.internal.util.omni.PackageUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -50,6 +51,14 @@ public class MoreSettings extends SettingsPreferenceFragment implements Indexabl
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.more_settings);
+        // check for disabled logcat app
+        Preference logcatApp = findPreference("logcat_app");
+        if (logcatApp != null) {
+            PreferenceCategory systemPrefs = (PreferenceCategory) findPreference("category_system");
+            if (systemPrefs != null && !PackageUtils.isAvailableApp("org.omnirom.logcat", getActivity())) {
+                systemPrefs.removePreference(logcatApp);
+            }
+        }
     }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
