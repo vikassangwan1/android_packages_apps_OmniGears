@@ -598,4 +598,6 @@
 
     <string name="logcat_app_title">MatLog</string>
     <string name="logcat_app_summary">Start app to collect logs</string>
+    <string name="omni_theme_title">Omni Light/Dark theme</string>
+    <string name="omni_theme_summary">Substratum based theme</string>
 </resources>

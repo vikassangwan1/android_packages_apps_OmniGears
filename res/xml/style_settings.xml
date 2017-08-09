@@ -26,6 +26,16 @@
                 android:title="@string/oms_app_title"
                 android:summary="@string/oms_app_summary"/>
 
+            <PreferenceScreen
+                android:key="omni_theme"
+                android:title="@string/omni_theme_title"
+                android:summary="@string/omni_theme_summary"
+                android:persistent="false" >
+                <intent android:action="android.intent.action.MAIN"
+                        android:targetPackage="org.omnirom.daynight"
+                        android:targetClass="org.omnirom.daynight.OmniSubstratumLauncher" />
+            </PreferenceScreen>
+
             <ListPreference
                 android:key="night_mode"
                 android:title="@string/night_mode_title"

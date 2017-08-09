@@ -46,6 +46,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.internal.util.omni.DeviceUtils;
+import com.android.internal.util.omni.PackageUtils;
 import com.android.settings.Utils;
 import com.android.settings.dashboard.SummaryLoader;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -77,7 +78,8 @@ public class StyleSettings extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
     private static final String KEY_NIGHT_MODE = "night_mode";
     private static final String KEY_OMS_APP = "oms_app";
-
+    private static final String KEY_OMNI_THEME = "omni_theme";
+    private static final String KEY_CATEGORY_THEMING = "category_theming";
 
     private ListPreference mDaylightHeaderPack;
     private SeekBarPreference mHeaderShadow;
@@ -159,6 +161,15 @@ public class StyleSettings extends SettingsPreferenceFragment implements
             mNightModePreference.setOnPreferenceChangeListener(this);
         }
         mOmsApp = (Preference) findPreference(KEY_OMS_APP);
+
+        Preference omniTheme = findPreference(KEY_OMNI_THEME);
+        if (omniTheme != null) {
+            PreferenceCategory themePrefs = (PreferenceCategory) findPreference(KEY_CATEGORY_THEMING);
+            if (themePrefs != null && !PackageUtils.isAvailableApp("org.omnirom.daynight", getActivity())
+                    && !PackageUtils.isAvailableApp("org.omnirom.substratum", getActivity())) {
+                themePrefs.removePreference(omniTheme);
+            }
+        }
     }
 
     @Override
