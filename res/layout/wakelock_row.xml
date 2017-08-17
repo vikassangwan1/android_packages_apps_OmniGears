@@ -36,12 +36,14 @@ Copyright (C) 2012  James Roberts
             android:scrollHorizontally="true"
             android:ellipsize="end"
             android:maxLines="2"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:textColor="?android:attr/textColorPrimary" />
         <TextView
             android:id="@+id/ui_count_text"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_gravity="center_vertical|end" />
+            android:layout_gravity="center_vertical|end"
+            android:textColor="?android:attr/textColorPrimary" />
     </LinearLayout>
     <TextView
         android:id="@+id/ui_more_text"
@@ -50,7 +52,8 @@ Copyright (C) 2012  James Roberts
         android:scrollHorizontally="true"
         android:ellipsize="end"
         android:maxLines="1"
-        android:visibility="gone" />
+        android:visibility="gone"
+        android:textColor="?android:attr/textColorPrimary" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,12 +71,14 @@ Copyright (C) 2012  James Roberts
             android:id="@+id/ui_duration_text"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_gravity="center_vertical" />
+            android:layout_gravity="center_vertical"
+            android:textColor="?android:attr/textColorPrimary" />
         <TextView
             android:id="@+id/ui_percentage_text"
             android:layout_width="35dp"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical|end"
-            android:gravity="end" />
+            android:gravity="end"
+            android:textColor="?android:attr/textColorPrimary" />
     </LinearLayout>
 </LinearLayout>

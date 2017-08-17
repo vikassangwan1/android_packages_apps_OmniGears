@@ -32,10 +32,12 @@ Copyright (C) 2012  James Roberts
         android:scrollHorizontally="true"
         android:ellipsize="end"
         android:maxLines="1"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:textColor="?android:attr/textColorPrimary" />
     <TextView
         android:id="@+id/ui_text_end"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_gravity="center_vertical|end" />
+        android:layout_gravity="center_vertical|end"
+        android:textColor="?android:attr/textColorPrimary" />
 </LinearLayout>
