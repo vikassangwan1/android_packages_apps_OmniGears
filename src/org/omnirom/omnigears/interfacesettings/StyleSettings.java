@@ -148,6 +148,8 @@ public class StyleSettings extends SettingsPreferenceFragment implements
 
         mHeaderBrowse = (PreferenceScreen) findPreference(CUSTOM_HEADER_BROWSE);
         mHeaderBrowse.setEnabled(isBrowseHeaderAvailable());
+        mHeaderBrowse.setTitle(valueIndex == 0 ? R.string.custom_header_browse_title : R.string.custom_header_pick_title);
+        mHeaderBrowse.setSummary(valueIndex == 0 ? R.string.custom_header_browse_summary_new : R.string.custom_header_pick_summary);
 
         mWallBrowse = (PreferenceScreen) findPreference(CUSTOM_WALL_BROWSE);
         mWallBrowse.setEnabled(isBrowseWallsAvailable());
@@ -181,6 +183,16 @@ public class StyleSettings extends SettingsPreferenceFragment implements
             } else {
                 downloadOmsApp();
             }
+            return true;
+        } else if (preference == mHeaderBrowse) {
+            String providerName = Settings.System.getString(getContentResolver(),
+                Settings.System.STATUS_BAR_CUSTOM_HEADER_PROVIDER);
+            if (providerName == null) {
+                providerName = mDaylightHeaderProvider;
+            }
+            int valueIndex = mHeaderProvider.findIndexOfValue(providerName);
+            startHeaderActivity(valueIndex == 0 ? false : true);
+            return true;
         }
         return super.onPreferenceTreeClick(preference);
     }
@@ -205,6 +217,8 @@ public class StyleSettings extends SettingsPreferenceFragment implements
             int valueIndex = mHeaderProvider.findIndexOfValue(value);
             mHeaderProvider.setSummary(mHeaderProvider.getEntries()[valueIndex]);
             mDaylightHeaderPack.setEnabled(value.equals(mDaylightHeaderProvider));
+            mHeaderBrowse.setTitle(valueIndex == 0 ? R.string.custom_header_browse_title : R.string.custom_header_pick_title);
+            mHeaderBrowse.setSummary(valueIndex == 0 ? R.string.custom_header_browse_summary_new : R.string.custom_header_pick_summary);
         } else if (preference == mNightModePreference) {
             try {
                 final int value = Integer.parseInt((String) newValue);
@@ -333,5 +347,11 @@ public class StyleSettings extends SettingsPreferenceFragment implements
         Intent omsDownloadIntent = new Intent(Intent.ACTION_VIEW);
         omsDownloadIntent.setData(Uri.parse("https://play.google.com/store/apps/details?id=projekt.substratum"));
         startActivity(omsDownloadIntent);
+    }
+
+    private void startHeaderActivity(boolean pick) {
+        Intent headerIntent = new Intent();
+        headerIntent.setClassName("org.omnirom.omnistyle", pick ? "org.omnirom.omnistyle.PickHeaderActivity" : "org.omnirom.omnistyle.BrowseHeaderActivity");
+        startActivity(headerIntent);
     }
 }
