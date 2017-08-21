@@ -240,6 +240,9 @@ public class StyleSettings extends SettingsPreferenceFragment implements
         for (ResolveInfo r : packageManager.queryIntentActivities(i, 0)) {
             String packageName = r.activityInfo.packageName;
             String label = r.activityInfo.loadLabel(getPackageManager()).toString();
+            if (r.activityInfo.name.endsWith(".theme")) {
+                continue;
+            }
             if (label == null) {
                 label = packageName;
             }
