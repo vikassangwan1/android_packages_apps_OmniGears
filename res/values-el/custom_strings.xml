@@ -83,7 +83,6 @@
   <string name="battery_light_full_color_title">Φορτισμένο (90%)</string>
   <string name="battery_light_really_full_color_title">Φορτισμένο (100%)</string>
   <string name="edit_battery_settings">Επεξεργασία ρυθμίσεων μπαταρίας</string>
-  <string name="notification_light_general_title">Γενικά</string>
   <string name="led_color_green">Πράσινο</string>
   <string name="led_color_red">Κόκκινο</string>
   <string name="led_color_blue">Μπλε</string>

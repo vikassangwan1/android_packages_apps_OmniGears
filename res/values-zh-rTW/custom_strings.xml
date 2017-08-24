@@ -85,7 +85,6 @@
   <string name="battery_light_full_color_title">已充電 (90%)</string>
   <string name="battery_light_really_full_color_title">已充電 (100%)</string>
   <string name="edit_battery_settings">編輯電池設定</string>
-  <string name="notification_light_general_title">一般</string>
   <string name="led_color_green">綠色</string>
   <string name="led_color_red">紅色</string>
   <string name="led_color_blue">藍色</string>

@@ -135,7 +135,6 @@
   <string name="battery_light_full_color_title">Carregat (90%)</string>
   <string name="battery_light_really_full_color_title">Carregat (100%)</string>
   <string name="edit_battery_settings">Edita la configuració de la bateria</string>
-  <string name="notification_light_general_title">General</string>
   <string name="led_color_green">Verd</string>
   <string name="led_color_red">Vermell</string>
   <string name="led_color_blue">Blau</string>

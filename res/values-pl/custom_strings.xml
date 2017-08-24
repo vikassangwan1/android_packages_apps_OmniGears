@@ -146,7 +146,6 @@
   <string name="battery_light_full_color_title">Naładowane (90%)</string>
   <string name="battery_light_really_full_color_title">Naładowane (100%)</string>
   <string name="edit_battery_settings">Edytuj ustawienia baterii</string>
-  <string name="notification_light_general_title">Ogólne</string>
   <string name="led_color_green">ZIelony</string>
   <string name="led_color_red">Czerwony</string>
   <string name="led_color_blue">Niebieski</string>

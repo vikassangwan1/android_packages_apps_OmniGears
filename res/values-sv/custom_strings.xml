@@ -116,7 +116,6 @@
   <string name="battery_light_full_color_title">Laddad (90%)</string>
   <string name="battery_light_really_full_color_title">Fulladdad (100%)</string>
   <string name="edit_battery_settings">Ändra batteriinställningar</string>
-  <string name="notification_light_general_title">Allmänt</string>
   <string name="led_color_green">Grön</string>
   <string name="led_color_red">Röd</string>
   <string name="led_color_blue">Blå</string>

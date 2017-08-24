@@ -147,7 +147,6 @@
   <string name="battery_light_full_color_title">(%90) şarj edildi</string>
   <string name="battery_light_really_full_color_title">(%100) şarj edildi</string>
   <string name="edit_battery_settings">Pil ayarlarını düzenle</string>
-  <string name="notification_light_general_title">Genel</string>
   <string name="led_color_green">Yeşil</string>
   <string name="led_color_red">Kırmızı</string>
   <string name="led_color_blue">Mavi</string>

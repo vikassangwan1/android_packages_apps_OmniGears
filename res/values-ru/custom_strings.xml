@@ -146,7 +146,6 @@
   <string name="battery_light_full_color_title">Заряжена на 90%</string>
   <string name="battery_light_really_full_color_title">Полностью заряжена</string>
   <string name="edit_battery_settings">Изменить настройки батареи</string>
-  <string name="notification_light_general_title">Основные</string>
   <string name="led_color_green">Зелёный</string>
   <string name="led_color_red">Красный</string>
   <string name="led_color_blue">Синий</string>

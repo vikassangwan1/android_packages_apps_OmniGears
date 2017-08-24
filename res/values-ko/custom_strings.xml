@@ -142,7 +142,6 @@
   <string name="battery_light_full_color_title">충전됨 (90%)</string>
   <string name="battery_light_really_full_color_title">충전됨 (100%)</string>
   <string name="edit_battery_settings">배터리 설정 편집</string>
-  <string name="notification_light_general_title">일반</string>
   <string name="led_color_green">녹색</string>
   <string name="led_color_red">적색</string>
   <string name="led_color_blue">청색</string>

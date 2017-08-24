@@ -172,7 +172,6 @@
     <string name="fast_charging_light_color_title">Color</string>
     <string name="fast_charging_light_color_summary"></string>
     <string name="edit_battery_settings">Edit battery settings</string>
-    <string name="notification_light_general_title">General</string>
     <string name="led_color_green">Green</string>
     <string name="led_color_red">Red</string>
     <string name="led_color_blue">Blue</string>
@@ -415,7 +414,6 @@
     <string name="notification_light_applist_title">Apps</string>
     <string name="notification_light_use_custom">Use custom values</string>
     <string name="notification_light_default_value">Default</string>
-    <string name="notification_light_brightness" translatable="false">@string/brightness</string>
     <string name="notification_light_screen_on">Lights with screen on</string>
     <string name="notification_light_zen_mode">Lights in Do Not Disturb mode</string>
     <string name="notification_light_use_multiple_leds">Multiple LEDs</string>

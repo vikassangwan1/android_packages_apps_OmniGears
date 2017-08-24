@@ -130,7 +130,6 @@
   <string name="battery_light_full_color_title">شحن (90%)</string>
   <string name="battery_light_really_full_color_title">شحن (100%)</string>
   <string name="edit_battery_settings">تغيير اعدادات البطارية</string>
-  <string name="notification_light_general_title">عام</string>
   <string name="led_color_green">أخضر</string>
   <string name="led_color_red">أحمر</string>
   <string name="led_color_blue">أزرق</string>

@@ -147,7 +147,6 @@
   <string name="battery_light_full_color_title">Geladen (90%)</string>
   <string name="battery_light_really_full_color_title">Voll geladen (100%)</string>
   <string name="edit_battery_settings">Akku-Einstellungen bearbeiten</string>
-  <string name="notification_light_general_title">Allgemein</string>
   <string name="led_color_green">Grün</string>
   <string name="led_color_red">Rot</string>
   <string name="led_color_blue">Blau</string>

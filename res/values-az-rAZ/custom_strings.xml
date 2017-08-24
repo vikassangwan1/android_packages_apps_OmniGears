@@ -109,7 +109,6 @@
   <string name="battery_light_full_color_title">Şarj edildi (90%)</string>
   <string name="battery_light_really_full_color_title">Şarj edildi (100%)</string>
   <string name="edit_battery_settings">Batareya parametrlərini redaktə et</string>
-  <string name="notification_light_general_title">Ümumi</string>
   <string name="led_color_green">Yaşıl</string>
   <string name="led_color_red">Qırmızı</string>
   <string name="led_color_blue">Mavi</string>

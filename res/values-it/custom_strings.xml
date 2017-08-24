@@ -147,7 +147,6 @@
   <string name="battery_light_full_color_title">Carica (90%)</string>
   <string name="battery_light_really_full_color_title">Carica (100%)</string>
   <string name="edit_battery_settings">Modifica impostazioni batteria</string>
-  <string name="notification_light_general_title">Generale</string>
   <string name="led_color_green">Verde</string>
   <string name="led_color_red">Rosso</string>
   <string name="led_color_blue">Blu</string>

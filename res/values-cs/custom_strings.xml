@@ -147,7 +147,6 @@
   <string name="battery_light_full_color_title">Nabito (90%)</string>
   <string name="battery_light_really_full_color_title">Nabito (100%)</string>
   <string name="edit_battery_settings">Upravit nastavení baterie</string>
-  <string name="notification_light_general_title">Obecné</string>
   <string name="led_color_green">Zelená</string>
   <string name="led_color_red">Červená</string>
   <string name="led_color_blue">Modrá</string>

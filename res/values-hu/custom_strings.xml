@@ -147,7 +147,6 @@
   <string name="battery_light_full_color_title">Feltöltve (90%)</string>
   <string name="battery_light_really_full_color_title">Feltöltve (100%)</string>
   <string name="edit_battery_settings">Akkumulátor-beállítások szerkesztése</string>
-  <string name="notification_light_general_title">Általános</string>
   <string name="led_color_green">Zöld</string>
   <string name="led_color_red">Vörös</string>
   <string name="led_color_blue">Kék</string>
