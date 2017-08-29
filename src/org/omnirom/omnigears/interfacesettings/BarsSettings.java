@@ -19,9 +19,7 @@ package org.omnirom.omnigears.interfacesettings;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.content.res.Resources;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.preference.Preference;
 import android.provider.SearchIndexableResource;
@@ -30,7 +28,6 @@ import android.util.Log;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
-import com.android.settings.Utils;
 import com.android.settings.dashboard.SummaryLoader;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
@@ -39,14 +36,10 @@ import java.util.List;
 import java.util.ArrayList;
 
 import org.omnirom.omnigears.OmniDashboardFragment;
-import org.omnirom.omnigears.PackageUtils;
 
-public class StyleSettings extends SettingsPreferenceFragment implements
+public class BarsSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
-    private static final String TAG = "StyleSettings";
-    private static final String CUSTOM_WALL_BROWSE = "custom_wall_browse";
-    
-    private Preference mWallBrowse;
+    private static final String TAG = "BarsSettings";
 
     @Override
     public int getMetricsCategory() {
@@ -56,27 +49,12 @@ public class StyleSettings extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.style_settings);
-
-        mWallBrowse = findPreference(CUSTOM_WALL_BROWSE);
-        mWallBrowse.setEnabled(isBrowseWallsAvailable());
-    }
-
-    @Override
-    public boolean onPreferenceTreeClick(Preference preference) {
-        return super.onPreferenceTreeClick(preference);
+        addPreferencesFromResource(R.xml.bars_settings);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return true;
-    }
-
-    private boolean isBrowseWallsAvailable() {
-        PackageManager pm = getPackageManager();
-        Intent browse = new Intent();
-        browse.setClassName("org.omnirom.omnistyle", "org.omnirom.omnistyle.BrowseWallsActivity");
-        return pm.resolveActivity(browse, 0) != null;
     }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
@@ -88,8 +66,9 @@ public class StyleSettings extends SettingsPreferenceFragment implements
                             new ArrayList<SearchIndexableResource>();
 
                     SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.style_settings;
+                    sir.xmlResId = R.xml.bars_settings;
                     result.add(sir);
+
                     return result;
                 }
 
@@ -99,5 +78,4 @@ public class StyleSettings extends SettingsPreferenceFragment implements
                     return result;
                 }
             };
-
 }
