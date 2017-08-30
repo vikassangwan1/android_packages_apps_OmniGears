@@ -251,8 +251,7 @@
     <string name="lockscreen_category_title">Lock screen</string>
 
     <string name="notification_title">Notification panel</string>
-    <string name="status_bar_custom_header_title">Custom header image</string>
-    <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
+    <string name="status_bar_custom_header_title">Enable</string>
     <string name="daylight_header_pack_title">Header image pack</string>
     <string name="status_bar_custom_header_shadow_title">Header image shadow</string>
     <string name="status_bar_custom_header_shadow_summary">For better visibility on bright images</string>
@@ -263,13 +262,15 @@
     <string name="daylight_header_provider_title">Dynamic</string>
     <string name="custom_header_provider_title">Header provider</string>
     <string name="custom_header_browse_title">Browse installed headers</string>
-    <string name="custom_header_browse_summary">Long press on any image to use for static mode</string>
+    <string name="custom_header_browse_summary">Click on any image to use for static mode</string>
     <string name="custom_header_browse_summary_new">Browse all available header packages</string>
     <string name="custom_header_pick_title">Select header image</string>
     <string name="custom_header_pick_summary">Select an image to use for static mode</string>
     <string name="style_enabled_summary">Custom header image is ON</string>
     <string name="style_disabled_summary">Custom header image is OFF</string>
-
+    <string name="header_provider_disabled">Disabled</string>
+    <string name="custom_header_title">Custom header image</string>
+    
     <!-- Network traffic -->
     <string name="network_traffic_title">Network traffic</string>
     <string name="network_traffic_summary">Status bar traffic monitor</string>
