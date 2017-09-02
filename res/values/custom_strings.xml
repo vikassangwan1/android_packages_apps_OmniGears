@@ -341,6 +341,7 @@
     <string name="enable_tablet_navigation_summary">Tablet layout shows back and home on the left side and overview on the right side of the navigation bar</string>
 
     <string name="other_category">Other</string>
+    <string name="blocker_category">Blockers</string>
     <string name="home_category_title">Home</string>
     <string name="behaviour_category">Behaviour</string>
     <string name="security_category">Security</string>
@@ -1128,6 +1129,26 @@
     <string name="dialog_pick_iconpack_title">Pick icon pack</string>
     <string name="default_iconpack_title">Default icons</string>
     
+    <!-- Wakelock blocker -->
+    <string name="wakelock_blocker">Wakelock blocker</string>
+    <string name="wakelock_blocker_title">Enable blocking</string>
+    <string name="wakelock_blocker_summary"> </string>
+    <string name="wakelock_blocker_save">Save</string>
+    <string name="wakelock_list_header">Available wakelocks</string>
+    <string name="wakelock_blocker_reload">Reload</string>
+    <string name="wakelock_blocker_warning_title">Proceed with caution</string>
+    <string name="wakelock_blocker_warning">Blocking wakelocks have the potential to cause instability, crashes or data loss</string>
+    
+    <!-- Alarm blocker -->
+    <string name="alarm_blocker">Alarms blocker</string>
+    <string name="alarm_blocker_title">Enable blocking</string>
+    <string name="alarm_blocker_summary"> </string>
+    <string name="alarm_blocker_save">Save</string>
+    <string name="alarm_list_header">Available alarms</string>
+    <string name="alarm_blocker_reload">Reload</string>
+    <string name="alarm_blocker_warning_title">Proceed with caution</string>
+    <string name="alarm_blocker_warning">Blocking alarms have the potential to cause instability, crashes or data loss.</string>
+
     <!-- Heads up snooze -->
     <string name="heads_up_category">Peek notifications</string>
     <string name="heads_up_snooze_title">Snooze timer</string>
