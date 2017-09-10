@@ -52,7 +52,7 @@ public class TimeInState extends SettingsPreferenceFragment {
     private TextView mTotalStateTime;
     private TextView mStatesWarning;
     private CheckBox mStateMode;
-    private boolean mUpdatingData = false;
+    private boolean mUpdatingData;
     private CPUStateMonitor monitor;
     private Context mContext;
     private int mCpuNum;
@@ -89,7 +89,6 @@ public class TimeInState extends SettingsPreferenceFragment {
         mCpuNum = Helpers.getNumOfCpus();
         mPeriodType = getPrefs().getInt("which", 1);
         if (savedInstanceState != null) {
-            mUpdatingData = savedInstanceState.getBoolean("updatingData");
             mPeriodType = savedInstanceState.getInt("which");
         }
 
@@ -171,12 +170,12 @@ public class TimeInState extends SettingsPreferenceFragment {
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putBoolean("updatingData", mUpdatingData);
         outState.putInt("which", mPeriodType);
     }
 
     @Override
     public void onResume() {
+        mUpdatingData = false;
         refreshData();
         super.onResume();
     }
@@ -240,7 +239,6 @@ public class TimeInState extends SettingsPreferenceFragment {
     }
 
     public void updateView() {
-        Log.d(TAG, "updateView " + mUpdatingData);
         if (mUpdatingData) {
             return;
         }
