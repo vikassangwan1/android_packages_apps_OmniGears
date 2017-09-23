@@ -71,11 +71,6 @@
             android:summary="@string/button_backlight_summary"
             android:persistent="false"
             android:fragment="org.omnirom.omnigears.ButtonBrightnessSettings" />
-        <SwitchPreference
-            android:key="fingerprint_success_vib"
-            android:title="@string/fprint_sucess_vib_title"
-            android:summary="@string/fprint_sucess_vib_summary"
-            android:persistent="false" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -127,6 +122,12 @@
             android:defaultValue="1500"
             android:persistent="false"
             android:dependency="button_back_kill_enable"/>
+
+        <SwitchPreference
+            android:key="fingerprint_success_vib"
+            android:title="@string/fprint_sucess_vib_title"
+            android:summary="@string/fprint_sucess_vib_summary"
+            android:persistent="false" />
 
     </PreferenceCategory>
     

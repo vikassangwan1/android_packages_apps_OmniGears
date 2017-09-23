@@ -714,5 +714,4 @@
     <!-- Face Auto Unlock -->
     <string name="face_auto_unlock_title">Auto face unlock</string>
     <string name="face_auto_unlock_summary">Dismiss lock screen after recognizing trusted face</string>
-
 </resources>

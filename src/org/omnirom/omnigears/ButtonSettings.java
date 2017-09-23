@@ -74,8 +74,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
     private Preference mButtonLight;
     private FingerprintManager mFingerprintManager;
     private SwitchPreference mFingerprintVib;
-
-
     
     @Override
     public int getMetricsCategory() {
@@ -156,9 +154,9 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
         if (!mFingerprintManager.isHardwareDetected()){
             prefScreen.removePreference(mFingerprintVib);
         } else {
-        mFingerprintVib.setChecked((Settings.System.getInt(getContentResolver(),
-                Settings.System.FINGERPRINT_SUCCESS_VIB, 1) == 1));
-        mFingerprintVib.setOnPreferenceChangeListener(this);
+            mFingerprintVib.setChecked((Settings.System.getInt(getContentResolver(),
+                    Settings.System.FINGERPRINT_SUCCESS_VIB, 1) == 1));
+            mFingerprintVib.setOnPreferenceChangeListener(this);
         }
     }
 
