@@ -50,6 +50,9 @@ import android.widget.TextView;
 import org.omnirom.omnigears.R;
 import org.omnirom.omnigears.preference.SeekBarPreference;
 
+import com.android.internal.logging.MetricsLogger;
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
@@ -71,7 +74,7 @@ public class ButtonBrightnessSettings extends SettingsPreferenceFragment impleme
 
     @Override
     public int getMetricsCategory() {
-        return OmniDashboardFragment.ACTION_SETTINGS_OMNI;
+        return MetricsEvent.OMNI_SETTINGS;
     }
 
     public void onCreate(Bundle savedInstanceState) {
