@@ -218,8 +218,7 @@ public class DozeSettings extends SettingsPreferenceFragment {
 
 
     private void getSettings() {
-        String line = Settings.Global.getString(getContentResolver(), Settings.Global.DEVICE_IDLE_CONSTANTS);
-        Log.d(TAG, "getSettings = " + line);
+        String line = Settings.Global.getString(getContentResolver(), Settings.Global.DEVICE_IDLE_CONSTANTS_USER);
 
         KeyValueListParser parser = new KeyValueListParser(',');
         if ("null".equals(line)) {
@@ -267,21 +266,18 @@ public class DozeSettings extends SettingsPreferenceFragment {
         if (sb.length() != 0) {
             sb.deleteCharAt(sb.length() - 1);
         }
-        Log.d(TAG, "save = " + sb.toString());
-        Settings.Global.putString(getContentResolver(), Settings.Global.DEVICE_IDLE_CONSTANTS, sb.toString());
+        Settings.Global.putString(getContentResolver(), Settings.Global.DEVICE_IDLE_CONSTANTS_USER, sb.toString());
         showApplyToast();
     }
 
     private void restoreDefaults() {
-        Log.d(TAG, "restoreDefaults");
-        Settings.Global.putString(getContentResolver(), Settings.Global.DEVICE_IDLE_CONSTANTS, null);
+        Settings.Global.putString(getContentResolver(), Settings.Global.DEVICE_IDLE_CONSTANTS_USER, null);
         getSettings();
         showApplyToast();
     }
 
     private void applyProfile(String settings) {
-        Log.d(TAG, "apply = " + settings);
-        Settings.Global.putString(getContentResolver(), Settings.Global.DEVICE_IDLE_CONSTANTS, settings);
+        Settings.Global.putString(getContentResolver(), Settings.Global.DEVICE_IDLE_CONSTANTS_USER, settings);
         getSettings();
         showApplyToast();
     }
