@@ -17,6 +17,7 @@
  */
 package org.omnirom.omnigears.interfacesettings;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
 import android.net.TrafficStats;
@@ -27,6 +28,7 @@ import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
+import android.view.View;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
@@ -50,6 +52,7 @@ public class BarsSettings extends SettingsPreferenceFragment implements
 
     private ListPreference mQuickPulldown;
     private SeekBarPreference mQsPanelAlpha;
+    private ListPreference mTickerMode;
 
     @Override
     public int getMetricsCategory() {
@@ -87,6 +90,14 @@ public class BarsSettings extends SettingsPreferenceFragment implements
                 Settings.System.QS_PANEL_BG_ALPHA, 255, UserHandle.USER_CURRENT);
         mQsPanelAlpha.setValue(qsPanelAlpha);
         mQsPanelAlpha.setOnPreferenceChangeListener(this);
+
+        mTickerMode = (ListPreference) findPreference("ticker_mode");
+        mTickerMode.setOnPreferenceChangeListener(this);
+        int tickerMode = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.STATUS_BAR_SHOW_TICKER,
+                1, UserHandle.USER_CURRENT);
+        mTickerMode.setValue(String.valueOf(tickerMode));
+        mTickerMode.setSummary(mTickerMode.getEntry());
     }
 
     @Override
@@ -108,6 +119,14 @@ public class BarsSettings extends SettingsPreferenceFragment implements
                     Settings.System.QS_PANEL_BG_ALPHA, bgAlpha,
                     UserHandle.USER_CURRENT);
             return true;
+        } else if (preference == mTickerMode) {
+            int tickerMode = Integer.parseInt(((String) newValue).toString());
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.STATUS_BAR_SHOW_TICKER, tickerMode, UserHandle.USER_CURRENT);
+            int index = mTickerMode.findIndexOfValue((String) newValue);
+            mTickerMode.setSummary(
+                    mTickerMode.getEntries()[index]);
+            return true;    
         }
         return false;
     }

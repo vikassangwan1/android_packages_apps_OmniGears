@@ -711,4 +711,9 @@
   <string name="smart_pixels_shift_title">Защита от выгорания</string>
   <string name="smart_pixels_shift_summary">Предотвращает выгорание на OLED-устройствах перемещая пиксели</string>
   <string name="smart_pixels_footer">Умные пиксели — это функция энергосбережения. В зависимости от того, сколько пикселей вы решите отключить, вы сможете получить значительное увеличение времени автономной работы. Для наилучшего опыта использования мы рекомендуем установить количество отключенных пикселей на 75 процентов.</string>
+  <!-- Status bar ticker -->
+  <string name="ticker_mode_title">Бегущая строка</string>
+  <string name="ticker_disabled">Отключено</string>
+  <string name="ticker_enabled">Сообщения бегущей строкой</string>
+  <string name="ticker_media_enabled">Сообщения и музыка бегущей строкой</string>
 </resources>
