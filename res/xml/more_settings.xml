@@ -87,6 +87,12 @@
                 android:title="@string/wake_when_plugged_or_unplugged_title"
                 android:summary="@string/wake_when_plugged_or_unplugged_summary"
                 android:defaultValue="@*android:bool/config_unplugTurnsOnScreen" />
+            
+            <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+                android:key="three_finger_gesture"
+                android:title="@string/three_finger_gesture"
+                android:summary="@string/three_finger_gesture_summary"
+                android:defaultValue="false" />
 
         </PreferenceCategory>
 </PreferenceScreen>

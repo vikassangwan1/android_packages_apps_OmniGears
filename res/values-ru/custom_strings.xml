@@ -677,4 +677,7 @@
   <!-- System default animation -->
   <string name="system_default_animation_title">Стиль анимации Android P</string>
   <string name="system_default_animation_summary">Включить анимации \"По умолчанию\" из Android P</string>
+  <!-- Three-fingers-swipe to screenshot -->
+  <string name="three_finger_gesture">Жест тремя пальцами</string>
+  <string name="three_finger_gesture_summary">Провести тремя пальцами, чтобы сделать скриншот</string>
 </resources>
