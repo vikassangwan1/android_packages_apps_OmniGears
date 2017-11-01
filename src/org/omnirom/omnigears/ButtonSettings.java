@@ -23,6 +23,7 @@ import android.content.res.Resources;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
@@ -51,7 +52,8 @@ import com.android.internal.util.omni.PackageUtils;
 import com.android.internal.util.omni.DeviceUtils;
 
 public class ButtonSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener, Indexable {
-
+    
+    private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
     private static final String CATEGORY_KEYS = "button_keys";
     private static final String KEYS_SHOW_NAVBAR_KEY = "navigation_bar_show";
     private static final String KEYS_DISABLE_HW_KEY = "hardware_keys_disable";
@@ -61,6 +63,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
     private static final String BUTTON_BACK_KILL_TIMEOUT = "button_back_kill_timeout";
     private static final String KEY_BUTTON_LIGHT = "button_brightness";
 
+    private ListPreference mRecentsClearAllLocation;
     private ListPreference mLongPressRecentsAction;
     private ListPreference mLongPressHomeAction;
     private ListPreference mDoublePressHomeAction;
@@ -69,6 +72,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
     private ListPreference mBackKillTimeout;
     private Preference mButtonLight;
 
+
+    
     @Override
     public int getMetricsCategory() {
         return MetricsEvent.OMNI_SETTINGS;
@@ -77,7 +82,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         addPreferencesFromResource(R.xml.button_settings);
 
         final ContentResolver resolver = getContentResolver();
@@ -99,6 +103,14 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
                     Settings.System.HARDWARE_KEYS_DISABLE, 0) == 1;
             mDisabkeHWKeys.setChecked(hardwareKeysDisable);
         }
+
+        mRecentsClearAllLocation = (ListPreference) findPreference(RECENTS_CLEAR_ALL_LOCATION);
+        int location = Settings.System.getIntForUser(resolver,
+                Settings.System.RECENTS_CLEAR_ALL_LOCATION, 3, UserHandle.USER_CURRENT);
+        
+        mRecentsClearAllLocation.setValue(String.valueOf(location));
+        mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
+        mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
 
         mLongPressRecentsAction = (ListPreference) findPreference(LONG_PRESS_RECENTS_ACTION);
         int longPressRecentsAction = Settings.System.getInt(resolver,
@@ -160,7 +172,15 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mLongPressRecentsAction) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mRecentsClearAllLocation) {
+            int location = Integer.valueOf((String) newValue);
+            int index = mRecentsClearAllLocation.findIndexOfValue((String) newValue);
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.RECENTS_CLEAR_ALL_LOCATION, location, UserHandle.USER_CURRENT);
+            mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
+            return true;
+        } else if (preference == mLongPressRecentsAction) {
             int value = Integer.valueOf((String) newValue);
             int index = mLongPressRecentsAction.findIndexOfValue((String) newValue);
             mLongPressRecentsAction.setSummary(mLongPressRecentsAction.getEntries()[index]);

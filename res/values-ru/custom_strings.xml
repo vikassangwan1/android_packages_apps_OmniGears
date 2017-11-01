@@ -574,4 +574,16 @@
   <string name="battery_percent_always">Всегда</string>
   <string name="battery_percent_expanded">Только при развернутой панели</string>
   <string name="battery_percent_title">Показать проценты</string>
+ <!-- Clear all recents -->
+  <string name="aosp_recents_title">Недавние</string>
+  <string name="show_clear_all_recents_button_title">Кнопка \"Очистить всё\"</string>
+  <string name="show_clear_all_recents_button_summary_on">Показать кнопку \"Очистить всё\"</string>
+  <string name="show_clear_all_recents_button_summary_off">Показать стандартную кнопку \"Очистить всё\"</string>
+  <string name="recents_clear_all_location_title">Расположение кнопки \"Очистить всё\"</string>
+  <string name="recents_clear_all_location_top_right">Вверху справа</string>
+  <string name="recents_clear_all_location_top_left">Вверху слева</string>
+  <string name="recents_clear_all_location_top_center">Вверху по центру</string>
+  <string name="recents_clear_all_location_bottom_right">Внизу справа</string>
+  <string name="recents_clear_all_location_bottom_left">Внизу слева</string>
+  <string name="recents_clear_all_location_bottom_center">Внизу по центру</string>  
 </resources>
