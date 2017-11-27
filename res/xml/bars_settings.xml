@@ -47,6 +47,11 @@
 					android:targetPackage="com.android.systemui"
 					android:targetClass="com.android.systemui.tuner.StatusBarIconsTunerActivity" />
 			</Preference>
+			
+			<Preference
+                android:key="category_status_bar_carrier"
+                android:title="@string/carrier_label_title"
+                android:fragment="org.omnirom.omnigears.interfacesettings.CarrierLabel" />
 
             <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
                 android:key="double_tap_sleep_gesture"

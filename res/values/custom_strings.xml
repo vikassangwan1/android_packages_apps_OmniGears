@@ -801,7 +801,7 @@
     
     <!-- Tuner -->
     <string name="quicksettings_items_title">Quick settings items</string>
-    <string name="statusbar_items_title">Status bar items</string>
+    <string name="statusbar_items_title">Icon manager</string>
     <string name="navbar_items_title">Navigation bar</string>
     
     <!-- Custom -->
@@ -835,8 +835,21 @@
     <string name="smart_pixels_shift_title">Burn-in protection</string>
     <string name="smart_pixels_shift_summary">Prevents burn-in on OLED devices by shifting pixels every so often</string>
     <string name="smart_pixels_footer">Smart pixels is a power saving feature. Depending on how many pixels you decide to turn off, you could see a significant improvement in battery life. For a good user experience, we recommend you set the amount of disabled pixels at 75 percent.</string>
+    
+    <!-- Carrier Label -->
+    <string name="carrier_label_title">Carrier label</string>
+    <string name="carrier_options">Select display locations</string>
+    <string name="custom_carrier_label_title">Custom carrier label</string>
+    <string name="custom_carrier_label_explain">Please enter a new label. Leave blank to revert to stock label.</string>
+    <string name="custom_carrier_label_notset">Custom label currently not set</string>
+    <string name="show_carrier_title">Carrier label is displayed</string>
+    <string name="show_carrier_disabled">Nowhere</string>
+    <string name="show_carrier_keyguard">On lock screen only</string>
+    <string name="show_carrier_statusbar">On status bar only</string>
+    <string name="show_carrier_enabled">On lock screen &amp; status bar</string>
+    <string name="carrier_label_warning_text">Be advised that the custom carrier label is not available in the extended statusbar area, also known as the quick settings area. Also using emojis as your carrier label might cause some visibility issues on lighter backgrounds.</string>
 
-      <!-- Status bar ticker -->
+    <!-- Status bar ticker -->
     <string name="ticker_mode_title">Statusbar notification ticker</string>
     <string name="ticker_disabled">Disabled</string>
     <string name="ticker_enabled">Notification ticker</string>
