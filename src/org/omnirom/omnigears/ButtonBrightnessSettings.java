@@ -25,8 +25,6 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.PowerManager;
-import android.os.IPowerManager;
-import android.os.ServiceManager;
 import android.support.v7.preference.CheckBoxPreference;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
@@ -68,7 +66,6 @@ public class ButtonBrightnessSettings extends SettingsPreferenceFragment impleme
     private static final String KEY_BUTTON_MANUAL_BRIGHTNESS_NEW = "button_manual_brightness_new";
     private static final String KEY_BUTTON_TIMEOUT = "button_timeout";
 
-    private IPowerManager mPowerService;
     private SeekBarPreference mButtonTimoutBar;
     private SeekBarPreference mManualButtonBrightness;
 
@@ -99,8 +96,6 @@ public class ButtonBrightnessSettings extends SettingsPreferenceFragment impleme
                         Settings.System.BUTTON_BACKLIGHT_TIMEOUT, 0);
         mButtonTimoutBar.setValue(currentTimeout);
         mButtonTimoutBar.setOnPreferenceChangeListener(this);
-
-        mPowerService = IPowerManager.Stub.asInterface(ServiceManager.getService("power"));
     }
 
     @Override
