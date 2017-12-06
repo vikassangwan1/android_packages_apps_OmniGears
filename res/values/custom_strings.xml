@@ -605,7 +605,4 @@
     <string name="logcat_app_summary">Start app to collect logs</string>
     <string name="omni_theme_title">Omni Light/Dark theme</string>
     <string name="omni_theme_summary">Substratum based theme</string>
-
-    <string name="qs_style_dark_title">Dark SystemUI style</string>
-    <string name="qs_style_dark_summary">Reboot is required after changing</string>
 </resources>
