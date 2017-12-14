@@ -605,4 +605,9 @@
     <string name="logcat_app_summary">Start app to collect logs</string>
     <string name="omni_theme_title">Omni Light/Dark theme</string>
     <string name="omni_theme_summary">Substratum based theme</string>
+
+    <string name="show_dashboard_columns_title">Use columns layout</string>
+    <string name="show_dashboard_columns_summary">In settings main page</string>
+    <string name="hide_dashboard_summary_title">Hide summary</string>
+    <string name="hide_dashboard_summary_summary">In settings main page</string>
 </resources>

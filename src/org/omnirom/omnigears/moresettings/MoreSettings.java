@@ -19,17 +19,21 @@
 package org.omnirom.omnigears.moresettings;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
+import android.support.v7.preference.Preference.OnPreferenceChangeListener;
+import android.support.v14.preference.SwitchPreference;
 import android.provider.SearchIndexableResource;
 import android.util.Log;
 
 import com.android.internal.util.omni.PackageUtils;
 
 import com.android.settings.R;
+import com.android.settings.SettingsActivity;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 import com.android.internal.logging.MetricsLogger;
@@ -42,6 +46,10 @@ import java.util.ArrayList;
 
 public class MoreSettings extends SettingsPreferenceFragment implements Indexable {
     private static final String TAG = "MoreSettings";
+    private static final String KEY_SHOW_DASHBOARD_COLUMNS = "show_dashboard_columns";
+    private static final String KEY_HIDE_DASHBOARD_SUMMARY = "hide_dashboard_summary";
+
+    private SharedPreferences mAppPreferences;
 
     @Override
     public int getMetricsCategory() {
@@ -60,6 +68,30 @@ public class MoreSettings extends SettingsPreferenceFragment implements Indexabl
                 systemPrefs.removePreference(logcatApp);
             }
         }
+        mAppPreferences = getActivity().getSharedPreferences(SettingsActivity.APP_PREFERENCES_NAME,
+                Context.MODE_PRIVATE);
+
+        SwitchPreference showColumnsLayout = (SwitchPreference) findPreference(KEY_SHOW_DASHBOARD_COLUMNS);
+        showColumnsLayout.setChecked(mAppPreferences.getInt(SettingsActivity.KEY_COLUMNS_COUNT, 1) == 2);
+        showColumnsLayout.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                if ((Boolean) newValue ) {
+                    mAppPreferences.edit().putInt(SettingsActivity.KEY_COLUMNS_COUNT, 2).commit();
+                } else {
+                    mAppPreferences.edit().putInt(SettingsActivity.KEY_COLUMNS_COUNT, 1).commit();
+                }
+                return true;
+            }
+        });
+
+        SwitchPreference hideColumnSummary = (SwitchPreference) findPreference(KEY_HIDE_DASHBOARD_SUMMARY);
+        hideColumnSummary.setChecked(mAppPreferences.getBoolean(SettingsActivity.KEY_HIDE_SUMMARY, false));
+        hideColumnSummary.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                mAppPreferences.edit().putBoolean(SettingsActivity.KEY_HIDE_SUMMARY, ((Boolean) newValue)).commit();
+                return true;
+            }
+        });
     }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
