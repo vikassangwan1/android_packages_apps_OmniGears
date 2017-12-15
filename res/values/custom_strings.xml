@@ -610,4 +610,9 @@
     <string name="show_dashboard_columns_summary">In settings main page</string>
     <string name="hide_dashboard_summary_title">Hide summary</string>
     <string name="hide_dashboard_summary_summary">In settings main page</string>
+
+    <string name="systemui_theme_style_title">SystemUI style</string>
+    <string name="systemui_theme_style_auto">Wallpaper based</string>
+    <string name="systemui_theme_style_light">Light style</string>
+    <string name="systemui_theme_style_dark">Dark style</string>
 </resources>

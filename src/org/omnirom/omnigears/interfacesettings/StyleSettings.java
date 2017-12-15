@@ -61,6 +61,7 @@ public class StyleSettings extends SettingsPreferenceFragment implements
     private static final String CUSTOM_HEADER_PROVIDER = "custom_header_provider";
     private static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
     private static final String CUSTOM_HEADER_ENABLED = "status_bar_custom_header";
+    private static final String SYSTEMUI_THEME_STYLE = "systemui_theme_style";
 
     private Preference mWallBrowse;
     private Preference mHeaderBrowse;
@@ -69,6 +70,7 @@ public class StyleSettings extends SettingsPreferenceFragment implements
     private ListPreference mHeaderProvider;
     private String mDaylightHeaderProvider;
     private SystemSettingSwitchPreference mHeaderEnabled;
+    private ListPreference mSystemUIThemeStyle;
 
     @Override
     public int getMetricsCategory() {
@@ -120,6 +122,14 @@ public class StyleSettings extends SettingsPreferenceFragment implements
         mHeaderProvider.setSummary(mHeaderProvider.getEntry());
         mHeaderProvider.setOnPreferenceChangeListener(this);
         mDaylightHeaderPack.setEnabled(providerName.equals(mDaylightHeaderProvider));
+
+        mSystemUIThemeStyle = (ListPreference) findPreference(SYSTEMUI_THEME_STYLE);
+        int systemUIThemeStyle = Settings.System.getInt(getContentResolver(),
+                Settings.System.SYSTEM_UI_THEME, 0);
+        valueIndex = mSystemUIThemeStyle.findIndexOfValue(String.valueOf(systemUIThemeStyle));
+        mSystemUIThemeStyle.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
+        mSystemUIThemeStyle.setSummary(mSystemUIThemeStyle.getEntry());
+        mSystemUIThemeStyle.setOnPreferenceChangeListener(this);
     }
 
     private void updateHeaderProviderSummary(boolean headerEnabled) {
@@ -169,6 +179,11 @@ public class StyleSettings extends SettingsPreferenceFragment implements
         } else if (preference == mHeaderEnabled) {
             Boolean headerEnabled = (Boolean) newValue;
             updateHeaderProviderSummary(headerEnabled);
+        } else if (preference == mSystemUIThemeStyle) {
+            String value = (String) newValue;
+            Settings.System.putInt(getContentResolver(), Settings.System.SYSTEM_UI_THEME, Integer.valueOf(value));
+            int valueIndex = mSystemUIThemeStyle.findIndexOfValue(value);
+            mSystemUIThemeStyle.setSummary(mSystemUIThemeStyle.getEntries()[valueIndex]);
         }
         return true;
     }

@@ -30,8 +30,16 @@
                     android:targetPackage="org.omnirom.omnistyle"
                     android:targetClass="org.omnirom.omnistyle.BrowseWallsActivity" />
         </Preference>
+
+        <ListPreference
+            android:key="systemui_theme_style"
+            android:title="@string/systemui_theme_style_title"
+            android:persistent="false"
+            android:entries="@array/systemui_theme_style_entries"
+            android:entryValues="@array/systemui_theme_style_values" />
+
     </PreferenceCategory>
-    
+
     <PreferenceCategory
         android:key="category_custom_header"
         android:title="@string/custom_header_title">
