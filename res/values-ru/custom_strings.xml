@@ -18,7 +18,6 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="more_settings_title">Больше OmniGears...</string>
   <string name="ok">ОК</string>
   <string name="advanced">Дополнительно</string>
   <string name="profiles_add">Добавить...</string>
@@ -154,9 +153,6 @@
   <string name="statusbar_battery_summary">Задать стиль аккумулятора в строке состояния</string>
   <string name="battery_style_title">Стиль</string>
   <string name="battery_percent_title">Показывать проценты</string>
-  <string name="battery_percent_none">Никогда</string>
-  <string name="battery_percent_always">Всегда</string>
-  <string name="battery_percent_expanded">Широкий</string>
   <string name="statusbar_percent_inside_title">Наложение процентов</string>
   <string name="statusbar_percent_inside_summary">Отображение процентов над значком батареи</string>
   <string name="statusbar_charging_image_title">Анимация зарядки</string>
@@ -212,7 +208,6 @@
   <string name="lockscreen_left_shortcut_enable_summary">Видимость зависит от настройки системы</string>
   <string name="notification_title">Панель уведомлений</string>
   <string name="status_bar_custom_header_title">Пользовательский заголовок изображения</string>
-  <string name="status_bar_custom_header_summary">Показывать изображение в заголовке панели уведомления</string>
   <string name="daylight_header_pack_title">Пакет изображений</string>
   <string name="status_bar_custom_header_shadow_title">Тень изображения в заголовке</string>
   <string name="status_bar_custom_header_shadow_summary">Затемнить изображение заголовка для лучшей видимости на ярких фонах</string>
@@ -290,7 +285,6 @@
   <string name="global_actions_voiceassist_title">Голосовой помощник</string>
   <string name="global_actions_silent_title">Без звука</string>
   <string name="global_actions_dnd_title">Не беспокоить</string>
-  <string name="global_actions_title">Меню кнопки питания</string>
   <string name="global_actions_summary">Действия, отображаемые в меню питания</string>
   <string name="global_actions_header">Некоторые действия зависят от настроек устройства и статуса разблокировки загрузчика</string>
   <string name="global_actions_anim">Внешний вид</string>
@@ -435,7 +429,6 @@
   <string name="headset_plugged_notification_summary">Показывать уведомление при подключении проводной гарнитуры</string>
   <!-- Display : Rotation -->
   <string name="category_display">Экран</string>
-  <string name="display_rotation_title">Поворот экрана</string>
   <string name="display_rotation_disabled">Отключен</string>
   <string name="display_rotation_unit">градусов</string>
   <string name="display_rotation_category_title">Режимы поворота</string>

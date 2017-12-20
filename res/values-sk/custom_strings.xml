@@ -18,7 +18,6 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="more_settings_title">Viac nastavení OmniGears...</string>
   <string name="ok">OK</string>
   <string name="advanced">Rozšírené</string>
   <string name="profiles_add">Pridať...</string>
@@ -155,9 +154,6 @@
   <string name="statusbar_battery_summary">Nastaviť štýl zobrazenia batérie v lište</string>
   <string name="battery_style_title">Štýl</string>
   <string name="battery_percent_title">Zobraziť percento</string>
-  <string name="battery_percent_none">Nikdy</string>
-  <string name="battery_percent_always">Vždy</string>
-  <string name="battery_percent_expanded">Rozšírený</string>
   <string name="statusbar_percent_inside_title">Zobrazenie percent</string>
   <string name="statusbar_percent_inside_summary">Zobraziť percentá nad indikátorom batérie</string>
   <string name="statusbar_charging_image_title">Indikátor nabíjania</string>
@@ -213,7 +209,6 @@
   <string name="lockscreen_left_shortcut_enable_summary">Viditeľnosť závisí od nastavenia systému</string>
   <string name="notification_title">Panel upozornení</string>
   <string name="status_bar_custom_header_title">Vlastný obrázok záhlavia</string>
-  <string name="status_bar_custom_header_summary">Povoliť obrázok na pozadí notifikačného panela</string>
   <string name="daylight_header_pack_title">Balík obrázkov pozadia</string>
   <string name="status_bar_custom_header_shadow_title">Tieňované záhlavie</string>
   <string name="status_bar_custom_header_shadow_summary">Pre lepšiu viditeľnosť pri jasných obrázkoch</string>
@@ -291,7 +286,6 @@
   <string name="global_actions_voiceassist_title">Hlasový asistent</string>
   <string name="global_actions_silent_title">Tichý režim</string>
   <string name="global_actions_dnd_title">Nerušiť</string>
-  <string name="global_actions_title">Ponuka pri vypnutí</string>
   <string name="global_actions_summary">Možnosti zobrazované pri vypnutí</string>
   <string name="global_actions_header">Niektoré voľby sú viditeľné v závislosti od nastavení alebo len pri odomknutom zariadení</string>
   <string name="global_actions_anim">Vzhľad</string>
@@ -407,7 +401,6 @@
   <string name="headset_plugged_notification_summary">Zobrazenie upozornenia po pripojení drôtových slúchadiel</string>
   <!-- Display : Rotation -->
   <string name="category_display">Displej</string>
-  <string name="display_rotation_title">Otočenie</string>
   <string name="display_rotation_disabled">Zakázané</string>
   <string name="display_rotation_unit">stupne</string>
   <string name="display_rotation_category_title">Režimy otočenia</string>

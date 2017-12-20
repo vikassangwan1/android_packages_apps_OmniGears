@@ -18,7 +18,6 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="more_settings_title">OmniGears Plus…</string>
   <string name="ok">OK</string>
   <string name="advanced">Paramètres avancés</string>
   <string name="profiles_add">Ajouter…</string>
@@ -154,9 +153,6 @@
   <string name="statusbar_battery_summary">Définit le style d\'affichage de la batterie dans la barre d\'état</string>
   <string name="battery_style_title">Style</string>
   <string name="battery_percent_title">Afficher le pourcentage</string>
-  <string name="battery_percent_none">Jamais</string>
-  <string name="battery_percent_always">Toujours</string>
-  <string name="battery_percent_expanded">Étendu</string>
   <string name="statusbar_percent_inside_title">Superposition du pourcentage</string>
   <string name="statusbar_percent_inside_summary">Affiche le pourcentage au dessus de l\'icône de batterie</string>
   <string name="statusbar_charging_image_title">Indicateur de charge</string>
@@ -212,7 +208,6 @@
   <string name="lockscreen_left_shortcut_enable_summary">La visibilité dépend de la configuration du système</string>
   <string name="notification_title">Panneau de notification</string>
   <string name="status_bar_custom_header_title">Personnalisation d\'en-tête</string>
-  <string name="status_bar_custom_header_summary">Affiche une bannière dans le panneau de notification</string>
   <string name="daylight_header_pack_title">Pack d\'image d\'en-tête</string>
   <string name="status_bar_custom_header_shadow_title">Ombrage de l\'image d\'en-tête</string>
   <string name="status_bar_custom_header_shadow_summary">Pour une meilleure visibilité des images lumineuses</string>
@@ -290,7 +285,6 @@
   <string name="global_actions_voiceassist_title">Assistant vocal</string>
   <string name="global_actions_silent_title">Mode silencieux</string>
   <string name="global_actions_dnd_title">Ne pas déranger</string>
-  <string name="global_actions_title">Menu Marche/Arrêt</string>
   <string name="global_actions_summary">Actions affichées dans le menu Marche/Arrêt</string>
   <string name="global_actions_header">Certaines actions sont uniquement visibles en fonction de la configuration ou seulement si l\'appareil est déverrouillé</string>
   <string name="global_actions_anim">Apparence</string>
@@ -424,7 +418,6 @@
   <string name="headset_plugged_notification_summary">Affiche une notification lorsque des écouteurs filaires sont connectés</string>
   <!-- Display : Rotation -->
   <string name="category_display">Affichage</string>
-  <string name="display_rotation_title">Rotation</string>
   <string name="display_rotation_disabled">Désactivée</string>
   <string name="display_rotation_unit">degrés</string>
   <string name="display_rotation_category_title">Modes de rotation</string>

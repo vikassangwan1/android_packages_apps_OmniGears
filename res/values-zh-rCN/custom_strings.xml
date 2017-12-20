@@ -18,7 +18,6 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="more_settings_title">Omni配置 更多...</string>
   <string name="ok">确定</string>
   <string name="advanced">高级选项</string>
   <string name="profiles_add">添加...</string>
@@ -155,9 +154,6 @@
   <string name="statusbar_battery_summary">设置状态栏电池显示样式</string>
   <string name="battery_style_title">样式</string>
   <string name="battery_percent_title">显示百分比</string>
-  <string name="battery_percent_none">从不</string>
-  <string name="battery_percent_always">总是</string>
-  <string name="battery_percent_expanded">展开时</string>
   <string name="statusbar_percent_inside_title">百分比布局</string>
   <string name="statusbar_percent_inside_summary">在电池图标上显示百分比</string>
   <string name="statusbar_charging_image_title">充电指示灯</string>
@@ -213,7 +209,6 @@
   <string name="lockscreen_left_shortcut_enable_summary">可见性取决于系统设置</string>
   <string name="notification_title">通知面板</string>
   <string name="status_bar_custom_header_title">自定义顶部图像</string>
-  <string name="status_bar_custom_header_summary">启用通知面板顶部图像</string>
   <string name="daylight_header_pack_title">顶部图像包</string>
   <string name="status_bar_custom_header_shadow_title">状态栏图片阴影</string>
   <string name="status_bar_custom_header_shadow_summary">提高在亮色图片上的能见度</string>
@@ -291,7 +286,6 @@
   <string name="global_actions_voiceassist_title">语音助手</string>
   <string name="global_actions_silent_title">静音模式</string>
   <string name="global_actions_dnd_title">勿扰</string>
-  <string name="global_actions_title">电源菜单</string>
   <string name="global_actions_summary">电源菜单选项</string>
   <string name="global_actions_header">部分选项根据设置仅在解锁后出现</string>
   <string name="global_actions_anim">布局</string>
@@ -436,7 +430,6 @@
   <string name="headset_plugged_notification_summary">当连接有线耳机时显示通知</string>
   <!-- Display : Rotation -->
   <string name="category_display">显示</string>
-  <string name="display_rotation_title">旋转</string>
   <string name="display_rotation_disabled">禁用</string>
   <string name="display_rotation_unit">度</string>
   <string name="display_rotation_category_title">旋转模式</string>

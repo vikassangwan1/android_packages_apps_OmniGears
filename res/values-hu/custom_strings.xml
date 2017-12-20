@@ -18,7 +18,6 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="more_settings_title">OmniGears egyebek...</string>
   <string name="ok">OK</string>
   <string name="advanced">Haladó</string>
   <string name="profiles_add">Hozzáadás...</string>
@@ -155,9 +154,6 @@
   <string name="statusbar_battery_summary">Állapotsor akkumulátor kijelzés stílusának beállítása</string>
   <string name="battery_style_title">Stílus</string>
   <string name="battery_percent_title">Százalék megjelenítése</string>
-  <string name="battery_percent_none">Soha</string>
-  <string name="battery_percent_always">Mindig</string>
-  <string name="battery_percent_expanded">Kiterjesztett</string>
   <string name="statusbar_percent_inside_title">Százalék megjelenítése</string>
   <string name="statusbar_percent_inside_summary">Százalék az akkumulátor képen jelenjen meg</string>
   <string name="statusbar_charging_image_title">Töltésjelző</string>
@@ -215,7 +211,6 @@
   <string name="lockscreen_left_shortcut_enable_summary">Láthatóság a rendszerbeállításoktól függ</string>
   <string name="notification_title">Értesítési panel</string>
   <string name="status_bar_custom_header_title">Egyéni fejléc kép</string>
-  <string name="status_bar_custom_header_summary">Értesítési panel fejléc kép engedélyezése</string>
   <string name="daylight_header_pack_title">Fejléc képcsomag</string>
   <string name="status_bar_custom_header_shadow_title">Fejléc kép árnyék</string>
   <string name="status_bar_custom_header_shadow_summary">Jobb láthatóság világos képek esetén</string>
@@ -293,7 +288,6 @@
   <string name="global_actions_voiceassist_title">Hangsegéd</string>
   <string name="global_actions_silent_title">Néma üzemmód</string>
   <string name="global_actions_dnd_title">Ne zavarjanak</string>
-  <string name="global_actions_title">Kikapcsoló menü</string>
   <string name="global_actions_summary">Kikapcsoló menüben látható műveletek</string>
   <string name="global_actions_header">Egyes tevékenységek csak a beállításai függvényében láthatóak, vagy csak akkor, ha a készülék fel van oldva</string>
   <string name="global_actions_anim">Megjelenés</string>
@@ -443,7 +437,6 @@
   <string name="headset_plugged_notification_summary">Értesítés megjelenítése vezetékes fejhallgató csatlakoztatásakor</string>
   <!-- Display : Rotation -->
   <string name="category_display">Kijelző</string>
-  <string name="display_rotation_title">Elforgatás</string>
   <string name="display_rotation_disabled">Kikapcsolva</string>
   <string name="display_rotation_unit">fok</string>
   <string name="display_rotation_category_title">Forgatás módok</string>

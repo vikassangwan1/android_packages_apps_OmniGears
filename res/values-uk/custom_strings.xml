@@ -18,7 +18,6 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="more_settings_title">OmniGears Детальніше...</string>
   <string name="ok">OK</string>
   <string name="advanced">Розширені налаштування</string>
   <string name="profiles_add">Додати...</string>
@@ -136,9 +135,6 @@
   <string name="battery_title">Показувати батарею</string>
   <string name="battery_style_title">Стиль</string>
   <string name="battery_percent_title">Відображати відсотки</string>
-  <string name="battery_percent_none">Ніколи</string>
-  <string name="battery_percent_always">Завжди</string>
-  <string name="battery_percent_expanded">Широкий</string>
   <string name="statusbar_percent_inside_title">Відсоток накладання</string>
   <string name="statusbar_percent_inside_summary">Відображення відсотків на верхівці зображення акумулятора</string>
   <string name="statusbar_charging_image_title">Індикатор зарядки</string>
@@ -162,7 +158,6 @@
   <!-- Lock screen config -->
   <string name="notification_title">Панель сповіщень</string>
   <string name="status_bar_custom_header_title">Користувацький заголовок зображення</string>
-  <string name="status_bar_custom_header_summary">Увімкнути заголовок зображення панелі сповіщень</string>
   <!-- Network traffic -->
   <string name="network_traffic_title">Мережевий трафік</string>
   <string name="show_network_traffic_state">Відображати трафік у статус барі</string>

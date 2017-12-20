@@ -18,7 +18,6 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="more_settings_title">OmniGears mer...</string>
   <string name="ok">OK</string>
   <string name="advanced">Avansert</string>
   <string name="profiles_add">Legg til...</string>

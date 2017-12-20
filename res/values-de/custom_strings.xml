@@ -18,7 +18,6 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="more_settings_title">OmniGears mehr...</string>
   <string name="ok">OK</string>
   <string name="advanced">Erweitert</string>
   <string name="profiles_add">Hinzufügen...</string>
@@ -155,9 +154,6 @@
   <string name="statusbar_battery_summary">Darstellung der Batterieanzeige festlegen</string>
   <string name="battery_style_title">Aussehen</string>
   <string name="battery_percent_title">Prozent anzeigen</string>
-  <string name="battery_percent_none">Niemals</string>
-  <string name="battery_percent_always">Immer</string>
-  <string name="battery_percent_expanded">Erweitert</string>
   <string name="statusbar_percent_inside_title">Prozent anzeigen</string>
   <string name="statusbar_percent_inside_summary">Prozent über dem Batteriebild anzeigen</string>
   <string name="statusbar_charging_image_title">Ladeanzeige</string>
@@ -213,7 +209,6 @@
   <string name="lockscreen_left_shortcut_enable_summary">Sichtbarkeit hängt von Systemeinstellungen ab</string>
   <string name="notification_title">Benachrichtigungsfeld</string>
   <string name="status_bar_custom_header_title">Benutzerdefiniertes Kopfzeilenbild</string>
-  <string name="status_bar_custom_header_summary">Benutzerdefiniertes Kopfzeilenbild im Benachrichtigungsfeld aktivieren</string>
   <string name="daylight_header_pack_title">Kopfzeilen Bild-Sammlung</string>
   <string name="status_bar_custom_header_shadow_title">Kopfzeilenbild-Schatten</string>
   <string name="status_bar_custom_header_shadow_summary">Bessere Sichtbarkeit bei hellen Bildern</string>
@@ -291,7 +286,6 @@
   <string name="global_actions_voiceassist_title">Sprachassistent</string>
   <string name="global_actions_silent_title">Lautlos</string>
   <string name="global_actions_dnd_title">Nicht stören</string>
-  <string name="global_actions_title">Ein/Aus-Menü</string>
   <string name="global_actions_summary">Im Ein/Aus-Menü angezeigte Aktionen</string>
   <string name="global_actions_header">Einige Aktionen sind nur abhängig von den Einstellungen oder wenn das Gerät entsperrt ist sichtbar</string>
   <string name="global_actions_anim">Aussehen</string>
@@ -436,7 +430,6 @@
   <string name="headset_plugged_notification_summary">Benachrichtigung beim Verbinden kabelgebundener Headsets zeigen</string>
   <!-- Display : Rotation -->
   <string name="category_display">Bildschirm</string>
-  <string name="display_rotation_title">Bildschirmausrichtung</string>
   <string name="display_rotation_disabled">Deaktiviert</string>
   <string name="display_rotation_unit">Grad</string>
   <string name="display_rotation_category_title">Rotations-Modi</string>
