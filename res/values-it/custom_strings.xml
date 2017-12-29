@@ -538,4 +538,12 @@
   <string name="logcat_app_summary">Avvia l\'app per raccogliere i registri</string>
   <string name="omni_theme_title">Tema Omni chiaro/scuro</string>
   <string name="omni_theme_summary">Tema basato su Substratum</string>
+  <string name="show_dashboard_columns_title">Usa un layout a colonne</string>
+  <string name="show_dashboard_columns_summary">Nella pagina principale delle impostazioni</string>
+  <string name="hide_dashboard_summary_title">Nascondi sommario</string>
+  <string name="hide_dashboard_summary_summary">Nella pagina principale delle impostazioni</string>
+  <string name="systemui_theme_style_title">Stile SystemUI</string>
+  <string name="systemui_theme_style_auto">In base allo sfondo</string>
+  <string name="systemui_theme_style_light">Stile chiaro</string>
+  <string name="systemui_theme_style_dark">Stile scuro</string>
 </resources>

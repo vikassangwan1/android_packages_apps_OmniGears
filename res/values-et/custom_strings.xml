@@ -18,29 +18,87 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="ok">OK</string>
   <!-- Hardware keys -->
+  <string name="button_keys_assist_title">Otsingunupp</string>
+  <string name="keys_assist_press_title">Otsingunupp</string>
+  <string name="keys_assist_long_press_title">Otsingunupp (pikk vajutus)</string>
+  <string name="keys_action_long">Pikk vajutus</string>
+  <string name="button_other_title">Muu</string>
+  <string name="button_back_kill_timeout_500ms">500 ms</string>
+  <string name="button_back_kill_timeout_1000ms">1000 ms</string>
+  <string name="button_back_kill_timeout_1500ms">1500 ms</string>
   <!-- Double tap to sleep -->
   <!-- Doze pulse (ambient display) options -->
+  <string name="twohundred_ms">200 ms</string>
+  <string name="fivehundred_ms">500 ms</string>
+  <string name="one_second">1 s</string>
+  <string name="one_second_default">1 s (vaikimisi)</string>
+  <string name="onehalf_second">1.5 s</string>
+  <string name="two_second">2 s</string>
+  <string name="twohalf_second">2.5 s</string>
+  <string name="three_second">3 s</string>
+  <string name="three_second_default">3 s (vaikimisi)</string>
+  <string name="threehalf_second">3.5 s</string>
+  <string name="four_second">4 s</string>
+  <string name="fourhalf_second">4.5 s</string>
+  <string name="five_second">5 s</string>
+  <string name="veryeasy_shake">Väga lihtne</string>
+  <string name="medium_shake">Vaikimisi</string>
+  <string name="veryhard_shake">Väga raske</string>
   <!-- Swap volume buttons when the screen is rotated -->
   <!-- Battery light settings  -->
+  <string name="battery_light_full_color_title">Laetud (90%)</string>
+  <string name="battery_light_really_full_color_title">Laetud (100%)</string>
+  <string name="led_color_red">Punane</string>
+  <string name="button_manual_brightness">Heledustase</string>
+  <string name="unit_sec">sek</string>
+  <string name="unit_msec">ms</string>
+  <string name="doze_brightness_level_title">Heledustase</string>
   <!-- Lock screen config -->
+  <string name="header_provider_disabled">Keelatud</string>
   <!-- Network traffic -->
+  <string name="show_network_traffic_disable">Keelatud</string>
+  <string name="show_network_traffic_500">500 ms</string>
+  <string name="show_network_traffic_1000">1000 ms</string>
+  <string name="show_network_traffic_1500">1500 ms</string>
+  <string name="show_network_traffic_2000">2000 ms</string>
   <!-- statusbar brightness -->
   <!-- Status Bar Activity Indicators -->
   <!-- Navigationbar settings -->
   <!-- Enable Tablet Style navigation bar -->
   <!-- Dashboard columns -->
+  <string name="dashboard_columns_phone_default">Vaikimisi</string>
+  <string name="dashboard_columns_two">2</string>
+  <string name="dashboard_columns_tablet_default">Vaikimisi</string>
+  <string name="dashboard_columns_three">3</string>
+  <string name="dashboard_columns_four">4</string>
   <!-- global acions config -->
+  <string name="global_actions_torch_title">Taskulamp</string>
+  <string name="font_sample_text">11:57</string>
   <!--<string name="screenshot_crop_behavior_title"></string>
     <string name="screenshot_crop_behavior_summary"></string>-->
+  <string name="status_bar_quick_qs_pulldown_off">Väljas</string>
   <!-- Power menu Animations  -->
+  <string name="power_menu_animation_enter">Omni (vaikimisi)</string>
   <!-- Notification light dialogs -->
   <!-- Values for the notification light pulse spinners -->
   <!-- Lights settings screen, notification light settings -->
+  <string name="notification_light_default_value">Vaikimisi</string>
   <!-- Lights settings, LED notification -->
   <!-- Hostname setting -->
   <!-- OMS -->
   <!-- Summaries -->
+  <string name="night_mode_summary">%s</string>
+  <string name="since_charged">Laetud</string>
   <!-- Display : Rotation -->
+  <string name="display_rotation_disabled">Keelatud</string>
+  <string name="display_rotation_unit">kraadi</string>
+  <string name="display_rotation_0_title">0 kraadi</string>
+  <string name="display_rotation_90_title">90 kraadi</string>
+  <string name="display_rotation_180_title">180 kraadi</string>
+  <string name="display_rotation_270_title">270 kraadi</string>
   <!-- Doze settings editor -->
+  <string name="string_seconds">sekundit</string>
+  <string name="string_default">Vaikimisi</string>
 </resources>

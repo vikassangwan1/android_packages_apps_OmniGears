@@ -491,4 +491,12 @@
   <string name="logcat_app_summary">Spusťte aplikaci a shromažďujte protokoly</string>
   <string name="omni_theme_title">Světlý/tmavý motiv Omni</string>
   <string name="omni_theme_summary">Motivy založené na Substratum</string>
+  <string name="show_dashboard_columns_title">Použít rozložení sloupců</string>
+  <string name="show_dashboard_columns_summary">V nastavení hlavní nabídky</string>
+  <string name="hide_dashboard_summary_title">Skrýt přehled</string>
+  <string name="hide_dashboard_summary_summary">V nastavení hlavní nabídky</string>
+  <string name="systemui_theme_style_title">Styl SystemUI</string>
+  <string name="systemui_theme_style_auto">Podle tapety</string>
+  <string name="systemui_theme_style_light">Světlý styl</string>
+  <string name="systemui_theme_style_dark">Tmavý styl</string>
 </resources>
