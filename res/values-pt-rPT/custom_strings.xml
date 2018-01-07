@@ -540,4 +540,20 @@
   <string name="logcat_app_summary">Iniciar o aplicativo para coletar logs</string>
   <string name="omni_theme_title">Tema Omni claro/escuro</string>
   <string name="omni_theme_summary">Tema com base em Substratum</string>
+  <string name="show_dashboard_columns_title">Layout de coluna</string>
+  <string name="show_dashboard_columns_summary">Na página principal de configurações</string>
+  <string name="hide_dashboard_summary_title">Esconder o sumário</string>
+  <string name="hide_dashboard_summary_summary">Na página principal de configurações</string>
+  <string name="systemui_theme_style_title">Estilo de UI de sistema</string>
+  <string name="systemui_theme_style_auto">Baseado no papel de parede</string>
+  <string name="systemui_theme_style_light">Estilo claro</string>
+  <string name="systemui_theme_style_dark">Estilo escuro</string>
+  <string name="volume_steps_title">Níveis de volume</string>
+  <string name="volume_steps_summary">Configurar os passos disponíveis para diferentes volumes de áudio</string>
+  <string name="volume_steps_30">30 passos</string>
+  <string name="volume_steps_15">15 passos</string>
+  <string name="volume_steps_7">7 passos</string>
+  <string name="volume_steps_5">5 passos</string>
+  <string name="system_volume_option_title">Volume do sistema</string>
+  <string name="call_volume_option_title">Volume de chamadas de voz</string>
 </resources>
