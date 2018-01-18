@@ -172,7 +172,7 @@
   <string name="button_backlight_on_touch_only_title">Tombol sentuh</string>
   <string name="button_backlight_on_touch_only_summary">Aktifkan lampu latar dengan batas waktu hanya pada sentuhan tombol</string>
   <string name="button_timeout_title">Batas waktu lampu latar</string>
-  <string name="button_timeout_summary">Dinonaktifkan nilainya 0</string>
+  <string name="button_timeout_summary">Dihentikan pada nilai 0</string>
   <string name="button_link_brightness">Tautan ke layar</string>
   <string name="button_link_brightness_summary">Gunakan tingkat kecerahan layar</string>
   <string name="button_manual_brightness">Tingkat kecerahan</string>

@@ -22,7 +22,7 @@
   <string name="advanced">Avançado</string>
   <string name="profiles_add">Adicionar...</string>
   <string name="profile_choose_app">Escolher aplicação</string>
-  <string name="reset">Reset</string>
+  <string name="reset">Redefinir</string>
   <!-- Hardware keys -->
   <string name="button_keys_title">Botões</string>
   <string name="keys_bindings_title">Ações dos botões</string>
@@ -33,7 +33,7 @@
   <string name="button_keys_appSwitch_title">Botão Recentes</string>
   <string name="keys_enable_custom_title">Acções personalizadas</string>
   <string name="keys_back_press_title">Botão Voltar</string>
-  <string name="keys_back_long_press_title">Botão Voltar (pressão longa)</string>
+  <string name="keys_back_long_press_title">Botão Voltar (Manter pressionado)</string>
   <string name="keys_home_press_title">Botão Home</string>
   <string name="keys_home_long_press_title">Botão Home (pressão longa)</string>
   <string name="keys_home_double_tap_title">Botão Home (Toque duplo)</string>
@@ -90,8 +90,8 @@
   <string name="doze_overwrite_value_summary">Permitir substituição do valor padrão com a configuração do utilizador</string>
   <string name="doze_list_mode_title">Modo Doze</string>
   <string name="doze_list_mode_summary">Opção para configurar o Modo Doze</string>
-  <string name="doze_pulse_title">Configurações de data e hora</string>
-  <string name="doze_pulse_duration_in_title">Aparecimento gradual</string>
+  <string name="doze_pulse_title">Configurações de tempo</string>
+  <string name="doze_pulse_duration_in_title">Desvanecer</string>
   <string name="doze_pulse_duration_visible_title">Duração visível</string>
   <string name="doze_pulse_duration_out_title">Desvanecer</string>
   <string name="doze_pulse_on_notifications_title">Notificações pulsantes</string>
@@ -138,7 +138,7 @@
   <string name="color_picker_dialog_title">Côr</string>
   <!-- Battery light settings  -->
   <string name="batterylight_title">Configurações da luz de bateria</string>
-  <string name="battery_light_enable">Activar</string>
+  <string name="battery_light_enable">Ativar</string>
   <string name="battery_low_pulse_title">Pulsar se a bateria estiver fraca</string>
   <string name="battery_light_only_full_charge_title">Ligar apenas quando a bateria estiver completamente carregada</string>
   <string name="battery_light_list_title">Cores</string>
@@ -173,7 +173,7 @@
   <string name="button_backlight_on_touch_only_summary">Activar retroiluminação com tempo limite apenas quando o botão é tocado</string>
   <string name="button_timeout_title">Duração da retroiluminação</string>
   <string name="button_timeout_summary">Desactivado quando o valor é 0</string>
-  <string name="button_link_brightness">Interligar com o ecrã</string>
+  <string name="button_link_brightness">Ajustar ao ecrã</string>
   <string name="button_link_brightness_summary">Usar o nível de brilho do ecrã</string>
   <string name="button_manual_brightness">Nível de brilho</string>
   <string name="unit_sec">seg</string>
@@ -273,7 +273,7 @@
   <string name="recents_category">Recentes</string>
   <string name="recents_search_bar_title">Mostrar barra de pesquisa</string>
   <string name="recents_fullscreen_title">Ecrã completo</string>
-  <string name="weather_title">Clima</string>
+  <string name="weather_title">Tempo</string>
   <string name="weather_config_title">Configurações do serviço</string>
   <string name="header_weather_title">Exibição do clima no cabeçalho</string>
   <string name="header_weather_summary">Habilitar exibição do tempo no painel de notificação</string>
@@ -406,10 +406,10 @@
   <string name="night_mode_summary">%s</string>
   <string name="night_mode_no">Claro</string>
   <string name="night_mode_yes">Escuro</string>
-  <string name="state_time_mode">Ligado</string>
+  <string name="state_time_mode">Despertar</string>
   <string name="since_boot">Boot</string>
   <string name="since_charged">Carregado</string>
-  <string name="since_unplugged">Desligado da corrente</string>
+  <string name="since_unplugged">Desligado</string>
   <string name="since_reset">Reiniciar</string>
   <string name="since_unplug">Desligar da corrente</string>
   <string name="other">Actividade</string>
