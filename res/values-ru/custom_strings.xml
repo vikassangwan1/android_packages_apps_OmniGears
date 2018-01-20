@@ -189,7 +189,7 @@
   <string name="omniswitch_dialog_running_new">В настоящее время OmniSwitch не включен. Пожалуйста включите его в настройках приложения.</string>
   <string name="omniswitch_dialog_unavail">OmniSwitch не установлен.</string>
   <string name="omniswitch_title">Стиль списка запущенных приложений</string>
-  <string name="long_press_recents_action_title">Действие при длительном нажатии недавних</string>
+  <string name="long_press_recents_action_title">Действие при длительном нажатии "недавних"</string>
   <string name="long_press_recents_action_split">Переключить разделение экрана</string>
   <string name="long_press_home_action_title">Долгое нажатие кнопки \"Домой\"</string>
   <string name="keys_action_recents">Недавние</string>
@@ -447,8 +447,6 @@
   <string name="wakelocks_title">Пробуждения</string>
   <string name="wakelocks_summary">Показать статистику пробуждений</string>
   <string name="system_category">Система</string>
-  <string name="custom_wall_browse_title">Обои Omni</string>
-  <string name="custom_wall_browse_summary">Обзор и установка фирменных обоев Omni</string>
   <string name="show_cpu_title">Показать информацию о процессоре</string>
   <string name="show_cpu_summary">Отображать текущее состояние процессора поверх изображения</string>
   <string name="headset_plugged_notification_title">Уведомление о подключении наушников</string>
@@ -467,8 +465,6 @@
   <string name="volume_button_force_media_summary">Кнопки громкости регулируют громкость мультимедиа</string>
   <string name="lockscreen_hide_status_bar_title">Скрыть строку состояния</string>
   <string name="lockscreen_hide_status_bar_summary">Нажмите для изменения видимости строки состоянии</string>
-  <string name="status_bar_logo_title">Лого строки состояния</string>
-  <string name="status_bar_logo_summary">Немного крутости</string>
   <!-- Doze settings editor -->
   <string name="doze_settings_title">Настройки режима Doze</string>
   <string name="doze_settings_summary">Изменить конфигурацию Doze</string>
@@ -554,4 +550,5 @@
   <string name="volume_steps_5">5 уровней</string>
   <string name="system_volume_option_title">Громкость системных звуков</string>
   <string name="call_volume_option_title">Громкость при разговоре</string>
+  <string name="double_press_home_action_title">Действие при двойном нажатии "Домой"</string>
 </resources>
