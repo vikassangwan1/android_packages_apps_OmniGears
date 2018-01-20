@@ -175,7 +175,6 @@
     <string name="led_color_red">Red</string>
     <string name="led_color_blue">Blue</string>
 
-    <string name="statusbar_title">Status bar</string>
     <string name="battery_title">Battery display</string>
     <string name="statusbar_battery_summary">Set style of status bar battery display</string>
     <string name="battery_style_title">Style</string>
