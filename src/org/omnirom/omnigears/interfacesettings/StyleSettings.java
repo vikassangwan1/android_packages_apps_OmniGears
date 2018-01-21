@@ -1,4 +1,4 @@
-/*
+ /*
  *  Copyright (C) 2017 The OmniROM Project
  *
  * This program is free software: you can redistribute it and/or modify
@@ -79,9 +79,6 @@ public class StyleSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.style_settings);
-
-        mWallBrowse = findPreference(CUSTOM_WALL_BROWSE);
-        mWallBrowse.setEnabled(isBrowseWallsAvailable());
 
         mHeaderBrowse = findPreference(CUSTOM_HEADER_BROWSE);
         mHeaderBrowse.setEnabled(isBrowseHeaderAvailable());
