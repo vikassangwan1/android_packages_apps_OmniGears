@@ -154,6 +154,7 @@
   <string name="led_color_green">Зелёный</string>
   <string name="led_color_red">Красный</string>
   <string name="led_color_blue">Синий</string>
+  <string name="statusbar_title">Панель уведомлений</string>
   <string name="battery_title">Отображение батареи</string>
   <string name="statusbar_battery_summary">Задать стиль аккумулятора в строке состояния</string>
   <string name="battery_style_title">Стиль</string>
