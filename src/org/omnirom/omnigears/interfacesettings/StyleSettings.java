@@ -35,12 +35,13 @@ import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.util.omni.PackageUtils;
 
-import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 import com.android.settings.Utils;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.dashboard.SummaryLoader;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
+import com.android.settingslib.core.AbstractPreferenceController;
 
 import org.omnirom.omnigears.preference.SystemSettingSwitchPreference;
 import org.omnirom.omnigears.preference.SeekBarPreference;
@@ -51,7 +52,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class StyleSettings extends SettingsPreferenceFragment implements
+public class StyleSettings extends DashboardFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
     private static final String TAG = "StyleSettings";
     private static final String CUSTOM_WALL_BROWSE = "custom_wall_browse";
@@ -84,9 +85,19 @@ public class StyleSettings extends SettingsPreferenceFragment implements
     }
 
     @Override
+    protected String getLogTag() {
+        return TAG;
+    }
+
+    @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.style_settings;
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.style_settings);
+        //addPreferencesFromResource(R.xml.style_settings);
 
         mWallBrowse = findPreference(CUSTOM_WALL_BROWSE);
         mWallBrowse.setEnabled(isBrowseWallsAvailable());
@@ -264,6 +275,13 @@ public class StyleSettings extends SettingsPreferenceFragment implements
             final Uri imageUri = result.getData();
             Settings.System.putString(getContentResolver(), Settings.System.STATUS_BAR_FILE_HEADER_IMAGE, imageUri.toString());
         }
+    }
+
+    @Override
+    protected List<AbstractPreferenceController> getPreferenceControllers(Context context) {
+        final List<AbstractPreferenceController> controllers = new ArrayList<>();
+        controllers.add(new OmniThemePreferenceController(context));
+        return controllers;
     }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
