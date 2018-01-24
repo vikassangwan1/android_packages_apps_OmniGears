@@ -538,7 +538,7 @@
   <string name="show_dashboard_columns_summary">В главной странице настроек</string>
   <string name="hide_dashboard_summary_title">Скрыть содержание</string>
   <string name="hide_dashboard_summary_summary">В главной странице настроек</string>
-  <string name="systemui_theme_style_title">Стиль SystemUI</string>
+  <string name="systemui_theme_style_title">Стиль системы</string>
   <string name="systemui_theme_style_auto">На основе обоев</string>
   <string name="systemui_theme_style_light">Светлый стиль</string>
   <string name="systemui_theme_style_dark">Темный стиль</string>
