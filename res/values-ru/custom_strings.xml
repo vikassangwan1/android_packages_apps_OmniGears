@@ -555,4 +555,7 @@
   <string name="screen_off_animation_crt">CRT</string>
   <string name="screen_off_animation_scale">Масштабирование</string>
   <string name="screen_off_animation_title">Анимация выключения экрана</string>
+  <string name="double_tap_sleep_lockscreen_title">Двойное нажатие для выключения на экране блокировки</string>
+  <string name="double_tap_sleep_lockscreen_summary">Нажмите дважды на экране блокировки, чтобы выключить экран</string>
+  
 </resources>
