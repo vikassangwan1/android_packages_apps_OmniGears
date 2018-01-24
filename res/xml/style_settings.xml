@@ -28,6 +28,11 @@
             android:entries="@array/systemui_theme_style_entries"
             android:entryValues="@array/systemui_theme_style_values" />
 
+        <ListPreference
+            android:key="omni_theme_select"
+            android:title="@string/omni_theme_select_title"
+            android:summary="@string/summary_placeholder" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
