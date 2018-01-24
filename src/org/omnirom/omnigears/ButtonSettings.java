@@ -102,13 +102,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
             mDisabkeHWKeys.setChecked(harwareKeysDisable);
         }
 
-        mNavbarRecentsStyle = (ListPreference) findPreference(NAVIGATION_BAR_RECENTS_STYLE);
-        int recentsStyle = Settings.System.getInt(resolver,
-                Settings.System.NAVIGATION_BAR_RECENTS, 0);
-
-        mNavbarRecentsStyle.setValue(Integer.toString(recentsStyle));
-        mNavbarRecentsStyle.setSummary(mNavbarRecentsStyle.getEntry());
-        mNavbarRecentsStyle.setOnPreferenceChangeListener(this);
 
         mLongPressRecentsAction = (ListPreference) findPreference(LONG_PRESS_RECENTS_ACTION);
         int longPressRecentsAction = Settings.System.getInt(resolver,
@@ -161,20 +154,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mNavbarRecentsStyle) {
-            int value = Integer.valueOf((String) newValue);
-            if (value == 1) {
-                if (!isOmniSwitchInstalled()){
-                    doOmniSwitchUnavail();
-                } else if (!OmniSwitchConstants.isOmniSwitchRunning(getActivity())) {
-                    doOmniSwitchConfig();
-                }
-            }
-            int index = mNavbarRecentsStyle.findIndexOfValue((String) newValue);
-            mNavbarRecentsStyle.setSummary(mNavbarRecentsStyle.getEntries()[index]);
-            Settings.System.putInt(getContentResolver(), Settings.System.NAVIGATION_BAR_RECENTS, value);
-            return true;
-        } else if (preference == mLongPressRecentsAction) {
+        if (preference == mLongPressRecentsAction) {
             int value = Integer.valueOf((String) newValue);
             int index = mLongPressRecentsAction.findIndexOfValue((String) newValue);
             mLongPressRecentsAction.setSummary(mLongPressRecentsAction.getEntries()[index]);
@@ -194,39 +174,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
             return true;
         }
         return false;
-    }
-
-    private void checkForOmniSwitchRecents() {
-        if (!isOmniSwitchInstalled()){
-            doOmniSwitchUnavail();
-        } else if (!OmniSwitchConstants.isOmniSwitchRunning(getActivity())) {
-            doOmniSwitchConfig();
-        }
-    }
-
-    private void doOmniSwitchConfig() {
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
-        alertDialogBuilder.setTitle(R.string.omniswitch_title);
-        alertDialogBuilder.setMessage(R.string.omniswitch_dialog_running_new)
-            .setPositiveButton(R.string.omniswitch_settings, new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog,int id) {
-                    startActivity(OmniSwitchConstants.INTENT_LAUNCH_APP);
-                }
-            });
-        AlertDialog alertDialog = alertDialogBuilder.create();
-        alertDialog.show();
-    }
-
-    private void doOmniSwitchUnavail() {
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
-        alertDialogBuilder.setTitle(R.string.omniswitch_title);
-        alertDialogBuilder.setMessage(R.string.omniswitch_dialog_unavail);
-        AlertDialog alertDialog = alertDialogBuilder.create();
-        alertDialog.show();
-    }
-
-    private boolean isOmniSwitchInstalled() {
-        return PackageUtils.isAvailableApp(OmniSwitchConstants.APP_PACKAGE_NAME, getActivity());
     }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
