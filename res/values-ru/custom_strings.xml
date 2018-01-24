@@ -551,4 +551,8 @@
   <string name="system_volume_option_title">Громкость системных звуков</string>
   <string name="call_volume_option_title">Громкость при разговоре</string>
   <string name="double_press_home_action_title">Действие при двойном нажатии \"Домой\"</string>
+  <string name="screen_off_animation_default">По умолчанию</string>
+  <string name="screen_off_animation_crt">CRT</string>
+  <string name="screen_off_animation_scale">Масштабирование</string>
+  <string name="screen_off_animation_title">Анимация выключения экрана</string>
 </resources>
