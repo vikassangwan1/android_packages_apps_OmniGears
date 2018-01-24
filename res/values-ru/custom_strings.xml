@@ -559,5 +559,8 @@
   <string name="double_tap_sleep_lockscreen_summary">Нажмите дважды на экране блокировки, чтобы выключить экран</string>
   <string name="omni_theme_select_title">Темы Omni</string>
   <string name="omni_theme_select_none">Отключено</string>
+  <string name="file_header_select_title">Выберите изображение</string>
+  <string name="file_header_select_summary">Выберите собственное изображение</string>
+  <string name="file_header_provider_title">Пользовательское изображение</string>
   
 </resources>
