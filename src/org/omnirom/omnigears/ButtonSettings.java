@@ -46,6 +46,7 @@ import com.android.settings.dashboard.SummaryLoader;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
+import com.android.internal.util.omni.OmniSwitchConstants;
 import com.android.internal.util.omni.PackageUtils;
 import com.android.internal.util.omni.DeviceUtils;
 
@@ -54,10 +55,12 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
     private static final String CATEGORY_KEYS = "button_keys";
     private static final String KEYS_SHOW_NAVBAR_KEY = "navigation_bar_show";
     private static final String KEYS_DISABLE_HW_KEY = "hardware_keys_disable";
+    private static final String NAVIGATION_BAR_RECENTS_STYLE = "navbar_recents_style";
     private static final String LONG_PRESS_RECENTS_ACTION = "long_press_recents_action";
     private static final String LONG_PRESS_HOME_ACTION = "long_press_home_action";
     private static final String DOUBLE_PRESS_HOME_ACTION = "double_press_home_action";
 
+    private ListPreference mNavbarRecentsStyle;
     private ListPreference mLongPressRecentsAction;
     private ListPreference mLongPressHomeAction;
     private ListPreference mDoublePressHomeAction;
