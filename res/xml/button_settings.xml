@@ -89,12 +89,6 @@
         android:title="@string/button_other_title" >
 
         <ListPreference
-            android:key="navbar_recents_style"
-            android:title="@string/navbar_recents_style_title"
-            android:entries="@array/navbar_recents_style_entries"
-            android:entryValues="@array/navbar_recents_style_values"
-            android:persistent="false"/>
-        <ListPreference
             android:key="long_press_recents_action"
             android:title="@string/long_press_recents_action_title"
             android:entries="@array/long_press_recents_action_entries"
