@@ -235,7 +235,7 @@
   <string name="custom_header_browse_title">Parcourir les en-têtes installées</string>
   <string name="custom_header_browse_summary">Un appui long sur une image permet de l\'utiliser en mode statique</string>
   <string name="custom_header_browse_summary_new">Parcourir toutes les en-têtes de pack</string>
-  <string name="custom_header_pick_title">Définir image d\'en-tête</string>
+  <string name="custom_header_pick_title">Définir l\'image d\'en-tête</string>
   <string name="custom_header_pick_summary">Sélectionner une image pour le mode statique</string>
   <string name="style_enabled_summary">Personnalisation d\'en-tête activée</string>
   <string name="style_disabled_summary">Personnalisation d\'en-tête désactivée</string>
