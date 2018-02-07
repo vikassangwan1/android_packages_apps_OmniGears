@@ -189,7 +189,7 @@
   <string name="omniswitch_dialog_running_new">В настоящее время OmniSwitch не включен. Пожалуйста включите его в настройках приложения.</string>
   <string name="omniswitch_dialog_unavail">OmniSwitch не установлен.</string>
   <string name="omniswitch_title">Стиль списка запущенных приложений</string>
-  <string name="long_press_recents_action_title">Действие при длительном нажатии \"Недавние\"</string>
+  <string name="long_press_recents_action_title">Долгое нажатие кнопки \"Недавние\"</string>
   <string name="long_press_recents_action_split">Переключить разделение экрана</string>
   <string name="long_press_home_action_title">Долгое нажатие кнопки \"Домой\"</string>
   <string name="keys_action_recents">Недавние</string>
@@ -552,7 +552,7 @@
   <string name="volume_steps_5">5 уровней</string>
   <string name="system_volume_option_title">Громкость системных звуков</string>
   <string name="call_volume_option_title">Громкость при разговоре</string>
-  <string name="double_press_home_action_title">Действие при двойном нажатии \"Домой\"</string>
+  <string name="double_press_home_action_title">Двойное нажатие кнопки \"Домой\"</string>
   <string name="screen_off_animation_default">По умолчанию</string>
   <string name="screen_off_animation_crt">CRT</string>
   <string name="screen_off_animation_scale">Масштабирование</string>
