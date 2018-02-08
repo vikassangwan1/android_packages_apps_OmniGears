@@ -564,5 +564,6 @@
   <string name="file_header_select_title">Выберите изображение</string>
   <string name="file_header_select_summary">Выберите собственное изображение</string>
   <string name="file_header_provider_title">Пользовательское изображение</string>
+  <string name="keys_action_notifications">Уведомления</string>
   
 </resources>
