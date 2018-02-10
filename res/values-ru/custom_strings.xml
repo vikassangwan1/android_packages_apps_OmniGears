@@ -565,5 +565,5 @@
   <string name="file_header_select_summary">Выберите собственное изображение</string>
   <string name="file_header_provider_title">Пользовательское изображение</string>
   <string name="keys_action_notifications">Уведомления</string>
-  
+  <string name="omni_theme_select_summary">Просмотр и выбор установленных тем Omni</string>
 </resources>
