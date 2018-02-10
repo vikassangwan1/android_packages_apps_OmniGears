@@ -275,7 +275,7 @@ public class StyleSettings extends DashboardFragment implements
     @Override
     protected List<AbstractPreferenceController> getPreferenceControllers(Context context) {
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
-        controllers.add(new OmniThemePreferenceController(context));
+        //controllers.add(new OmniThemePreferenceController(context));
         return controllers;
     }
 
