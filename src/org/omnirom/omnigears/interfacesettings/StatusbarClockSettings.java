@@ -18,8 +18,10 @@
 package org.omnirom.omnigears.interfacesettings;
 
 import android.app.AlertDialog;
+
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.res.Resources;
@@ -31,6 +33,7 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v14.preference.PreferenceFragment;
 import android.support.v14.preference.SwitchPreference;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.text.format.DateFormat;
 import android.view.Menu;
@@ -42,11 +45,15 @@ import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
 
+import java.util.List;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class StatusbarClockSettings extends SettingsPreferenceFragment implements
-        OnPreferenceChangeListener {
+        OnPreferenceChangeListener, Indexable {
     private static final String TAG = "StatusbarClockSettings";
 
     private static final String PREF_CLOCK_STYLE = "clock_style";
@@ -54,6 +61,7 @@ public class StatusbarClockSettings extends SettingsPreferenceFragment implement
     private static final String PREF_CLOCK_DATE_DISPLAY = "clock_date_display";
     private static final String PREF_CLOCK_DATE_STYLE = "clock_date_style";
     private static final String PREF_CLOCK_DATE_FORMAT = "clock_date_format";
+    private static final String PREF_CLOCK_DATE_POSITION = "clock_date_position";
 
     public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
@@ -64,6 +72,7 @@ public class StatusbarClockSettings extends SettingsPreferenceFragment implement
     private ListPreference mClockDateDisplay;
     private ListPreference mClockDateStyle;
     private ListPreference mClockDateFormat;
+    private ListPreference mClockDatePosition;
 
     @Override
     public int getMetricsCategory() {
@@ -109,6 +118,13 @@ public class StatusbarClockSettings extends SettingsPreferenceFragment implement
                 0)));
         mClockDateStyle.setSummary(mClockDateStyle.getEntry());
 
+        mClockDatePosition = (ListPreference) findPreference(PREF_CLOCK_DATE_POSITION);
+        mClockDatePosition.setOnPreferenceChangeListener(this);
+        mClockDatePosition.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.STATUSBAR_CLOCK_DATE_POSITION,
+                0)));
+        mClockDatePosition.setSummary(mClockDatePosition.getEntry());
+
         mClockDateFormat = (ListPreference) findPreference(PREF_CLOCK_DATE_FORMAT);
         mClockDateFormat.setOnPreferenceChangeListener(this);
         String value = Settings.System.getString(getActivity().getContentResolver(),
@@ -129,6 +145,7 @@ public class StatusbarClockSettings extends SettingsPreferenceFragment implement
                     Settings.System.STATUSBAR_CLOCK_DATE_DISPLAY, 0) != 0;
         if (!mClockDateToggle) {
             mClockDateStyle.setEnabled(false);
+            mClockDatePosition.setEnabled(false);
             mClockDateFormat.setEnabled(false);
         }
     }
@@ -159,9 +176,11 @@ public class StatusbarClockSettings extends SettingsPreferenceFragment implement
             mClockDateDisplay.setSummary(mClockDateDisplay.getEntries()[index]);
             if (val == 0) {
                 mClockDateStyle.setEnabled(false);
+                mClockDatePosition.setEnabled(false);
                 mClockDateFormat.setEnabled(false);
             } else {
                 mClockDateStyle.setEnabled(true);
+                mClockDatePosition.setEnabled(true);
                 mClockDateFormat.setEnabled(true);
             }
             return true;
@@ -171,6 +190,14 @@ public class StatusbarClockSettings extends SettingsPreferenceFragment implement
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_DATE_STYLE, val);
             mClockDateStyle.setSummary(mClockDateStyle.getEntries()[index]);
+            parseClockDateFormats();
+            return true;
+        } else if (preference == mClockDatePosition) {
+            int val = Integer.parseInt((String) newValue);
+            int index = mClockDatePosition.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_CLOCK_DATE_POSITION, val);
+            mClockDatePosition.setSummary(mClockDatePosition.getEntries()[index]);
             parseClockDateFormats();
             return true;
         } else if (preference == mClockDateFormat) {
@@ -251,5 +278,26 @@ public class StatusbarClockSettings extends SettingsPreferenceFragment implement
         mClockDateFormat.setEntries(parsedDateEntries);
     }
 
+    public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    ArrayList<SearchIndexableResource> result =
+                            new ArrayList<SearchIndexableResource>();
+
+                    SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.statusbar_clock_settings;
+                    result.add(sir);
+
+                    return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    ArrayList<String> result = new ArrayList<String>();
+                    return result;
+                }
+            };
 }
 
