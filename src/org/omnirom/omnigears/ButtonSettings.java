@@ -60,6 +60,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
     private static final String LONG_PRESS_HOME_ACTION = "long_press_home_action";
     private static final String DOUBLE_PRESS_HOME_ACTION = "double_press_home_action";
     private static final String BUTTON_BACK_KILL_TIMEOUT = "button_back_kill_timeout";
+    private static final String KEY_BUTTON_LIGHT = "button_brightness";
 
     private ListPreference mNavbarRecentsStyle;
     private ListPreference mLongPressRecentsAction;
@@ -68,6 +69,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
     private SwitchPreference mEnableNavBar;
     private SwitchPreference mDisabkeHWKeys;
     private ListPreference mBackKillTimeout;
+    private Preference mButtonLight;
 
     @Override
     public int getMetricsCategory() {
@@ -87,24 +89,23 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
         final PreferenceCategory keysCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_KEYS);
 
+        mEnableNavBar = (SwitchPreference) prefScreen.findPreference(KEYS_SHOW_NAVBAR_KEY);
+        mDisabkeHWKeys = (SwitchPreference) prefScreen.findPreference(KEYS_DISABLE_HW_KEY);
+        mButtonLight = prefScreen.findPreference(KEY_BUTTON_LIGHT);
+
         if (deviceKeys == 0) {
-            prefScreen.removePreference(keysCategory);
+            keysCategory.removePreference(mDisabkeHWKeys);
+            keysCategory.removePreference(mButtonLight);
         } else {
-            mEnableNavBar = (SwitchPreference) prefScreen.findPreference(
-                   KEYS_SHOW_NAVBAR_KEY);
-
-            mDisabkeHWKeys = (SwitchPreference) prefScreen.findPreference(
-                    KEYS_DISABLE_HW_KEY);
-
-            boolean showNavBarDefault = DeviceUtils.deviceSupportNavigationBar(getActivity());
-            boolean showNavBar = Settings.System.getInt(resolver,
-                        Settings.System.NAVIGATION_BAR_SHOW, showNavBarDefault ? 1:0) == 1;
-            mEnableNavBar.setChecked(showNavBar);
-
-            boolean harwareKeysDisable = Settings.System.getInt(resolver,
-                        Settings.System.HARDWARE_KEYS_DISABLE, 0) == 1;
-            mDisabkeHWKeys.setChecked(harwareKeysDisable);
+            boolean hardwareKeysDisable = Settings.System.getInt(resolver,
+                    Settings.System.HARDWARE_KEYS_DISABLE, 0) == 1;
+            mDisabkeHWKeys.setChecked(hardwareKeysDisable);
         }
+
+        boolean showNavBarDefault = DeviceUtils.deviceSupportNavigationBar(getActivity());
+        boolean showNavBar = Settings.System.getInt(resolver,
+                Settings.System.NAVIGATION_BAR_SHOW, showNavBarDefault ? 1 : 0) == 1;
+        mEnableNavBar.setChecked(showNavBar);
 
         mNavbarRecentsStyle = (ListPreference) findPreference(NAVIGATION_BAR_RECENTS_STYLE);
         int recentsStyle = Settings.System.getInt(resolver,
