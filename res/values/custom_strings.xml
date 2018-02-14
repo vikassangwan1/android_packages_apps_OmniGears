@@ -648,4 +648,6 @@
     <string name="battery_style_circle">Circle</string>
     <string name="battery_style_droid">Droid</string>
     <string name="battery_style_round_rect">Square</string>
+    <string name="statusbar_battery_dotted_line_title">Dotted line</string>
+    <string name="statusbar_battery_dotted_line_summary">Use dotted line effect for certain styles</string>
 </resources>
