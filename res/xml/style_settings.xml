@@ -98,5 +98,5 @@
             android:dependency="status_bar_custom_header" />
 
     </PreferenceCategory>
-
+    
 </PreferenceScreen>

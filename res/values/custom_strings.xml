@@ -180,8 +180,9 @@
     <string name="statusbar_battery_summary">Set style of status bar battery display</string>
     <string name="battery_style_title">Style</string>
     <string name="battery_percent_title">Show percent</string>
+    <string name="battery_percent_summary">Show battery percentage</string>
     <string name="statusbar_percent_inside_title">Percent overlay</string>
-    <string name="statusbar_percent_inside_summary">Display percent on top of the the battery image</string>
+    <string name="statusbar_percent_inside_summary">Display battery percentage on top of the the battery image</string>
     <string name="statusbar_charging_image_title">Charging indicator</string>
     <string name="statusbar_category_charging_title">Charging</string>
     <string name="statusbar_charging_image_summary">Display bolt indicator while charging. Hides percent overlay</string>
@@ -639,4 +640,11 @@
     <string name="omni_theme_select_summary">Browse and select installed Omni themes</string>
 
     <string name="keys_action_notifications">Notifications</string>
+
+    <string name="battery_style_text">Text only</string>
+    <string name="battery_style_default">Default</string>
+    <string name="battery_style_meter_horizontal">Horizontal bar</string>
+    <string name="battery_style_circle">Circle</string>
+    <string name="battery_style_droid">Droid</string>
+    <string name="battery_style_round_rect">Square</string>
 </resources>
