@@ -82,6 +82,7 @@
   <string name="button_back_kill_timeout_500ms">500 мс</string>
   <string name="button_back_kill_timeout_1000ms">1000 мс</string>
   <string name="button_back_kill_timeout_1500ms">1500 мс</string>
+  <string name="button_back_kill_timeout_2000ms">2000 мс</string>
   <!-- Double tap to sleep -->
   <string name="double_tap_to_sleep_title">Двойное нажатие для выключения</string>
   <string name="double_tap_to_sleep_summary">Двойное нажатие на строке состояния выключает экран</string>
@@ -573,5 +574,7 @@
   <string name="battery_style_circle">Круг</string>
   <string name="battery_style_droid">Дроид</string>
   <string name="battery_style_round_rect">Квадрат</string>
+  <string name="statusbar_battery_dotted_line_title">Пунктирная линия</string>
+  <string name="statusbar_battery_dotted_line_summary">Использовать эффект пунктирной линии для определенных стилей</string>
 
 </resources>
