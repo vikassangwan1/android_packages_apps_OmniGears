@@ -135,7 +135,7 @@
   <string name="pulse_only_mode">Импульс (по умолчанию)</string>
   <!-- Swap volume buttons when the screen is rotated -->
   <string name="swap_volume_buttons_title">Соответствовать повороту экрана</string>
-  <string name="swap_volume_buttons_summary">Изменияь действия кнопок громкости в зависимости от текущего поворота экрана</string>
+  <string name="swap_volume_buttons_summary">Изменять действия кнопок громкости в зависимости от текущего поворота экрана</string>
   <string name="color_picker_dialog_title">Цвет</string>
   <!-- Battery light settings  -->
   <string name="batterylight_title">Индикация батареи</string>
