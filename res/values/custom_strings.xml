@@ -180,8 +180,6 @@
     <string name="battery_title">Battery display</string>
     <string name="statusbar_battery_summary">Set style of status bar battery display</string>
     <string name="battery_style_title">Style</string>
-    <string name="battery_percent_title">Show percent</string>
-    <string name="battery_percent_summary">Show battery percentage</string>
     <string name="statusbar_percent_inside_title">Percent overlay</string>
     <string name="statusbar_percent_inside_summary">Display battery percentage on top of the the battery image</string>
     <string name="statusbar_charging_image_title">Charging indicator</string>
@@ -651,4 +649,8 @@
     <string name="battery_style_round_rect">Square</string>
     <string name="statusbar_battery_dotted_line_title">Dotted line</string>
     <string name="statusbar_battery_dotted_line_summary">Use dotted line effect for certain styles</string>
+    <string name="battery_percent_none">Never</string>
+    <string name="battery_percent_always">Always</string>
+    <string name="battery_percent_expanded">Only when expanded</string>
+    <string name="battery_percent_title">Show percent</string>
 </resources>

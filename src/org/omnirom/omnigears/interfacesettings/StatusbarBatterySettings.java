@@ -51,7 +51,7 @@ import com.android.internal.util.omni.PackageUtils;
 import java.util.List;
 import java.util.ArrayList;
 
-//import org.omnirom.omnigears.preference.ColorPickerPreference;
+import org.omnirom.omnigears.preference.ColorSelectPreference;
 import org.omnirom.omnigears.preference.SeekBarPreference;
 import org.omnirom.omnigears.preference.SystemCheckBoxPreference;
 
@@ -60,14 +60,14 @@ public class StatusbarBatterySettings extends SettingsPreferenceFragment impleme
     private static final String TAG = "StatusbarBatterySettings";
 
     private static final String STATUSBAR_BATTERY_STYLE = "statusbar_battery_style";
-    private static final String STATUSBAR_BATTERY_PERCENT = "statusbar_battery_percent";
-    //private static final String STATUSBAR_CHARGING_COLOR = "statusbar_battery_charging_color";
+    private static final String STATUSBAR_BATTERY_PERCENT = "statusbar_battery_percent_enable";
+    private static final String STATUSBAR_CHARGING_COLOR = "statusbar_battery_charging_color";
     private static final String STATUSBAR_BATTERY_PERCENT_INSIDE = "statusbar_battery_percent_inside";
     private static final String STATUSBAR_BATTERY_SHOW_BOLT = "statusbar_battery_charging_image";
 
     private ListPreference mBatteryStyle;
-    private Preference mBatteryPercent;
-    //private ColorPickerPreference mChargingColor;
+    private ListPreference mBatteryPercent;
+    private ColorSelectPreference mChargingColor;
     private Preference mPercentInside;
     private Preference mShowBolt;
     private int mBatteryStyleValue;
@@ -93,16 +93,30 @@ public class StatusbarBatterySettings extends SettingsPreferenceFragment impleme
         mBatteryStyle.setSummary(mBatteryStyle.getEntry());
         mBatteryStyle.setOnPreferenceChangeListener(this);
 
-
-        /*mChargingColor = (ColorPickerPreference) prefScreen.findPreference(STATUSBAR_CHARGING_COLOR);
+        mChargingColor = (ColorSelectPreference) prefScreen.findPreference(STATUSBAR_CHARGING_COLOR);
         int chargingColor = Settings.System.getInt(resolver, Settings.System.STATUSBAR_BATTERY_CHARGING_COLOR, 0xFFFFFFFF);
         mChargingColor.setColor(chargingColor);
         String hexColor = String.format("#%08X", chargingColor);
         mChargingColor.setSummary(hexColor);
-        mChargingColor.setOnPreferenceChangeListener(this);*/
+        mChargingColor.setOnPreferenceChangeListener(this);
 
         mPercentInside = findPreference(STATUSBAR_BATTERY_PERCENT_INSIDE);
-        mBatteryPercent = findPreference(STATUSBAR_BATTERY_PERCENT);
+
+        mBatteryPercent = (ListPreference) findPreference(STATUSBAR_BATTERY_PERCENT);
+        int showPercent = Settings.System.getInt(resolver,
+                Settings.System.STATUSBAR_BATTERY_PERCENT, 0);
+        int forceShowPercent = Settings.System.getInt(resolver,
+                Settings.System.STATUSBAR_BATTERY_FORCE_PERCENT, 0);
+        int batteryPercentValue = 0;
+        if (showPercent == 1) {
+            batteryPercentValue = 1;
+        } else if (forceShowPercent == 1) {
+            batteryPercentValue = 2;
+        }
+        mBatteryPercent.setValue(Integer.toString(batteryPercentValue));
+        mBatteryPercent.setSummary(mBatteryPercent.getEntry());
+        mBatteryPercent.setOnPreferenceChangeListener(this);
+
         mShowBolt = findPreference(STATUSBAR_BATTERY_SHOW_BOLT);
 
         //updateEnablement();
@@ -124,11 +138,31 @@ public class StatusbarBatterySettings extends SettingsPreferenceFragment impleme
                     mBatteryStyle.getEntries()[index]);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.STATUSBAR_BATTERY_STYLE, mBatteryStyleValue);
-        /*} else if (preference == mChargingColor) {
+        } else if (preference == mChargingColor) {
             String hexColor = String.format("#%08X", mChargingColor.getColor());
             mChargingColor.setSummary(hexColor);
             Settings.System.putInt(resolver,
-                    Settings.System.STATUSBAR_BATTERY_CHARGING_COLOR, mChargingColor.getColor());*/
+                    Settings.System.STATUSBAR_BATTERY_CHARGING_COLOR, mChargingColor.getColor());
+        } else if (preference == mBatteryPercent) {
+            int batteryPercentValue = Integer.valueOf((String) newValue);
+            if (batteryPercentValue == 1) {
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.STATUSBAR_BATTERY_PERCENT, 1);
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.STATUSBAR_BATTERY_FORCE_PERCENT, 0);
+            } else if (batteryPercentValue == 2) {
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.STATUSBAR_BATTERY_PERCENT, 0);
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.STATUSBAR_BATTERY_FORCE_PERCENT, 1);
+            } else {
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.STATUSBAR_BATTERY_PERCENT, 0);
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.STATUSBAR_BATTERY_FORCE_PERCENT, 0);
+            }
+            mBatteryPercent.setValue(Integer.toString(batteryPercentValue));
+            mBatteryPercent.setSummary(mBatteryPercent.getEntry());
         }
         //updateEnablement();
         return true;

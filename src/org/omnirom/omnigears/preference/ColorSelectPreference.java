@@ -114,8 +114,12 @@ public class ColorSelectPreference extends Preference implements DialogInterface
                 new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                mColorValue =  d.getColor() & 0x00FFFFFF; // strip alpha, led does not support it
-                d.switchOffLed();
+                if (mShowLedPreview) {
+                    mColorValue =  d.getColor() & 0x00FFFFFF; // strip alpha, led does not support it
+                    d.switchOffLed();
+                } else {
+                    mColorValue =  d.getColor();
+                }
                 updatePreferenceViews();
                 callChangeListener(new Integer(mColorValue));
             }
