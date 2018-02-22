@@ -180,8 +180,6 @@
     <string name="battery_title">Battery display</string>
     <string name="statusbar_battery_summary">Set style of status bar battery display</string>
     <string name="battery_style_title">Style</string>
-    <string name="battery_percent_title">Show percent</string>
-    <string name="battery_percent_summary">Show battery percentage</string>
     <string name="statusbar_percent_inside_title">Percent overlay</string>
     <string name="statusbar_percent_inside_summary">Display battery percentage on top of the the battery image</string>
     <string name="statusbar_charging_image_title">Charging indicator</string>
@@ -264,18 +262,15 @@
     <string name="static_header_provider_title">Static image</string>
     <string name="daylight_header_provider_title">Image collection</string>
     <string name="custom_header_provider_title">Header provider</string>
-    <string name="custom_header_browse_title">Browse installed headers</string>
-    <string name="custom_header_browse_summary">Click on any image to use for static mode</string>
-    <string name="custom_header_browse_summary_new">Browse all available header collections</string>
     <string name="custom_header_pick_title">Select header image</string>
-    <string name="custom_header_pick_summary">Select an image to use for static mode</string>
+    <string name="custom_header_pick_summary">Select a local or remote image</string>
     <string name="style_enabled_summary">Custom header image is ON</string>
     <string name="style_disabled_summary">Custom header image is OFF</string>
     <string name="header_provider_disabled">Disabled</string>
     <string name="custom_header_title">Custom header image</string>
-    <string name="file_header_select_title">Select image</string>
-    <string name="file_header_select_summary">Select custom image</string>
-    <string name="file_header_provider_title">Custom image</string>
+    <string name="file_header_select_title">Select local image</string>
+    <string name="file_header_select_summary">Select image from storage</string>
+    <string name="file_header_provider_title">Single image</string>
     <string name="file_header_provider" translatable="false">file</string>
 
     <!-- Network traffic -->
@@ -631,7 +626,8 @@
     <string name="double_tap_sleep_lockscreen_title">Double tap to sleep on lockscreen</string>
     <string name="double_tap_sleep_lockscreen_summary"></string>
 
-    <string name="screen_off_animation_default">Default</string>
+    <string name="screen_off_animation_fade">Simple fade</string>
+    <string name="screen_off_animation_color">Color fade</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">Scale</string>
     <string name="screen_off_animation_title">Screen off animation</string>
@@ -650,4 +646,8 @@
     <string name="battery_style_round_rect">Square</string>
     <string name="statusbar_battery_dotted_line_title">Dotted line</string>
     <string name="statusbar_battery_dotted_line_summary">Use dotted line effect for certain styles</string>
+    <string name="battery_percent_none">Never</string>
+    <string name="battery_percent_always">Always</string>
+    <string name="battery_percent_expanded">Only when expanded</string>
+    <string name="battery_percent_title">Show percent</string>
 </resources>

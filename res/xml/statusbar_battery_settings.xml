@@ -20,16 +20,18 @@
         <ListPreference
             android:key="statusbar_battery_style"
             android:title="@string/battery_style_title"
-            android:entries="@array/entries_battery_styles"
-            android:entryValues="@array/values_battery_styles"
+            android:entries="@array/battery_styles_entries"
+            android:entryValues="@array/battery_styles_values"
             android:persistent="false"
             android:defaultValue="0"/>
 
-        <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
-            android:key="statusbar_battery_percent"
+        <ListPreference
+            android:key="statusbar_battery_percent_enable"
             android:title="@string/battery_percent_title"
-            android:summary="@string/battery_percent_summary"
-            android:defaultValue="false"/>
+            android:entries="@array/battery_percent_enable_entries"
+            android:entryValues="@array/battery_percent_enable_values"
+            android:persistent="false"
+            android:defaultValue="0"/>
 
         <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
             android:key="statusbar_battery_percent_inside"
@@ -52,16 +54,16 @@
                 android:title="@string/statusbar_charging_image_title"
                 android:summary="@string/statusbar_charging_image_summary"
                 android:defaultValue="true"/>
-            <!--<org.omnirom.omnigears.preference.SystemCheckBoxPreference
+            <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
                 android:key="statusbar_battery_charging_color_enable"
                 android:title="@string/statusbar_battery_charging_color_enable_title"
                 android:summary="@string/statusbar_battery_charging_color_enable_summary"
-                android:defaultValue="true"/>
-            <org.omnirom.omnigears.preference.ColorPickerPreference
+                android:defaultValue="false"/>
+            <org.omnirom.omnigears.preference.ColorSelectPreference
                 android:key="statusbar_battery_charging_color"
                 android:title="@string/statusbar_battery_charging_color_title"
                 android:persistent="false"
-            android:dependency ="statusbar_battery_charging_color_enable"/>-->
+                android:dependency ="statusbar_battery_charging_color_enable"/>
 
         </PreferenceCategory>
 </PreferenceScreen>

@@ -284,13 +284,11 @@
 
     <string-array name="custom_header_provider_entries" translatable="false">
         <item>@string/daylight_header_provider_title</item>
-        <item>@string/static_header_provider_title</item>
         <item>@string/file_header_provider_title</item>
     </string-array>
 
     <string-array name="custom_header_provider_values" translatable="false">
         <item>@string/daylight_header_provider</item>
-        <item>@string/static_header_provider</item>
         <item>@string/file_header_provider</item>
     </string-array>
 
@@ -494,18 +492,20 @@
     </string-array>
 
     <string-array name="screen_off_animation_entries">
-        <item>@string/screen_off_animation_default</item>
+        <item>@string/screen_off_animation_fade</item>
+        <item>@string/screen_off_animation_color</item>
         <item>@string/screen_off_animation_crt</item>
         <item>@string/screen_off_animation_scale</item>
     </string-array>
 
     <string-array name="screen_off_animation_values" translatable="false">
         <item>0</item>
+        <item>1</item>
         <item>2</item>
         <item>3</item>
     </string-array>
 
-    <string-array name="entries_battery_styles" translatable="false">
+    <string-array name="battery_styles_entries" translatable="false">
         <item>@string/battery_style_default</item>
         <item>@string/battery_style_meter_horizontal</item>
         <item>@string/battery_style_circle</item>
@@ -514,12 +514,24 @@
         <item>@string/battery_style_droid</item>
     </string-array>
 
-    <string-array name="values_battery_styles" translatable="false">
+    <string-array name="battery_styles_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
         <item>4</item>
         <item>5</item>
+    </string-array>
+
+    <string-array name="battery_percent_enable_entries" translatable="false">
+        <item>@string/battery_percent_none</item>
+        <item>@string/battery_percent_always</item>
+        <item>@string/battery_percent_expanded</item>
+    </string-array>
+
+    <string-array name="battery_percent_enable_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
     </string-array>
 </resources>
