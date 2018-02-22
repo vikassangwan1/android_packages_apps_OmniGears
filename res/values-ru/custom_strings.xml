@@ -159,7 +159,6 @@
   <string name="battery_title">Отображение батареи</string>
   <string name="statusbar_battery_summary">Задать стиль аккумулятора в строке состояния</string>
   <string name="battery_style_title">Стиль</string>
-  <string name="battery_percent_title">Показывать проценты</string>
   <string name="statusbar_percent_inside_title">Наложение процентов</string>
   <string name="statusbar_percent_inside_summary">Отображение процентов над значком батареи</string>
   <string name="statusbar_charging_image_title">Анимация зарядки</string>
@@ -565,7 +564,6 @@
   <string name="file_header_provider_title">Одно изображение</string>
   <string name="keys_action_notifications">Уведомления</string>
   <string name="omni_theme_select_summary">Просмотр и выбор установленных тем</string>
-  <string name="battery_percent_summary">Показать процент батареи</string>
   <string name="battery_style_text">Только текст</string>
   <string name="battery_style_default">По умолчанию</string>
   <string name="battery_style_meter_horizontal">Горизонтально</string>
@@ -574,5 +572,8 @@
   <string name="battery_style_round_rect">Квадрат</string>
   <string name="statusbar_battery_dotted_line_title">Пунктирная линия</string>
   <string name="statusbar_battery_dotted_line_summary">Использовать эффект пунктирной линии для определенных стилей</string>
-
+  <string name="battery_percent_none">Никогда</string>
+  <string name="battery_percent_always">Всегда</string>
+  <string name="battery_percent_expanded">Только при развернутой панели</string>
+  <string name="battery_percent_title">Показать проценты</string>
 </resources>
