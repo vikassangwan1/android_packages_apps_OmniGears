@@ -58,12 +58,14 @@
   <string name="keys_action_double">Topeltkoputus</string>
   <string name="keys_action_all_apps">Kõik rakendused</string>
   <string name="dialog_no_home_key_title">Kodutegevus puudub</string>
+  <string name="no_home_key">Ükski nupp ei ole määratud tegevusele \"kodu\". See võib su seadme kasutuskõlbmatuks muuta!</string>
   <string name="button_volume_keys_title">Helitugevus</string>
   <string name="button_volume_wake_title">Nupuga ärkamine</string>
   <string name="button_volume_wake_summary">Helitugevuse nuppu vajutades seade ärkab</string>
   <string name="button_volume_wake_enabled_summary">Helitugevusnupuga ärkamine SEES</string>
   <string name="button_volume_wake_disabled_summary">Helitugevusnupuga ärkamine VÄLJAS</string>
   <string name="volume_button_music_control_title">Muusika juhtimine</string>
+  <string name="volume_button_music_control_summary">Vajuta pikalt helitugevuse klahvidele, et vahetada lugusid, kui ekraan on väljas</string>
   <string name="keys_action_sleep">Mine unerežiimi</string>
   <string name="keys_action_omniswitch">OmniSwitch viimatised</string>
   <string name="button_home_wake_title">Nupuga ärkamine</string>
@@ -85,6 +87,7 @@
   <string name="double_tap_to_sleep_summary">Topeltkoputa olekuriba, et viia seade unerežiimi</string>
   <!-- Doze pulse (ambient display) options -->
   <string name="doze_overwrite_value_title">Kirjuta väärtus üle</string>
+  <string name="doze_overwrite_value_summary">Luba kasutaja seadistusega vaikeväärtuse ülekirjutamine</string>
   <string name="doze_list_mode_title">Tukkumisrežiim</string>
   <string name="doze_list_mode_summary">Valik tukkumisrežiimi seadistamiseks</string>
   <string name="doze_pulse_title">Aja seaded</string>
@@ -92,13 +95,16 @@
   <string name="doze_pulse_duration_visible_title">Nähtav pikkus</string>
   <string name="doze_pulse_duration_out_title">Sujuvalt välja</string>
   <string name="doze_pulse_on_notifications_title">Pulseeri teadete puhul</string>
+  <string name="doze_pulse_on_notifications_summary">Aktiveeri ainult sissetulevate teadete puhul</string>
   <string name="doze_shake_title">Raputamise seaded</string>
   <string name="doze_shake_mode_title">Raputamisrežiim</string>
+  <string name="doze_shake_mode_summary">Kasuta raputussensori väärtust aktiveerimiseks</string>
   <string name="doze_shake_mode_test_summary">Kas soovid testida raputussensorit?</string>
   <string name="doze_shake_mode_test_result">Rakendad praeguse väärtuse?</string>
   <string name="doze_shake_test">Raputa oma seadet nüüd</string>
   <string name="doze_shake_it">Raputus tuvastatud!</string>
   <string name="doze_shake_acc_threshold_title">Raputustugevus</string>
+  <string name="doze_shake_acc_threshold_summary">Seadista aktiveerimiseks vajaliku raputuse tugevust</string>
   <string name="doze_time_mode_title">Kuva kella ja kuupäeva</string>
   <string name="doze_time_mode_summary">Sunni kella kuvamist kui teateid pole</string>
   <string name="twohundred_ms">200 ms</string>
@@ -154,8 +160,10 @@
   <string name="battery_style_title">Stiil</string>
   <string name="battery_percent_title">Kuva protsente</string>
   <string name="statusbar_percent_inside_title">Protsentide ülekate</string>
+  <string name="statusbar_percent_inside_summary">Kuva protsente aku pildi peal</string>
   <string name="statusbar_charging_image_title">Laadija indikaator</string>
   <string name="statusbar_category_charging_title">Laadimine</string>
+  <string name="statusbar_charging_image_summary">Kuva laadimisel välguindikaatorit. Peidab protsentide ülekatte</string>
   <string name="statusbar_battery_charging_color_title">Värv</string>
   <string name="statusbar_battery_charging_color_enable_title">Värv laadimise ajal</string>
   <string name="battery_enable_title">Kuva akut</string>
@@ -178,6 +186,7 @@
   <string name="navbar_title">Navigatsiooniriba</string>
   <string name="navbar_recents_style_title">Viimatiste stiil</string>
   <string name="omniswitch_settings">Seaded</string>
+  <string name="omniswitch_dialog_running_new">OmniSwitch ei ole hetkel lubatud. Palun luba see rakenduse seadetes.</string>
   <string name="omniswitch_dialog_unavail">OmniSwitch pole installitud.</string>
   <string name="omniswitch_title">Viimatiste stiil</string>
   <string name="long_press_recents_action_title">Vajuta viimatiste tegevust pikalt</string>
@@ -200,12 +209,15 @@
   <string name="lockscreen_clock_color_title">Aja ja kuupäeva värv</string>
   <string name="lockscreen_clock_size_title">Aja suurus</string>
   <string name="lockscreen_clock_enable_title">Luba</string>
+  <string name="lockscreen_clock_enable_summary">Keelamisel kuvatakse olekuriba kell</string>
   <string name="lockscreen_clock_shadow_title">Vari</string>
   <string name="lockscreen_shortcuts_title">Kohandatud rakenduste otseteed</string>
+  <string name="lockscreen_shortcuts_summary">Rakendused, mida kuvatakse kiireks juurdepääsuks lukukuval. Peitmiseks vajuta pikalt.</string>
   <string name="lockscreen_shortcut_add_dialog_title">Lisa otsetee</string>
   <string name="lockscreen_shortcut_apps_title">Otseteed</string>
   <string name="lockscreen_shortcut_add">Lisa\u2026</string>
   <string name="lockscreen_hide_indicator_display_title">Peida alumine olekutekst</string>
+  <string name="lockscreen_hide_indicator_display_summary">Peida laadimise info ja luku avamise vihjed</string>
   <string name="lockscreen_camera_shortcut_enable_title">Kuva kaamera otsetee</string>
   <string name="lockscreen_camera_shortcut_enable_summary">Nähtavus sõltub süsteemi seadistusest</string>
   <string name="lockscreen_left_shortcut_enable_title">Kuva telefoni või hääle abirakenduse otseteed</string>
@@ -221,7 +233,10 @@
   <string name="daylight_header_provider_title">Dünaamiline</string>
   <string name="custom_header_provider_title">Päise pakkuja</string>
   <string name="custom_header_browse_title">Sirvi installitud päiseid</string>
+  <string name="custom_header_browse_summary">Klõpsa mistahes pildil, et seda kasutada staatilises režiimis</string>
+  <string name="custom_header_browse_summary_new">Sirvi kõiki saadaolevaid päisepakke</string>
   <string name="custom_header_pick_title">Vali päise pilt</string>
+  <string name="custom_header_pick_summary">Vali pilt staatilises režiimis kasutamiseks</string>
   <string name="style_enabled_summary">Kohandatud päise pilt VÄLJAS</string>
   <string name="style_disabled_summary">Kohandatud päise pilt SEES</string>
   <string name="header_provider_disabled">Keelatud</string>
@@ -243,6 +258,8 @@
   <string name="show_network_traffic_1500">1500 ms</string>
   <string name="show_network_traffic_2000">2000 ms</string>
   <string name="network_traffic_autohide_title">Peida automaatselt</string>
+  <string name="network_traffic_autohide_summary">Peida liiklusmonitor, kui pole tegevust</string>
+  <string name="network_traffic_autohide_threshold">Ebaaktiivsuse piirmäär</string>
   <string name="network_traffic_enable_title">Luba</string>
   <!-- statusbar brightness -->
   <string name="status_bar_brightness_control_title">Heleduse reguleerimine</string>
@@ -253,6 +270,7 @@
   <string name="quick_settings_title">Kiirseaded</string>
   <string name="quick_settings_summary">Seadista kiirseadete ikoone</string>
   <string name="status_bar_icon_blacklist_title">Olekuriba ikoonid</string>
+  <string name="status_bar_icon_blacklist_summary">Seadista, milliseid ikoone kuvatakse olekuribal</string>
   <string name="recents_category">Viimatised</string>
   <string name="recents_search_bar_title">Kuva otsinguriba</string>
   <string name="recents_fullscreen_title">Täisekraan</string>
@@ -261,10 +279,12 @@
   <string name="header_weather_title">Päisevaate ilm</string>
   <string name="header_weather_summary">Luba teadetepaneeli päises ilmateate kuvamine</string>
   <string name="weather_icon_pack_title">Ilmateate ikoonipakk</string>
+  <string name="weather_icon_pack_note">Märkus\u003a sa võid installida uusi ikoonipakke, otsides Play poest \"Chronus icons\"</string>
   <!-- Navigationbar settings -->
   <string name="navigationbar_title">Navigatsiooniriba</string>
   <!-- Enable Tablet Style navigation bar -->
   <string name="enable_tablet_navigation_title">Kasuta tahvlipaigutust</string>
+  <string name="enable_tablet_navigation_summary">Tahvlipaigutus näitab tagasi ja kodunuppu navigatsiooniriba vasakus servas ning ülevaatenuppu paremas servas</string>
   <string name="other_category">Muu</string>
   <!-- Dashboard columns -->
   <string name="dashboard_columns_title">Seadete veerud</string>
@@ -290,15 +310,18 @@
   <string name="global_actions_silent_title">Hääletu režiim</string>
   <string name="global_actions_dnd_title">Mitte segada</string>
   <string name="global_actions_summary">Toitemenüüs kuvatavad tegevused</string>
+  <string name="global_actions_header">Mõned tegevused kuvatakse vastavalt seadme seadistusele või ainult siis, kui seade on lukustamata</string>
   <string name="global_actions_anim">Välimus</string>
   <string name="global_actions_advanced_reboot_summary">Kuva rohkem valikuid taaskäivitusmenüüs</string>
   <string name="global_actions_advanced_reboot_title">Luba täpsem taaskäivitus</string>
   <string name="global_actions_advanced_reboot_summary_new">Kuva lukustamata olekus taaskäivitusmenüüs rohkem valikuid</string>
   <string name="font_sample_text">11:57</string>
   <string name="screenshot_crop_and_share_title">Kuvatõmmise lõikamine ja jagamine</string>
+  <string name="screenshot_crop_and_share_summary">Kuva redaktoriakent peale kuvatõmmise tegemist, et teha teatud toiminguid nagu kärpimine, salvestamine või jagamine</string>
   <!--<string name="screenshot_crop_behavior_title"></string>
     <string name="screenshot_crop_behavior_summary"></string>-->
   <string name="lockscreen_qs_disabled_title">Keela lukustatud olekus kiirseaded</string>
+  <string name="lockscreen_qs_summary">Keela turvalistel lukukuvadel otseteed ja kiirseadete avamine</string>
   <string name="lockscreen_qs_disabled_summary">Kiirseadetele juurdepääs lukukuval on LUBATUD</string>
   <string name="lockscreen_qs_enabled_summary">Kiirseadetele juurdepääs lukukuval on KEELATUD</string>
   <string name="lockscreen_power_menu_disabled_title">Keela lukus olles toitemenüü</string>
@@ -341,10 +364,18 @@
   <string name="omni_notification_light_settings">Rakenduste pulseerimine</string>
   <string name="omni_leds">LED-tuled</string>
   <string name="omni_lights_title">Teate LED</string>
+  <string name="notification_light_title">Teatetuli</string>
+  <string name="notificationlight_title">Teate LEDi seaded</string>
   <string name="notification_light_general_title">Üldine</string>
   <string name="notification_light_applist_title">Rakendused</string>
+  <string name="notification_light_use_custom">Kasuta kohandatud väärtusi</string>
   <string name="notification_light_default_value">Vaikimisi</string>
+  <string name="notification_light_screen_on">Tuled ekraani sees olekul</string>
+  <string name="notification_light_zen_mode">Tuled Mitte segada režiimis</string>
+  <string name="notification_light_use_multiple_leds">Mitu LEDi</string>
+  <string name="keywords_lights_brightness_level">tumenda ledid heledus</string>
   <string name="notification_light_automagic">Automaatne värv</string>
+  <string name="notification_light_automagic_summary">Määra LED-teatele automaatselt sobiv värv, kui rakendusel pole kohandatud väärtusi</string>
   <!-- Lights settings, LED notification -->
   <string name="led_notification_title">Valguse seaded</string>
   <string name="led_notification_text">LED tuli lubatud seadetes</string>
@@ -370,6 +401,8 @@
   <string name="volume_dialog_headers_summary">Kuva voo nime päiseid helitugevuse dialoogis</string>
   <string name="lockscreen_hide_media_title">Keela meedia taustapilt</string>
   <string name="lockscreen_hide_media_summary">Ära kuva meedia metaandmeid lukukuva taustapildina</string>
+  <string name="omni_notification_light_settings_summary">Teate LED-tulede kohandamine rakenduste puhul</string>
+  <string name="omni_battery_light_settings_summary">Teate LED-tulede kohandamine aku puhul</string>
   <string name="night_mode_title">Hele/tume teema</string>
   <string name="night_mode_summary">%s</string>
   <string name="night_mode_no">Hele</string>
@@ -401,6 +434,10 @@
   <string name="copy_as_text">Kopeeri tekstina</string>
   <string name="google_it">Googelda seda</string>
   <string name="app_details">Rakenduse üksikasjad</string>
+  <string name="no_states_file_found">Olekute faili ei leitud. Kas oled kindel, et su telefon
+        ühildub?\n\nKui sa kasutad kohandatud ROMi või tuuma, proovi
+        kontakteeruda selle arendajaga, teatamaks, et olekute fail
+        pole loetav.</string>
   <string name="deep_sleep">"Sügavuni"</string>
   <string name="mt_refresh">Värskenda</string>
   <string name="mt_share">Jaga</string>
@@ -450,7 +487,14 @@
   <string name="SHORT_LOCATING_TIMEOUT">Koha leidmise ajalõpp</string>
   <string name="SHORT_LOCATION_ACCURACY">Asukoha täpsus</string>
   <string name="SHORT_MOTION_INACTIVE_TIMEOUT">Liikumise ebaaktiivsuse ajalõpp</string>
+  <string name="SHORT_IDLE_TIMEOUT">Eemaloleku ajalõpp</string>
+  <string name="SHORT_MAX_IDLE_TIMEOUT">Maksimaalne eemaloleku ajalõpp</string>
+  <string name="SHORT_IDLE_FACTOR">Eemaloleku tegur</string>
   <string name="SHORT_MIN_TIME_TO_ALARM">Min. aeg äratuseni</string>
+  <string name="SHORT_LIGHT_PRE_IDLE_TIMEOUT">Tule eel-eemaloleku ajalõpp</string>
+  <string name="SHORT_LIGHT_IDLE_TIMEOUT">Tule eemaloleku ajalõpp</string>
+  <string name="SHORT_LIGHT_IDLE_FACTOR">Tule eemaloleku tegur</string>
+  <string name="SHORT_LIGHT_MAX_IDLE_TIMEOUT">Maksimaalne tule eemaloleku ajalõpp</string>
   <string name="logcat_app_title">MatLog</string>
   <string name="logcat_app_summary">Käivita rakendus logide kogumiseks</string>
   <string name="omni_theme_title">Omni hele/tume teema</string>
