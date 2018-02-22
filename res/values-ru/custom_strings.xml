@@ -560,13 +560,13 @@
   <string name="screen_off_animation_title">Анимация выключения экрана</string>
   <string name="double_tap_sleep_lockscreen_title">Двойное нажатие для выключения на экране блокировки</string>
   <string name="double_tap_sleep_lockscreen_summary">Нажмите дважды на экране блокировки, чтобы выключить экран</string>
-  <string name="omni_theme_select_title">Темы Omni</string>
+  <string name="omni_theme_select_title">Темы</string>
   <string name="omni_theme_select_none">Отключено</string>
   <string name="file_header_select_title">Выберите изображение</string>
   <string name="file_header_select_summary">Выберите собственное изображение</string>
   <string name="file_header_provider_title">Пользовательское изображение</string>
   <string name="keys_action_notifications">Уведомления</string>
-  <string name="omni_theme_select_summary">Просмотр и выбор установленных тем Omni</string>
+  <string name="omni_theme_select_summary">Просмотр и выбор установленных тем</string>
   <string name="battery_percent_summary">Показать процент батареи</string>
   <string name="battery_style_text">Только текст</string>
   <string name="battery_style_default">По умолчанию</string>
