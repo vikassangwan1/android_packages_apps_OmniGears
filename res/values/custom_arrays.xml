@@ -511,7 +511,6 @@
         <item>@string/battery_style_circle</item>
         <item>@string/battery_style_text</item>
         <item>@string/battery_style_round_rect</item>
-        <item>@string/battery_style_droid</item>
     </string-array>
 
     <string-array name="battery_styles_values" translatable="false">
