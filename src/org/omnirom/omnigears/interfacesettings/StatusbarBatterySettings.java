@@ -103,8 +103,10 @@ public class StatusbarBatterySettings extends SettingsPreferenceFragment impleme
         mPercentInside = findPreference(STATUSBAR_BATTERY_PERCENT_INSIDE);
 
         mBatteryPercent = (ListPreference) findPreference(STATUSBAR_BATTERY_PERCENT);
+        final int systemShowPercent = Settings.System.getInt(resolver,
+                Settings.System.SHOW_BATTERY_PERCENT, 0);
         int showPercent = Settings.System.getInt(resolver,
-                Settings.System.STATUSBAR_BATTERY_PERCENT, 0);
+                Settings.System.STATUSBAR_BATTERY_PERCENT, systemShowPercent);
         int forceShowPercent = Settings.System.getInt(resolver,
                 Settings.System.STATUSBAR_BATTERY_FORCE_PERCENT, 0);
         int batteryPercentValue = 0;
