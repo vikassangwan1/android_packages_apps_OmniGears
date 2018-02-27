@@ -56,7 +56,7 @@
   <string name="keys_action_normal">Appui normal</string>
   <string name="keys_action_long">Appui long</string>
   <string name="keys_action_double">Double appui</string>
-  <string name="keys_action_all_apps">Toutes les applis</string>
+  <string name="keys_action_all_apps">Toutes les applications</string>
   <string name="dialog_no_home_key_title">Pas de bouton Accueil</string>
   <string name="no_home_key">Vous n\'avez pas de bouton assigner à l\'action «Accueil» ! Cela peut rendre votre appareil inutilisable!</string>
   <string name="button_volume_keys_title">Volume</string>
@@ -148,7 +148,7 @@
   <string name="battery_light_really_full_color_title">Chargée (100%)</string>
   <string name="fast_color_cat_title">Charge rapide</string>
   <string name="fast_charging_led_enabled_title">Activer la couleur de chargement rapide</string>
-  <string name="fast_charging_led_enabled_summary">En chargement rapide, utiliser une couleur différente a partir de 90% de la charge</string>
+  <string name="fast_charging_led_enabled_summary">Lors d\'une charge rapide, utilisez une couleur différente jusqu\'à 90% de la charge</string>
   <string name="fast_charging_light_color_title">Couleur</string>
   <string name="edit_battery_settings">Éditer les paramètres de la batterie</string>
   <string name="led_color_green">Vert</string>
@@ -169,7 +169,7 @@
   <string name="battery_enable_title">Afficher la batterie</string>
   <string name="button_backlight_title">Rétro-éclairage des boutons</string>
   <string name="button_backlight_summary">Configurer activation et Luminosité</string>
-  <string name="button_backlight_on_touch_only_title">Pression de bouton</string>
+  <string name="button_backlight_on_touch_only_title">Bouton tactile</string>
   <string name="button_backlight_on_touch_only_summary">Activer l\'éclairage arrière avec une pause à l\'appuie du bouton seulement</string>
   <string name="button_timeout_title">Délai d\'extinction du rétro-éclairage</string>
   <string name="button_timeout_summary">Désactivé lorsque la valeur est égale à 0</string>
@@ -240,10 +240,10 @@
   <string name="style_enabled_summary">Personnalisation d\'en-tête activée</string>
   <string name="style_disabled_summary">Personnalisation d\'en-tête désactivée</string>
   <string name="header_provider_disabled">Désactivé</string>
-  <string name="custom_header_title">Personnalisation d\'en-tête</string>
+  <string name="custom_header_title">Personnalisation de l\'image d\'en-tête</string>
   <!-- Network traffic -->
   <string name="network_traffic_title">Trafic réseau</string>
-  <string name="network_traffic_summary">Moniteur de trafic dans la barre d\'état</string>
+  <string name="network_traffic_summary">Indicateur d\'activité réseau dans la barre d\'état</string>
   <string name="show_network_traffic_state">Indicateur de trafic dans la barre d\'état</string>
   <string name="show_network_traffic_unit">Afficher l\'unité</string>
   <string name="show_network_traffic_frequency">Fréquence d\'actualisation</string>
@@ -403,7 +403,7 @@
   <string name="lockscreen_hide_media_summary">Ne pas utiliser les métadonnées des médias comme fond d’écran de verrouillage</string>
   <string name="omni_notification_light_settings_summary">Personnalise les éclairages led de notification pour les applications</string>
   <string name="omni_battery_light_settings_summary">Personnalise la couleur de la Led de notification de la batterie</string>
-  <string name="night_mode_title">Thème Sombre/Clair</string>
+  <string name="night_mode_title">Thème Clair/Sombre</string>
   <string name="night_mode_summary">%s</string>
   <string name="night_mode_no">Clair</string>
   <string name="night_mode_yes">Sombre</string>
@@ -488,6 +488,7 @@
   <string name="DESC_INACTIVE_TIMEOUT">C\'est le temps, après un délai d\'inactivité, à partir duquel on commence à vérifier le capteur de mouvement pour déterminer si l\'appareil n\'est pas porté et est immobile. Nous ne le faisons pas immédiatement après un temps d\'inactivité car nous ne voulons pas continuer à utiliser le capteur de mouvement à chaque fois que l\'écran s\'éteint</string>
   <string name="DESC_SENSING_TIMEOUT">Si nous ne recevons un rappel de AnyMotion dans ce laps de temps + locating_to, nous allons changer de STATE_SENSING à STATE_INACTIVE, et tous les rappels de AnyMotion passés hors STATE_SENSING seront ignorés</string>
   <string name="DESC_LOCATING_TIMEOUT">C\'est le temps que nous attendrons pour obtenir une bonne localisation avant de passer en mode veille</string>
+  <string name="DESC_LOCATION_ACCURACY">La précision maximale désirée (en mètres) pour laquelle nous considérons la localisation être suffisante pour passer en veille. Nous allons essayer d’obtenir une précision équivalente ou jusqu\'à l’expiration de la locating_to</string>
   <string name="logcat_app_summary">Démarrer l\'application pour collecter les logs</string>
   <string name="omni_theme_title">Thème Sombre/Clair</string>
   <string name="omni_theme_summary">Thème basé sur Substratum</string>

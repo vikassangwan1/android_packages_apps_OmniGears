@@ -18,29 +18,72 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="ok">OK</string>
+  <string name="advanced">Lisäasetukset</string>
+  <string name="profiles_add">Lisää...</string>
+  <string name="profile_choose_app">Valitse sovellus</string>
+  <string name="reset">Nollaa</string>
   <!-- Hardware keys -->
+  <string name="keys_action_omniswitch_short">OmniSwitch</string>
   <!-- Double tap to sleep -->
   <!-- Doze pulse (ambient display) options -->
   <!-- Swap volume buttons when the screen is rotated -->
   <!-- Battery light settings  -->
+  <string name="battery_light_medium_color_title">Ladataan</string>
+  <string name="battery_light_full_color_title">Ladattu (90 %)</string>
+  <string name="battery_light_really_full_color_title">Ladattu (100 %)</string>
+  <string name="fast_charging_light_color_title">Väri</string>
+  <string name="led_color_green">Vihreä</string>
+  <string name="led_color_red">Punainen</string>
+  <string name="led_color_blue">Sininen</string>
+  <string name="statusbar_title">Tilapalkki</string>
+  <string name="battery_style_title">Tyyli</string>
+  <string name="battery_percent_title">Näytä prosentit</string>
+  <string name="statusbar_category_charging_title">Ladataan</string>
+  <string name="statusbar_battery_charging_color_title">Väri</string>
+  <string name="statusbar_battery_charging_color_enable_title">Väri ladattaessa</string>
+  <string name="battery_enable_title">Näytä akku</string>
+  <string name="button_backlight_title">Painikkeiden taustavalo</string>
+  <string name="omniswitch_settings">Asetukset</string>
   <!-- Lock screen config -->
+  <string name="lockscreen_clock_display_time_title">Näytä aika</string>
+  <string name="lockscreen_clock_display_date_title">Näytä päivämäärä</string>
+  <string name="lockscreen_clock_display_alarm_title">Näytä seuraava hälytys</string>
+  <string name="lockscreen_clock">Kello</string>
+  <string name="lockscreen_clock_font_title">Ajan fontti</string>
+  <string name="lockscreen_clock_color_title">Ajan ja päivämäärän väri</string>
+  <string name="lockscreen_clock_size_title">Ajan koko</string>
+  <string name="lockscreen_category_title">Lukitusnäyttö</string>
   <!-- Network traffic -->
   <!-- statusbar brightness -->
   <!-- Status Bar Activity Indicators -->
+  <string name="weather_title">Sää</string>
+  <string name="weather_config_title">Palvelun asetukset</string>
   <!-- Navigationbar settings -->
   <!-- Enable Tablet Style navigation bar -->
   <!-- Dashboard columns -->
   <!-- global acions config -->
+  <string name="global_actions_power_title">Virta</string>
+  <string name="global_actions_reboot_title">Käynnistä uudelleen</string>
+  <string name="global_actions_lockdown_title">Lukitse</string>
+  <string name="global_actions_settings_title">Asetukset</string>
+  <string name="global_actions_airplane_title">Lentokonetila</string>
+  <string name="global_actions_screenshot_title">Kuvakaappaus</string>
+  <string name="global_actions_torch_title">Taskulamppu</string>
+  <string name="global_actions_users_title">Käyttäjät</string>
   <!--<string name="screenshot_crop_behavior_title"></string>
     <string name="screenshot_crop_behavior_summary"></string>-->
   <!-- Power menu Animations  -->
   <!-- Notification light dialogs -->
+  <string name="dialog_delete_title">Poista</string>
   <!-- Values for the notification light pulse spinners -->
   <!-- Lights settings screen, notification light settings -->
   <!-- Lights settings, LED notification -->
   <!-- Hostname setting -->
   <!-- OMS -->
   <!-- Summaries -->
+  <string name="mt_refresh">Päivitä</string>
+  <string name="mt_share">Jaa</string>
   <!-- Display : Rotation -->
   <!-- Doze settings editor -->
 </resources>

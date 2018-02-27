@@ -371,9 +371,7 @@
     <string name="screenshot_crop_behavior_summary"></string>-->
 
     <string name="lockscreen_qs_disabled_title">Disable quick settings when locked</string>
-    <string name="lockscreen_qs_summary">Disable shortcuts and expanding quick settings on secure lock screens</string>
-    <string name="lockscreen_qs_disabled_summary">Quick settings access on lock screen is ENABLED</string>
-    <string name="lockscreen_qs_enabled_summary">Quick settings access on lock screen is DISABLED</string>
+    <string name="lockscreen_qs_disabled_summary">Disable expanding quick settings on secure lock screens</string>
     <string name="lockscreen_power_menu_disabled_title">Disable power menu when locked</string>
     <string name="lockscreen_power_menu_disabled_summary">Disable power menu on secure lock screens</string>
 
@@ -623,8 +621,8 @@
     <string name="system_volume_option_title">System volume</string>
     <string name="call_volume_option_title">Voice call volume</string>
 
-    <string name="double_tap_sleep_lockscreen_title">Double tap to sleep on lockscreen</string>
-    <string name="double_tap_sleep_lockscreen_summary"></string>
+    <string name="double_tap_sleep_lockscreen_title">Double tap to sleep on lock screen</string>
+    <string name="double_tap_sleep_lockscreen_summary">Double tap anywhere on the lock screen to put the device to sleep</string>
 
     <string name="screen_off_animation_fade">Simple fade</string>
     <string name="screen_off_animation_color">Color fade</string>
