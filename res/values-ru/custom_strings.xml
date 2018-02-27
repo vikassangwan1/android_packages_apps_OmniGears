@@ -317,9 +317,7 @@
   <!--<string name="screenshot_crop_behavior_title"></string>
     <string name="screenshot_crop_behavior_summary"></string>-->
   <string name="lockscreen_qs_disabled_title">Отключить плитки быстрых настроек на экране блокировки</string>
-  <string name="lockscreen_qs_summary">Отключить ярлыки и расширенные плитки быстрых настроек на защищенном экране блокировки</string>
-  <string name="lockscreen_qs_disabled_summary">Плитки быстрых настроек на экране блокировки ВКЛЮЧЕНЫ</string>
-  <string name="lockscreen_qs_enabled_summary">Плитки быстрых настроек на экране блокировки ОТКЛЮЧЕНЫ</string>
+  <string name="lockscreen_qs_summary">Отключить расширенные быстрые настройки на защищенных экранах блокировки</string>
   <string name="lockscreen_power_menu_disabled_title">Отключить меню питания в заблокированном состоянии</string>
   <string name="lockscreen_power_menu_disabled_summary">Выключить меню питания на защищённых экранах блокировки</string>
   <string name="status_bar_quick_qs_pulldown_title">Быстрый доступ</string>

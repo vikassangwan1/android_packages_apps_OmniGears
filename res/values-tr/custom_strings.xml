@@ -31,7 +31,7 @@
   <string name="button_keys_menu_title">Menü tuşu</string>
   <string name="button_keys_assist_title">Arama tuşu</string>
   <string name="button_keys_appSwitch_title">Uygulama değiştirme tuşu</string>
-  <string name="keys_enable_custom_title">Husûsi eylemler</string>
+  <string name="keys_enable_custom_title">Husûsî eylemler</string>
   <string name="keys_back_press_title">Geri tuşu</string>
   <string name="keys_back_long_press_title">Geri tuşu (uzun basma)</string>
   <string name="keys_home_press_title">Ana ekran tuşu</string>
@@ -159,11 +159,11 @@
   <string name="statusbar_battery_summary">Durum çubuğundaki pilin görünüm tarzını ayarlayın</string>
   <string name="battery_style_title">Tarz</string>
   <string name="battery_percent_title">Yüzdeyi göster</string>
-  <string name="statusbar_percent_inside_title">Yüzdeyi simgenin üstünde görüntüle</string>
-  <string name="statusbar_percent_inside_summary">Yüzdeyi batarya simgesinin üstünde görüntüleyin</string>
+  <string name="statusbar_percent_inside_title">Yüzdeyi simgenin üstünde göster</string>
+  <string name="statusbar_percent_inside_summary">Yüzdeyi batarya simgesinin üstünde gösterin</string>
   <string name="statusbar_charging_image_title">Şarj edilme göstergesi</string>
   <string name="statusbar_category_charging_title">Şarj edilme</string>
-  <string name="statusbar_charging_image_summary">Şarj edilme esnâsında yıldırım simgesi görüntüleyin. Yüzde simgenin üstündeyse gizlenir</string>
+  <string name="statusbar_charging_image_summary">Şarj edilme esnâsında yıldırım simgesi göster. Yüzde simgenin üstündeyse saklanır</string>
   <string name="statusbar_battery_charging_color_title">Renk</string>
   <string name="statusbar_battery_charging_color_enable_title">Şarj edilme esnâsındaki renk</string>
   <string name="battery_enable_title">Pili göster</string>
@@ -211,7 +211,7 @@
   <string name="lockscreen_clock_enable_title">Etkinleştir</string>
   <string name="lockscreen_clock_enable_summary">Devre dışı bırakıldığında durum çubuğu saati gösterilir</string>
   <string name="lockscreen_clock_shadow_title">Gölge</string>
-  <string name="lockscreen_shortcuts_title">Hususi uygulama kısayolları</string>
+  <string name="lockscreen_shortcuts_title">Husûsî uygulama kısayolları</string>
   <string name="lockscreen_shortcuts_summary">Hızlı erişim için kilit ekranında gösterilen uygulamalar. Gizlemek için uzun basın.</string>
   <string name="lockscreen_shortcut_add_dialog_title">Kısayol ekle</string>
   <string name="lockscreen_shortcut_apps_title">Kısayollar</string>
@@ -224,7 +224,7 @@
   <string name="lockscreen_left_shortcut_enable_summary">Görünürlük sistem ayarına bağlıdır</string>
   <string name="lockscreen_category_title">Kilit ekranı</string>
   <string name="notification_title">Bildirim paneli</string>
-  <string name="status_bar_custom_header_title">Hususi başlık resmi</string>
+  <string name="status_bar_custom_header_title">Etkinleştir</string>
   <string name="daylight_header_pack_title">Başlık resmi paketi</string>
   <string name="status_bar_custom_header_shadow_title">Başlık resmi gölgesi</string>
   <string name="status_bar_custom_header_shadow_summary">Parlak resimlerde daha iyi görünürlük için</string>
@@ -233,19 +233,19 @@
   <string name="daylight_header_provider_title">Dinamik</string>
   <string name="custom_header_provider_title">Üstbilgi sağlayıcısı</string>
   <string name="custom_header_browse_title">Yüklü üstbilgilere gözat</string>
-  <string name="custom_header_browse_summary">Statik modda kullanmak için herhangi bir görüntüye uzun basın</string>
+  <string name="custom_header_browse_summary">Statik mod için kullanmak için herhangi bir resme dokunun</string>
   <string name="custom_header_browse_summary_new">Bütün mevcûd başlık paketlerine göz at</string>
   <string name="custom_header_pick_title">Başlık resmini seçin</string>
   <string name="custom_header_pick_summary">Statik modda kullanmak için herhangi bir resmi seçin</string>
-  <string name="style_enabled_summary">Özel başlık görüntüsü AÇIK</string>
-  <string name="style_disabled_summary">Özel başlık görüntüsü KAPALI</string>
+  <string name="style_enabled_summary">Husûsî başlık resmi AÇIK</string>
+  <string name="style_disabled_summary">Husûsî başlık resmi KAPALI</string>
   <string name="header_provider_disabled">Devre dışı</string>
-  <string name="custom_header_title">Hususi başlık resmi</string>
+  <string name="custom_header_title">Husûsî başlık resmi</string>
   <!-- Network traffic -->
   <string name="network_traffic_title">Ağ trafiği</string>
   <string name="network_traffic_summary">Durum çubuğunda trafik monitörü</string>
-  <string name="show_network_traffic_state">Durum çubuğunda trafik monitörü</string>
-  <string name="show_network_traffic_unit">Görüntü birimi</string>
+  <string name="show_network_traffic_state">Trafik türünü göster</string>
+  <string name="show_network_traffic_unit">Gösterme birimi</string>
   <string name="show_network_traffic_frequency">Güncelleme sıklığı</string>
   <string name="show_network_traffic_disable">Devre dışı</string>
   <string name="show_network_traffic_up">Giden</string>
@@ -258,14 +258,14 @@
   <string name="show_network_traffic_1500">1500 ms</string>
   <string name="show_network_traffic_2000">2000 ms</string>
   <string name="network_traffic_autohide_title">Otomatik gizle</string>
-  <string name="network_traffic_autohide_summary">Hiçbir etkinlik yokken trafik monitörünü gizle</string>
+  <string name="network_traffic_autohide_summary">Hiçbir faaliyet yokken trafik monitörünü sakla</string>
   <string name="network_traffic_autohide_threshold">Hareketsizlik eşiği</string>
   <string name="network_traffic_enable_title">Etkinleştir</string>
   <!-- statusbar brightness -->
   <string name="status_bar_brightness_control_title">Parlaklık denetimi</string>
   <string name="status_bar_brightness_control_summary">Parlaklığı durum çubuğu üzerinde parmağınızı gezdirerek ayarlayın</string>
   <!-- Status Bar Activity Indicators -->
-  <string name="status_bar_network_activity_title">Etkinlik göstergeleri</string>
+  <string name="status_bar_network_activity_title">Faaliyet göstergeleri</string>
   <string name="status_bar_network_activity_summary">Sinyal çubuklarındaki göstergeleri göster</string>
   <string name="quick_settings_title">Hızlı Ayarlar</string>
   <string name="quick_settings_summary">Hızlı ayarlar karelerini yapılandırma</string>
@@ -277,14 +277,14 @@
   <string name="weather_title">Hava Durumu</string>
   <string name="weather_config_title">Servis ayarları</string>
   <string name="header_weather_title">Başlıkta hava durumu</string>
-  <string name="header_weather_summary">Bildirim panelinde hava durumu görüntülemeyi etkinleştir</string>
+  <string name="header_weather_summary">Bildirim paneli başlığında hava durumu göstermeyi etkinleştirin</string>
   <string name="weather_icon_pack_title">Hava durumu simge paketi</string>
   <string name="weather_icon_pack_note">Not\u003a play store\'dan \"Chronus simgeleri\" araması yaparak yeni simge paketleri yükleyebilirsiniz</string>
   <!-- Navigationbar settings -->
   <string name="navigationbar_title">Gezinti çubuğu</string>
   <!-- Enable Tablet Style navigation bar -->
   <string name="enable_tablet_navigation_title">Tablet düzeni kullan</string>
-  <string name="enable_tablet_navigation_summary">Tablet düzeni geri ve ana ekran düğmesini sol tarafta gösterir ve gezinti çubuğunun sağ tarafında umûmî bir bakış gösterir</string>
+  <string name="enable_tablet_navigation_summary">Tablet düzeni geri ve ana ekran düğmesini gezinti çubuğunun sol tarafında genel bakış düğmesini de sağ tarafında gösterir</string>
   <string name="other_category">Diğer</string>
   <!-- Dashboard columns -->
   <string name="dashboard_columns_title">Sütun ayarları</string>
@@ -302,9 +302,9 @@
   <string name="global_actions_lockdown_title">Kilitle</string>
   <string name="global_actions_settings_title">Ayarlar</string>
   <string name="global_actions_airplane_title">Uçak modu</string>
-  <string name="global_actions_screenshot_title">Ekran görüntüsü</string>
+  <string name="global_actions_screenshot_title">Ekran resmi</string>
   <string name="global_actions_screenrecord_title">Ekran Kaydı</string>
-  <string name="global_actions_torch_title">El feneri</string>
+  <string name="global_actions_torch_title">Fener</string>
   <string name="global_actions_users_title">Kullanıcılar</string>
   <string name="global_actions_voiceassist_title">Sesli yardımcı</string>
   <string name="global_actions_silent_title">Sessiz mod</string>
@@ -313,16 +313,16 @@
   <string name="global_actions_header">Bazı eylemler yalnızca kuruluma bağlı olarak yada sadece cihaz kilidi açıksa görünür</string>
   <string name="global_actions_anim">Görünüm</string>
   <string name="global_actions_advanced_reboot_summary">Yeniden başlat menüsünde daha fazla seçenek göster</string>
-  <string name="global_actions_advanced_reboot_title">Gelişmiş yeniden başlatmayı etkinleştir</string>
+  <string name="global_actions_advanced_reboot_title">İleri seviye tekrar başlatmayı etkinleştir</string>
   <string name="global_actions_advanced_reboot_summary_new">Telefon kilitli değilse, tekrar başlatma menüsünde daha fazla tercih göster</string>
   <string name="font_sample_text">11:57</string>
-  <string name="screenshot_crop_and_share_title">Ekran görüntüsünü kırp ve paylaş</string>
-  <string name="screenshot_crop_and_share_summary">Ekran görüntüsünü aldıktan sonra kırpma, kaydetme veya paylaşma gibi bazı eylemleri yapmak için bir düzenleyici göster</string>
+  <string name="screenshot_crop_and_share_title">Ekran resmini kırp ve paylaş</string>
+  <string name="screenshot_crop_and_share_summary">Bir ekran resmi aldıktan sonra kırpma, kaydetme veyâ paylaşma gibi bazı işlemleri yapmak için bir düzenleyici penceresi göster</string>
   <!--<string name="screenshot_crop_behavior_title"></string>
     <string name="screenshot_crop_behavior_summary"></string>-->
   <string name="lockscreen_qs_disabled_title">Kilitlendiğinde hızlı ayarları devre dışı bırak</string>
   <string name="lockscreen_qs_summary">Güvenli kilit ekranlarında kısayolları ve hızlı ayarları genişletmeyi devre dışı bırak</string>
-  <string name="lockscreen_qs_disabled_summary">Kilit ekranında hızlı ayarlara erişme ETKİNLEŞTİRİLDİ</string>
+  <string name="lockscreen_qs_disabled_summary">Kilit ekranında hızlı ayarlara erişme ETKİN</string>
   <string name="lockscreen_qs_enabled_summary">Kilit ekranında hızlı ayarlara erişme DEVRE DIŞI BIRAKILDI</string>
   <string name="lockscreen_power_menu_disabled_title">Kilitlendiğinde güç menüsünü devre dışı bırak</string>
   <string name="lockscreen_power_menu_disabled_summary">Güvenli kilit ekranlarında güç menüsünü devre dışı bırak</string>
@@ -344,11 +344,11 @@
   <string name="edit_light_settings">Işık ayarlarını düzenle</string>
   <string name="pulse_speed_title">Yanma hızı ve süresi</string>
   <string name="default_time">Normal</string>
-  <string name="custom_time">Özel</string>
+  <string name="custom_time">Husûsî</string>
   <string name="dialog_delete_title">Sil</string>
   <string name="dialog_delete_message">Seçili öğe silinsin mi?</string>
   <!-- Values for the notification light pulse spinners -->
-  <string name="pulse_length_always_on">Her zaman açık</string>
+  <string name="pulse_length_always_on">Dâimâ açık</string>
   <string name="pulse_length_very_short">Çok kısa</string>
   <string name="pulse_length_short">Kısa</string>
   <string name="pulse_length_normal">Normal</string>
@@ -368,20 +368,20 @@
   <string name="notificationlight_title">Bildirim LED ışığı ayarları</string>
   <string name="notification_light_general_title">Genel</string>
   <string name="notification_light_applist_title">Uygulamalar</string>
-  <string name="notification_light_use_custom">Özel değerleri kullan</string>
+  <string name="notification_light_use_custom">Husûsî değerleri kullan</string>
   <string name="notification_light_default_value">Varsayılan</string>
   <string name="notification_light_screen_on">Ekran açıkken bildirim ışıkları</string>
   <string name="notification_light_zen_mode">Rahatsız etmeyin modunda bildirim ışıkları</string>
   <string name="notification_light_use_multiple_leds">Birden fazla LED ışıkları</string>
   <string name="keywords_lights_brightness_level">led ışıklarının parlaklığını sönükleştir</string>
   <string name="notification_light_automagic">Otomatik Renk</string>
-  <string name="notification_light_automagic_summary">Uygulamanın özel bir değeri yoksa, otomatik olarak led bildirim için uygun bir renk ayarlayın</string>
+  <string name="notification_light_automagic_summary">Uygulamanın husûsî bir değeri yoksa, led bildirim için kendiliğinden uygun bir renk ayarlar</string>
   <!-- Lights settings, LED notification -->
   <string name="led_notification_title">Işık ayarları</string>
   <string name="led_notification_text">LED ışık ayarlardan etkinleştirildi</string>
   <string name="led_category_summary_on">Bildirim ışığı AÇIK</string>
   <string name="led_category_summary_off">Bildirim ışığı KAPALI</string>
-  <string name="notification_light_no_apps_summary">Uygulamaya has denetim eklemek için, \"%1$s\" etkinleştirin ve menü çubuğunda \'\u002b\' basın</string>
+  <string name="notification_light_no_apps_summary">Uygulamaya has denetim eklemek için, \"%1$s\" etkinleştirin ve menü çubuğunda \'\u002b\' dokunun</string>
   <!-- Hostname setting -->
   <string name="device_hostname">Cihaz ana makine adı</string>
   <!-- OMS -->
@@ -401,9 +401,9 @@
   <string name="volume_dialog_headers_summary">Ses seviyesi iletişim kutusunda akış adı üst bilgilerini göster</string>
   <string name="lockscreen_hide_media_title">Ortam duvar kağıdını devre dışı bırak</string>
   <string name="lockscreen_hide_media_summary">Ortam meta verilerini kilit ekranı duvar kağıdı olarak gösterme</string>
-  <string name="omni_notification_light_settings_summary">Uygulamalar için bildirim ışıklarını özelleştirme</string>
-  <string name="omni_battery_light_settings_summary">Pil için bildirim ışıklarını özelleştirme</string>
-  <string name="night_mode_title">Açık/Koyu tema</string>
+  <string name="omni_notification_light_settings_summary">Uygulamalar için led bildirim ışıklarını husûsîleştirme</string>
+  <string name="omni_battery_light_settings_summary">Pil için led bildirim ışıklarını husûsîleştirme</string>
+  <string name="night_mode_title">Açık veyâ Koyu tema</string>
   <string name="night_mode_summary">%s</string>
   <string name="night_mode_no">Açık</string>
   <string name="night_mode_yes">Koyu</string>
@@ -413,7 +413,7 @@
   <string name="since_unplugged">Prizden çıkarıldıktan itibaren</string>
   <string name="since_reset">Sıfırla</string>
   <string name="since_unplug">Prizden çıkart</string>
-  <string name="other">Etkinlik</string>
+  <string name="other">Faaliyet</string>
   <string name="kernel_wakelocks">Çekirdek wakelockları</string>
   <string name="partial_wakelocks">Kısmi wakelocklar</string>
   <string name="app_wakelocks">Uygulama wakelockları</string>
@@ -439,8 +439,8 @@
   <string name="no_stat_because_reset_wakelock">Wakelock verisini toplamaya başlamak için sıfırlaya basın</string>
   <string name="no_stat_because_plugged">Wakelock verisini almak için lütfen telefonu şarjdan çıkarın</string>
   <string name="no_states_file_found">States dosyası bulunmadı. Telefonunuzun uyumlu olduğundan
-        emin misiniz?\n\nÖzel bir ROM veya kernel çalıştırıyorsanız, states
-        dosyanın okunabilir olmadığını söylemek için geliştiriciyle irtibat
+        emin misiniz?\n\nHusûsî bir ROM veyâ kernel çalıştırıyorsanız, states
+        dosyasının okunabilir olmadığını söylemek için geliştiriciyle irtibat
         kurun.</string>
   <string name="deep_sleep">"Derin Uyku"</string>
   <string name="mt_refresh">Yenile</string>
@@ -454,7 +454,7 @@
   <string name="custom_wall_browse_title">Omni duvar kağıtları</string>
   <string name="custom_wall_browse_summary">Omni duvar kağıtlarına göz at ve ayarla</string>
   <string name="show_cpu_title">CPU bilgilerini göster</string>
-  <string name="show_cpu_summary">Ekran üzerinde CPU bilgisi görüntüleme</string>
+  <string name="show_cpu_summary">Mevcûd işlemci bilgisini gösteren yardımcı grafik</string>
   <string name="headset_plugged_notification_title">Kulaklık bildirimi</string>
   <string name="headset_plugged_notification_summary">Kablolu kulaklık bağlandığında bildirim göster</string>
   <!-- Display : Rotation -->
@@ -541,7 +541,7 @@
   <string name="logcat_app_title">MatLog</string>
   <string name="logcat_app_summary">Kayıtları toplamak için uygulama başlatın</string>
   <string name="omni_theme_title">Omni Açık veyâ Koyu tema</string>
-  <string name="omni_theme_summary">Substratum temelli tema</string>
+  <string name="omni_theme_summary">Substratum esaslı tema</string>
   <string name="show_dashboard_columns_title">Sütun düzenini kullan</string>
   <string name="show_dashboard_columns_summary">Ayarların ana sayfasında</string>
   <string name="hide_dashboard_summary_title">Özeti gizle</string>
