@@ -798,7 +798,10 @@
     <string name="ticker_disabled">Disabled</string>
     <string name="ticker_enabled">Notification ticker</string>
     <string name="ticker_media_enabled">Notification and music ticker</string>
-</resources>
+    <string name="ticker_animation_mode_title">Ticker animation style</string>
+    <string name="ticker_animation_mode_alpha_fade">Fade</string>
+    <string name="ticker_animation_mode_scroll">Scroll</string>
+    
     <string name="hide_lockscreen_indicator_display_title">Hide bottom status text</string>
     <string name="hide_lockscreen_indicator_display_summary">Hide charging information and unlock hints</string>
 </resources>
