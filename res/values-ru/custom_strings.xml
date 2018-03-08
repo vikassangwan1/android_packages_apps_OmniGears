@@ -658,4 +658,7 @@
   <string name="not_ready_summary">Получение разрешения...</string>
   <string name="resolve_failed_summary">Ошибка получения разрешения приложения</string>
   <string name="disabled_entry">Отключено</string>
+  <!-- Face Auto Unlock -->
+  <string name="face_auto_unlock_title">Автоматическая разблокировка</string>
+  <string name="face_auto_unlock_summary">Скрыть экран блокировки при разблокировке лицом</string>
 </resources>

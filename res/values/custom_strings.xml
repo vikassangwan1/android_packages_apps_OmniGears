@@ -740,4 +740,9 @@
     <string name="expanded_user_configurable">User configurable</string>
     <string name="show_only_launcher_menu">Only launcher apps</string>
     <string name="show_all_apps_menu">All apps</string>
+
+    <!-- Face Auto Unlock -->
+    <string name="face_auto_unlock_title">Auto face unlock</string>
+    <string name="face_auto_unlock_summary">Dismiss lock screen after recognizing trusted face</string>
+
 </resources>
