@@ -711,4 +711,8 @@
     <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string>
     <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
 
+    <!-- Face Auto Unlock -->
+    <string name="face_auto_unlock_title">Auto face unlock</string>
+    <string name="face_auto_unlock_summary">Dismiss lock screen after recognizing trusted face</string>
+
 </resources>
