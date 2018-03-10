@@ -598,12 +598,12 @@
 
   <string name="clock_title">Часы и дата</string>
   <string name="statusbar_clock_summary">Установить стиль отображения часов в строке состояния</string>
-  <string name="status_bar_clock">Часы &amp; Дата</string>
+  <string name="status_bar_clock">Часы и дата</string>
   <string name="clock_title_enable">Выравнивание</string>
   <string name="clock_enabled">Включено</string>
   <string name="clock_disabled">Отключено</string>
   <string name="status_bar_clock_style_reset">Сбросить цвет</string>
-  <string name="status_bar_show_clock_title">Показать часы &amp; дату</string>
+  <string name="status_bar_show_clock_title">Показать часы и дату</string>
   <string name="status_bar_am_pm_title">AM/PM</string>
   <string name="status_bar_am_pm_info">24-часовой режим включен</string>
   <string name="enable_clock_weekday">День недели</string>
