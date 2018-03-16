@@ -337,6 +337,7 @@
     <string name="enable_tablet_navigation_summary">Tablet layout shows back and home on the left side and overview on the right side of the navigation bar</string>
 
     <string name="other_category">Other</string>
+    <string name="screenshot_category">Screenshot</string>
     <string name="general_category">General</string>
     <string name="options_category">Options</string>
     <string name="style_category">Style</string>
@@ -945,6 +946,12 @@
 	<string name="incall_notifications_vibrate">Less annoying in-call notifications</string>
     <string name="incall_notifications_vibrate_summary">Vibrate instead of playing a sound for in-call notifications</string>
     
+    <!-- Screenshot editor -->
+    <string name="screenshot_edit_app">Screenshot editor</string>
+    <string name="screenshot_edit_app_summary">Select which image editor to use to edit screenshots with</string>
+    <string name="screenshot_edit_app_no_editor">No image editor available</string>
+    <string name="profile_choose_app">Choose app</string>
+
     <!-- Status bar ticker -->
     <string name="ticker_title">Ticker</string>
     <string name="ticker_summary">Enable the statusbar ticker and configure ticker related tweaks</string>
