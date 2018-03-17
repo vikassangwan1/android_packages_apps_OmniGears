@@ -689,4 +689,8 @@
     <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string>
     <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
 
+    <string name="choose_app">Choose app</string>
+    <string name="not_ready_summary">Resolving...</string>
+    <string name="resolve_failed_summary">Resolving app failed</string>
+    <string name="disabled_entry">Disabled</string>
 </resources>
