@@ -55,6 +55,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
     
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
     private static final String CATEGORY_KEYS = "button_keys";
+    private static final String CATEGORY_OTHER = "button_other";
     private static final String KEYS_SHOW_NAVBAR_KEY = "navigation_bar_show";
     private static final String KEYS_DISABLE_HW_KEY = "hardware_keys_disable";
     private static final String LONG_PRESS_RECENTS_ACTION = "long_press_recents_action";
@@ -74,7 +75,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
     private Preference mButtonLight;
     private FingerprintManager mFingerprintManager;
     private SwitchPreference mFingerprintVib;
-    
+
+
     @Override
     public int getMetricsCategory() {
         return MetricsEvent.OMNI_SETTINGS;
@@ -91,6 +93,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
                 com.android.internal.R.integer.config_deviceHardwareKeys);
         final PreferenceCategory keysCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_KEYS);
+        final PreferenceCategory otherCategory =
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_OTHER);
 
         mEnableNavBar = (SwitchPreference) prefScreen.findPreference(KEYS_SHOW_NAVBAR_KEY);
         mDisabkeHWKeys = (SwitchPreference) prefScreen.findPreference(KEYS_DISABLE_HW_KEY);
@@ -152,7 +156,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mFingerprintVib = (SwitchPreference) findPreference(FINGERPRINT_VIB);
         if (!mFingerprintManager.isHardwareDetected()){
-            prefScreen.removePreference(mFingerprintVib);
+            otherCategory.removePreference(mFingerprintVib);
         } else {
             mFingerprintVib.setChecked((Settings.System.getInt(getContentResolver(),
                     Settings.System.FINGERPRINT_SUCCESS_VIB, 1) == 1));
