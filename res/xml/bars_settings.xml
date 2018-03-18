@@ -66,6 +66,15 @@
                 android:entryValues="@array/quick_pulldown_values"
                 android:persistent="false" />
 
+            <org.omnirom.omnigears.preference.SeekBarPreference
+                android:key="qs_panel_alpha"
+                android:title="@string/qs_panel_alpha_title"
+                android:max="255"
+                settings:min="0"
+                android:persistent="false"
+                settings:unitsLeft=""
+                settings:unitsRight="" />
+
         </PreferenceCategory>
 
         <PreferenceCategory

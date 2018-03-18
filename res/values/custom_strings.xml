@@ -771,4 +771,7 @@
     <!-- Bottom shortcuts -->
     <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Bottom shortcuts</string>
     <string name="systemui_tuner_lockscreen_bottom_shortcuts_summary">Configure the bottom shortcuts</string>
+
+    <!-- QuickSettings Panel Transparency -->
+    <string name="qs_panel_alpha_title">Quick Settings panel opacity</string>
 </resources>

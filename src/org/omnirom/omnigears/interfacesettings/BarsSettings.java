@@ -14,41 +14,30 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
-*/
+ */
 package org.omnirom.omnigears.interfacesettings;
 
 import android.content.Context;
-import android.content.ContentResolver;
-import android.content.Intent;
 import android.content.res.Resources;
+import android.net.TrafficStats;
 import android.os.Bundle;
-import android.support.v7.preference.Preference;
+import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
-import android.util.Log;
-import android.net.TrafficStats;
-
-import com.android.internal.logging.MetricsLogger;
-import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-
-import android.support.v7.preference.CheckBoxPreference;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceGroup;
 import android.support.v7.preference.PreferenceScreen;
-import android.support.v7.preference.PreferenceCategory;
 
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
-import com.android.settings.dashboard.SummaryLoader;
+import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
-import com.android.internal.util.omni.DeviceUtils;
-import com.android.settings.Utils;
+import org.omnirom.omnigears.preference.SeekBarPreference;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class BarsSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
@@ -56,10 +45,11 @@ public class BarsSettings extends SettingsPreferenceFragment implements
     private static final String NETWORK_TRAFFIC_ROOT = "category_network_traffic";
     private static final String NAVIGATIONBAR_ROOT = "category_navigationbar";
     private static final String EXPANDED_DESKTOP_CATEGORY = "expanded_desktop_category";
-
+    private static final String QS_PANEL_ALPHA = "qs_panel_alpha";
     private static final String QUICK_PULLDOWN = "quick_pulldown";
 
     private ListPreference mQuickPulldown;
+    private SeekBarPreference mQsPanelAlpha;
 
     @Override
     public int getMetricsCategory() {
@@ -91,6 +81,12 @@ public class BarsSettings extends SettingsPreferenceFragment implements
                 TrafficStats.getTotalRxBytes() == TrafficStats.UNSUPPORTED) {
             prefScreen.removePreference(findPreference(NETWORK_TRAFFIC_ROOT));
         }
+
+        mQsPanelAlpha = (SeekBarPreference) findPreference(QS_PANEL_ALPHA);
+        int qsPanelAlpha = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.QS_PANEL_BG_ALPHA, 255, UserHandle.USER_CURRENT);
+        mQsPanelAlpha.setValue(qsPanelAlpha);
+        mQsPanelAlpha.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -100,11 +96,17 @@ public class BarsSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-         if (preference == mQuickPulldown) {
+        if (preference == mQuickPulldown) {
             int quickPulldownValue = Integer.valueOf((String) newValue);
             Settings.System.putInt(getContentResolver(), Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
                     quickPulldownValue);
             updatePulldownSummary(quickPulldownValue);
+            return true;
+        } else if (preference == mQsPanelAlpha) {
+            int bgAlpha = (Integer) newValue;
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.QS_PANEL_BG_ALPHA, bgAlpha,
+                    UserHandle.USER_CURRENT);
             return true;
         }
         return false;
@@ -123,14 +125,14 @@ public class BarsSettings extends SettingsPreferenceFragment implements
                     ? R.string.quick_pulldown_left
                     : R.string.quick_pulldown_right);
             mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_summary, direction));
-       }
+        }
     }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
                 @Override
                 public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
-                        boolean enabled) {
+                                                                            boolean enabled) {
                     ArrayList<SearchIndexableResource> result =
                             new ArrayList<SearchIndexableResource>();
 

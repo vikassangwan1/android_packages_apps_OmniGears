@@ -683,4 +683,6 @@
    <!-- Bottom shortcuts -->
   <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Экран блокировки</string>
   <string name="systemui_tuner_lockscreen_bottom_shortcuts_summary">Настроить экран блокировки</string>
+  <!-- QuickSettings Panel Transparency -->
+  <string name="qs_panel_alpha_title">Прозрачность панели быстрых настроек</string>
 </resources>
