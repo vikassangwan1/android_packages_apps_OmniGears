@@ -703,4 +703,6 @@
     <string name="event_service_enabled_title">Enable event service</string>
     <string name="event_service_running">Service is running</string>
     <string name="event_service_stopped">Service is not running</string>
+    <string name="category_media_player_info_title">Select an app to be started for this event</string>
+    <string name="media_player_autostart_title">Send media play event after start</string>
 </resources>
