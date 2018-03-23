@@ -636,4 +636,14 @@
 
   <string name="wake_when_plugged_or_unplugged_title">Пробуждение при подключении или отключении</string>
   <string name="wake_when_plugged_or_unplugged_summary">Будить устройство, когда оно подключено или отключено от зарядки</string>
+
+  <string name="event_service_settings_title">События</string>
+  <string name="category_media_player_title">Медиа плеер</string>
+  <string name="bt_a2dp_connect_app_title">Подключение Bluetooth A2DP</string>
+  <string name="headset_connect_app_title">Подключение проводной гарнитуры</string>
+  <string name="event_service_enabled_title">Включить сервис событий</string>
+  <string name="event_service_running">Сервис запущен</string>
+  <string name="event_service_stopped">Сервис не запущен</string>
+  <string name="category_media_player_info_title">Выберите приложение для запуска</string>
+  <string name="media_player_autostart_title">Отправить событие воспроизведения мультимедиа после запуска</string>
 </resources>
