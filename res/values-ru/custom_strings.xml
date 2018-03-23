@@ -586,16 +586,6 @@
   <string name="recents_clear_all_location_bottom_right">Внизу справа</string>
   <string name="recents_clear_all_location_bottom_left">Внизу слева</string>
   <string name="recents_clear_all_location_bottom_center">Внизу по центру</string>  
-
-  <!-- Launch music player when headset is connected -->
-  <string name="headset_connect_player_title">Запустить музыкальное приложение при подключение гарнитуры</string>
-  <string name="headset_connect_player_disabled">Отключено</string>
-  <string name="headset_connect_player_wired">Проводная гарнитура подключена</string>
-  <string name="headset_connect_player_bt_no_carkit">BT гарнитура (не автомобильная) подключена</string>
-  <string name="headset_connect_player_bt">BT гарнитура подключена</string>
-  <string name="headset_connect_player_both_no_carkit">Любая гарнитура (не автомобильная) подключена</string>
-  <string name="headset_connect_player_both">Любая гарнитура подключена</string>
-
   <string name="clock_title">Часы и дата</string>
   <string name="statusbar_clock_summary">Установить стиль отображения часов в строке состояния</string>
   <string name="status_bar_clock">Часы и дата</string>

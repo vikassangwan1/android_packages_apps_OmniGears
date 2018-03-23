@@ -21,7 +21,6 @@ package org.omnirom.omnigears.moresettings;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.UserHandle;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
@@ -51,11 +50,9 @@ public class MoreSettings extends SettingsPreferenceFragment implements OnPrefer
     private static final String KEY_SHOW_DASHBOARD_COLUMNS = "show_dashboard_columns";
     private static final String KEY_HIDE_DASHBOARD_SUMMARY = "hide_dashboard_summary";
     private static final String KEY_SCREEN_OFF_ANIMATION = "screen_off_animation";
-    private static final String HEADSET_CONNECT_PLAYER = "headset_connect_player";
 
     private SharedPreferences mAppPreferences;
     private ListPreference mScreenOffAnimation;
-    private ListPreference mLaunchPlayerHeadsetConnection;
 
     @Override
     public int getMetricsCategory() {
@@ -99,14 +96,6 @@ public class MoreSettings extends SettingsPreferenceFragment implements OnPrefer
         mScreenOffAnimation.setValue(Integer.toString(screenOffAnimation));
         mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
         mScreenOffAnimation.setOnPreferenceChangeListener(this);
-
-
-        mLaunchPlayerHeadsetConnection = (ListPreference) findPreference(HEADSET_CONNECT_PLAYER);
-        int mLaunchPlayerHeadsetConnectionValue = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.HEADSET_CONNECT_PLAYER, 4, UserHandle.USER_CURRENT);
-        mLaunchPlayerHeadsetConnection.setValue(Integer.toString(mLaunchPlayerHeadsetConnectionValue));
-        mLaunchPlayerHeadsetConnection.setSummary(mLaunchPlayerHeadsetConnection.getEntry());
-        mLaunchPlayerHeadsetConnection.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -116,15 +105,6 @@ public class MoreSettings extends SettingsPreferenceFragment implements OnPrefer
             int index = mScreenOffAnimation.findIndexOfValue((String) newValue);
             mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[index]);
             Settings.Global.putInt(getContentResolver(), Settings.Global.SCREEN_OFF_ANIMATION, value);
-            return true;
-            
-        } else if (preference == mLaunchPlayerHeadsetConnection) {
-            int mLaunchPlayerHeadsetConnectionValue = Integer.valueOf((String) newValue);
-            int index = mLaunchPlayerHeadsetConnection.findIndexOfValue((String) newValue);
-            mLaunchPlayerHeadsetConnection.setSummary(
-                    mLaunchPlayerHeadsetConnection.getEntries()[index]);
-            Settings.System.putIntForUser(getActivity().getContentResolver(),
-                    Settings.System.HEADSET_CONNECT_PLAYER, mLaunchPlayerHeadsetConnectionValue, UserHandle.USER_CURRENT);
             return true;
         }
         return false;
