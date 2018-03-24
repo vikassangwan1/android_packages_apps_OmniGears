@@ -646,4 +646,13 @@
   <string name="event_service_stopped">Сервис не запущен</string>
   <string name="category_media_player_info_title">Выберите приложение для запуска</string>
   <string name="media_player_autostart_title">Отправить событие воспроизведения мультимедиа после запуска</string>
+
+   <!-- Quick Pulldown-->
+  <string name="quick_pulldown_title">Быстрое раскрытие</string>
+  <string name="quick_pulldown_summary">%1$s край строки состояния раскрывает быстрые настройки</string>
+  <string name="quick_pulldown_summary_always">Всегда показывать быстрые настройки в раскрывающемся меню строки состояния</string>
+  <string name="quick_pulldown_off">Выкл.</string>
+  <string name="quick_pulldown_left">Левый</string>
+  <string name="quick_pulldown_right">Правый</string>
+  <string name="quick_pulldown_always">Всегда</string>
 </resources>
