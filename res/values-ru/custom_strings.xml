@@ -624,10 +624,6 @@
   <!-- fingerprint authentication vibration -->
   <string name="fprint_sucess_vib_title">Отпечаток пальца</string>
   <string name="fprint_sucess_vib_summary">Вибрировать при успешном распознавании отпечатка пальца</string>
-  
-    <!-- Face Auto Unlock -->
-  <string name="face_auto_unlock_title">Автоматическая разблокировка</string>
-  <string name="face_auto_unlock_summary">Скрыть экран блокировки при разблокировке лицом</string>
 
   <string name="choose_app">Выбрать приложение</string>
   <string name="not_ready_summary">Получаю разрешение...</string>
