@@ -651,4 +651,18 @@
   <string name="quick_pulldown_left">Левый</string>
   <string name="quick_pulldown_right">Правый</string>
   <string name="quick_pulldown_always">Всегда</string>
+
+  <!-- Expanded desktop -->
+  <string name="expanded_desktop_title">Расширенный рабочий стол</string>
+  <string name="expanded_desktop_summary">Конфигурация приложения в строке состояния и панели навигации</string>
+  <string name="expanded_hide_nothing">Ничего не скрывать</string>
+  <string name="expanded_hide_status">Скрыть строку состояния</string>
+  <string name="expanded_hide_navigation">Скрыть панель навигации</string>
+  <string name="expanded_hide_both">Спрятать обе</string>
+  <string name="expanded_nothing_to_show">Чтобы добавить настраиваемую конфигурацию для каждого приложения для расширенного состояния, установите «Включено для всех» в положение «выключено»</string>
+  <string name="expanded_desktop_state">Расширенные состояние</string>
+  <string name="expanded_enabled_for_all">Включено для всех</string>
+  <string name="expanded_user_configurable">Настраиваемое пользователем</string>
+  <string name="show_only_launcher_menu">Только приложения ланчера</string>
+  <string name="show_all_apps_menu">Все приложения</string>
 </resources>
