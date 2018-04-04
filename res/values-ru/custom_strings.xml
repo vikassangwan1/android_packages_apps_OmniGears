@@ -613,15 +613,21 @@
   <string name="am_pm_clock_none">Не показывать</string>
   <string name="clock_date_display_none">Не показывать</string>
   <string name="clock_date_display_small">Маленький размер шрифта</string>
+
   <string name="event_service_settings_title">События</string>
   <string name="category_media_player_title">Медиа плеер</string>
-  <string name="bt_a2dp_connect_app_title">Подключение Bluetooth A2DP</string>
-  <string name="headset_connect_app_title">Подключение проводной гарнитуры</string>
+  <string name="bt_a2dp_connect_app_list_title">Подключение Bluetooth A2DP</string>
+  <string name="headset_connect_app_list_title">Подключение проводной гарнитуры</string>
   <string name="event_service_enabled_title">Включить сервис событий</string>
   <string name="event_service_running">Сервис запущен</string>
   <string name="event_service_stopped">Сервис не запущен</string>
-  <string name="category_media_player_info_title">Выберите приложение для запуска</string>
+  <string name="category_media_player_info_title">Выбор приложения</string>
   <string name="media_player_autostart_title">Отправить событие воспроизведения мультимедиа после запуска</string>
+  <string name="media_player_music_active_title">Не запускать событие при воспроизведении</string>
+  <string name="autorun_single_app_title">Автозапуск одного приложения</string>
+  <string name="autorun_single_app_summary">Не показывать диалог выбора приложения</string>
+  <string name="bt_a2dp_connect_app_list_summary">Приложения, которые будут отображаться при запуске события A2DP, например, при подключении Bluetooth-гарнитуры</string>
+  <string name="headset_connect_app_list_summary">Приложения, которые будут отображаться при подключении проводной гарнитуры</string>
 
    <!-- Quick Pulldown-->
   <string name="quick_pulldown_title">Быстрое раскрытие</string>
