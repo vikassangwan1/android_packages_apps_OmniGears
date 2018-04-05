@@ -667,4 +667,7 @@
   <!-- Face Auto Unlock -->
   <string name="face_auto_unlock_title">Автоматическая разблокировка</string>
   <string name="face_auto_unlock_summary">Скрыть экран блокировки при разблокировке лицом</string>
+   <!-- Brightness control -->
+  <string name="status_bar_toggle_brightness">Управление яркостью</string>
+  <string name="status_bar_toggle_brightness_summary">Регулировать яркость экрана движением пальца по строке состояния</string>
 </resources>
