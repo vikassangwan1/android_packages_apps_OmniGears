@@ -628,6 +628,10 @@
   <string name="autorun_single_app_summary">Не показывать диалог выбора приложения</string>
   <string name="bt_a2dp_connect_app_list_summary">Приложения, которые будут отображаться при запуске события A2DP, например, при подключении Bluetooth-гарнитуры</string>
   <string name="headset_connect_app_list_summary">Приложения, которые будут отображаться при подключении проводной гарнитуры</string>
+  <string name="app_chooser_left">Слева</string>
+  <string name="app_chooser_right">Справа</string>
+  <string name="app_chooser_timeout_title">Тайм-аут диалогового окна выбора</string>
+  <string name="app_chooser_position_title">Позиция диалогового окна выбора приложения</string>
 
    <!-- Quick Pulldown-->
   <string name="quick_pulldown_title">Быстрое раскрытие</string>
