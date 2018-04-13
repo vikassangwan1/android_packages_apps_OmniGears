@@ -62,6 +62,8 @@ public class SmartPixels extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.smart_pixels);
 
+        mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.smart_pixels_footer);
+
         resolver = getActivity().getContentResolver();
 
         mSmartPixelsEnable = (SystemSettingSwitchPreference) findPreference(ENABLE);
