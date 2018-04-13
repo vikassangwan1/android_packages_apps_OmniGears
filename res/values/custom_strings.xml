@@ -767,4 +767,8 @@
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture">Three finger gesture</string>
     <string name="three_finger_gesture_summary">Swipe three finger to screenshot</string>
+
+    <!-- Bottom shortcuts -->
+    <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Bottom shortcuts</string>
+    <string name="systemui_tuner_lockscreen_bottom_shortcuts_summary">Configure the bottom shortcuts</string>
 </resources>
