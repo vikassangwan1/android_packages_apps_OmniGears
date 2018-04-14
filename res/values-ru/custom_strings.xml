@@ -632,6 +632,8 @@
   <string name="app_chooser_right">Справа</string>
   <string name="app_chooser_timeout_title">Тайм-аут диалогового окна выбора</string>
   <string name="app_chooser_position_title">Позиция диалогового окна выбора приложения</string>
+  <string name="wired_events_threshold_title">Порог события проводной гарнитуры</string>
+  <string name="wired_events_threshold_summary">Игнорировать события гарнитуры, если они находятся в пределах порогового времени</string>
 
    <!-- Quick Pulldown-->
   <string name="quick_pulldown_title">Быстрое раскрытие</string>
