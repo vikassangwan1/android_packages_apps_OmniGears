@@ -114,6 +114,11 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
             keysCategory.removePreference(mButtonLight);
         }
 
+        boolean showNavBarDefault = DeviceUtils.deviceSupportNavigationBar(getActivity());
+        boolean showNavBar = Settings.System.getInt(resolver,
+                Settings.System.NAVIGATION_BAR_SHOW, showNavBarDefault ? 1 : 0) == 1;
+        mEnableNavBar.setChecked(showNavBar);
+
         mRecentsClearAllLocation = (ListPreference) findPreference(RECENTS_CLEAR_ALL_LOCATION);
         int location = Settings.System.getIntForUser(resolver,
                 Settings.System.RECENTS_CLEAR_ALL_LOCATION, 3, UserHandle.USER_CURRENT);
