@@ -687,4 +687,17 @@
   <string name="systemui_tuner_lockscreen_bottom_shortcuts_summary">Настроить экран блокировки</string>
   <!-- QuickSettings Panel Transparency -->
   <string name="qs_panel_alpha_title">Прозрачность панели быстрых настроек</string>
+  <string name="long_press_power_torch_title">Длительное нажатие для включения фонарика</string>
+  <string name="long_press_power_torch_summary">Переключайте фонарик, когда экран выключен</string>
+  <!-- Hide lockscreen status bar, clock, date, alarm -->
+  <string name="lockscreen_item_title">Элементы экрана блокировки</string>
+  <string name="lockscreen_item_summary">Настройка видимости элементов экрана блокировки</string>
+  <string name="hide_lockscreen_clock_title">Скрыть виджет часов</string>
+  <string name="hide_lockscreen_clock_summary">Изменение видимости виджета часов</string>
+  <string name="hide_lockscreen_date_title">Скрыть виджет даты</string>
+  <string name="hide_lockscreen_date_summary">Изменение видимости даты под виджетами часов</string>
+  <string name="hide_lockscreen_alarm_title">Скрыть текст будильника</string>
+  <string name="hide_lockscreen_alarm_summary">Изменение видимости текстового сообщения под виджетами часов</string>
+  <string name="hide_lockscreen_status_bar_title">Скрыть строку состояния</string>
+  <string name="hide_lockscreen_status_bar_summary">Нажмите на строку состояния, чтобы переключить видимость</string>
 </resources>
