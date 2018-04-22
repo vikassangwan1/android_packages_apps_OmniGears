@@ -700,4 +700,14 @@
   <string name="hide_lockscreen_alarm_summary">Изменение видимости текстового сообщения под виджетами часов</string>
   <string name="hide_lockscreen_status_bar_title">Скрыть строку состояния</string>
   <string name="hide_lockscreen_status_bar_summary">Нажмите на строку состояния, чтобы переключить видимость</string>
+  <!-- Smart Pixels -->
+  <string name="smart_pixels_title">Умные пиксели</string>
+  <string name="smart_pixels_summary">Экономить аккумулятор, отключая дополнительные пиксели</string>
+  <string name="smart_pixels_enable_title">Включить умные пиксели</string>
+  <string name="smart_pixels_enable_summary">Отключить пиксели, чтобы уменьшить потребление энергии</string>
+  <string name="smart_pixels_on_power_save_title">Автоматическое включение в режиме энергосбережения</string>
+  <string name="smart_pixels_on_power_save_summary">Включить умные пиксели, когда включена функция экономии заряда батареи</string>
+  <string name="smart_pixels_percent">Процент пикселей для отключения</string>
+  <string name="smart_pixels_shift_title">Защита от выгорания</string>
+  <string name="smart_pixels_shift_summary">Предотвращает выгорание на OLED-устройствах перемещая пиксели</string>
 </resources>
