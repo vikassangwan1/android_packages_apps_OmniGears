@@ -247,8 +247,6 @@
     <string name="lockscreen_shortcut_add_dialog_title">Add shortcut</string>
     <string name="lockscreen_shortcut_apps_title">Shortcuts</string>
     <string name="lockscreen_shortcut_add">Add\u2026</string>
-    <string name="lockscreen_hide_indicator_display_title">Hide bottom status text</string>
-    <string name="lockscreen_hide_indicator_display_summary">Hide charging information and unlock hints</string>
     <string name="lockscreen_camera_shortcut_enable_title">Show camera shortcut</string>
     <string name="lockscreen_camera_shortcut_enable_summary">Visibility depends on system setup</string>
     <string name="lockscreen_left_shortcut_enable_title">Show dialer or voice assist shortcut</string>
@@ -800,4 +798,7 @@
     <string name="ticker_disabled">Disabled</string>
     <string name="ticker_enabled">Notification ticker</string>
     <string name="ticker_media_enabled">Notification and music ticker</string>
+</resources>
+    <string name="hide_lockscreen_indicator_display_title">Hide bottom status text</string>
+    <string name="hide_lockscreen_indicator_display_summary">Hide charging information and unlock hints</string>
 </resources>

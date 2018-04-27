@@ -716,4 +716,7 @@
   <string name="ticker_disabled">Отключено</string>
   <string name="ticker_enabled">Сообщения бегущей строкой</string>
   <string name="ticker_media_enabled">Сообщения и музыка бегущей строкой</string>
+
+  <string name="hide_lockscreen_indicator_display_title">Скрыть нижний текст статуса</string>
+  <string name="hide_lockscreen_indicator_display_summary">Скрыть информацию о зарядке и подсказки разблокировки</string>
 </resources>
