@@ -722,4 +722,6 @@
 
   <string name="hide_lockscreen_indicator_display_title">Скрыть нижний текст статуса</string>
   <string name="hide_lockscreen_indicator_display_summary">Скрыть информацию о зарядке и подсказки разблокировки</string>
+  <string name="hide_lockscreen_icon_title">Скрыть значок экрана блокировки</string>
+  <string name="hide_lockscreen_icon_summary">Изменение видимости значка блокировки экрана</string>
 </resources>
