@@ -179,7 +179,8 @@
   <string name="button_link_brightness_summary">Использовать яркость экрана</string>
   <string name="button_manual_brightness">Уровень яркости</string>
   <string name="unit_sec">сек.</string>
-  <string name="unit_msec">мсек</string>
+  <string name="unit_msec">мсек.</string>
+  <string name="unit_minutes">мин.</string>
   <string name="button_backlight_enable_title">Включить</string>
   <string name="navigation_bar_show_title">Показывать панель навигации</string>
   <string name="navigation_bar_show_summary">Принудительно включить панель навигации</string>
@@ -724,4 +725,8 @@
   <string name="hide_lockscreen_indicator_display_summary">Скрыть информацию о зарядке и подсказки разблокировки</string>
   <string name="hide_lockscreen_icon_title">Скрыть значок экрана блокировки</string>
   <string name="hide_lockscreen_icon_summary">Изменение видимости значка блокировки экрана</string>
+
+  <string name="category_network_title">Сеть</string>
+  <string name="disable_wifi_threshold_title">Выключать Wi\u2011Fi автоматически</string>
+  <string name="disable_wifi_threshold_summary">Деактивировать Wi\u2011Fi, если при отключении от сети мы не подключаемся через несколько минут</string>
 </resources>
