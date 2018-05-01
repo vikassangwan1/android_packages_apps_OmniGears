@@ -18,56 +18,46 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:key="more_settings"
     android:title="@string/more_settings_title">
+    
+    <PreferenceCategory
+        android:title="@string/general_category"/>
+            
+		<Preference
+			android:key="rotation_settings"
+			android:title="@string/display_rotation_title"
+			android:fragment="org.omnirom.omnigears.DisplayRotation" />
 
-        <PreferenceCategory
-            android:key="category_other"
-            android:title="@string/other_category">
+		<Preference
+			android:key="led_settings"
+			android:title="@string/battery_light_settings_title"
+			android:fragment="org.omnirom.omnigears.batterylight.BatteryLightSettings" />
 
-            <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
-                android:key="volume_dialog_headers"
-                android:title="@string/volume_dialog_headers_title"
-                android:summary="@string/volume_dialog_headers_summary"
-                android:defaultValue="true" />
-            <SwitchPreference
-                android:key="show_dashboard_columns"
-                android:title="@string/show_dashboard_columns_title"
-                android:summary="@string/show_dashboard_columns_summary"
-                android:persistent="false" />
-            <SwitchPreference
-                android:key="hide_dashboard_summary"
-                android:title="@string/hide_dashboard_summary_title"
-                android:summary="@string/hide_dashboard_summary_summary"
-                android:persistent="false" />
+		<Preference
+            android:key="volume_steps"
+            android:title="@string/volume_steps_title"
+            android:summary="@string/volume_steps_summary"
+            android:fragment="org.omnirom.omnigears.system.VolumeSteps" />
 
-        </PreferenceCategory>
+		<Preference
+            android:key="time_in_state"
+            android:title="@string/time_in_state_title"
+            android:summary="@string/time_in_state_summary"
+            android:fragment="org.omnirom.omnigears.system.TimeInState" />
 
-        <PreferenceCategory
-            android:key="category_system"
-            android:title="@string/system_category">
+        <Preference
+            android:key="doze_settings"
+            android:title="@string/doze_settings_title"
+            android:summary="@string/doze_settings_summary"
+            android:fragment="org.omnirom.omnigears.system.DozeSettings" />
 
-            <Preference
-                android:key="time_in_state"
-                android:title="@string/time_in_state_title"
-                android:summary="@string/time_in_state_summary"
-                android:fragment="org.omnirom.omnigears.system.TimeInState" />
-
-            <Preference
-                android:key="doze_settings"
-                android:title="@string/doze_settings_title"
-                android:summary="@string/doze_settings_summary"
-                android:fragment="org.omnirom.omnigears.system.DozeSettings" />
-
-            <org.omnirom.omnigears.preference.GlobalSettingSwitchPreference
-                android:key="show_cpu_overlay"
-                android:title="@string/show_cpu_title"
-                android:summary="@string/show_cpu_summary"
-                android:defaultValue="false" />
-
-            <Preference
-                android:key="volume_steps"
-                android:title="@string/volume_steps_title"
-                android:summary="@string/volume_steps_summary"
-                android:fragment="org.omnirom.omnigears.system.VolumeSteps" />
+		<Preference
+			android:key="event_service_settings"
+			android:title="@string/event_service_settings_title"
+			android:fragment="org.omnirom.omnigears.service.EventServiceSettings" />
+        
+   <PreferenceCategory
+        android:key="category_system"
+        android:title="@string/animation_category">
 
             <ListPreference
                 android:key="screen_off_animation"
@@ -82,7 +72,43 @@
                 android:summary="@string/system_default_animation_summary"
                 android:defaultValue="true" />    
 
-            <org.omnirom.omnigears.preference.GlobalSettingSwitchPreference
+        </PreferenceCategory>
+        
+        <PreferenceCategory
+            android:title="@string/settings_category">
+            
+        <SwitchPreference
+                android:key="show_dashboard_columns"
+                android:title="@string/show_dashboard_columns_title"
+                android:summary="@string/show_dashboard_columns_summary"
+                android:persistent="false" />
+                
+        <SwitchPreference
+                android:key="hide_dashboard_summary"
+                android:title="@string/hide_dashboard_summary_title"
+                android:summary="@string/hide_dashboard_summary_summary"
+                android:persistent="false" />
+            
+		<org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+				android:key="enable_conditions"
+				android:title="@string/dashboard_conditions_title"
+				android:summaryOn="@string/summary_dashboard_conditions_enabled"
+				android:summaryOff="@string/summary_dashboard_conditions_disabled"
+				android:defaultValue="true" />
+            
+		</PreferenceCategory>
+        
+        <PreferenceCategory
+            android:key="category_other"
+            android:title="@string/other_category">
+
+			<org.omnirom.omnigears.preference.GlobalSettingSwitchPreference
+                android:key="show_cpu_overlay"
+                android:title="@string/show_cpu_title"
+                android:summary="@string/show_cpu_summary"
+                android:defaultValue="false" />
+
+			<org.omnirom.omnigears.preference.GlobalSettingSwitchPreference
                 android:key="wake_when_plugged_or_unplugged"
                 android:title="@string/wake_when_plugged_or_unplugged_title"
                 android:summary="@string/wake_when_plugged_or_unplugged_summary"
@@ -93,6 +119,13 @@
                 android:title="@string/three_finger_gesture"
                 android:summary="@string/three_finger_gesture_summary"
                 android:defaultValue="false" />
-
+                
+            <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+                android:key="volume_dialog_headers"
+                android:title="@string/volume_dialog_headers_title"
+                android:summary="@string/volume_dialog_headers_summary"
+                android:defaultValue="true" />
+                
         </PreferenceCategory>
+         
 </PreferenceScreen>

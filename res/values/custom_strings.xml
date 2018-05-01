@@ -79,7 +79,10 @@
     <string name="button_back_kill_enable_title">Kill app back button</string>
     <string name="button_back_kill_enable_summary">Kill the foreground app by long-pressing the back button</string>
     <string name="button_back_kill_timeout_title">Kill app timeout</string>
+    <string name="button_back_kill_timeout_200ms">200 ms</string>
+    <string name="button_back_kill_timeout_300ms">300 ms</string>
     <string name="button_back_kill_timeout_500ms">500 ms</string>
+    <string name="button_back_kill_timeout_700ms">700 ms</string>
     <string name="button_back_kill_timeout_1000ms">1000 ms</string>
     <string name="button_back_kill_timeout_1500ms">1500 ms</string>
     <string name="button_back_kill_timeout_2000ms">2000 ms</string>
@@ -332,6 +335,20 @@
     <string name="enable_tablet_navigation_summary">Tablet layout shows back and home on the left side and overview on the right side of the navigation bar</string>
 
     <string name="other_category">Other</string>
+    <string name="general_category">General</string>
+    <string name="notification_category">Notifications</string>
+    
+    <!-- Lockscreen battery info indicator  -->
+    <string name="lockscreen_battery_info_title">Battery info</string>
+    <string name="lockscreen_battery_info_summary">Display charging current, voltage, battery temperature on the lock screen</string>
+    
+    <!-- Notification guts kill app button -->
+    <string name="notification_guts_kill_app_button_title">Kill app button</string>
+    <string name="notification_guts_kill_app_button_summary">Show a kill app button in the notification\'s longpress menu</string>
+    
+    <!-- Fingerprint unlock keystore -->
+    <string name="fp_unlock_keystore_title">Fingerprint unlock</string>
+    <string name="fp_unlock_keystore_summary">Unlock device with fingerprint after reboot without PIN/Password/Pattern\nNote: at your own risk!</string>
 
     <!-- Dashboard columns -->
     <string name="dashboard_columns_title">Settings columns</string>
@@ -501,6 +518,10 @@
     <string name="wakelocks_title">Wakelocks</string>
     <string name="wakelocks_summary">Show wakelock statistics</string>
     <string name="system_category">System</string>
+    <string name="animation_category">Animation</string>
+    <string name="quicksettings_title">Quick settings</string>
+    <string name="qs_tile_title_visibility_title">Tile titles</string>
+    <string name="qs_tile_title_visibility_summary">Show titles underneath quick settings tiles</string>
     <string name="custom_wall_browse_title">Omni wallpapers</string>
     <string name="custom_wall_browse_summary">Browse and set Omni branded wallpapers</string>
     <string name="show_cpu_title">Show CPU info</string>
@@ -598,10 +619,15 @@
     <string name="logcat_app_title">MatLog</string>
     <string name="logcat_app_summary">Start app to collect logs</string>
 
+    <string name="settings_category">Settings layout</string>
+    
     <string name="show_dashboard_columns_title">Use columns layout</string>
     <string name="show_dashboard_columns_summary">In settings main page</string>
     <string name="hide_dashboard_summary_title">Hide summary</string>
     <string name="hide_dashboard_summary_summary">In settings main page</string>
+    <string name="dashboard_conditions_title">Dashboard conditions</string>
+    <string name="summary_dashboard_conditions_enabled">Dashboard conditions are enabled</string>
+    <string name="summary_dashboard_conditions_disabled">Dashboard conditions are disabled</string>
 
     <string name="systemui_theme_style_title">SystemUI style</string>
     <string name="systemui_theme_style_auto">Wallpaper based</string>
@@ -743,7 +769,7 @@
     <string name="expanded_user_configurable">User configurable</string>
     <string name="show_only_launcher_menu">Only launcher apps</string>
     <string name="show_all_apps_menu">All apps</string>
-
+    
     <!-- Face Auto Unlock -->
     <string name="face_auto_unlock_title">Auto face unlock</string>
     <string name="face_auto_unlock_summary">Dismiss lock screen after recognizing trusted face</string>
