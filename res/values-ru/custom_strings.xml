@@ -763,4 +763,7 @@
   <string name="wallpaper_tint_keyguard">На экране блокировки</string>
   <string name="wallpaper_tint_notification_shade">В уведомлениях</string>
   <string name="wallpaper_tint_summary">Применить оттенок к фону на основе обоев рабочего стола</string>
+          <!-- Toast icon -->
+  <string name="toast_icon_title">Иконка приложения в тост-уведомлении</string>
+  <string name="toast_icon_summary">Отображать значок приложения, соответствующий тост-уведомлению</string>
 </resources>

@@ -846,4 +846,8 @@
     <string name="wallpaper_tint_keyguard">Lockscreen</string>
     <string name="wallpaper_tint_notification_shade">Notifications</string>
     <string name="wallpaper_tint_summary">Apply a tint to the background based on the homescreen wallpaper</string>
+
+        <!-- Toast icon -->
+    <string name="toast_icon_title">App\'s icon in toast</string>
+    <string name="toast_icon_summary">Display the app icon corresponding with the toast</string>
 </resources>
