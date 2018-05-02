@@ -796,6 +796,8 @@
 
     <!-- QuickSettings Panel Transparency -->
     <string name="qs_panel_alpha_title">Quick settings panel opacity</string>
+    
+    <string name="app_ops_settings_summary">Control apps permissions</string>
 
     <string name="long_press_power_torch_title">Long press for flashlight</string>
     <string name="long_press_power_torch_summary">Toggle flashlight when screen is off</string>

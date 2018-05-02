@@ -21,6 +21,11 @@
     
     <PreferenceCategory
         android:title="@string/general_category"/>
+        
+        <Preference
+            android:title="@string/app_ops_settings"
+            android:summary="@string/app_ops_settings_summary"
+            android:fragment="com.android.settings.applications.AppOpsSummary"/>
             
 		<Preference
 			android:key="rotation_settings"
