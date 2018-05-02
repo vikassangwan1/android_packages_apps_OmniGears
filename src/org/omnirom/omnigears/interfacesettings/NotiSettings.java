@@ -37,7 +37,7 @@ import com.android.settings.Utils;
 
 import com.android.internal.logging.nano.MetricsProto;
 
-public class NotiSettingsd extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener, Indexable {
+public class NotiSettings extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener, Indexable {
 
     private ListPreference mTickerMode;
     private ListPreference mTickerAnimation;

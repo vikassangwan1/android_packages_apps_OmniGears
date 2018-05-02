@@ -15,7 +15,7 @@
             xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
             android:title="@string/headsup_title" >
 
-    <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+    <org.omnirom.omnigears.preference.GlobalSettingSwitchPreference
         android:key="heads_up_notifications_enabled"
         android:title="@string/heads_up_title"
         android:summaryOn="@string/heads_up_summary_enabled"

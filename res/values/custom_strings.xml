@@ -809,7 +809,7 @@
     <!-- Custom -->
     <string name="unlock_category_title">Unlock</string>
     <string name="disable_category_title">Disable</string>
-    <string name="quicksettings_item_summary">Configure QS panel's appearance</string>
+    <string name="quicksettings_item_summary">Configure QS panel\'s appearance</string>
     
 
     <string name="long_press_power_torch_title">Long press for flashlight</string>
@@ -870,6 +870,13 @@
     <string name="heads_up_blacklist_dialog_delete_title">Delete</string>
     <string name="heads_up_blacklist_dialog_delete_message">Remove selected item?</string>
 
+	<!-- Chooser blacklist -->
+	<string name="chooser_activity_blacklist_title">Chooser Activity blacklist</string>
+    <string name="chooser_activity_blacklist_summary">Apps to not show when tapping on the a Share button</string>
+    <string name="chooser_activity_blacklist_cat_title">Blacklist</string>
+    <string name="chooser_activity_blacklist_pref_title">Add app</string>
+    <string name="chooser_activity_blacklist_pref_summary">Tap here to add, tap on added app to remove it</string>
+    
     <!-- Status bar ticker -->
     <string name="ticker_mode_title">Allow notification ticker</string>
     <string name="ticker_disabled">Disabled</string>

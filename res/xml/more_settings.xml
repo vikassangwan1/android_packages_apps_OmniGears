@@ -27,8 +27,13 @@
             android:summary="@string/app_ops_settings_summary"
             android:fragment="com.android.settings.applications.AppOpsSummary"/>
 
-		
-
+		<Preference
+			android:key="chooser_activity_blacklist"
+			android:fragment="org.omnirom.omnigears.moresettings.ChooserActivityBlacklist"
+			android:title="@string/chooser_activity_blacklist_title"
+			android:summary="@string/chooser_activity_blacklist_summary"
+			android:persistent="false" />
+        
 		<Preference
             android:key="doze_settings"
             android:title="@string/doze_settings_title"
