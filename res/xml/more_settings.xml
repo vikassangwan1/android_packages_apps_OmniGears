@@ -26,22 +26,11 @@
             android:title="@string/app_ops_settings"
             android:summary="@string/app_ops_settings_summary"
             android:fragment="com.android.settings.applications.AppOpsSummary"/>
-            
-		<Preference
-			android:key="rotation_settings"
-			android:title="@string/display_rotation_title"
-			android:fragment="org.omnirom.omnigears.DisplayRotation" />
 
 		<Preference
 			android:key="led_settings"
 			android:title="@string/battery_light_settings_title"
 			android:fragment="org.omnirom.omnigears.batterylight.BatteryLightSettings" />
-
-		<Preference
-            android:key="volume_steps"
-            android:title="@string/volume_steps_title"
-            android:summary="@string/volume_steps_summary"
-            android:fragment="org.omnirom.omnigears.system.VolumeSteps" />
 
 		<Preference
             android:key="time_in_state"
@@ -112,25 +101,13 @@
                 android:title="@string/show_cpu_title"
                 android:summary="@string/show_cpu_summary"
                 android:defaultValue="false" />
-
-			<org.omnirom.omnigears.preference.GlobalSettingSwitchPreference
-                android:key="wake_when_plugged_or_unplugged"
-                android:title="@string/wake_when_plugged_or_unplugged_title"
-                android:summary="@string/wake_when_plugged_or_unplugged_summary"
-                android:defaultValue="@*android:bool/config_unplugTurnsOnScreen" />
-            
+                
             <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
                 android:key="three_finger_gesture"
                 android:title="@string/three_finger_gesture"
                 android:summary="@string/three_finger_gesture_summary"
                 android:defaultValue="false" />
-                
-            <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
-                android:key="volume_dialog_headers"
-                android:title="@string/volume_dialog_headers_title"
-                android:summary="@string/volume_dialog_headers_summary"
-                android:defaultValue="true" />
-                
+                     
         </PreferenceCategory>
          
 </PreferenceScreen>
