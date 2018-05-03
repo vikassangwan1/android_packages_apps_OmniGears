@@ -279,10 +279,13 @@
   <string name="recents_search_bar_title">Показывать строку поиска</string>
   <string name="recents_fullscreen_title">Полноэкранный режим</string>
   <string name="weather_title">Погода</string>
+  <string name="weather_config_title">Служба погоды</string>
+  <string name="weather_config_summary">Настройки системной службы</string>
   <string name="header_weather_title">Показать погоду в заголовке</string>
   <string name="header_weather_summary">Показывать изображение в заголовке панели уведомления в зависимости от времени суток</string>
   <string name="weather_icon_pack_title">Набор значков \"Погода\"</string>
   <string name="weather_icon_pack_note">Учтите\u003a вы можете установить новые наборы значков из Play Market по запросу \"Chronus icons\"</string>
+  <string name="weather_icon_pack_info_title">Пакет значков используется в быстрых настройках и на экране блокировки</string>
   <!-- Navigationbar settings -->
   <string name="navigationbar_title">Панель навигации</string>
   <!-- Enable Tablet Style navigation bar -->
@@ -730,4 +733,8 @@
   <!-- Bottom shortcuts -->
   <string name="long_press_power_torch_title">Длительное нажатие для включения фонарика</string>
   <string name="long_press_power_torch_summary">Включение и выключение фонарика, когда экран выключен</string>
+  
+  <string name="lockscreen_weather_title">Показать состояние погоды</string>
+  <string name="lockscreen_weather_summary">Показать текущие погодные условия и температуру</string>
+  <string name="lockscreen_items_aod_info_title">Эта настройка так же применяется к активному экрану</string>
 </resources>
