@@ -41,6 +41,13 @@
                 android:summary="@string/network_traffic_summary"
                 android:fragment="org.omnirom.omnigears.interfacesettings.NetworkTraffic" />
             
+            <Preference
+				android:title="@string/statusbar_items_title" >
+				<intent android:action="android.intent.action.MAIN"
+					android:targetPackage="com.android.systemui"
+					android:targetClass="com.android.systemui.tuner.StatusBarIconsTunerActivity" />
+			</Preference>
+
             <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
                 android:key="double_tap_sleep_gesture"
                 android:title="@string/double_tap_to_sleep_title"
@@ -92,7 +99,7 @@
 
 		<PreferenceCategory
             android:title="@string/quicksettings_title"/>
-            
+              
             <org.omnirom.omnigears.preference.SeekBarPreference
                 android:key="qs_panel_alpha"
                 android:title="@string/qs_panel_alpha_title"
@@ -101,6 +108,13 @@
                 android:persistent="false"
                 settings:unitsLeft=""
                 settings:unitsRight="" />
+                
+            <Preference
+				android:title="@string/quicksettings_items_title" >
+				<intent android:action="android.intent.action.MAIN"
+					android:targetPackage="com.android.systemui"
+					android:targetClass="com.android.systemui.tuner.QSTunerActivity" />
+			</Preference>
 				
 			<ListPreference
                 android:key="quick_pulldown"
@@ -113,6 +127,13 @@
         <PreferenceCategory
             android:key="category_navigationbar"
             android:title="@string/navigationbar_title">
+            
+            <Preference
+				android:title="@string/navbar_items_title" >
+				<intent android:action="android.intent.action.MAIN"
+					android:targetPackage="com.android.systemui"
+					android:targetClass="com.android.systemui.tuner.NavBarTunerActivity" />
+			</Preference>
 
             <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
                 android:key="navigation_bar_ime_button"
