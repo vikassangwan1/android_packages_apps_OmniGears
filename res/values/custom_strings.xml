@@ -803,6 +803,11 @@
     <string name="quicksettings_items_title">Quick settings items</string>
     <string name="statusbar_items_title">Status bar items</string>
     <string name="navbar_items_title">Navigation bar</string>
+    
+    <!-- Custom -->
+    <string name="unlock_category_title">Unlock</string>
+    <string name="disable_category_title">Disable</string>
+    
 
     <string name="long_press_power_torch_title">Long press for flashlight</string>
     <string name="long_press_power_torch_summary">Toggle flashlight when screen is off</string>
