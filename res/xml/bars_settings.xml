@@ -104,31 +104,30 @@
 
 		<PreferenceCategory
             android:title="@string/quicksettings_title"/>
-              
-            <org.omnirom.omnigears.preference.SeekBarPreference
-                android:key="qs_panel_alpha"
-                android:title="@string/qs_panel_alpha_title"
-                android:max="255"
-                settings:min="0"
-                android:persistent="false"
-                settings:unitsLeft=""
-                settings:unitsRight="" />
-                
+             
             <Preference
-				android:title="@string/quicksettings_items_title" >
+				android:title="@string/quicksettings_items_title"
+				android:summary="@string/quicksettings_item_summary" >
 				<intent android:action="android.intent.action.MAIN"
 					android:targetPackage="com.android.systemui"
 					android:targetClass="com.android.systemui.tuner.QSTunerActivity" />
 			</Preference>
-				
+			
 			<ListPreference
                 android:key="quick_pulldown"
                 android:title="@string/quick_pulldown_title"
                 android:entries="@array/quick_pulldown_entries"
                 android:entryValues="@array/quick_pulldown_values"
                 android:persistent="false" />
-                
-
+			 
+            <org.omnirom.omnigears.preference.CustomSeekBarPreference
+                android:key="qs_panel_alpha"
+				android:title="@string/qs_panel_alpha_title"
+				android:max="255"
+				settings:min="0"
+				settings:units=""
+				android:persistent="false" />
+		
         <PreferenceCategory
             android:key="category_navigationbar"
             android:title="@string/navigationbar_title">

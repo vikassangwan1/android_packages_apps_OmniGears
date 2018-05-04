@@ -46,7 +46,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import org.omnirom.omnigears.R;
-import org.omnirom.omnigears.preference.SeekBarPreference;
+import org.omnirom.omnigears.preference.CustomSeekBarPreference;
 
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
@@ -66,8 +66,8 @@ public class ButtonBrightnessSettings extends SettingsPreferenceFragment impleme
     private static final String KEY_BUTTON_MANUAL_BRIGHTNESS_NEW = "button_manual_brightness_new";
     private static final String KEY_BUTTON_TIMEOUT = "button_timeout";
 
-    private SeekBarPreference mButtonTimoutBar;
-    private SeekBarPreference mManualButtonBrightness;
+    private CustomSeekBarPreference mButtonTimoutBar;
+    private CustomSeekBarPreference mManualButtonBrightness;
 
     @Override
     public int getMetricsCategory() {
@@ -81,17 +81,17 @@ public class ButtonBrightnessSettings extends SettingsPreferenceFragment impleme
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getContentResolver();
 
-        mManualButtonBrightness = (SeekBarPreference) findPreference(KEY_BUTTON_MANUAL_BRIGHTNESS_NEW);
+        mManualButtonBrightness = (CustomSeekBarPreference) findPreference(KEY_BUTTON_MANUAL_BRIGHTNESS_NEW);
         final int customButtonBrightness = getResources().getInteger(
                 com.android.internal.R.integer.config_button_brightness_default);
         final int currentBrightness = Settings.System.getInt(resolver,
                 Settings.System.CUSTOM_BUTTON_BRIGHTNESS, customButtonBrightness);
         PowerManager pm = (PowerManager)getActivity().getSystemService(Context.POWER_SERVICE);
-        mManualButtonBrightness.setMaxValue(pm.getMaximumScreenBrightnessSetting());
+        mManualButtonBrightness.setMax(pm.getMaximumScreenBrightnessSetting());
         mManualButtonBrightness.setValue(currentBrightness);
         mManualButtonBrightness.setOnPreferenceChangeListener(this);
 
-        mButtonTimoutBar = (SeekBarPreference) findPreference(KEY_BUTTON_TIMEOUT);
+        mButtonTimoutBar = (CustomSeekBarPreference) findPreference(KEY_BUTTON_TIMEOUT);
         int currentTimeout = Settings.System.getInt(resolver,
                         Settings.System.BUTTON_BACKLIGHT_TIMEOUT, 0);
         mButtonTimoutBar.setValue(currentTimeout);

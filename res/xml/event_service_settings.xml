@@ -86,15 +86,14 @@
             android:persistent="false"
             android:title="@string/media_player_autostart_title" />
 
-        <org.omnirom.omnigears.preference.SeekBarPreference
+        <org.omnirom.omnigears.preference.CustomSeekBarPreference
             android:dependency="event_service_enabled"
             android:key="app_chooser_timeout"
             android:max="60"
             android:persistent="false"
             android:title="@string/app_chooser_timeout_title"
             settings:min="0"
-            settings:unitsLeft=""
-            settings:unitsRight="@string/unit_sec" />
+            settings:units="" />
 
         <ListPreference
             android:dependency="event_service_enabled"
@@ -104,7 +103,7 @@
             android:persistent="false"
             android:title="@string/app_chooser_position_title" />
 
-        <org.omnirom.omnigears.preference.SeekBarPreference
+        <org.omnirom.omnigears.preference.CustomSeekBarPreference
             android:dependency="event_service_enabled"
             android:key="wired_events_threshold"
             android:max="6"
@@ -112,15 +111,14 @@
             android:summary="@string/wired_events_threshold_summary"
             android:title="@string/wired_events_threshold_title"
             settings:min="0"
-            settings:unitsLeft=""
-            settings:unitsRight="@string/unit_sec" />
+            settings:units="" />
     </PreferenceCategory>
 
     <PreferenceCategory
         android:key="category_network"
         android:title="@string/category_network_title">
 
-        <org.omnirom.omnigears.preference.SeekBarPreference
+        <org.omnirom.omnigears.preference.CustomSeekBarPreference
             android:dependency="event_service_enabled"
             android:icon="@drawable/ic_settings_wireless"
             android:key="disable_wifi_threshold"
@@ -129,7 +127,6 @@
             android:summary="@string/disable_wifi_threshold_summary"
             android:title="@string/disable_wifi_threshold_title"
             settings:min="0"
-            settings:unitsLeft=""
-            settings:unitsRight="@string/unit_minutes" />
+            settings:units="" />
     </PreferenceCategory>
 </PreferenceScreen>

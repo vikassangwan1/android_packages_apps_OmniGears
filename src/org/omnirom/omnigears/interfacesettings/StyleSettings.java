@@ -44,7 +44,7 @@ import com.android.settings.search.Indexable;
 import com.android.settingslib.core.AbstractPreferenceController;
 
 import org.omnirom.omnigears.preference.SystemSettingSwitchPreference;
-import org.omnirom.omnigears.preference.SeekBarPreference;
+import org.omnirom.omnigears.preference.CustomSeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -68,7 +68,7 @@ public class StyleSettings extends SettingsPreferenceFragment implements
     private Preference mWallBrowse;
     private Preference mHeaderBrowse;
     private ListPreference mDaylightHeaderPack;
-    private SeekBarPreference mHeaderShadow;
+    private CustomSeekBarPreference mHeaderShadow;
     private ListPreference mHeaderProvider;
     private String mDaylightHeaderProvider;
     private SystemSettingSwitchPreference mHeaderEnabled;
@@ -113,7 +113,7 @@ public class StyleSettings extends SettingsPreferenceFragment implements
         updateHeaderProviderSummary(headerEnabled);
         mDaylightHeaderPack.setOnPreferenceChangeListener(this);
 
-        mHeaderShadow = (SeekBarPreference) findPreference(CUSTOM_HEADER_IMAGE_SHADOW);
+        mHeaderShadow = (CustomSeekBarPreference) findPreference(CUSTOM_HEADER_IMAGE_SHADOW);
         final int headerShadow = Settings.System.getInt(getContentResolver(),
                 Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
         mHeaderShadow.setValue((int)(((double) headerShadow / 255) * 100));

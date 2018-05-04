@@ -46,7 +46,7 @@ import com.android.settings.search.Indexable;
 import java.util.List;
 import java.util.ArrayList;
 
-import org.omnirom.omnigears.preference.SeekBarPreference;
+import org.omnirom.omnigears.preference.CustomSeekBarPreference;
 
 public class NetworkTraffic extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
@@ -61,7 +61,7 @@ public class NetworkTraffic extends SettingsPreferenceFragment implements
     private ListPreference mNetTrafficState;
     private ListPreference mNetTrafficUnit;
     private ListPreference mNetTrafficPeriod;
-    private SeekBarPreference mNetTrafficAutohideThreshold;
+    private CustomSeekBarPreference mNetTrafficAutohideThreshold;
 
     private int mNetTrafficVal;
     private int MASK_UP;
@@ -87,7 +87,7 @@ public class NetworkTraffic extends SettingsPreferenceFragment implements
         mNetTrafficState = (ListPreference) prefScreen.findPreference(NETWORK_TRAFFIC_STATE);
         mNetTrafficUnit = (ListPreference) prefScreen.findPreference(NETWORK_TRAFFIC_UNIT);
         mNetTrafficPeriod = (ListPreference) prefScreen.findPreference(NETWORK_TRAFFIC_PERIOD);
-        mNetTrafficAutohideThreshold = (SeekBarPreference) prefScreen.findPreference(NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD);
+        mNetTrafficAutohideThreshold = (CustomSeekBarPreference) prefScreen.findPreference(NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD);
 
         // TrafficStats will return UNSUPPORTED if the device does not support it.
         if (TrafficStats.getTotalTxBytes() != TrafficStats.UNSUPPORTED &&

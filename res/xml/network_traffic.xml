@@ -56,13 +56,12 @@
                 android:defaultValue="false"
                 android:dependency="network_traffic_enable" />
 
-            <org.omnirom.omnigears.preference.SeekBarPreference
+            <org.omnirom.omnigears.preference.CustomSeekBarPreference
                 android:key="network_traffic_autohide_threshold"
                 android:title="@string/network_traffic_autohide_threshold"
                 android:max="100"
-                settings:min="0"
-                settings:unitsLeft=""
-                settings:unitsRight="kB/s"
+				settings:min="0"
+				settings:units=""
                 android:dependency="network_traffic_autohide"
                 android:persistent="false" />
 

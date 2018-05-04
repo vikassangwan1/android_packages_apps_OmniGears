@@ -38,7 +38,7 @@ import com.android.settings.search.Indexable;
 
 import org.omnirom.omnigears.preference.AppMultiSelectListPreference;
 import org.omnirom.omnigears.preference.ScrollAppsViewPreference;
-import org.omnirom.omnigears.preference.SeekBarPreference;
+import org.omnirom.omnigears.preference.CustomSeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -74,13 +74,13 @@ public class EventServiceSettings extends SettingsPreferenceFragment implements 
     private SwitchPreference mAutoStart;
     private SwitchPreference mMusicActive;
     private SwitchPreference mAutorun;
-    private SeekBarPreference mChooserTimeout;
-    private SeekBarPreference mDisableWifi;
+    private CustomSeekBarPreference mChooserTimeout;
+    private CustomSeekBarPreference mDisableWifi;
     private ListPreference mChooserPosition;
     private Handler mHandler = new Handler();
     private String mServiceRunning;
     private String mServiceStopped;
-    private SeekBarPreference mWiredThresholdTimeout;
+    private CustomSeekBarPreference mWiredThresholdTimeout;
 
     @Override
     public int getMetricsCategory() {
@@ -132,15 +132,15 @@ public class EventServiceSettings extends SettingsPreferenceFragment implements 
         mAutorun.setChecked(getPrefs().getBoolean(EventServiceSettings.EVENT_AUTORUN_SINGLE, true));
         mAutorun.setOnPreferenceChangeListener(this);
 
-        mChooserTimeout = (SeekBarPreference) findPreference(APP_CHOOSER_TIMEOUT);
+        mChooserTimeout = (CustomSeekBarPreference) findPreference(APP_CHOOSER_TIMEOUT);
         mChooserTimeout.setValue(getPrefs().getInt(EventServiceSettings.APP_CHOOSER_TIMEOUT, 15));
         mChooserTimeout.setOnPreferenceChangeListener(this);
 
-        mDisableWifi = (SeekBarPreference) findPreference(DISABLE_WIFI_THRESHOLD);
+        mDisableWifi = (CustomSeekBarPreference) findPreference(DISABLE_WIFI_THRESHOLD);
         mDisableWifi.setValue(getPrefs().getInt(EventServiceSettings.DISABLE_WIFI_THRESHOLD, 0));
         mDisableWifi.setOnPreferenceChangeListener(this);
 
-        mWiredThresholdTimeout = (SeekBarPreference) findPreference(WIRED_EVENTS_THRESHOLD);
+        mWiredThresholdTimeout = (CustomSeekBarPreference) findPreference(WIRED_EVENTS_THRESHOLD);
         mWiredThresholdTimeout.setValue(getPrefs().getInt(EventServiceSettings.WIRED_EVENTS_THRESHOLD, 0));
         mWiredThresholdTimeout.setOnPreferenceChangeListener(this);
 

@@ -88,14 +88,13 @@
             android:dependency="status_bar_custom_header" >
         </Preference>
 
-        <org.omnirom.omnigears.preference.SeekBarPreference
+        <org.omnirom.omnigears.preference.CustomSeekBarPreference
             android:key="status_bar_custom_header_shadow"
             android:title="@string/status_bar_custom_header_shadow_title"
             android:summary="@string/status_bar_custom_header_shadow_summary"
             android:max="100"
             settings:min="0"
-            settings:unitsLeft=""
-            settings:unitsRight="@string/unit_percent"
+            settings:units=""
             android:persistent="false"
             android:dependency="status_bar_custom_header" />
 

@@ -36,7 +36,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
-import org.omnirom.omnigears.preference.SeekBarPreference;
+import org.omnirom.omnigears.preference.CustomSeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +51,7 @@ public class BarsSettings extends SettingsPreferenceFragment implements
     private static final String QUICK_PULLDOWN = "quick_pulldown";
 
     private ListPreference mQuickPulldown;
-    private SeekBarPreference mQsPanelAlpha;
+    private CustomSeekBarPreference mQsPanelAlpha;
     private ListPreference mTickerMode;
     private ListPreference mTickerAnimation;
 
@@ -86,7 +86,7 @@ public class BarsSettings extends SettingsPreferenceFragment implements
             prefScreen.removePreference(findPreference(NETWORK_TRAFFIC_ROOT));
         }
 
-        mQsPanelAlpha = (SeekBarPreference) findPreference(QS_PANEL_ALPHA);
+        mQsPanelAlpha = (CustomSeekBarPreference) findPreference(QS_PANEL_ALPHA);
         int qsPanelAlpha = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.QS_PANEL_BG_ALPHA, 255, UserHandle.USER_CURRENT);
         mQsPanelAlpha.setValue(qsPanelAlpha);

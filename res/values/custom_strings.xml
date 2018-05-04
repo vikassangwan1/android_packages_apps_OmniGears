@@ -201,7 +201,7 @@
     <string name="button_backlight_summary">Configure enablement and brightness</string>
     <string name="button_backlight_on_touch_only_title">Button touch</string>
     <string name="button_backlight_on_touch_only_summary">Enable backlight with timeout only on button touch</string>
-    <string name="button_timeout_title">Backlight timeout</string>
+    <string name="button_timeout_title">Backlight timeout (sec)</string>
     <string name="button_timeout_summary">Disabled on value 0</string>
     <string name="button_link_brightness">Link to screen</string>
     <string name="button_link_brightness_summary">Use screen brightness level</string>
@@ -260,7 +260,7 @@
     <string name="notification_title">Notification panel</string>
     <string name="status_bar_custom_header_title">Enable</string>
     <string name="daylight_header_pack_title">Header image collection</string>
-    <string name="status_bar_custom_header_shadow_title">Header image shadow</string>
+    <string name="status_bar_custom_header_shadow_title">Header image shadow (%)</string>
     <string name="status_bar_custom_header_shadow_summary">For better visibility on bright images</string>
     <string name="unit_percent">\u0025</string>
     <string name="static_header_provider" translatable="false">static</string>
@@ -297,7 +297,7 @@
     <string name="show_network_traffic_2000">2000 ms</string>
     <string name="network_traffic_autohide_title">Auto hide</string>
     <string name="network_traffic_autohide_summary">Hide the traffic monitor when there is no activity</string>
-    <string name="network_traffic_autohide_threshold">Inactivity threshold</string>
+    <string name="network_traffic_autohide_threshold">Inactivity threshold (kB/s)</string>
     <string name="network_traffic_enable_title">Enable</string>
 
     <!-- statusbar brightness -->
@@ -746,9 +746,9 @@
     <string name="headset_connect_app_list_summary">App(s) to be listed when a wired headset is connected</string>
     <string name="app_chooser_left">Left</string>
     <string name="app_chooser_right">Right</string>
-    <string name="app_chooser_timeout_title">App chooser dialog timeout</string>
+    <string name="app_chooser_timeout_title">App chooser dialog timeout (sec)</string>
     <string name="app_chooser_position_title">App chooser dialog position</string>
-    <string name="wired_events_threshold_title">Wired headset event threshold</string>
+    <string name="wired_events_threshold_title">Wired headset event threshold (sec)</string>
     <string name="wired_events_threshold_summary">Ignore headset events if they are within threshold time</string>
 
     <!-- Quick Pulldown-->
@@ -795,7 +795,7 @@
     <string name="systemui_tuner_lockscreen_bottom_shortcuts_summary">Configure the bottom shortcuts</string>
 
     <!-- QuickSettings Panel Transparency -->
-    <string name="qs_panel_alpha_title">Quick settings panel opacity</string>
+    <string name="qs_panel_alpha_title">QS panel opacity</string>
     
     <string name="app_ops_settings_summary">Control apps permissions</string>
     
@@ -807,6 +807,7 @@
     <!-- Custom -->
     <string name="unlock_category_title">Unlock</string>
     <string name="disable_category_title">Disable</string>
+    <string name="quicksettings_item_summary">Configure QS panel's appearance</string>
     
 
     <string name="long_press_power_torch_title">Long press for flashlight</string>
@@ -850,7 +851,7 @@
     <string name="carrier_label_warning_text">Be advised that the custom carrier label is not available in the extended statusbar area, also known as the quick settings area. Also using emojis as your carrier label might cause some visibility issues on lighter backgrounds.</string>
 
     <!-- Status bar ticker -->
-    <string name="ticker_mode_title">Statusbar notification ticker</string>
+    <string name="ticker_mode_title">Status bar notification ticker</string>
     <string name="ticker_disabled">Disabled</string>
     <string name="ticker_enabled">Notification ticker</string>
     <string name="ticker_media_enabled">Notification and music ticker</string>
@@ -864,6 +865,6 @@
     <string name="hide_lockscreen_icon_summary">Change the lock screen icon visibility</string>
 
     <string name="category_network_title">Network</string>
-    <string name="disable_wifi_threshold_title">Turn off Wi\u2011Fi automatically</string>
+    <string name="disable_wifi_threshold_title">Turn off Wi\u2011Fi automatically (min)</string>
     <string name="disable_wifi_threshold_summary">Deactivate Wi\u2011Fi if, when disconnecting from a network, we do not reconnect after a few minutes</string>
 </resources>
