@@ -160,7 +160,8 @@
     <string name="color_picker_dialog_title">Color</string>
 
     <!-- Battery light settings  -->
-    <string name="batterylight_title">Battery LED notify</string>
+    <string name="batterylight_title">Battery charging LED</string>
+    <string name="batterylight_summary">Configure LED behaviour during charging and low battery</string>
     <string name="battery_light_enable">Enable</string>
     <string name="battery_low_pulse_title">Pulse if battery low</string>
     <string name="battery_light_only_full_charge_title">Only light up when fully charged</string>
@@ -281,7 +282,7 @@
 
     <!-- Network traffic -->
     <string name="network_traffic_title">Network traffic</string>
-    <string name="network_traffic_summary">Status bar traffic monitor</string>
+    <string name="network_traffic_summary">Enable and configure the network traffic on the statusbar</string>
     <string name="show_network_traffic_state">Display traffic type</string>
     <string name="show_network_traffic_unit">Display unit</string>
     <string name="show_network_traffic_frequency">Update interval</string>
@@ -806,12 +807,16 @@
     <string name="statusbar_items_title">Icon manager</string>
     <string name="navbar_items_title">Navigation bar</string>
     
-    <!-- Custom -->
+    <!-- Custom strings mine-->
+    <string name="qs_settings_title">Quick settings</string>
     <string name="unlock_category_title">Unlock</string>
     <string name="disable_category_title">Disable</string>
-    <string name="quicksettings_item_summary">Configure QS panel\'s appearance</string>
-    
-
+    <string name="quicksettings_item_summary">Configure the layout of the quick settings area</string>
+    <string name="icon_manager_summary">Configure the visibility of statusbar items</string>
+    <string name="carrier_label_summary">Customize the carrier label on the lockscreen or statusbar</string>
+    <string name="qs_footer">Options for QS rows/column count and to hide qs labels are located in QS edit menu under the 3-dot menu</string>
+	<string name="weather_settings_summary">Configure settings for lock screen weather and quick settings weather tile</string>
+	
     <string name="long_press_power_torch_title">Long press for flashlight</string>
     <string name="long_press_power_torch_summary">Toggle flashlight when screen is off</string>
 
@@ -871,13 +876,15 @@
     <string name="heads_up_blacklist_dialog_delete_message">Remove selected item?</string>
 
 	<!-- Chooser blacklist -->
-	<string name="chooser_activity_blacklist_title">Chooser Activity blacklist</string>
+	<string name="chooser_activity_blacklist_title">Chooser activity blacklist</string>
     <string name="chooser_activity_blacklist_summary">Apps to not show when tapping on the a Share button</string>
     <string name="chooser_activity_blacklist_cat_title">Blacklist</string>
     <string name="chooser_activity_blacklist_pref_title">Add app</string>
     <string name="chooser_activity_blacklist_pref_summary">Tap here to add, tap on added app to remove it</string>
     
     <!-- Status bar ticker -->
+    <string name="ticker_title">Ticker</string>
+    <string name="ticker_summary">Enable the statusbar ticker and configure ticker related tweaks</string>
     <string name="ticker_mode_title">Allow notification ticker</string>
     <string name="ticker_disabled">Disabled</string>
     <string name="ticker_enabled">Notification ticker</string>

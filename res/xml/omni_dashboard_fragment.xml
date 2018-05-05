@@ -27,19 +27,25 @@
 	<Preference
         android:key="lockscreen_settings"
         android:title="@string/lockscreen_category_title"
-        android:icon="@drawable/ic_settings_lockscreens"
+        android:icon="@drawable/ic_owlsnest_lockscreen"
         android:fragment="org.omnirom.omnigears.interfacesettings.LockscreenSettings" />
         
     <Preference
         android:key="noti_settings"
         android:title="@string/notification_category"
-        android:icon="@drawable/ic_settings_notification"
+        android:icon="@drawable/ic_settings_notifications"
         android:fragment="org.omnirom.omnigears.interfacesettings.NotiSettings" />
+        
+    <Preference
+        android:key="quick_settings"
+        android:title="@string/qs_settings_title"
+        android:icon="@drawable/ic_owlsnest_qs"
+        android:fragment="org.omnirom.omnigears.interfacesettings.QuickSettings" />
 
 	<Preference
         android:key="button_settings"
         android:title="@string/button_settings_title"
-        android:icon="@drawable/ic_settings_buttons"
+        android:icon="@drawable/ic_owlsnest_buttons"
         android:fragment="org.omnirom.omnigears.ButtonSettings" />
 
     <Preference
@@ -47,11 +53,17 @@
         android:title="@string/style_settings_title"
         android:icon="@drawable/ic_settings_style"
         android:fragment="org.omnirom.omnigears.interfacesettings.StyleSettings" />
+        
+    <Preference
+        android:key="more_settings"
+        android:title="@string/more_settings_title"
+        android:icon="@drawable/ic_owlsnest_advanced"
+        android:fragment="org.omnirom.omnigears.moresettings.MoreSettings" />
 
     <Preference
         android:key="device_parts"
         android:title="@string/omni_device_parts"
-        android:icon="@drawable/ic_settings_quicksettings"
+        android:icon="@drawable/ic_settings_omnigears"
         android:fragment="org.omnirom.device.DeviceParts" />
 
     <!--<Preference
@@ -63,11 +75,5 @@
                 android:targetPackage="org.omnirom.omnijaws"
                 android:targetClass="org.omnirom.omnijaws.SettingsActivityService" />
     </Preference>-->
-
-    <Preference
-        android:key="more_settings"
-        android:title="@string/more_settings_title"
-        android:icon="@drawable/ic_settings_miscs"
-        android:fragment="org.omnirom.omnigears.moresettings.MoreSettings" />
         
 </PreferenceScreen>

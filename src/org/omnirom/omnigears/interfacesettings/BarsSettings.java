@@ -47,11 +47,6 @@ public class BarsSettings extends SettingsPreferenceFragment implements
     private static final String NETWORK_TRAFFIC_ROOT = "category_network_traffic";
     private static final String NAVIGATIONBAR_ROOT = "category_navigationbar";
     private static final String EXPANDED_DESKTOP_CATEGORY = "expanded_desktop_category";
-    private static final String QS_PANEL_ALPHA = "qs_panel_alpha";
-    private static final String QUICK_PULLDOWN = "quick_pulldown";
-
-    private ListPreference mQuickPulldown;
-    private CustomSeekBarPreference mQsPanelAlpha;
 
     @Override
     public int getMetricsCategory() {
@@ -65,13 +60,7 @@ public class BarsSettings extends SettingsPreferenceFragment implements
 
         PreferenceScreen prefScreen = getPreferenceScreen();
 
-        mQuickPulldown = (ListPreference) findPreference(QUICK_PULLDOWN);
-        mQuickPulldown.setOnPreferenceChangeListener(this);
-        int quickPulldownValue = Settings.System.getInt(getContentResolver(),
-                Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0);
-        mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
-        updatePulldownSummary(quickPulldownValue);
-
+        
         // Navigationbar catagory will not be displayed when the device is not a tablet
         // or the device has physical keys
         /*if (!DeviceUtils.deviceSupportNavigationBar(getActivity())) {
@@ -83,13 +72,6 @@ public class BarsSettings extends SettingsPreferenceFragment implements
                 TrafficStats.getTotalRxBytes() == TrafficStats.UNSUPPORTED) {
             prefScreen.removePreference(findPreference(NETWORK_TRAFFIC_ROOT));
         }
-
-        mQsPanelAlpha = (CustomSeekBarPreference) findPreference(QS_PANEL_ALPHA);
-        int qsPanelAlpha = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.QS_PANEL_BG_ALPHA, 255, UserHandle.USER_CURRENT);
-        mQsPanelAlpha.setValue(qsPanelAlpha);
-        mQsPanelAlpha.setOnPreferenceChangeListener(this);
-
     }
 
     @Override
@@ -99,36 +81,7 @@ public class BarsSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mQuickPulldown) {
-            int quickPulldownValue = Integer.valueOf((String) newValue);
-            Settings.System.putInt(getContentResolver(), Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
-                    quickPulldownValue);
-            updatePulldownSummary(quickPulldownValue);
-            return true;
-        } else if (preference == mQsPanelAlpha) {
-            int bgAlpha = (Integer) newValue;
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.QS_PANEL_BG_ALPHA, bgAlpha,
-                    UserHandle.USER_CURRENT);
-            return true;       
-        }
         return false;
-    }
-
-    private void updatePulldownSummary(int value) {
-        Resources res = getResources();
-        if (value == 0) {
-            // Quick Pulldown deactivated
-            mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_off));
-        } else if (value == 3) {
-            // Quick Pulldown always
-            mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_summary_always));
-        } else {
-            String direction = res.getString(value == 2
-                    ? R.string.quick_pulldown_left
-                    : R.string.quick_pulldown_right);
-            mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_summary, direction));
-        }
     }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

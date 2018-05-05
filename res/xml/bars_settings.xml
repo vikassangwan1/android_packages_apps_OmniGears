@@ -42,7 +42,8 @@
                 android:fragment="org.omnirom.omnigears.interfacesettings.NetworkTraffic" />
             
             <Preference
-				android:title="@string/statusbar_items_title" >
+				android:title="@string/statusbar_items_title"
+				android:summary="@string/icon_manager_summary" >
 				<intent android:action="android.intent.action.MAIN"
 					android:targetPackage="com.android.systemui"
 					android:targetClass="com.android.systemui.tuner.StatusBarIconsTunerActivity" />
@@ -51,6 +52,7 @@
 			<Preference
                 android:key="category_status_bar_carrier"
                 android:title="@string/carrier_label_title"
+                android:summary="@string/carrier_label_summary"
                 android:fragment="org.omnirom.omnigears.interfacesettings.CarrierLabel" />
 
             <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
@@ -66,33 +68,7 @@
                 android:defaultValue="false" />
 
 		</PreferenceCategory>
-		
-		<PreferenceCategory
-            android:title="@string/quicksettings_title"/>
-             
-            <Preference
-				android:title="@string/quicksettings_items_title"
-				android:summary="@string/quicksettings_item_summary" >
-				<intent android:action="android.intent.action.MAIN"
-					android:targetPackage="com.android.systemui"
-					android:targetClass="com.android.systemui.tuner.QSTunerActivity" />
-			</Preference>
-			
-			<ListPreference
-                android:key="quick_pulldown"
-                android:title="@string/quick_pulldown_title"
-                android:entries="@array/quick_pulldown_entries"
-                android:entryValues="@array/quick_pulldown_values"
-                android:persistent="false" />
-			 
-            <org.omnirom.omnigears.preference.CustomSeekBarPreference
-                android:key="qs_panel_alpha"
-				android:title="@string/qs_panel_alpha_title"
-				android:max="255"
-				settings:min="0"
-				settings:units=""
-				android:persistent="false" />
-		
+	   
         <PreferenceCategory
             android:key="category_navigationbar"
             android:title="@string/navigationbar_title">

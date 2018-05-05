@@ -1,4 +1,4 @@
- /*
+/*
  *  Copyright (C) 2017 The OmniROM Project
  *
  * This program is free software: you can redistribute it and/or modify
@@ -15,71 +15,52 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
 */
+
 package org.omnirom.omnigears.interfacesettings;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
-import android.content.res.Resources;
-import android.net.Uri;
+import android.content.ContentResolver;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
-import android.provider.SearchIndexableResource;
+import android.support.v7.preference.PreferenceCategory;
+import android.support.v7.preference.PreferenceScreen;
+import android.support.v7.preference.Preference.OnPreferenceChangeListener;
+import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
+import android.provider.SearchIndexableResource;
 import android.util.Log;
 
-import com.android.internal.logging.MetricsLogger;
-import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.util.omni.PackageUtils;
 
 import com.android.settings.R;
-import com.android.settings.Utils;
+import com.android.settings.SettingsActivity;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.dashboard.SummaryLoader;
+import com.android.settings.Utils;
+import com.android.internal.logging.MetricsLogger;
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
-import com.android.settingslib.core.AbstractPreferenceController;
 
-import org.omnirom.omnigears.preference.SystemSettingSwitchPreference;
-import org.omnirom.omnigears.preference.CustomSeekBarPreference;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import java.util.ArrayList;
 
-public class StyleSettings extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener, Indexable {
+public class StyleSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener, Indexable {
     private static final String TAG = "StyleSettings";
-    private static final String CUSTOM_HEADER_BROWSE = "custom_header_browse";
-    private static final String DAYLIGHT_HEADER_PACK = "daylight_header_pack";
-    private static final String CUSTOM_HEADER_IMAGE_SHADOW = "status_bar_custom_header_shadow";
-    private static final String CUSTOM_HEADER_PROVIDER = "custom_header_provider";
-    private static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
+    
     private static final String SYSTEMUI_THEME_STYLE = "systemui_theme_style";
-    private static final String FILE_HEADER_SELECT = "file_header_select";
+    private static final String KEY_SHOW_DASHBOARD_COLUMNS = "show_dashboard_columns";
+    private static final String KEY_HIDE_DASHBOARD_SUMMARY = "hide_dashboard_summary";
+    private static final String KEY_SCREEN_OFF_ANIMATION = "screen_off_animation";
 
-    private static final int REQUEST_PICK_IMAGE = 0;
-
-    private Preference mWallBrowse;
-    private Preference mHeaderBrowse;
-    private ListPreference mDaylightHeaderPack;
-    private CustomSeekBarPreference mHeaderShadow;
-    private ListPreference mHeaderProvider;
-    private String mDaylightHeaderProvider;
-    private SystemSettingSwitchPreference mHeaderEnabled;
-    private ListPreference mSystemUIThemeStyle;
-    private Preference mFileHeader;
-    private String mFileHeaderProvider;
-
+	private ListPreference mSystemUIThemeStyle;
+    private SharedPreferences mAppPreferences;
+    private ListPreference mScreenOffAnimation;
+    
     @Override
     public void onResume() {
         super.onResume();
-        updateEnablement();
     }
 
     @Override
@@ -92,36 +73,31 @@ public class StyleSettings extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.style_settings);
 
-        mDaylightHeaderProvider = getResources().getString(R.string.daylight_header_provider);
-        mFileHeaderProvider = getResources().getString(R.string.file_header_provider);
+        mAppPreferences = getActivity().getSharedPreferences(SettingsActivity.APP_PREFERENCES_NAME,
+                Context.MODE_PRIVATE);
 
-        mHeaderBrowse = findPreference(CUSTOM_HEADER_BROWSE);
+        SwitchPreference showColumnsLayout = (SwitchPreference) findPreference(KEY_SHOW_DASHBOARD_COLUMNS);
+        showColumnsLayout.setChecked(mAppPreferences.getInt(SettingsActivity.KEY_COLUMNS_COUNT, 1) == 2);
+        showColumnsLayout.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                if ((Boolean) newValue ) {
+                    mAppPreferences.edit().putInt(SettingsActivity.KEY_COLUMNS_COUNT, 2).commit();
+                } else {
+                    mAppPreferences.edit().putInt(SettingsActivity.KEY_COLUMNS_COUNT, 1).commit();
+                }
+                return true;
+            }
+        });
 
-        mHeaderEnabled = (SystemSettingSwitchPreference) findPreference(STATUS_BAR_CUSTOM_HEADER);
-        mHeaderEnabled.setOnPreferenceChangeListener(this);
-
-        mDaylightHeaderPack = (ListPreference) findPreference(DAYLIGHT_HEADER_PACK);
-
-        List<String> entries = new ArrayList<String>();
-        List<String> values = new ArrayList<String>();
-        getAvailableHeaderPacks(entries, values);
-        mDaylightHeaderPack.setEntries(entries.toArray(new String[entries.size()]));
-        mDaylightHeaderPack.setEntryValues(values.toArray(new String[values.size()]));
-
-        boolean headerEnabled = Settings.System.getInt(getContentResolver(),
-                Settings.System.STATUS_BAR_CUSTOM_HEADER, 0) != 0;
-        updateHeaderProviderSummary(headerEnabled);
-        mDaylightHeaderPack.setOnPreferenceChangeListener(this);
-
-        mHeaderShadow = (CustomSeekBarPreference) findPreference(CUSTOM_HEADER_IMAGE_SHADOW);
-        final int headerShadow = Settings.System.getInt(getContentResolver(),
-                Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
-        mHeaderShadow.setValue((int)(((double) headerShadow / 255) * 100));
-        mHeaderShadow.setOnPreferenceChangeListener(this);
-
-        mHeaderProvider = (ListPreference) findPreference(CUSTOM_HEADER_PROVIDER);
-        mHeaderProvider.setOnPreferenceChangeListener(this);
-
+        SwitchPreference hideColumnSummary = (SwitchPreference) findPreference(KEY_HIDE_DASHBOARD_SUMMARY);
+        hideColumnSummary.setChecked(mAppPreferences.getBoolean(SettingsActivity.KEY_HIDE_SUMMARY, false));
+        hideColumnSummary.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                mAppPreferences.edit().putBoolean(SettingsActivity.KEY_HIDE_SUMMARY, ((Boolean) newValue)).commit();
+                return true;
+            }
+        });
+        
         mSystemUIThemeStyle = (ListPreference) findPreference(SYSTEMUI_THEME_STYLE);
         int systemUIThemeStyle = Settings.System.getInt(getContentResolver(),
                 Settings.System.SYSTEM_UI_THEME, 0);
@@ -130,140 +106,37 @@ public class StyleSettings extends SettingsPreferenceFragment implements
         mSystemUIThemeStyle.setSummary(mSystemUIThemeStyle.getEntry());
         mSystemUIThemeStyle.setOnPreferenceChangeListener(this);
 
-        mFileHeader = findPreference(FILE_HEADER_SELECT);
-    }
+        mScreenOffAnimation = (ListPreference) findPreference(KEY_SCREEN_OFF_ANIMATION);
+        int screenOffAnimation = Settings.Global.getInt(getContentResolver(),
+                Settings.Global.SCREEN_OFF_ANIMATION, 0);
 
-    private void updateHeaderProviderSummary(boolean headerEnabled) {
-        mDaylightHeaderPack.setSummary(getResources().getString(R.string.header_provider_disabled));
-        if (headerEnabled) {
-            String settingHeaderPackage = Settings.System.getString(getContentResolver(),
-                    Settings.System.STATUS_BAR_DAYLIGHT_HEADER_PACK);
-            if (settingHeaderPackage != null) {
-                int valueIndex = mDaylightHeaderPack.findIndexOfValue(settingHeaderPackage);
-                mDaylightHeaderPack.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
-                mDaylightHeaderPack.setSummary(mDaylightHeaderPack.getEntry());
-            }
-        }
-    }
-
-    @Override
-    public boolean onPreferenceTreeClick(Preference preference) {
-        if (preference == mFileHeader) {
-            Intent intent = new Intent(Intent.ACTION_PICK);
-            intent.setType("image/*");
-            startActivityForResult(intent, REQUEST_PICK_IMAGE);
-            return true;
-        }
-        return super.onPreferenceTreeClick(preference);
+        mScreenOffAnimation.setValue(Integer.toString(screenOffAnimation));
+        mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
+        mScreenOffAnimation.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mDaylightHeaderPack) {
-            String value = (String) newValue;
-            Settings.System.putString(getContentResolver(),
-                    Settings.System.STATUS_BAR_DAYLIGHT_HEADER_PACK, value);
-            int valueIndex = mDaylightHeaderPack.findIndexOfValue(value);
-            mDaylightHeaderPack.setSummary(mDaylightHeaderPack.getEntries()[valueIndex]);
-        } else if (preference == mHeaderShadow) {
-            Integer headerShadow = (Integer) newValue;
-            int realHeaderValue = (int) (((double) headerShadow / 100) * 255);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, realHeaderValue);
-        } else if (preference == mHeaderProvider) {
-            String value = (String) newValue;
-            Settings.System.putString(getContentResolver(),
-                    Settings.System.STATUS_BAR_CUSTOM_HEADER_PROVIDER, value);
-            int valueIndex = mHeaderProvider.findIndexOfValue(value);
-            mHeaderProvider.setSummary(mHeaderProvider.getEntries()[valueIndex]);
-            updateEnablement();
-        } else if (preference == mHeaderEnabled) {
-            Boolean headerEnabled = (Boolean) newValue;
-            updateHeaderProviderSummary(headerEnabled);
+        if (preference == mScreenOffAnimation) {
+            int value = Integer.valueOf((String) newValue);
+            int index = mScreenOffAnimation.findIndexOfValue((String) newValue);
+            mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[index]);
+            Settings.Global.putInt(getContentResolver(), Settings.Global.SCREEN_OFF_ANIMATION, value);
+            return true;
         } else if (preference == mSystemUIThemeStyle) {
             String value = (String) newValue;
             Settings.System.putInt(getContentResolver(), Settings.System.SYSTEM_UI_THEME, Integer.valueOf(value));
             int valueIndex = mSystemUIThemeStyle.findIndexOfValue(value);
             mSystemUIThemeStyle.setSummary(mSystemUIThemeStyle.getEntries()[valueIndex]);
+            return true;
         }
-        return true;
+        return false;
     }
 
-    private boolean isBrowseWallsAvailable() {
-        PackageManager pm = getPackageManager();
-        Intent browse = new Intent();
-        browse.setClassName("org.omnirom.omnistyle", "org.omnirom.omnistyle.BrowseWallsActivity");
-        return pm.resolveActivity(browse, 0) != null;
-    }
-
-    private boolean isBrowseHeaderAvailable() {
-        PackageManager pm = getPackageManager();
-        Intent browse = new Intent();
-        browse.setClassName("org.omnirom.omnistyle", "org.omnirom.omnistyle.PickHeaderActivity");
-        return pm.resolveActivity(browse, 0) != null;
-    }
-
-    private void getAvailableHeaderPacks(List<String> entries, List<String> values) {
-        Map<String, String> headerMap = new HashMap<String, String>();
-        Intent i = new Intent();
-        PackageManager packageManager = getPackageManager();
-        i.setAction("org.omnirom.DaylightHeaderPack");
-        for (ResolveInfo r : packageManager.queryIntentActivities(i, 0)) {
-            String packageName = r.activityInfo.packageName;
-            String label = r.activityInfo.loadLabel(getPackageManager()).toString();
-            if (label == null) {
-                label = r.activityInfo.packageName;
-            }
-            headerMap.put(label, packageName);
-        }
-        i.setAction("org.omnirom.DaylightHeaderPack1");
-        for (ResolveInfo r : packageManager.queryIntentActivities(i, 0)) {
-            String packageName = r.activityInfo.packageName;
-            String label = r.activityInfo.loadLabel(getPackageManager()).toString();
-            if (r.activityInfo.name.endsWith(".theme")) {
-                continue;
-            }
-            if (label == null) {
-                label = packageName;
-            }
-            headerMap.put(label, packageName  + "/" + r.activityInfo.name);
-        }
-        List<String> labelList = new ArrayList<String>();
-        labelList.addAll(headerMap.keySet());
-        Collections.sort(labelList);
-        for (String label : labelList) {
-            entries.add(label);
-            values.add(headerMap.get(label));
-        }
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent result) {
-        if (requestCode == REQUEST_PICK_IMAGE) {
-            if (resultCode != Activity.RESULT_OK) {
-                return;
-            }
-            final Uri imageUri = result.getData();
-            Settings.System.putString(getContentResolver(), Settings.System.STATUS_BAR_CUSTOM_HEADER_PROVIDER, "file");
-            Settings.System.putString(getContentResolver(), Settings.System.STATUS_BAR_FILE_HEADER_IMAGE, imageUri.toString());
-        }
-    }
-
-    private void updateEnablement() {
-        String providerName = Settings.System.getString(getContentResolver(),
-                Settings.System.STATUS_BAR_CUSTOM_HEADER_PROVIDER);
-        if (providerName == null) {
-            providerName = mDaylightHeaderProvider;
-        }
-        if (!providerName.equals(mDaylightHeaderProvider)) {
-            providerName = mFileHeaderProvider;
-        }
-        int valueIndex = mHeaderProvider.findIndexOfValue(providerName);
-        mHeaderProvider.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
-        mHeaderProvider.setSummary(mHeaderProvider.getEntry());
-        mDaylightHeaderPack.setEnabled(providerName.equals(mDaylightHeaderProvider));
-        mFileHeader.setEnabled(providerName.equals(mFileHeaderProvider));
-        mHeaderBrowse.setEnabled(isBrowseHeaderAvailable() && providerName.equals(mFileHeaderProvider));
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.Global.putInt(resolver,
+                Settings.Global.SYSTEM_DEFAULT_ANIMATION, 0);
     }
     
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
@@ -277,6 +150,7 @@ public class StyleSettings extends SettingsPreferenceFragment implements
                     SearchIndexableResource sir = new SearchIndexableResource(context);
                     sir.xmlResId = R.xml.style_settings;
                     result.add(sir);
+
                     return result;
                 }
 
@@ -285,6 +159,5 @@ public class StyleSettings extends SettingsPreferenceFragment implements
                     ArrayList<String> result = new ArrayList<String>();
                     return result;
                 }
-            };
-
+    };
 }
