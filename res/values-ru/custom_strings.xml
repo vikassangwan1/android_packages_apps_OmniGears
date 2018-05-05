@@ -169,6 +169,8 @@
   <string name="statusbar_battery_charging_color_title">Цвет</string>
   <string name="statusbar_battery_charging_color_enable_title">Цвет во время зарядки</string>
   <string name="battery_enable_title">Показать батарею</string>
+  <string name="statusbar_battery_low_color_enable_title">Низкий уровень заряда аккумулятора</string>
+  <string name="statusbar_battery_low_color_enable_summary">Включить разный цвет, если батарея ниже 15%</string>
   <string name="button_backlight_title">Подсветка кнопок</string>
   <string name="button_backlight_summary">Настройка включения и яркости</string>
   <string name="button_backlight_on_touch_only_title">Подсветка по прикосновению к кнопкам</string>
@@ -277,11 +279,13 @@
   <string name="recents_search_bar_title">Показывать строку поиска</string>
   <string name="recents_fullscreen_title">Полноэкранный режим</string>
   <string name="weather_title">Погода</string>
-  <string name="weather_config_title">Параметры службы</string>
+  <string name="weather_config_title">Служба погоды</string>
+  <string name="weather_config_summary">Настройки системной службы</string>
   <string name="header_weather_title">Показать погоду в заголовке</string>
   <string name="header_weather_summary">Показывать изображение в заголовке панели уведомления в зависимости от времени суток</string>
   <string name="weather_icon_pack_title">Набор значков \"Погода\"</string>
   <string name="weather_icon_pack_note">Учтите\u003a вы можете установить новые наборы значков из Play Market по запросу \"Chronus icons\"</string>
+  <string name="weather_icon_pack_info_title">Пакет значков используется в быстрых настройках и на экране блокировки</string>
   <!-- Navigationbar settings -->
   <string name="navigationbar_title">Панель навигации</string>
   <!-- Enable Tablet Style navigation bar -->
@@ -636,15 +640,6 @@
   <string name="wired_events_threshold_title">Порог события проводной гарнитуры</string>
   <string name="wired_events_threshold_summary">Игнорировать события гарнитуры, если они находятся в пределах порогового времени</string>
 
-   <!-- Quick Pulldown-->
-  <string name="quick_pulldown_title">Быстрое раскрытие</string>
-  <string name="quick_pulldown_summary">%1$s край строки состояния раскрывает быстрые настройки</string>
-  <string name="quick_pulldown_summary_always">Всегда показывать быстрые настройки в раскрывающемся меню строки состояния</string>
-  <string name="quick_pulldown_off">Выкл.</string>
-  <string name="quick_pulldown_left">Левый</string>
-  <string name="quick_pulldown_right">Правый</string>
-  <string name="quick_pulldown_always">Всегда</string>
-
   <!-- Expanded desktop -->
   <string name="expanded_desktop_title">Расширенный рабочий стол</string>
   <string name="expanded_desktop_summary">Конфигурация приложения в строке состояния и панели навигации</string>
@@ -688,8 +683,6 @@
   <string name="systemui_tuner_lockscreen_bottom_shortcuts_summary">Настроить экран блокировки</string>
   <!-- QuickSettings Panel Transparency -->
   <string name="qs_panel_alpha_title">Прозрачность панели быстрых настроек</string>
-  <string name="long_press_power_torch_title">Длительное нажатие для включения фонарика</string>
-  <string name="long_press_power_torch_summary">Переключайте фонарик, когда экран выключен</string>
   <!-- Hide lockscreen status bar, clock, date, alarm -->
   <string name="lockscreen_item_title">Элементы экрана блокировки</string>
   <string name="lockscreen_item_summary">Настройка видимости элементов экрана блокировки</string>
@@ -729,4 +722,19 @@
   <string name="category_network_title">Сеть</string>
   <string name="disable_wifi_threshold_title">Выключать Wi\u2011Fi автоматически</string>
   <string name="disable_wifi_threshold_summary">Деактивировать Wi\u2011Fi, если при отключении от сети мы не подключаемся через несколько минут</string>
+  <!-- Quick Pulldown-->
+  <string name="quick_pulldown_title">Быстрый доступ</string>
+  <string name="quick_pulldown_summary">%1$s строки состояния при опускании вниз открывает панель быстрых настроек</string>
+  <string name="quick_pulldown_summary_always">Всегда показывать быстрые настройки в строке состояния выпадающего списка</string>
+  <string name="quick_pulldown_off">Выкл.</string>
+  <string name="quick_pulldown_left">Левый край</string>
+  <string name="quick_pulldown_right">Правый край</string>
+  <string name="quick_pulldown_always">Всегда</string>
+  <!-- Bottom shortcuts -->
+  <string name="long_press_power_torch_title">Длительное нажатие для включения фонарика</string>
+  <string name="long_press_power_torch_summary">Включение и выключение фонарика, когда экран выключен</string>
+  
+  <string name="lockscreen_weather_title">Показать состояние погоды</string>
+  <string name="lockscreen_weather_summary">Показать текущие погодные условия и температуру</string>
+  <string name="lockscreen_items_aod_info_title">Эта настройка так же применяется к активному экрану</string>
 </resources>
