@@ -27,10 +27,7 @@
             android:summary="@string/app_ops_settings_summary"
             android:fragment="com.android.settings.applications.AppOpsSummary"/>
 
-		<Preference
-			android:key="led_settings"
-			android:title="@string/battery_light_settings_title"
-			android:fragment="org.omnirom.omnigears.batterylight.BatteryLightSettings" />
+		
 
 		<Preference
             android:key="doze_settings"

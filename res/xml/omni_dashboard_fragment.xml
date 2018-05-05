@@ -29,6 +29,12 @@
         android:title="@string/lockscreen_category_title"
         android:icon="@drawable/ic_settings_lockscreens"
         android:fragment="org.omnirom.omnigears.interfacesettings.LockscreenSettings" />
+        
+    <Preference
+        android:key="noti_settings"
+        android:title="@string/notification_category"
+        android:icon="@drawable/ic_settings_notification"
+        android:fragment="org.omnirom.omnigears.interfacesettings.NotiSettings" />
 
 	<Preference
         android:key="button_settings"

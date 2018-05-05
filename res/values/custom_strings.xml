@@ -160,7 +160,7 @@
     <string name="color_picker_dialog_title">Color</string>
 
     <!-- Battery light settings  -->
-    <string name="batterylight_title">Battery LED settings</string>
+    <string name="batterylight_title">Battery LED notify</string>
     <string name="battery_light_enable">Enable</string>
     <string name="battery_low_pulse_title">Pulse if battery low</string>
     <string name="battery_light_only_full_charge_title">Only light up when fully charged</string>
@@ -337,6 +337,7 @@
 
     <string name="other_category">Other</string>
     <string name="general_category">General</string>
+    <string name="style_category">Style</string>
     <string name="notification_category">Notifications</string>
     
     <!-- Lockscreen battery info indicator  -->
@@ -850,9 +851,27 @@
     <string name="show_carrier_statusbar">On status bar only</string>
     <string name="show_carrier_enabled">On lock screen &amp; status bar</string>
     <string name="carrier_label_warning_text">Be advised that the custom carrier label is not available in the extended statusbar area, also known as the quick settings area. Also using emojis as your carrier label might cause some visibility issues on lighter backgrounds.</string>
+    
+    <!-- Footer warnings -->
+    <string name="heads_up_warning_text">Heads up notifications are meant to be used for multitasking while using full screen apps and/or playing games. Just know that while you use heads up notifications, you will not be able to use the ticker feature.</string>
+    <string name="ticker_warning_text">The ticker feature is meant to be used as a mulitasking tool and brings a bit of splash of the old times. Just know that while you use the ticker feature, you will not be able to use heads up notifications.</string>
+    
+    <!-- Heads up -->
+    <string name="headsup_title">Heads up</string>
+    <string name="headsup_summary">Configure heads up options</string>
+    
+    <string name="heads_up_title">Allow Heads up</string>
+    <string name="heads_up_summary_enabled">Heads-up notifications are enabled</string>
+    <string name="heads_up_summary_disabled">Heads-up notifications are disabled</string>
+    <string name="heads_up_blacklist_add_package_title">Add app</string>
+    <string name="heads_up_blacklist_add_package_summary">Disable heads-up notifications in these applications</string>
+    <string name="heads_up_blacklist_title">Blacklist</string>
+    <string name="heads_up_blacklist_choose_app">Select app</string>
+    <string name="heads_up_blacklist_dialog_delete_title">Delete</string>
+    <string name="heads_up_blacklist_dialog_delete_message">Remove selected item?</string>
 
     <!-- Status bar ticker -->
-    <string name="ticker_mode_title">Status bar notification ticker</string>
+    <string name="ticker_mode_title">Allow notification ticker</string>
     <string name="ticker_disabled">Disabled</string>
     <string name="ticker_enabled">Notification ticker</string>
     <string name="ticker_media_enabled">Notification and music ticker</string>
