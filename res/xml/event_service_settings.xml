@@ -108,10 +108,15 @@
             android:key="wired_events_threshold"
             android:max="6"
             android:persistent="false"
-            android:summary="@string/wired_events_threshold_summary"
             android:title="@string/wired_events_threshold_title"
             settings:min="0"
             settings:units="" />
+            
+        <Preference
+            android:dependency="event_service_enabled"
+            android:persistent="false"
+            android:summary="@string/wired_events_threshold_summary" />
+            
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -124,9 +129,14 @@
             android:key="disable_wifi_threshold"
             android:max="10"
             android:persistent="false"
-            android:summary="@string/disable_wifi_threshold_summary"
             android:title="@string/disable_wifi_threshold_title"
             settings:min="0"
             settings:units="" />
+            
+        <Preference
+            android:dependency="event_service_enabled"
+            android:persistent="false"
+            android:summary="@string/disable_wifi_threshold_summary" />
+            
     </PreferenceCategory>
 </PreferenceScreen>

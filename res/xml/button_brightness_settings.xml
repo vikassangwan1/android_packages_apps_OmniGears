@@ -23,6 +23,10 @@
         android:key="button_backlight_enable"
         android:title="@string/button_backlight_enable_title"
         android:defaultValue="true"/>
+        
+    <PreferenceCategory
+			android:title="@string/general_category"/>
+			
     <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
         android:key="custom_button_use_screen_brightness"
         android:title="@string/button_link_brightness"

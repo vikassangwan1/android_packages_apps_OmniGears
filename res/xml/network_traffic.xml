@@ -23,6 +23,9 @@
                 android:key="network_traffic_enable"
                 android:title="@string/network_traffic_enable_title"
                 android:defaultValue="false"/>
+                
+           <PreferenceCategory
+			android:title="@string/general_category"/>
 
             <ListPreference
                 android:key="network_traffic_state"

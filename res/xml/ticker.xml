@@ -15,15 +15,15 @@
             xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
             android:title="@string/ticker_title" >
             
-    <PreferenceCategory
-        android:title="@string/general_category"/>
-
     <ListPreference
         android:key="ticker_mode"
         android:entries="@array/ticker_mode_entries"
         android:entryValues="@array/ticker_mode_values"
         android:summary="%s"
         android:title="@string/ticker_mode_title" />
+        
+    <PreferenceCategory
+        android:title="@string/general_category"/>
 
     <ListPreference
         android:key="status_bar_ticker_animation_mode"

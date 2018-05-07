@@ -38,6 +38,7 @@ import android.util.Log;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
+import android.support.v14.preference.SwitchPreference;
 import android.view.View;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;

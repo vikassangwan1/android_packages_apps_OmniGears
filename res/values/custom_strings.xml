@@ -322,7 +322,7 @@
 
     <string name="weather_title">Weather</string>
     <string name="weather_config_title">Weather service</string>
-    <string name="weather_config_summary">System service settings</string>
+    <string name="weather_config_summary">Configure weather provider, location , unit etc.</string>
     <string name="header_weather_title">Header view weather</string>
     <string name="header_weather_summary">Enable notification panel header weather display</string>
     <string name="weather_icon_pack_title">Condition icon pack</string>
@@ -808,6 +808,7 @@
     <string name="unlock_category_title">Unlock</string>
     <string name="disable_category_title">Disable</string>
     <string name="quicksettings_item_summary">Configure the layout of the quick settings area</string>
+    <string name="navigation_bar_summary">Configure navigaton bar layout and buttons</string>
     <string name="icon_manager_summary">Configure the visibility of statusbar items</string>
     <string name="carrier_label_summary">Customize the carrier label on the lockscreen or statusbar</string>
     <string name="qs_footer">Options for QS rows/column count and to hide qs labels are located in QS edit menu under the 3-dot menu</string>
