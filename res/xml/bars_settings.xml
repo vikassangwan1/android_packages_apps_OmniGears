@@ -54,6 +54,12 @@
                 android:title="@string/carrier_label_title"
                 android:summary="@string/carrier_label_summary"
                 android:fragment="org.omnirom.omnigears.interfacesettings.CarrierLabel" />
+                
+            <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+				android:key="no_sim_cluster_switch"
+				android:title="@string/no_sim_cluster_switch_title"
+     			android:summary="@string/no_sim_cluster_switch_summary"
+				android:defaultValue="false"/>
 
             <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
                 android:key="double_tap_sleep_gesture"

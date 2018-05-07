@@ -893,6 +893,28 @@
     <string name="ringtone_focus_mode_dynamic">From headset if connected and playing music</string>
     <string name="ringtone_focus_mode_stock">"From speakerphone (aosp default)"</string>
     
+    <!-- QuickSettings haptic feedback -->
+    <string name="quick_settings_vibrate_title">Vibrate on touch</string>
+    <string name="quick_settings_vibrate_summary">Vibrate when touching QS tiles</string>
+    
+    <!-- Disable sim icon -->
+    <string name="sim_enabler_enabling">Activating\u2026</string>
+    <string name="sim_enabler_disabling">Deactivating\u2026 </string>
+    <string name="sub_activate_success">SIM activated</string>
+    <string name="sub_activate_failed">Activation failed</string>
+    <string name="sub_deactivate_success">SIM deactivated</string>
+    <string name="sub_deactivate_failed">Deactivation failed</string>
+    
+    <!-- no network switch -->
+    <string name="no_sim_cluster_switch_title">Hide inactive/disabled sim network icon</string>
+    <string name="no_sim_cluster_switch_summary">Hide the network bar if the subscription of sim is inactive and disabled. If sim is not disabled, this switch will not work. NOTE: This will restart SystemUI</string>
+
+    <!-- SystemUI restart prompt -->
+    <string name="systemui_restart_title">WARNING</string>
+    <string name="systemui_restart_message">SystemUI will be restarted so that selected setting can be applied correctly</string>
+    <string name="restarting_ui">Restarting UI\u2026</string>
+    <string name="print_restart">Restart</string>
+    
     <!-- Status bar ticker -->
     <string name="ticker_title">Ticker</string>
     <string name="ticker_summary">Enable the statusbar ticker and configure ticker related tweaks</string>
