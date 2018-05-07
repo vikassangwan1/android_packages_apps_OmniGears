@@ -882,6 +882,12 @@
     <string name="chooser_activity_blacklist_pref_title">Add app</string>
     <string name="chooser_activity_blacklist_pref_summary">Tap here to add, tap on added app to remove it</string>
     
+    <!-- Suppress notification sound/vibration -->
+    <string name="notification_sound_vib_screen_on_title">Notifications sound and vibration if screen is on</string>
+    <string name="notification_sound_vib_screen_on_never">Never</string>
+    <string name="notification_sound_vib_screen_on_always">Always (default)</string>
+    <string name="notification_sound_vib_screen_on_nomedia">If no media is playing</string>
+    
     <!-- Status bar ticker -->
     <string name="ticker_title">Ticker</string>
     <string name="ticker_summary">Enable the statusbar ticker and configure ticker related tweaks</string>

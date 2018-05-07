@@ -18,11 +18,15 @@
 package org.omnirom.omnigears.interfacesettings;
 
 import android.content.Context;
+import android.content.ContentResolver;
 import android.os.Bundle;
+import android.os.UserHandle;
+import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import android.provider.SearchIndexableResource;
+import android.provider.Settings;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -33,6 +37,8 @@ import java.util.ArrayList;
 
 public class NotiSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
+			
+	private ListPreference mNoisyNotification;
 
     @Override
     public int getMetricsCategory() {
@@ -43,6 +49,15 @@ public class NotiSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.noti_settings);
+        
+        mNoisyNotification = (ListPreference) findPreference("notification_sound_vib_screen_on");
+        mNoisyNotification.setOnPreferenceChangeListener(this);
+        int mode = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON,
+                1, UserHandle.USER_CURRENT);
+        mNoisyNotification.setValue(String.valueOf(mode));
+        mNoisyNotification.setSummary(mNoisyNotification.getEntry());
+
     }
 
     @Override
@@ -52,6 +67,16 @@ public class NotiSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+		ContentResolver resolver = getActivity().getContentResolver();
+		if (preference.equals(mNoisyNotification)) {
+            int mode = Integer.parseInt(((String) newValue).toString());
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON, mode, UserHandle.USER_CURRENT);
+            int index = mNoisyNotification.findIndexOfValue((String) newValue);
+            mNoisyNotification.setSummary(
+                    mNoisyNotification.getEntries()[index]);
+            return true;
+		}
         return false;
     }
 
