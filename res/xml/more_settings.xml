@@ -61,6 +61,12 @@
         <PreferenceCategory
             android:key="category_other"
             android:title="@string/other_category">
+            
+            <ListPreference
+				android:key="ringtone_focus_mode"
+				android:title="@string/ringtone_focus_mode_title"
+				android:entries="@array/ringtone_focus_mode_entries"
+				android:entryValues="@array/ringtone_focus_mode_values" />
 
 			<org.omnirom.omnigears.preference.GlobalSettingSwitchPreference
                 android:key="show_cpu_overlay"
