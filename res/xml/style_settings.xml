@@ -49,6 +49,13 @@
     <PreferenceCategory
         android:key="category_system"
         android:title="@string/animation_category">
+        
+			<ListPreference
+				android:key="toast_animation"
+				android:title="@string/toast_animation_title"
+				android:entries="@array/toast_animation_entries"
+				android:entryValues="@array/toast_animation_values"
+				android:persistent="false" />
 
             <ListPreference
                 android:key="screen_off_animation"

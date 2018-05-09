@@ -31,6 +31,7 @@ import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
 import android.provider.SearchIndexableResource;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.android.internal.util.omni.PackageUtils;
 
@@ -53,10 +54,12 @@ public class StyleSettings extends SettingsPreferenceFragment implements OnPrefe
     private static final String KEY_SHOW_DASHBOARD_COLUMNS = "show_dashboard_columns";
     private static final String KEY_HIDE_DASHBOARD_SUMMARY = "hide_dashboard_summary";
     private static final String KEY_SCREEN_OFF_ANIMATION = "screen_off_animation";
+    private static final String KEY_TOAST_ANIMATION = "toast_animation";
 
 	private ListPreference mSystemUIThemeStyle;
     private SharedPreferences mAppPreferences;
     private ListPreference mScreenOffAnimation;
+    private ListPreference mToastAnimation;
     
     @Override
     public void onResume() {
@@ -72,6 +75,8 @@ public class StyleSettings extends SettingsPreferenceFragment implements OnPrefe
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.style_settings);
+        
+        final ContentResolver resolver = getActivity().getContentResolver();
 
         mAppPreferences = getActivity().getSharedPreferences(SettingsActivity.APP_PREFERENCES_NAME,
                 Context.MODE_PRIVATE);
@@ -113,15 +118,31 @@ public class StyleSettings extends SettingsPreferenceFragment implements OnPrefe
         mScreenOffAnimation.setValue(Integer.toString(screenOffAnimation));
         mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
         mScreenOffAnimation.setOnPreferenceChangeListener(this);
+        
+        mToastAnimation = (ListPreference) findPreference(KEY_TOAST_ANIMATION);
+        mToastAnimation.setSummary(mToastAnimation.getEntry());
+        int CurrentToastAnimation = Settings.System.getInt(resolver, Settings.System.TOAST_ANIMATION, 1);
+        mToastAnimation.setValueIndex(CurrentToastAnimation); //set to index of default value
+        mToastAnimation.setSummary(mToastAnimation.getEntries()[CurrentToastAnimation]);
+        mToastAnimation.setOnPreferenceChangeListener(this);
+
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+		ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mScreenOffAnimation) {
             int value = Integer.valueOf((String) newValue);
             int index = mScreenOffAnimation.findIndexOfValue((String) newValue);
             mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[index]);
             Settings.Global.putInt(getContentResolver(), Settings.Global.SCREEN_OFF_ANIMATION, value);
+            return true;
+        } else if (preference == mToastAnimation) {
+            int index = mToastAnimation.findIndexOfValue((String) newValue);
+            Settings.System.putString(resolver, Settings.System.TOAST_ANIMATION, (String) newValue);
+            mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
+            Toast.makeText(getActivity(), R.string.toast_animation_test,
+                    Toast.LENGTH_SHORT).show();
             return true;
         } else if (preference == mSystemUIThemeStyle) {
             String value = (String) newValue;
