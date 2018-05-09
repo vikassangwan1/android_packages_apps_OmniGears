@@ -153,6 +153,12 @@ public class StyleSettings extends SettingsPreferenceFragment implements OnPrefe
         }
         return false;
     }
+
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.Global.putInt(resolver,
+                Settings.Global.SYSTEM_DEFAULT_ANIMATION, 0);
+    }
     
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
