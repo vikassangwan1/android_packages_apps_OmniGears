@@ -941,6 +941,10 @@
     <string name="toast_SlideLeftRight_animation">Slide left to right</string>
     <string name="toast_SlideRightLeft_animation">Slide right to left</string>
     
+    <!-- Allow vibration instead of beep for in-call notifications -->
+	<string name="incall_notifications_vibrate">Less annoying in-call notifications</string>
+    <string name="incall_notifications_vibrate_summary">Vibrate instead of playing a sound for in-call notifications</string>
+    
     <!-- Status bar ticker -->
     <string name="ticker_title">Ticker</string>
     <string name="ticker_summary">Enable the statusbar ticker and configure ticker related tweaks</string>

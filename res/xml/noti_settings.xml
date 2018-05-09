@@ -44,6 +44,12 @@
 			android:entries="@array/notification_sound_vib_screen_on_entries"
 			android:entryValues="@array/notification_sound_vib_screen_on_values"
 			android:summary="%s" />
+			
+		<org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+		    android:key="incall_notifications_vibrate"
+			android:title="@string/incall_notifications_vibrate"
+			android:summary="@string/incall_notifications_vibrate_summary"
+			android:defaultValue="false" />
          
         <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
 				android:key="notification_guts_kill_app_button"
