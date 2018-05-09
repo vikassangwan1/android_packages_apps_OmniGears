@@ -338,6 +338,7 @@
 
     <string name="other_category">Other</string>
     <string name="general_category">General</string>
+    <string name="options_category">Options</string>
     <string name="style_category">Style</string>
     <string name="notification_category">Notifications</string>
     
@@ -801,10 +802,12 @@
     <!-- Tuner -->
     <string name="quicksettings_items_title">Quick settings items</string>
     <string name="statusbar_items_title">Icon manager</string>
+    <string name="do_not_disturb_title">Do not disturb</string>
     <string name="navbar_items_title">Navigation bar</string>
     
     <!-- Custom strings mine-->
     <string name="qs_settings_title">Quick settings</string>
+    <string name="tuner_settings_title">System UI tuner</string>
     <string name="unlock_category_title">Unlock</string>
     <string name="disable_category_title">Disable</string>
     <string name="quicksettings_item_summary">Configure the layout of the quick settings area</string>
@@ -816,6 +819,8 @@
 	
     <string name="long_press_power_torch_title">Long press for flashlight</string>
     <string name="long_press_power_torch_summary">Toggle flashlight when screen is off</string>
+    <string name="double_press_power_button">Double tap</string>
+    <string name="double_press_power_button_summary">Open camera by pressing the power button twice</string>
 
     <!-- Hide lockscreen status bar, clock, date, alarm -->
     <string name="lockscreen_item_title">Lock screen items</string>

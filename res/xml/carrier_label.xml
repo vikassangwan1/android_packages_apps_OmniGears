@@ -16,9 +16,6 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory
-        android:title="@string/general_category"/>
-
         <org.omnirom.omnigears.preference.SystemSettingListPreference
             android:key="status_bar_carrier"
 			android:title="@string/show_carrier_title"

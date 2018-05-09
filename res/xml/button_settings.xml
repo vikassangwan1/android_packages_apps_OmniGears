@@ -87,6 +87,12 @@
             android:title="@string/long_press_power_torch_title"
             android:summary="@string/long_press_power_torch_summary"
             android:defaultValue="false" />
+            
+        <Preference
+			android:key="gesture_settings"
+			android:title="@string/double_press_power_button"
+			android:summary="@string/double_press_power_button_summary"
+			android:fragment="com.android.settings.gestures.GestureSettings" />
 
     </PreferenceCategory>
 

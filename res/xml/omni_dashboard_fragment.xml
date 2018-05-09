@@ -33,7 +33,7 @@
     <Preference
         android:key="noti_settings"
         android:title="@string/notification_category"
-        android:icon="@drawable/ic_settings_notifications"
+        android:icon="@drawable/ic_owlsnest_notif"
         android:fragment="org.omnirom.omnigears.interfacesettings.NotiSettings" />
         
     <Preference
@@ -63,7 +63,7 @@
     <Preference
         android:key="device_parts"
         android:title="@string/omni_device_parts"
-        android:icon="@drawable/ic_settings_omnigears"
+        android:icon="@drawable/ic_settings_device"
         android:fragment="org.omnirom.device.DeviceParts" />
 
     <!--<Preference

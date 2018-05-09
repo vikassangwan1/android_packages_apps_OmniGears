@@ -24,7 +24,7 @@
             android:defaultValue="true" />
             
         <PreferenceCategory
-			android:title="@string/general_category"/>
+			android:title="@string/options_category"/>
 
         <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
             android:key="status_bar_clock_seconds"

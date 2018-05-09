@@ -30,7 +30,7 @@
         android:fragment="org.omnirom.omnigears.interfacesettings.Ticker" />
 
     <PreferenceCategory
-		android:title="@string/other_category"/>
+        android:title="@string/general_category"/>
 		
 		<Preference
 			android:key="led_settings"

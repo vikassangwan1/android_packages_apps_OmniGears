@@ -18,9 +18,6 @@
             xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
             android:key="lockscreen_settings"
             android:title="@string/lockscreen_category_title" >
-            
-    <PreferenceCategory
-        android:title="@string/general_category"/>
 
     <Preference
         android:key="bottom_shortcuts_category"

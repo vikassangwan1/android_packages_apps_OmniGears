@@ -14,10 +14,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
             android:title="@string/qs_settings_title" >
-            
-            <PreferenceCategory
-				android:title="@string/general_category"/>
-            
+    
             <Preference
 				android:title="@string/quicksettings_items_title"
 				android:summary="@string/quicksettings_item_summary" >

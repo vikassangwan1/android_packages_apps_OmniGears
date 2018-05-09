@@ -25,7 +25,7 @@
                 android:defaultValue="false"/>
                 
            <PreferenceCategory
-			android:title="@string/general_category"/>
+			android:title="@string/options_category"/>
 
             <ListPreference
                 android:key="network_traffic_state"
