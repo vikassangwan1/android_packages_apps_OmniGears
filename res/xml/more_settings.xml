@@ -77,6 +77,12 @@
                 android:persistent="false"/>
 
             <org.omnirom.omnigears.preference.GlobalSettingSwitchPreference
+                android:key="system_default_animation"
+                android:title="@string/system_default_animation_title"
+                android:summary="@string/system_default_animation_summary"
+                android:defaultValue="true" />    
+
+            <org.omnirom.omnigears.preference.GlobalSettingSwitchPreference
                 android:key="wake_when_plugged_or_unplugged"
                 android:title="@string/wake_when_plugged_or_unplugged_title"
                 android:summary="@string/wake_when_plugged_or_unplugged_summary"
