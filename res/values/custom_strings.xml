@@ -344,7 +344,9 @@
     <string name="options_category">Options</string>
     <string name="style_category">Style</string>
     <string name="notification_category">Notifications</string>
-    
+    <string name="event_service_settings_summary">Automation (headset connect actions, deactivate Wi\u2011Fi)</string>
+    <string name="tuner_settings_summary">Do not disturb</string>
+
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Battery info</string>
     <string name="lockscreen_battery_info_summary">Display charging current, voltage, battery temperature on the lock screen</string>
@@ -730,7 +732,7 @@
 
     <!-- fingerprint authentication vibration -->
     <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string>
-    <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication. (On lock screen and inside apps).</string>
+    <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication (on lock screen and inside apps)</string>
 
     <string name="choose_app">Choose app</string>
     <string name="not_ready_summary">Resolving...</string>
@@ -887,7 +889,7 @@
 
 	<!-- Chooser blacklist -->
 	<string name="chooser_activity_blacklist_title">Chooser activity blacklist</string>
-    <string name="chooser_activity_blacklist_summary">Apps to not show when tapping on the a Share button</string>
+    <string name="chooser_activity_blacklist_summary">Apps to not show when tapping on the a share button</string>
     <string name="chooser_activity_blacklist_cat_title">Blacklist</string>
     <string name="chooser_activity_blacklist_pref_title">Add app</string>
     <string name="chooser_activity_blacklist_pref_summary">Tap here to add, tap on added app to remove it</string>
@@ -912,8 +914,9 @@
     <string name="immersive_recents_navbar">Navbar only</string>
     
     <!-- Wakelock blocker -->
-    <string name="wakelock_blocker_title">Wakelock blocker</string>
-    <string name="wakelock_blocker_summary">Block system wakelocks</string>
+    <string name="wakelock_blocker">Wakelock blocker</string>
+    <string name="wakelock_blocker_title">Enable blocking</string>
+    <string name="wakelock_blocker_summary"> </string>
     <string name="wakelock_blocker_save">Save</string>
     <string name="wakelock_list_header">Available wakelocks</string>
     <string name="wakelock_blocker_reload">Reload</string>
@@ -921,9 +924,9 @@
     <string name="wakelock_blocker_warning">Blocking wakelocks have the potential to cause instability, crashes or data loss</string>
     
     <!-- Alarm blocker -->
-    <string name="alarm_blocker">Alarm blocker</string>
-    <string name="alarm_blocker_title">Enable</string>
-    <string name="alarm_blocker_summary">Block alarms while screen off</string>
+    <string name="alarm_blocker">Alarms blocker</string>
+    <string name="alarm_blocker_title">Enable blocking</string>
+    <string name="alarm_blocker_summary"> </string>
     <string name="alarm_blocker_save">Save</string>
     <string name="alarm_list_header">Available alarms</string>
     <string name="alarm_blocker_reload">Reload</string>
@@ -941,6 +944,9 @@
     <!-- no network switch -->
     <string name="no_sim_cluster_switch_title">Hide inactive/disabled sim network icon</string>
     <string name="no_sim_cluster_switch_summary">Hide the network bar if the subscription of sim is inactive and disabled. If sim is not disabled, this switch will not work. NOTE: This will restart SystemUI</string>
+
+	<!--Advanced-->
+    <string name="advanced_title">Advanced</string>
 
 	<!-- Less Notification sounds -->
     <string name="less_notification_sounds_title">Less frequent notification sounds of apps</string>
@@ -991,8 +997,9 @@
     <string name="screenshot_edit_app_summary">Select which image editor to use to edit screenshots with</string>
     <string name="screenshot_edit_app_no_editor">No image editor available</string>
     
-    <string name="recents_show_membar_title">Memory bar</string>
-    <string name="recents_show_membar_summary">Show a bar with the device\'s available memory</string>
+    <!-- Show 4G instead of LTE -->
+    <string name="show4g_instead_lte_title">4G instead of LTE</string>
+    <string name="show4g_instead_lte_title_summary">Enable to show 4G instead of LTE on network icon</string>
 
     <!-- Status bar ticker -->
     <string name="ticker_title">Ticker</string>

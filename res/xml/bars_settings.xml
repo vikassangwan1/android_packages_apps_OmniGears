@@ -62,6 +62,12 @@
                 android:defaultValue="false" />
                 
             <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+                android:key="show_lte_fourgee"
+                android:title="@string/show4g_instead_lte_title"
+                android:summary="@string/show4g_instead_lte_title_summary"
+                android:defaultValue="false" />
+                
+            <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
 				android:key="no_sim_cluster_switch"
 				android:title="@string/no_sim_cluster_switch_title"
      			android:summary="@string/no_sim_cluster_switch_summary"

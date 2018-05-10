@@ -162,7 +162,7 @@ public class AlarmBlocker extends SettingsPreferenceFragment {
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.CANDYSHOP;
+        return MetricsProto.MetricsEvent.OMNI_SETTINGS;
     }
 
     @Override
