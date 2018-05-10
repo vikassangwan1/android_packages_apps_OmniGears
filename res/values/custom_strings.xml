@@ -337,6 +337,8 @@
     <string name="enable_tablet_navigation_summary">Tablet layout shows back and home on the left side and overview on the right side of the navigation bar</string>
 
     <string name="other_category">Other</string>
+    <string name="behaviour_category">Behaviour</string>
+    <string name="security_category">Security</string>
     <string name="screenshot_category">Screenshot</string>
     <string name="general_category">General</string>
     <string name="options_category">Options</string>
@@ -825,7 +827,7 @@
 	
     <string name="long_press_power_torch_title">Long press for flashlight</string>
     <string name="long_press_power_torch_summary">Toggle flashlight when screen is off</string>
-    <string name="double_press_power_button">Double tap</string>
+    <string name="double_press_power_button">Double tap for camera</string>
     <string name="double_press_power_button_summary">Open camera by pressing the power button twice</string>
 
     <!-- Hide lockscreen status bar, clock, date, alarm -->
@@ -917,6 +919,20 @@
     <string name="no_sim_cluster_switch_title">Hide inactive/disabled sim network icon</string>
     <string name="no_sim_cluster_switch_summary">Hide the network bar if the subscription of sim is inactive and disabled. If sim is not disabled, this switch will not work. NOTE: This will restart SystemUI</string>
 
+	<!-- Less Notification sounds -->
+    <string name="less_notification_sounds_title">Less frequent notification sounds of apps</string>
+    <string name="less_notification_sounds_summary">Play the notification sound of each app only once per set time period</string>
+    <string name="less_notification_sounds_default">Default Behaviour</string>
+    <string name="less_notification_sounds_3s">Once every 3 seconds</string>
+    <string name="less_notification_sounds_5s">Once every 5 seconds</string>
+    <string name="less_notification_sounds_10s">Once every 10 seconds</string>
+    <string name="less_notification_sounds_15s">Once every 15 seconds</string>
+    <string name="less_notification_sounds_30s">Once every 30 seconds</string>
+    <string name="less_notification_sounds_45s">Once every 45 seconds</string>
+    <string name="less_notification_sounds_1m">Once every 1 minute</string>
+    <string name="less_notification_sounds_2m">Once every 2 minutes</string>
+    <string name="less_notification_sounds_5m">Once every 5 minutes</string>
+    
     <!-- SystemUI restart prompt -->
     <string name="systemui_restart_title">WARNING</string>
     <string name="systemui_restart_message">SystemUI will be restarted so that selected setting can be applied correctly</string>
