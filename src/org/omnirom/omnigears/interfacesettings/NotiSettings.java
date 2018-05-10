@@ -66,7 +66,7 @@ public class NotiSettings extends SettingsPreferenceFragment implements
                 Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD,
                 0, UserHandle.USER_CURRENT);
         mAnnoyingNotification.setValue(String.valueOf(threshold));
-        mAnnoyingNotification.setSummary(mNoisyNotification.getEntry());
+        mAnnoyingNotification.setSummary(mAnnoyingNotification.getEntry());
 
     }
 
@@ -90,6 +90,7 @@ public class NotiSettings extends SettingsPreferenceFragment implements
             int mode = Integer.parseInt(((String) newValue).toString());
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, mode, UserHandle.USER_CURRENT);
+            int index = mAnnoyingNotification.findIndexOfValue((String) newValue);
             mAnnoyingNotification.setSummary(
                     mAnnoyingNotification.getEntries()[index]);
             return true;

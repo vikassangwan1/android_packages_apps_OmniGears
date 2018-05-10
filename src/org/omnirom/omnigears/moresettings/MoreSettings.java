@@ -24,12 +24,16 @@ import android.content.Context;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.hardware.fingerprint.FingerprintManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.UserHandle;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
+import android.support.v7.preference.PreferenceCategory;
+import android.support.v7.preference.PreferenceScreen;
+import android.support.v14.preference.SwitchPreference;
 
 import android.view.View;
 import android.widget.AdapterView;
@@ -57,14 +61,16 @@ public class MoreSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Preference.OnPreferenceClickListener, Indexable {
     private static final String TAG = "MoreSettings";
     
-    private static final String RINGTONE_FOCUS_MODE = "ringtone_focus_mode";
+    private static final String CATEGORY_SYSTEM = "more_system";
+    private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     
     private static final int DIALOG_SCREENSHOT_EDIT_APP = 1;
 
     private Preference mScreenshotEditAppPref;
     private ScreenshotEditPackageListAdapter mPackageAdapter;
     
-    private ListPreference mHeadsetRingtoneFocus;
+    private SwitchPreference mFingerprintVib;
+    private FingerprintManager mFingerprintManager;
 
     @Override
     public int getMetricsCategory() {
@@ -77,13 +83,20 @@ public class MoreSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.more_settings);
         
         final ContentResolver resolver = getActivity().getContentResolver();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        final PreferenceCategory systemCategory =
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_SYSTEM);
         
-        mHeadsetRingtoneFocus = (ListPreference) findPreference(RINGTONE_FOCUS_MODE);
-        int mHeadsetRingtoneFocusValue = Settings.Global.getInt(resolver,
-                Settings.Global.RINGTONE_FOCUS_MODE, 0);
-        mHeadsetRingtoneFocus.setValue(Integer.toString(mHeadsetRingtoneFocusValue));
-        mHeadsetRingtoneFocus.setSummary(mHeadsetRingtoneFocus.getEntry());
-        mHeadsetRingtoneFocus.setOnPreferenceChangeListener(this);
+        mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+        mFingerprintVib = (SwitchPreference) findPreference(FINGERPRINT_VIB);
+        if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()){
+            systemCategory.removePreference(mFingerprintVib);
+        } else {
+            mFingerprintVib.setChecked((Settings.System.getInt(getContentResolver(),
+                    Settings.System.FINGERPRINT_SUCCESS_VIB, 1) == 1));
+            mFingerprintVib.setOnPreferenceChangeListener(this);
+        }
         
         mPackageAdapter = new ScreenshotEditPackageListAdapter(getActivity());
         mScreenshotEditAppPref = findPreference("screenshot_edit_app");
@@ -148,13 +161,10 @@ public class MoreSettings extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
 		ContentResolver resolver = getActivity().getContentResolver();
-		if (preference == mHeadsetRingtoneFocus) {
-            int mHeadsetRingtoneFocusValue = Integer.valueOf((String) newValue);
-            int index = mHeadsetRingtoneFocus.findIndexOfValue((String) newValue);
-            mHeadsetRingtoneFocus.setSummary(
-                    mHeadsetRingtoneFocus.getEntries()[index]);
-            Settings.Global.putInt(resolver, Settings.Global.RINGTONE_FOCUS_MODE,
-                    mHeadsetRingtoneFocusValue);
+		if (preference == mFingerprintVib) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.FINGERPRINT_SUCCESS_VIB, value ? 1 : 0);
             return true;
         }
         return false;

@@ -22,7 +22,6 @@ import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.hardware.fingerprint.FingerprintManager;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.support.v7.preference.ListPreference;
@@ -62,7 +61,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
     private static final String DOUBLE_PRESS_HOME_ACTION = "double_press_home_action";
     private static final String BUTTON_BACK_KILL_TIMEOUT = "button_back_kill_timeout";
     private static final String KEY_BUTTON_LIGHT = "button_brightness";
-    private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     
     private ListPreference mLongPressRecentsAction;
     private ListPreference mLongPressHomeAction;
@@ -71,8 +69,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
     private SwitchPreference mDisabkeHWKeys;
     private ListPreference mBackKillTimeout;
     private Preference mButtonLight;
-    private FingerprintManager mFingerprintManager;
-    private SwitchPreference mFingerprintVib;
 
 
     @Override
@@ -153,15 +149,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
         mDoublePressHomeAction.setSummary(mDoublePressHomeAction.getEntry());
         mDoublePressHomeAction.setOnPreferenceChangeListener(this);
 
-        mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
-        mFingerprintVib = (SwitchPreference) findPreference(FINGERPRINT_VIB);
-        if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()){
-            otherCategory.removePreference(mFingerprintVib);
-        } else {
-            mFingerprintVib.setChecked((Settings.System.getInt(getContentResolver(),
-                    Settings.System.FINGERPRINT_SUCCESS_VIB, 1) == 1));
-            mFingerprintVib.setOnPreferenceChangeListener(this);
-        }
     }
 
     @Override
@@ -205,11 +192,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
             int index = mBackKillTimeout.findIndexOfValue((String) newValue);
             mBackKillTimeout.setSummary(mBackKillTimeout.getEntries()[index]);
             Settings.System.putInt(getContentResolver(), Settings.System.BUTTON_BACK_KILL_TIMEOUT, value);
-            return true;
-        } else if (preference == mFingerprintVib) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.FINGERPRINT_SUCCESS_VIB, value ? 1 : 0);
             return true;
         }
         return false;

@@ -730,7 +730,7 @@
 
     <!-- fingerprint authentication vibration -->
     <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string>
-    <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
+    <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication. (On lock screen and inside apps).</string>
 
     <string name="choose_app">Choose app</string>
     <string name="not_ready_summary">Resolving...</string>
@@ -897,12 +897,7 @@
     <string name="notification_sound_vib_screen_on_never">Never</string>
     <string name="notification_sound_vib_screen_on_always">Always (default)</string>
     <string name="notification_sound_vib_screen_on_nomedia">If no media is playing</string>
-    
-    <!-- Headset ringtone audio focus -->
-    <string name="ringtone_focus_mode_title">Where to play ringtones from</string>
-    <string name="ringtone_focus_mode_dynamic">From headset if connected and playing music</string>
-    <string name="ringtone_focus_mode_stock">"From speakerphone (aosp default)"</string>
-    
+  
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
     <string name="quick_settings_vibrate_summary">Vibrate when touching QS tiles</string>
