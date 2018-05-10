@@ -53,7 +53,6 @@ import com.android.internal.util.omni.DeviceUtils;
 
 public class ButtonSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener, Indexable {
     
-    private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
     private static final String CATEGORY_KEYS = "button_keys";
     private static final String CATEGORY_OTHER = "button_other";
     private static final String KEYS_SHOW_NAVBAR_KEY = "navigation_bar_show";
@@ -64,8 +63,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
     private static final String BUTTON_BACK_KILL_TIMEOUT = "button_back_kill_timeout";
     private static final String KEY_BUTTON_LIGHT = "button_brightness";
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
-
-    private ListPreference mRecentsClearAllLocation;
+    
     private ListPreference mLongPressRecentsAction;
     private ListPreference mLongPressHomeAction;
     private ListPreference mDoublePressHomeAction;
@@ -118,14 +116,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
         boolean showNavBar = Settings.System.getInt(resolver,
                 Settings.System.NAVIGATION_BAR_SHOW, showNavBarDefault ? 1 : 0) == 1;
         mEnableNavBar.setChecked(showNavBar);
-
-        mRecentsClearAllLocation = (ListPreference) findPreference(RECENTS_CLEAR_ALL_LOCATION);
-        int location = Settings.System.getIntForUser(resolver,
-                Settings.System.RECENTS_CLEAR_ALL_LOCATION, 3, UserHandle.USER_CURRENT);
-        
-        mRecentsClearAllLocation.setValue(String.valueOf(location));
-        mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
-        mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
 
         mLongPressRecentsAction = (ListPreference) findPreference(LONG_PRESS_RECENTS_ACTION);
         int longPressRecentsAction = Settings.System.getInt(resolver,
@@ -192,14 +182,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mRecentsClearAllLocation) {
-            int location = Integer.valueOf((String) newValue);
-            int index = mRecentsClearAllLocation.findIndexOfValue((String) newValue);
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.RECENTS_CLEAR_ALL_LOCATION, location, UserHandle.USER_CURRENT);
-            mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
-            return true;
-        } else if (preference == mLongPressRecentsAction) {
+        if (preference == mLongPressRecentsAction) {
             int value = Integer.valueOf((String) newValue);
             int index = mLongPressRecentsAction.findIndexOfValue((String) newValue);
             mLongPressRecentsAction.setSummary(mLongPressRecentsAction.getEntries()[index]);

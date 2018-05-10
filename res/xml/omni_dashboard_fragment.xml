@@ -55,6 +55,12 @@
         android:fragment="org.omnirom.omnigears.interfacesettings.StyleSettings" />
         
     <Preference
+        android:key="recents_settings"
+        android:title="@string/recents_settings_title"
+        android:icon="@drawable/ic_owlsnest_recents"
+        android:fragment="org.omnirom.omnigears.interfacesettings.RecentsSettings" />
+        
+    <Preference
         android:key="more_settings"
         android:title="@string/more_settings_title"
         android:icon="@drawable/ic_owlsnest_advanced"

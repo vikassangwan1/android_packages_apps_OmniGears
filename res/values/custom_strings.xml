@@ -683,8 +683,8 @@
     <!-- Clear all recents -->
     <string name="aosp_recents_title">AOSP recents</string>
     <string name="show_clear_all_recents_button_title">Clear-all FAB</string>
-    <string name="show_clear_all_recents_button_summary_on">Show clear all FAB</string>
-    <string name="show_clear_all_recents_button_summary_off">Show AOSP clear all</string>
+    <string name="show_clear_all_recents_button_summary_on">Enabled</string>
+    <string name="show_clear_all_recents_button_summary_off">Disabled</string>
     <string name="recents_clear_all_location_title">Clear all FAB location</string>
     <string name="recents_clear_all_location_top_right">Top right</string>
     <string name="recents_clear_all_location_top_left">Top left</string>
@@ -811,6 +811,7 @@
     <string name="navbar_items_title">Navigation bar</string>
     
     <!-- Custom strings mine-->
+    <string name="recents_settings_title">Recents</string>
     <string name="qs_settings_title">Quick settings</string>
     <string name="tuner_settings_title">System UI tuner</string>
     <string name="unlock_category_title">Unlock</string>
@@ -950,7 +951,9 @@
     <string name="screenshot_edit_app">Screenshot editor</string>
     <string name="screenshot_edit_app_summary">Select which image editor to use to edit screenshots with</string>
     <string name="screenshot_edit_app_no_editor">No image editor available</string>
-    <string name="profile_choose_app">Choose app</string>
+    
+    <string name="recents_show_membar_title">Memory bar</string>
+    <string name="recents_show_membar_summary">Show a bar with the device\'s available memory</string>
 
     <!-- Status bar ticker -->
     <string name="ticker_title">Ticker</string>

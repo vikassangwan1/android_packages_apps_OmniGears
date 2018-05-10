@@ -127,10 +127,22 @@ public class MoreSettings extends SettingsPreferenceFragment implements
                 return 0;
         }
     }
-
+    
     @Override
-    public boolean onPreferenceTreeClick(Preference preference) {
-        return super.onPreferenceTreeClick(preference);
+    public boolean onPreferenceClick(Preference preference) {
+        // Don't show the dialog if there are no available editor apps
+        if (preference == mScreenshotEditAppPref && mPackageAdapter.getCount() > 0) {
+            showDialog(DIALOG_SCREENSHOT_EDIT_APP);
+        } else {
+            Toast.makeText(getActivity(), getActivity().getString(R.string.screenshot_edit_app_no_editor),
+                    Toast.LENGTH_LONG).show();
+        }
+        return true;
+    }
+    
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 
     @Override
@@ -146,18 +158,6 @@ public class MoreSettings extends SettingsPreferenceFragment implements
             return true;
         }
         return false;
-    }
-    
-    @Override
-    public boolean onPreferenceClick(Preference preference) {
-        // Don't show the dialog if there are no available editor apps
-        if (preference == mScreenshotEditAppPref && mPackageAdapter.getCount() > 0) {
-            showDialog(DIALOG_SCREENSHOT_EDIT_APP);
-        } else {
-            Toast.makeText(getActivity(), getActivity().getString(R.string.screenshot_edit_app_no_editor),
-                    Toast.LENGTH_LONG).show();
-        }
-        return true;
     }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

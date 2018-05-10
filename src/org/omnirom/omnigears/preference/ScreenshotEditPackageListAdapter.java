@@ -108,7 +108,7 @@ public class ScreenshotEditPackageListAdapter extends BaseAdapter implements Run
         if (convertView != null) {
             holder = (ViewHolder) convertView.getTag();
         } else {
-            convertView = mInflater.inflate(R.layout.applist_preference_icon, null, false);
+            convertView = mInflater.inflate(R.layout.applist_preference_icon_new, null, false);
             holder = new ViewHolder();
             convertView.setTag(holder);
             holder.title = (TextView) convertView.findViewById(com.android.internal.R.id.title);
