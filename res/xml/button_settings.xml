@@ -76,6 +76,8 @@
             android:title="@string/system_proxi_check_enabled_title"
             android:summary="@string/system_proxi_check_enabled_summary"
             android:defaultValue="false"/>
+         
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="button_power"
