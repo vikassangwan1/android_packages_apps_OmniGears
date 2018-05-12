@@ -25,9 +25,20 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.provider.SearchIndexableResource;
+import android.provider.Settings;
+import android.text.TextUtils;
+import android.util.Log;
+
+import com.android.internal.logging.MetricsLogger;
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+
+import android.support.v7.preference.CheckBoxPreference;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceGroup;
 import android.support.v7.preference.PreferenceScreen;
+import android.support.v7.preference.PreferenceCategory;
 import android.view.View;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
@@ -38,7 +49,12 @@ import com.android.settings.search.Indexable;
 
 import org.omnirom.omnigears.preference.SeekBarPreference;
 
+import org.omnirom.omnigears.preference.AppMultiSelectListPreference;
+import org.omnirom.omnigears.preference.ScrollAppsViewPreference;
+
+import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class BarsSettings extends SettingsPreferenceFragment implements
@@ -49,11 +65,17 @@ public class BarsSettings extends SettingsPreferenceFragment implements
     private static final String EXPANDED_DESKTOP_CATEGORY = "expanded_desktop_category";
     private static final String QS_PANEL_ALPHA = "qs_panel_alpha";
     private static final String QUICK_PULLDOWN = "quick_pulldown";
+    private static final String KEY_ASPECT_RATIO_APPS_ENABLED = "aspect_ratio_apps_enabled";
+    private static final String KEY_ASPECT_RATIO_APPS_LIST = "aspect_ratio_apps_list";
+    private static final String KEY_ASPECT_RATIO_CATEGORY = "aspect_ratio_category";
+    private static final String KEY_ASPECT_RATIO_APPS_LIST_SCROLLER = "aspect_ratio_apps_list_scroller";
 
     private ListPreference mQuickPulldown;
     private SeekBarPreference mQsPanelAlpha;
     private ListPreference mTickerMode;
     private ListPreference mTickerAnimation;
+    private AppMultiSelectListPreference mAspectRatioAppsSelect;
+    private ScrollAppsViewPreference mAspectRatioApps;
 
     @Override
     public int getMetricsCategory() {
@@ -107,6 +129,27 @@ public class BarsSettings extends SettingsPreferenceFragment implements
                 1, UserHandle.USER_CURRENT);
         mTickerAnimation.setValue(String.valueOf(tickerAnimationMode));
         mTickerAnimation.setSummary(mTickerAnimation.getEntry());
+
+        final PreferenceCategory aspectRatioCategory =
+                (PreferenceCategory) getPreferenceScreen().findPreference(KEY_ASPECT_RATIO_CATEGORY);
+        final boolean supportMaxAspectRatio = getResources().getBoolean(com.android.internal.R.bool.config_haveHigherAspectRatioScreen);
+        if (!supportMaxAspectRatio) {
+            getPreferenceScreen().removePreference(aspectRatioCategory);
+        } else {
+            mAspectRatioAppsSelect = (AppMultiSelectListPreference) findPreference(KEY_ASPECT_RATIO_APPS_LIST);
+            mAspectRatioApps = (ScrollAppsViewPreference) findPreference(KEY_ASPECT_RATIO_APPS_LIST_SCROLLER);
+            final String valuesString = Settings.System.getString(getContentResolver(), Settings.System.ASPECT_RATIO_APPS_LIST);
+            List<String> valuesList = new ArrayList<String>();
+            if (!TextUtils.isEmpty(valuesString)) {
+                valuesList.addAll(Arrays.asList(valuesString.split(":")));
+                mAspectRatioApps.setVisible(true);
+                mAspectRatioApps.setValues(valuesList);
+            } else {
+                mAspectRatioApps.setVisible(false);
+            }
+            mAspectRatioAppsSelect.setValues(valuesList);
+            mAspectRatioAppsSelect.setOnPreferenceChangeListener(this);
+        }
     }
 
     @Override
@@ -144,6 +187,18 @@ public class BarsSettings extends SettingsPreferenceFragment implements
             mTickerAnimation.setSummary(
                     mTickerAnimation.getEntries()[index]);
             return true;        
+        } else if (preference == mAspectRatioAppsSelect) {
+            Collection<String> valueList = (Collection<String>) newValue;
+            mAspectRatioApps.setVisible(false);
+            if (valueList != null) {
+                Settings.System.putString(getContentResolver(), Settings.System.ASPECT_RATIO_APPS_LIST,
+                        TextUtils.join(":", valueList));
+                mAspectRatioApps.setVisible(true);
+                mAspectRatioApps.setValues(valueList);
+            } else {
+                Settings.System.putString(getContentResolver(), Settings.System.ASPECT_RATIO_APPS_LIST, "");
+            }
+            return true;
         }
         return false;
     }
