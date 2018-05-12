@@ -61,7 +61,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
     private static final String DOUBLE_PRESS_HOME_ACTION = "double_press_home_action";
     private static final String BUTTON_BACK_KILL_TIMEOUT = "button_back_kill_timeout";
     private static final String KEY_BUTTON_LIGHT = "button_brightness";
-    
+    private static final String SYSTEM_PROXI_CHECK_ENABLED = "system_proxi_check_enabled";
+
     private ListPreference mLongPressRecentsAction;
     private ListPreference mLongPressHomeAction;
     private ListPreference mDoublePressHomeAction;
@@ -149,6 +150,11 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
         mDoublePressHomeAction.setSummary(mDoublePressHomeAction.getEntry());
         mDoublePressHomeAction.setOnPreferenceChangeListener(this);
 
+        boolean supportPowerButtonProxyCheck = getResources().getBoolean(com.android.internal.R.bool.config_proxiSensorWakupCheck);
+        SwitchPreference proxyCheckPreference = (SwitchPreference) findPreference(SYSTEM_PROXI_CHECK_ENABLED);
+        if (!supportPowerButtonProxyCheck) {
+            keysCategory.removePreference(proxyCheckPreference);
+        }
     }
 
     @Override
