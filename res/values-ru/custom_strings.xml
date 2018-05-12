@@ -737,4 +737,6 @@
   <string name="lockscreen_weather_title">Показать состояние погоды</string>
   <string name="lockscreen_weather_summary">Показать текущие погодные условия и температуру</string>
   <string name="lockscreen_items_aod_info_title">Эта настройка так же применяется к активному экрану</string>
+  <string name="system_proxi_check_enabled_title">Проверка приближения</string>
+  <string name="system_proxi_check_enabled_summary">Проверять датчик приближения перед началом работы с кнопками питания и громкости</string>
 </resources>
