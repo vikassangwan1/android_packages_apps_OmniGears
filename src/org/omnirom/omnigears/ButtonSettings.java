@@ -56,6 +56,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
     private static final String CATEGORY_KEYS = "button_keys";
     private static final String CATEGORY_OTHER = "button_other";
+    private static final String CATEGORY_POWER = "button_power";
     private static final String KEYS_SHOW_NAVBAR_KEY = "navigation_bar_show";
     private static final String KEYS_DISABLE_HW_KEY = "hardware_keys_disable";
     private static final String LONG_PRESS_RECENTS_ACTION = "long_press_recents_action";
@@ -64,6 +65,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
     private static final String BUTTON_BACK_KILL_TIMEOUT = "button_back_kill_timeout";
     private static final String KEY_BUTTON_LIGHT = "button_brightness";
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
+    private static final String SYSTEM_PROXI_CHECK_ENABLED = "system_proxi_check_enabled";
 
     private ListPreference mRecentsClearAllLocation;
     private ListPreference mLongPressRecentsAction;
@@ -97,6 +99,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_KEYS);
         final PreferenceCategory otherCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_OTHER);
+        final PreferenceCategory powerCategory =
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_POWER);
 
         mEnableNavBar = (SwitchPreference) prefScreen.findPreference(KEYS_SHOW_NAVBAR_KEY);
         mDisabkeHWKeys = (SwitchPreference) prefScreen.findPreference(KEYS_DISABLE_HW_KEY);
@@ -171,6 +175,12 @@ public class ButtonSettings extends SettingsPreferenceFragment implements OnPref
             mFingerprintVib.setChecked((Settings.System.getInt(getContentResolver(),
                     Settings.System.FINGERPRINT_SUCCESS_VIB, 1) == 1));
             mFingerprintVib.setOnPreferenceChangeListener(this);
+        }
+
+        boolean supportPowerButtonProxyCheck = getResources().getBoolean(com.android.internal.R.bool.config_proxiSensorWakupCheck);
+        SwitchPreference proxyCheckPreference = (SwitchPreference) findPreference(SYSTEM_PROXI_CHECK_ENABLED);
+        if (!supportPowerButtonProxyCheck) {
+            powerCategory.removePreference(proxyCheckPreference);
         }
     }
 
