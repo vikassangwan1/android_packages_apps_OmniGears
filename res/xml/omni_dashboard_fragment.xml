@@ -21,54 +21,63 @@
 	<Preference
         android:key="bars_settings"
         android:title="@string/custom_bars_settings_title"
+        android:summary="@string/summary_status_bar"
         android:icon="@drawable/ic_settings_statusbar"
         android:fragment="org.omnirom.omnigears.interfacesettings.BarsSettings" />
        
 	<Preference
         android:key="lockscreen_settings"
         android:title="@string/lockscreen_category_title"
+        android:summary="@string/summary_lock_screen"
         android:icon="@drawable/ic_owlsnest_lockscreen"
         android:fragment="org.omnirom.omnigears.interfacesettings.LockscreenSettings" />
         
     <Preference
         android:key="noti_settings"
         android:title="@string/notification_category"
+        android:summary="@string/summary_noti_settings"
         android:icon="@drawable/ic_owlsnest_notif"
         android:fragment="org.omnirom.omnigears.interfacesettings.NotiSettings" />
         
     <Preference
         android:key="quick_settings"
         android:title="@string/qs_settings_title"
+        android:summary="@string/summary_quick_settings"
         android:icon="@drawable/ic_owlsnest_qs"
         android:fragment="org.omnirom.omnigears.interfacesettings.QuickSettings" />
 
 	<Preference
         android:key="button_settings"
         android:title="@string/button_settings_title"
+        android:summary="@string/summary_buttons_settings"
         android:icon="@drawable/ic_owlsnest_buttons"
         android:fragment="org.omnirom.omnigears.ButtonSettings" />
 
     <Preference
         android:key="style_settings_new"
         android:title="@string/style_settings_title"
+        android:summary="@string/summary_style_settings"
         android:icon="@drawable/ic_settings_style"
         android:fragment="org.omnirom.omnigears.interfacesettings.StyleSettings" />
         
     <Preference
         android:key="recents_settings"
         android:title="@string/recents_settings_title"
+        android:summary="@string/summary_recents_settings"
         android:icon="@drawable/ic_owlsnest_recents"
         android:fragment="org.omnirom.omnigears.interfacesettings.RecentsSettings" />
            
     <Preference
         android:key="more_settings"
         android:title="@string/more_settings_title"
+        android:summary="@string/summary_misc_settings"
         android:icon="@drawable/ic_owlsnest_advanced"
         android:fragment="org.omnirom.omnigears.moresettings.MoreSettings" />
 
     <Preference
         android:key="device_parts"
         android:title="@string/omni_device_parts"
+        android:summary="@string/summary_device_settings"
         android:icon="@drawable/ic_settings_device"
         android:fragment="org.omnirom.device.DeviceParts" />
 

@@ -344,7 +344,7 @@
     <string name="options_category">Options</string>
     <string name="style_category">Style</string>
     <string name="notification_category">Notifications</string>
-    <string name="event_service_settings_summary">Automation (headset connect actions, deactivate Wi\u2011Fi)</string>
+    <string name="event_service_settings_summary">Automated actions</string>
     <string name="tuner_settings_summary">Do not disturb</string>
 
     <!-- Lockscreen battery info indicator  -->
@@ -408,7 +408,7 @@
     <string name="lockscreen_power_menu_disabled_summary">Disable power menu on secure lock screens</string>
 
     <string name="status_bar_quick_qs_pulldown_title">Quick pulldown</string>
-    <string name="status_bar_quick_qs_pulldown_summary">%1$s edge of the status bar pulls down Quick Settings</string>
+    <string name="status_bar_quick_qs_pulldown_summary">%1$s edge of the status bar pulls down quick settings</string>
     <string name="status_bar_quick_qs_pulldown_summary_left">Left</string>
     <string name="status_bar_quick_qs_pulldown_summary_right">Right</string>
     <string name="status_bar_quick_qs_pulldown_off">Off</string>
@@ -762,8 +762,8 @@
 
     <!-- Quick Pulldown-->
     <string name="quick_pulldown_title">Quick pulldown</string>
-    <string name="quick_pulldown_summary">%1$s edge of the status bar pulls down Quick Settings</string>
-    <string name="quick_pulldown_summary_always">Always show Quick Settings on status bar pulldown</string>
+    <string name="quick_pulldown_summary">%1$s edge of the status bar pulls down quick settings</string>
+    <string name="quick_pulldown_summary_always">Always show quick settings on status bar pulldown</string>
     <string name="quick_pulldown_off">Off</string>
     <string name="quick_pulldown_left">Left</string>
     <string name="quick_pulldown_right">Right</string>
@@ -797,19 +797,19 @@
 
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture">Three finger gesture</string>
-    <string name="three_finger_gesture_summary">Swipe three finger to screenshot</string>
+    <string name="three_finger_gesture_summary">Swipe down with three fingers to take screenshot</string>
 
     <!-- Bottom shortcuts -->
     <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Bottom shortcuts</string>
     <string name="systemui_tuner_lockscreen_bottom_shortcuts_summary">Configure the bottom shortcuts</string>
 
     <!-- QuickSettings Panel Transparency -->
-    <string name="qs_panel_alpha_title">QS panel opacity</string>
+    <string name="qs_panel_alpha_title">Opacity</string>
     
     <string name="app_ops_settings_summary">Control apps permissions</string>
     
     <!-- Tuner -->
-    <string name="quicksettings_items_title">Quick settings items</string>
+    <string name="quicksettings_items_title">Panel items</string>
     <string name="statusbar_items_title">Icon manager</string>
     <string name="do_not_disturb_title">Do not disturb</string>
     <string name="navbar_items_title">Navigation bar</string>
@@ -902,7 +902,7 @@
   
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
-    <string name="quick_settings_vibrate_summary">Vibrate when touching QS tiles</string>
+    <string name="quick_settings_vibrate_summary">Vibrate when touching quick settings tiles</string>
     
     <!-- Immersive Recents -->
     <string name="immersive_recents_title">Immersive recents</string>
@@ -912,26 +912,6 @@
     <string name="immersive_recents_fullscreen">Fullscreen</string>
     <string name="immersive_recents_statusbar">Statusbar only</string>
     <string name="immersive_recents_navbar">Navbar only</string>
-    
-    <!-- Wakelock blocker -->
-    <string name="wakelock_blocker">Wakelock blocker</string>
-    <string name="wakelock_blocker_title">Enable blocking</string>
-    <string name="wakelock_blocker_summary"> </string>
-    <string name="wakelock_blocker_save">Save</string>
-    <string name="wakelock_list_header">Available wakelocks</string>
-    <string name="wakelock_blocker_reload">Reload</string>
-    <string name="wakelock_blocker_warning_title">Proceed with caution</string>
-    <string name="wakelock_blocker_warning">Blocking wakelocks have the potential to cause instability, crashes or data loss</string>
-    
-    <!-- Alarm blocker -->
-    <string name="alarm_blocker">Alarms blocker</string>
-    <string name="alarm_blocker_title">Enable blocking</string>
-    <string name="alarm_blocker_summary"> </string>
-    <string name="alarm_blocker_save">Save</string>
-    <string name="alarm_list_header">Available alarms</string>
-    <string name="alarm_blocker_reload">Reload</string>
-    <string name="alarm_blocker_warning_title">Proceed with caution</string>
-    <string name="alarm_blocker_warning">Blocking alarms have the potential to cause instability, crashes or data loss.</string>
 
     <!-- Disable sim icon -->
     <string name="sim_enabler_enabling">Activating\u2026</string>
@@ -1005,6 +985,17 @@
     <string name="dashboard_suggestions_title">Dashboard suggestions</string>
     <string name="summary_dashboard_suggestions_enabled">Dashboard suggestions are enabled</string>
     <string name="summary_dashboard_suggestions_disabled">Dashboard suggestions are disabled</string>
+    
+    <!-- Summaries -->
+    <string name="summary_status_bar">Status bar, navigation bar</string>
+    <string name="summary_lock_screen">Appearance, shortcuts, unlock behaviour</string>
+    <string name="summary_noti_settings">Heads up, ticker, charging light</string>
+    <string name="summary_quick_settings">Panel items, custom header, opacity</string>
+    <string name="summary_recents_settings">Immersive recents, clear all FAB</string>
+    <string name="summary_style_settings">Themes, animations, layout</string>
+    <string name="summary_misc_settings">App ops, doze, events, weather</string>
+    <string name="summary_device_settings">Gestures, ambient display, notification slider</string>
+    <string name="summary_buttons_settings">Hardware keys, buttons backlight</string>
 
     <!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">Force expanded notifications</string>

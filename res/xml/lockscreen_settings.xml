@@ -22,6 +22,7 @@
     <Preference
         android:key="bottom_shortcuts_category"
         android:title="@string/systemui_tuner_lockscreen_bottom_shortcuts_title"
+        android:icon="@drawable/ic_new_bottomshortcuts"
         android:summary="@string/systemui_tuner_lockscreen_bottom_shortcuts_summary">
         <intent android:action="android.intent.action.MAIN"
             android:targetPackage="com.android.systemui"
@@ -32,6 +33,7 @@
         android:key="lockscreen_item"
         android:title="@string/lockscreen_item_title"
         android:summary="@string/lockscreen_item_summary"
+        android:icon="@drawable/ic_new_lockscreenitems"
         android:fragment="org.omnirom.omnigears.interfacesettings.LockscreenItemSettings" />
 
 	<org.omnirom.omnigears.preference.SystemSettingSwitchPreference
@@ -49,14 +51,9 @@
     <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
         android:key="lockscreen_weather"
         android:title="@string/lockscreen_weather_title"
-        android:summary="@string/lockscreen_weather_summary"
+        android:summary="@string/lockscreen_items_aod_info_title"
         android:defaultValue="false" />
 
-    <Preference
-        android:icon="@drawable/ic_info_outline_24dp"
-        android:persistent="false"
-        android:summary="@string/lockscreen_items_aod_info_title" />
-        
     <PreferenceCategory
             android:title="@string/unlock_category_title"/>
         

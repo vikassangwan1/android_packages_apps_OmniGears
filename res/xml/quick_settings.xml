@@ -14,36 +14,37 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
             android:title="@string/qs_settings_title" >
-    
+                
             <Preference
 				android:title="@string/quicksettings_items_title"
+				android:icon="@drawable/ic_new_qsitems"
 				android:summary="@string/quicksettings_item_summary" >
 				<intent android:action="android.intent.action.MAIN"
 					android:targetPackage="com.android.systemui"
 					android:targetClass="com.android.systemui.tuner.QSTunerActivity" />
 			</Preference>
-			
+   
+            <org.omnirom.omnigears.preference.SecureSettingSwitchPreference
+				android:key="quick_settings_vibrate"
+				android:title="@string/quick_settings_vibrate_title"
+				android:summary="@string/quick_settings_vibrate_summary"
+				android:defaultValue="false" />
+				
 			<ListPreference
                 android:key="quick_pulldown"
                 android:title="@string/quick_pulldown_title"
                 android:entries="@array/quick_pulldown_entries"
                 android:entryValues="@array/quick_pulldown_values"
                 android:persistent="false" />
-                
-            <org.omnirom.omnigears.preference.SecureSettingSwitchPreference
-				android:key="quick_settings_vibrate"
-				android:title="@string/quick_settings_vibrate_title"
-				android:summary="@string/quick_settings_vibrate_summary"
-				android:defaultValue="false" />
-			 
-            <org.omnirom.omnigears.preference.CustomSeekBarPreference
+				
+			<org.omnirom.omnigears.preference.CustomSeekBarPreference
                 android:key="qs_panel_alpha"
 				android:title="@string/qs_panel_alpha_title"
 				android:max="255"
 				settings:min="0"
 				settings:units=""
 				android:persistent="false" />
-		
+			 
     <PreferenceCategory
         android:key="category_custom_header"
         android:title="@string/custom_header_title">
