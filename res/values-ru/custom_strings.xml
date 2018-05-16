@@ -401,7 +401,7 @@
   <string name="bars_dt2s_disabled_summary">DT2S ОТКЛЮЧЕН</string>
   <string name="volume_dialog_headers_title">Подписи в панели громкости</string>
   <string name="volume_dialog_headers_summary">Показывать имя потока в панели громкости</string>
-  <string name="lockscreen_hide_media_title">Оключить обложки медиафайлов</string>
+  <string name="lockscreen_hide_media_title">Отключить обложки медиафайлов</string>
   <string name="lockscreen_hide_media_summary">Не показывать данные медиафайлов как обложку экрана блокировки</string>
   <string name="omni_notification_light_settings_summary">Настроить индикатор уведомлений для приложений</string>
   <string name="omni_battery_light_settings_summary">Настроить индикацию батареи</string>
