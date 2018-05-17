@@ -32,12 +32,15 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
+import org.omnirom.omnigears.TelephonyUtils;
 
 import java.util.List;
 import java.util.ArrayList;
 
 public class NotiSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
+			
+	private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
 			
 	private ListPreference mNoisyNotification;
 	private ListPreference mAnnoyingNotification;
@@ -51,6 +54,8 @@ public class NotiSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.noti_settings);
+        
+        final PreferenceScreen prefSet = getPreferenceScreen();
         
         mNoisyNotification = (ListPreference) findPreference("notification_sound_vib_screen_on");
         mNoisyNotification.setOnPreferenceChangeListener(this);
@@ -67,6 +72,11 @@ public class NotiSettings extends SettingsPreferenceFragment implements
                 0, UserHandle.USER_CURRENT);
         mAnnoyingNotification.setValue(String.valueOf(threshold));
         mAnnoyingNotification.setSummary(mAnnoyingNotification.getEntry());
+        
+        PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
+        if (!TelephonyUtils.isVoiceCapable(getActivity())) {
+            prefSet.removePreference(incallVibCategory);
+        }
 
     }
 

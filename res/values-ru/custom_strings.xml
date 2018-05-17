@@ -401,7 +401,7 @@
   <string name="bars_dt2s_disabled_summary">DT2S ОТКЛЮЧЕН</string>
   <string name="volume_dialog_headers_title">Подписи в панели громкости</string>
   <string name="volume_dialog_headers_summary">Показывать имя потока в панели громкости</string>
-  <string name="lockscreen_hide_media_title">Оключить обложки медиафайлов</string>
+  <string name="lockscreen_hide_media_title">Отключить обложки медиафайлов</string>
   <string name="lockscreen_hide_media_summary">Не показывать данные медиафайлов как обложку экрана блокировки</string>
   <string name="omni_notification_light_settings_summary">Настроить индикатор уведомлений для приложений</string>
   <string name="omni_battery_light_settings_summary">Настроить индикацию батареи</string>
@@ -739,4 +739,9 @@
   <string name="lockscreen_items_aod_info_title">Эта настройка так же применяется к активному экрану</string>
   <string name="system_proxi_check_enabled_title">Проверка приближения</string>
   <string name="system_proxi_check_enabled_summary">Проверять датчик приближения перед началом работы с кнопками питания и громкости</string>
+  <!-- Incall vibrate options -->
+  <string name="incall_vibration_category">Параметры вибрации во время разговора</string>
+  <string name="incall_vibrate_connect_title">Вибрировать при соединении</string>
+  <string name="incall_vibrate_call_wait_title">Вибрировать при ожидании</string>
+  <string name="incall_vibrate_disconnect_title">Вибрировать при отключении</string>
 </resources>

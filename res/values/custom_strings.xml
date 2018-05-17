@@ -1040,4 +1040,10 @@
 
     <string name="system_proxi_check_enabled_title">Proximity check</string>
     <string name="system_proxi_check_enabled_summary">Check proximity sensor before handling power button and volume button wake events</string>
+
+        <!-- Incall vibrate options -->
+    <string name="incall_vibration_category">In-call vibration options</string>
+    <string name="incall_vibrate_connect_title">On connect</string>
+    <string name="incall_vibrate_call_wait_title">On call waiting</string>
+    <string name="incall_vibrate_disconnect_title">On disconnect</string>
 </resources>
