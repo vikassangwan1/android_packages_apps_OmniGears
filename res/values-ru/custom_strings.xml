@@ -744,4 +744,11 @@
   <string name="incall_vibrate_connect_title">Вибрировать при соединении</string>
   <string name="incall_vibrate_call_wait_title">Вибрировать при ожидании</string>
   <string name="incall_vibrate_disconnect_title">Вибрировать при отключении</string>
+
+  <string name="aspect_ratio_apps_enabled_title">Включить масштабирование</string>
+  <string name="aspect_ratio_apps_enabled_summary">Разрешить устаревшим приложениям использовать полноэкранный режим</string>
+  <string name="aspect_ratio_apps_list_summary"></string>
+  <string name="aspect_ratio_apps_list_title">Приложения, которым разрешено использовать масштабирование</string>
+  <string name="aspect_ratio_category_title">Масштабирование устаревших приложений</string>
+  <string name="aspect_ratio_apps_info">Приложения необходимо перезапустить после изменений</string>
 </resources>
