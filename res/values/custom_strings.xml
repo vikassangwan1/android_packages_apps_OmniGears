@@ -79,13 +79,12 @@
     <string name="button_back_kill_enable_title">Kill app back button</string>
     <string name="button_back_kill_enable_summary">Kill the foreground app by long-pressing the back button</string>
     <string name="button_back_kill_timeout_title">Kill app timeout</string>
-    <string name="button_back_kill_timeout_200ms">200 ms</string>
+    <string name="button_back_kill_timeout_250ms">250 ms</string>
     <string name="button_back_kill_timeout_300ms">300 ms</string>
+    <string name="button_back_kill_timeout_400ms">400 ms</string>
     <string name="button_back_kill_timeout_500ms">500 ms</string>
     <string name="button_back_kill_timeout_700ms">700 ms</string>
     <string name="button_back_kill_timeout_1000ms">1000 ms</string>
-    <string name="button_back_kill_timeout_1500ms">1500 ms</string>
-    <string name="button_back_kill_timeout_2000ms">2000 ms</string>
 
     <!-- Double tap to sleep -->
     <string name="double_tap_to_sleep_title">Double-tap to sleep</string>
@@ -845,12 +844,12 @@
     <string name="hide_lockscreen_status_bar_summary">Touch status bar to toggle visibility</string>
 
     <!-- Smart Pixels -->
-    <string name="smart_pixels_title">Smart Pixels</string>
+    <string name="smart_pixels_title">Smart pixels</string>
     <string name="smart_pixels_summary">Save battery by shutting off extra pixels</string>
-    <string name="smart_pixels_enable_title">Enable Smart Pixels</string>
+    <string name="smart_pixels_enable_title">Enable smart pixels</string>
     <string name="smart_pixels_enable_summary">Shut off pixels to reduce power consumption</string>
     <string name="smart_pixels_on_power_save_title">Auto-enable on battery saver</string>
-    <string name="smart_pixels_on_power_save_summary">Enable Smart Pixels when battery saver is enabled</string>
+    <string name="smart_pixels_on_power_save_summary">Enable smart pixels when battery saver is enabled</string>
     <string name="smart_pixels_percent">Percent of pixels to disable</string>
     <string name="smart_pixels_shift_title">Burn-in protection</string>
     <string name="smart_pixels_shift_summary">Prevents burn-in on OLED devices by shifting pixels every so often</string>
@@ -1004,15 +1003,15 @@
     <!-- Heads up timeout -->
     <string name="heads_up_time_out_title">Time out</string>
     <string name="heads_up_time_out_summary">Peeking notifications will show for <xliff:g id="number">%d</xliff:g> seconds</string>
-    <string name="heads_up_time_out_2sec">2 seconds</string>
-    <string name="heads_up_time_out_3sec">3 seconds</string>
-    <string name="heads_up_time_out_4sec">4 seconds</string>
-    <string name="heads_up_time_out_5sec">5 seconds</string>
-    <string name="heads_up_time_out_6sec">6 seconds</string>
-    <string name="heads_up_time_out_7sec">7 seconds</string>
-    <string name="heads_up_time_out_8sec">8 seconds</string>
-    <string name="heads_up_time_out_9sec">9 seconds</string>
-    <string name="heads_up_time_out_10sec">10 seconds</string>
+    <string name="heads_up_time_out_2000ms">2000 ms</string>
+    <string name="heads_up_time_out_2500ms">2500 ms</string>
+    <string name="heads_up_time_out_3000ms">3000 ms</string>
+    <string name="heads_up_time_out_3500ms">3500 ms</string>
+    <string name="heads_up_time_out_4000ms">4000 ms</string>
+    <string name="heads_up_time_out_5000ms">5000 ms</string>
+    <string name="heads_up_time_out_6000ms">6000 ms</string>
+    <string name="heads_up_time_out_7000ms">7000 ms</string>
+    <string name="heads_up_time_out_8000ms">8000 ms</string>
 
     <!-- Status bar ticker -->
     <string name="ticker_title">Ticker</string>

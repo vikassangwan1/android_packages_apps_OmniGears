@@ -125,7 +125,7 @@ public class HeadsUp extends SettingsPreferenceFragment
 
     private void updateHeadsUpTimeOutSummary(int value) {
         String summary = getResources().getString(R.string.heads_up_time_out_summary,
-                value / 1000);
+                value);
         mHeadsUpTimeOut.setSummary(summary);
     }
 
