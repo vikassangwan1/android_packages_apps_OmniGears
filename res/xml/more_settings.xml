@@ -45,6 +45,12 @@
 			android:icon="@drawable/ic_new_events"
 			android:summary="@string/event_service_settings_summary"
 			android:fragment="org.omnirom.omnigears.service.EventServiceSettings" />
+			
+		<PreferenceScreen
+            android:key="systemappremover"
+            android:fragment="org.omnirom.omnigears.moresettings.SystemappRemover"
+            android:icon="@drawable/ic_new_systemappremover"
+            android:title="@string/system_app_remover" />
 				
 		<Preference
 			android:title="@string/tuner_settings_title"

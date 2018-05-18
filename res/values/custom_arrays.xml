@@ -831,6 +831,12 @@
         <item>9000</item>
         <item>10000</item>
     </string-array>
+    
+    <!-- System App Remover -->
+    <string-array name="slimsizer_profile_array">
+        <item >Load Profile</item>
+        <item >Save Profile</item>
+    </string-array>
 
     <!-- Ticker mode -->
     <string-array name="ticker_mode_entries">
