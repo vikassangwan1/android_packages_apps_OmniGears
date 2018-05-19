@@ -106,12 +106,6 @@
                 android:title="@string/show_cpu_title"
                 android:summary="@string/show_cpu_summary"
                 android:defaultValue="false" />
-                
-            <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
-				android:key="disable_fc_notifications"
-				android:title="@string/disable_fc_notifications_title"
-				android:summary="@string/disable_fc_notifications_summary"
-				android:defaultValue="false" />
                          
         </PreferenceCategory>
      
