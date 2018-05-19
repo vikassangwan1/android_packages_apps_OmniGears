@@ -830,6 +830,10 @@
     <string name="long_press_power_torch_summary">Toggle flashlight when screen is off</string>
     <string name="double_press_power_button">Double tap for camera</string>
     <string name="double_press_power_button_summary">Open camera by pressing the power button twice</string>
+    
+    <string name="aspect_settings_title">Aspect ratio settings</string>
+    
+    
 
     <!-- Hide lockscreen status bar, clock, date, alarm -->
     <string name="lockscreen_item_title">Lock screen items</string>
@@ -1002,7 +1006,7 @@
     
     <!-- Heads up timeout -->
     <string name="heads_up_time_out_title">Time out</string>
-    <string name="heads_up_time_out_summary">Peeking notifications will show for <xliff:g id="number">%d</xliff:g> seconds</string>
+    <string name="heads_up_time_out_summary">Peeking notifications will show for <xliff:g id="number">%d</xliff:g> ms</string>
     <string name="heads_up_time_out_2000ms">2000 ms</string>
     <string name="heads_up_time_out_2500ms">2500 ms</string>
     <string name="heads_up_time_out_3000ms">3000 ms</string>
