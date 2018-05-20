@@ -558,7 +558,9 @@
     <string name="volume_button_force_media_summary">Media volume will be changed by default</string>
 
     <string name="status_bar_logo_title">Status bar logo</string>
-    <string name="status_bar_logo_summary">A little swag</string>
+    <string name="status_bar_logo_summary_on">is enabled</string>
+    <string name="status_bar_logo_summary_off">is disabled</string>
+    <string name="status_bar_logo_style_title">Status bar logo style</string>
 
     <!-- Doze settings editor -->
     <string name="doze_settings_title">Doze settings</string>

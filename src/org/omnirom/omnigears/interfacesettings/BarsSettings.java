@@ -67,6 +67,7 @@ public class BarsSettings extends SettingsPreferenceFragment implements
     private static final String NO_SIM_CLUSTER = "no_sim_cluster_switch";
    
     private SwitchPreference mNoSimCluster;
+    private ListPreference mLogoStyle;
 
     @Override
     public int getMetricsCategory() {
@@ -93,8 +94,16 @@ public class BarsSettings extends SettingsPreferenceFragment implements
                 TrafficStats.getTotalRxBytes() == TrafficStats.UNSUPPORTED) {
             prefScreen.removePreference(findPreference(NETWORK_TRAFFIC_ROOT));
         }
+        
+        mLogoStyle = (ListPreference) findPreference("status_bar_logo_style");
+        mLogoStyle.setOnPreferenceChangeListener(this);
+        int logoStyle = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.STATUS_BAR_LOGO_STYLE,
+                0, UserHandle.USER_CURRENT);
+        mLogoStyle.setValue(String.valueOf(logoStyle));
+        mLogoStyle.setSummary(mLogoStyle.getEntry());
 
-	  final PreferenceCategory aspectRatioCategory =
+	    final PreferenceCategory aspectRatioCategory =
                 (PreferenceCategory) getPreferenceScreen().findPreference(KEY_ASPECT_RATIO_CATEGORY);
         final boolean supportMaxAspectRatio = getResources().getBoolean(com.android.internal.R.bool.config_haveHigherAspectRatioScreen);
         if (!supportMaxAspectRatio) {
@@ -112,7 +121,15 @@ public class BarsSettings extends SettingsPreferenceFragment implements
 	 if (preference == mNoSimCluster) {
             Helpers.showSystemUIrestartDialog(getActivity());
             return true;
-       }
+     } else if (preference.equals(mLogoStyle)) {
+            int logoStyle = Integer.parseInt(((String) newValue).toString());
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.STATUS_BAR_LOGO_STYLE, logoStyle, UserHandle.USER_CURRENT);
+            int index = mLogoStyle.findIndexOfValue((String) newValue);
+            mLogoStyle.setSummary(
+                    mLogoStyle.getEntries()[index]);
+            return true;
+     }
 	return false;
     }
 

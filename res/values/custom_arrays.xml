@@ -835,6 +835,39 @@
         <item >Load Profile</item>
         <item >Save Profile</item>
     </string-array>
+    
+    <!-- Status Bar Logo Style -->
+    <string-array name="status_bar_logo_style_entries">
+        <item>Living dead hand</item>
+        <item>Eagle</item>
+        <item>Eagle feathers</item>
+        <item>Frankenstein</item>
+        <item>Frankenstein 2</item>
+        <item>Ghost</item>
+        <item>Invader</item>
+        <item>Monster</item>
+        <item>Pumpkin face</item>
+        <item>Pumpkin face 1</item>
+        <item>Pumpkin face 2</item>
+        <item>Punisher</item>
+        <item>Skull</item>
+    </string-array>
+
+    <string-array name="status_bar_logo_style_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
 
     <!-- Ticker mode -->
     <string-array name="ticker_mode_entries">
