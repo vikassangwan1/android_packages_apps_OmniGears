@@ -23,20 +23,27 @@
 					android:targetPackage="com.android.systemui"
 					android:targetClass="com.android.systemui.tuner.QSTunerActivity" />
 			</Preference>
-   
-            <org.omnirom.omnigears.preference.SecureSettingSwitchPreference
+
+			<org.omnirom.omnigears.preference.SecureSettingSwitchPreference
 				android:key="quick_settings_vibrate"
 				android:title="@string/quick_settings_vibrate_title"
 				android:summary="@string/quick_settings_vibrate_summary"
 				android:defaultValue="false" />
-				
+
 			<ListPreference
                 android:key="quick_pulldown"
                 android:title="@string/quick_pulldown_title"
                 android:entries="@array/quick_pulldown_entries"
                 android:entryValues="@array/quick_pulldown_values"
                 android:persistent="false" />
-				
+                
+            <ListPreference
+                android:key="smart_pulldown"
+                android:title="@string/smart_pulldown_title"
+                android:entries="@array/smart_pulldown_entries"
+                android:entryValues="@array/smart_pulldown_values"
+                android:persistent="false" />
+
 			<org.omnirom.omnigears.preference.CustomSeekBarPreference
                 android:key="qs_panel_alpha"
 				android:title="@string/qs_panel_alpha_title"
@@ -44,7 +51,7 @@
 				settings:min="0"
 				settings:units=""
 				android:persistent="false" />
-			 
+		 
     <PreferenceCategory
         android:key="category_custom_header"
         android:title="@string/custom_header_title">

@@ -767,6 +767,7 @@
     <string name="quick_pulldown_summary">%1$s edge of the status bar pulls down quick settings</string>
     <string name="quick_pulldown_summary_always">Always show quick settings on status bar pulldown</string>
     <string name="quick_pulldown_off">Off</string>
+    <string name="quick_pulldown_off_summary">is turned off</string>
     <string name="quick_pulldown_left">Left</string>
     <string name="quick_pulldown_right">Right</string>
     <string name="quick_pulldown_always">Always</string>
@@ -806,7 +807,7 @@
     <string name="systemui_tuner_lockscreen_bottom_shortcuts_summary">Configure the bottom shortcuts</string>
 
     <!-- QuickSettings Panel Transparency -->
-    <string name="qs_panel_alpha_title">Opacity</string>
+    <string name="qs_panel_alpha_title">Panel opacity</string>
     
     <string name="app_ops_settings_summary">Control apps permissions</string>
     
@@ -1058,6 +1059,16 @@
     <string name="system_app_remover">System app remover</string>
     <string name="sizer_message_error">Failed to uninstall, check root access</string>
     <string name="sizer_message_success">Success</string>
+    
+    <!-- Smart pulldown-->
+    <string name="smart_pulldown_title">Smart pulldown</string>
+    <string name="smart_pulldown_off">off</string>
+    <string name="smart_pulldown_none">no notifications</string>
+    <string name="smart_pulldown_dismissable">no dismissable notifications</string>
+    <string name="smart_pulldown_ongoing">no ongoing notifications</string>
+    <string name="smart_pulldown_summary">Open quick settings when there are %1$s</string>
+    <string name="smart_pulldown_none_summary">Open quick settings when there are no notifications</string>
+    <string name="smart_pulldown_off_summary">is turned off</string>
     
     <!-- Incall vibrate options -->
     <string name="incall_vibration_category">In-call vibration options</string>

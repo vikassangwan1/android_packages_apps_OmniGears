@@ -19,6 +19,7 @@ package org.omnirom.omnigears.interfacesettings;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
@@ -64,6 +65,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String FILE_HEADER_SELECT = "file_header_select";
     private static final String QS_PANEL_ALPHA = "qs_panel_alpha";
     private static final String QUICK_PULLDOWN = "quick_pulldown";
+    private static final String PREF_SMART_PULLDOWN = "smart_pulldown";
 
     private static final int REQUEST_PICK_IMAGE = 0;
 
@@ -78,6 +80,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private String mFileHeaderProvider;
     
     private ListPreference mQuickPulldown;
+    private ListPreference mSmartPulldown;
     private CustomSeekBarPreference mQsPanelAlpha;
 
     @Override
@@ -105,6 +108,13 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
         updatePulldownSummary(quickPulldownValue);
         
+        mSmartPulldown = (ListPreference) findPreference(PREF_SMART_PULLDOWN);
+        mSmartPulldown.setOnPreferenceChangeListener(this);
+        int smartPulldown = Settings.System.getInt(getContentResolver(),
+                Settings.System.QS_SMART_PULLDOWN, 0);
+        mSmartPulldown.setValue(String.valueOf(smartPulldown));
+        updateSmartPulldownSummary(smartPulldown);
+
         mQsPanelAlpha = (CustomSeekBarPreference) findPreference(QS_PANEL_ALPHA);
         int qsPanelAlpha = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.QS_PANEL_BG_ALPHA, 255, UserHandle.USER_CURRENT);
@@ -176,6 +186,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                     quickPulldownValue);
             updatePulldownSummary(quickPulldownValue);
             return true;
+        } else if (preference == mSmartPulldown) {
+            int smartPulldown = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getContentResolver(), Settings.System.QS_SMART_PULLDOWN, smartPulldown);
+            updateSmartPulldownSummary(smartPulldown);
+            return true;
         } else if (preference == mQsPanelAlpha) {
             int bgAlpha = (Integer) newValue;
             Settings.System.putIntForUser(getContentResolver(),
@@ -205,6 +220,22 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             updateHeaderProviderSummary(headerEnabled);
         }
         return true;
+    }
+    
+    private void updateSmartPulldownSummary(int value) {
+        Resources res = getResources();
+
+        if (value == 0) {
+            // Smart pulldown deactivated
+            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_off_summary));
+        } else if (value == 3) {
+            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_none_summary));
+        } else {
+            String type = res.getString(value == 1
+                    ? R.string.smart_pulldown_dismissable
+                    : R.string.smart_pulldown_ongoing);
+            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_summary, type));
+        }
     }
 
     private boolean isBrowseWallsAvailable() {
@@ -288,7 +319,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         Resources res = getResources();
         if (value == 0) {
             // Quick Pulldown deactivated
-            mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_off));
+            mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_off_summary));
         } else if (value == 3) {
             // Quick Pulldown always
             mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_summary_always));
