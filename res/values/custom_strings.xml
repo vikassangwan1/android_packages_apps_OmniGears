@@ -1059,6 +1059,11 @@
     <string name="system_app_remover">System app remover</string>
     <string name="sizer_message_error">Failed to uninstall, check root access</string>
     <string name="sizer_message_success">Success</string>
+
+
+    <string name="size_category_title">Size</string>
+    <string name="lockdate_font_size_title">Lock screen date</string>
+    <string name="lockclock_font_size_title">Lock screen clock</string>
     
     <!-- Smart pulldown-->
     <string name="smart_pulldown_title">Smart pulldown</string>

@@ -55,6 +55,27 @@
         android:defaultValue="false" />
 
     <PreferenceCategory
+            android:title="@string/size_category_title"/>
+
+    <org.omnirom.omnigears.preference.CustomSeekBarPreference
+        android:key="lockclock_font_size"
+        android:title="@string/lockclock_font_size_title"
+        android:max="108"
+        settings:min="50"
+        settings:units=""
+        android:persistent="false"
+        android:defaultValue="78" />
+
+    <org.omnirom.omnigears.preference.CustomSeekBarPreference
+        android:key="lockdate_font_size"
+        android:title="@string/lockdate_font_size_title"
+        android:max="25"
+        settings:min="1"
+        settings:units=""
+        android:defaultValue="14"
+        android:persistent="false" />
+
+    <PreferenceCategory
             android:title="@string/unlock_category_title"/>
         
 	<org.omnirom.omnigears.preference.SystemSettingSwitchPreference
