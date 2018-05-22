@@ -336,6 +336,7 @@
     <string name="enable_tablet_navigation_summary">Tablet layout shows back and home on the left side and overview on the right side of the navigation bar</string>
 
     <string name="other_category">Other</string>
+    <string name="home_category_title">Home</string>
     <string name="behaviour_category">Behaviour</string>
     <string name="security_category">Security</string>
     <string name="screenshot_category">Screenshot</string>

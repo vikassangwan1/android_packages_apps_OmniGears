@@ -20,6 +20,36 @@
         android:title="@string/button_settings_title" >
 
     <PreferenceCategory
+        android:key="button_keys"
+        android:title="@string/button_keys_title" >
+
+        <SwitchPreference
+            android:key="navigation_bar_show"
+            android:title="@string/navigation_bar_show_title"
+            android:summary="@string/navigation_bar_show_summary"
+            android:persistent="false" />
+        <SwitchPreference
+            android:key="hardware_keys_disable"
+            android:title="@string/hardware_keys_disable_title"
+            android:summary="@string/hardware_keys_disable_summary"
+            android:persistent="false" />
+        <Preference
+            android:key="button_brightness"
+            android:title="@string/button_backlight_title"
+            android:icon="@drawable/ic_new_buttonbrightness"
+            android:summary="@string/button_backlight_summary"
+            android:persistent="false"
+            android:fragment="org.omnirom.omnigears.ButtonBrightnessSettings" />
+ 
+        <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+            android:key="system_proxi_check_enabled"
+            android:title="@string/system_proxi_check_enabled_title"
+            android:summary="@string/system_proxi_check_enabled_summary"
+            android:defaultValue="false"/>
+         
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="button_volume_keys"
         android:title="@string/button_volume_keys_title" >
 
@@ -51,36 +81,6 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="button_keys"
-        android:title="@string/button_keys_title" >
-
-        <SwitchPreference
-            android:key="navigation_bar_show"
-            android:title="@string/navigation_bar_show_title"
-            android:summary="@string/navigation_bar_show_summary"
-            android:persistent="false" />
-        <SwitchPreference
-            android:key="hardware_keys_disable"
-            android:title="@string/hardware_keys_disable_title"
-            android:summary="@string/hardware_keys_disable_summary"
-            android:persistent="false" />
-        <Preference
-            android:key="button_brightness"
-            android:title="@string/button_backlight_title"
-            android:icon="@drawable/ic_new_buttonbrightness"
-            android:summary="@string/button_backlight_summary"
-            android:persistent="false"
-            android:fragment="org.omnirom.omnigears.ButtonBrightnessSettings" />
- 
-        <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
-            android:key="system_proxi_check_enabled"
-            android:title="@string/system_proxi_check_enabled_title"
-            android:summary="@string/system_proxi_check_enabled_summary"
-            android:defaultValue="false"/>
-         
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:key="button_power"
         android:title="@string/global_actions_power_title" >
 
@@ -106,15 +106,8 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="button_other"
-        android:title="@string/button_other_title" >
+        android:title="@string/home_category_title" >
 
-        <ListPreference
-            android:key="long_press_recents_action"
-            android:title="@string/long_press_recents_action_title"
-            android:entries="@array/long_press_recents_action_entries"
-            android:entryValues="@array/long_press_recents_action_values"
-            android:persistent="false"/>
         <ListPreference
             android:key="long_press_home_action"
             android:title="@string/long_press_home_action_title"
@@ -126,6 +119,19 @@
             android:title="@string/double_press_home_action_title"
             android:entries="@array/long_press_home_action_entries"
             android:entryValues="@array/long_press_home_action_values"
+            android:persistent="false"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="button_other"
+        android:title="@string/button_other_title" >
+
+        <ListPreference
+            android:key="long_press_recents_action"
+            android:title="@string/long_press_recents_action_title"
+            android:entries="@array/long_press_recents_action_entries"
+            android:entryValues="@array/long_press_recents_action_values"
             android:persistent="false"/>
 
         <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
