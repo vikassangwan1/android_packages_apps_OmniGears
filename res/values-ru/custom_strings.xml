@@ -755,4 +755,12 @@
   <string name="navigation_bar_menu_arrow_keys_summary">Отображать левую и правую кнопки курсора при наборе текста</string>
   <string name="captive_portal_mode_title">Отключить доступный портал</string>
   <string name="captive_portal_mode_summary">Отключить проверку соединения, отключив доступный портал</string>
+
+        <!-- Wallpaper tint -->
+  <string name="wallpaper_tint_title">Оттенок на основе обоев</string> 
+  <string name="wallpaper_tint_power_menu">В меню питания</string>
+  <string name="wallpaper_tint_recents">В недавних приложениях</string>
+  <string name="wallpaper_tint_keyguard">На экране блокировки</string>
+  <string name="wallpaper_tint_notification_shade">В уведомлениях</string>
+  <string name="wallpaper_tint_summary">Применить оттенок к фону на основе обоев рабочего стола</string>
 </resources>

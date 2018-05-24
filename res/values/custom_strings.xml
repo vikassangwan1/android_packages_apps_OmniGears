@@ -838,4 +838,12 @@
 
     <string name="navigation_bar_menu_arrow_keys_title">Arrow keys while typing</string>
     <string name="navigation_bar_menu_arrow_keys_summary">Display left and right cursor buttons while typing</string>
+
+        <!-- Wallpaper tint -->
+    <string name="wallpaper_tint_title">Wallpaper tint</string> 
+    <string name="wallpaper_tint_power_menu">Power menu</string>
+    <string name="wallpaper_tint_recents">Recents</string>
+    <string name="wallpaper_tint_keyguard">Lockscreen</string>
+    <string name="wallpaper_tint_notification_shade">Notifications</string>
+    <string name="wallpaper_tint_summary">Apply a tint to the background based on the homescreen wallpaper</string>
 </resources>
