@@ -19,6 +19,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/recents_settings_title">
+  
+    <ListPreference
+       android:key="navbar_recents_style"
+       android:title="@string/navbar_recents_style_title"
+       android:entries="@array/navbar_recents_style_entries"
+       android:entryValues="@array/navbar_recents_style_values"
+       android:persistent="false"/>
+       
+    <PreferenceCategory
+       android:title="@string/aosp_recents_title" />
     
     <ListPreference
         android:key="immersive_recents"

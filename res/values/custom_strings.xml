@@ -67,14 +67,14 @@
     <string name="volume_button_music_control_title">Music control</string>
     <string name="volume_button_music_control_summary">Long press volume buttons to switch tracks while screen off</string>
     <string name="keys_action_sleep">Go to sleep</string>
-    <string name="keys_action_omniswitch">OmniSwitch recents</string>
+    <string name="keys_action_omniswitch">Omni switch recents</string>
     <string name="button_home_wake_title">Button wake</string>
     <string name="button_home_wake_summary">Pressing the home button will wake the device</string>
     <string name="button_home_answers_call_title">Button answers call</string>
     <string name="button_home_answers_call_summary">Pressing the home button will answer incoming call</string>
     <string name="button_other_title">Other</string>
     <string name="keys_action_app_switch_card">AOSP (stack)</string>
-    <string name="keys_action_omniswitch_short">OmniSwitch</string>
+    <string name="keys_action_omniswitch_short">Omni switch</string>
     <string name="keys_action_app_switch_grid">AOSP (grid)</string>
     <string name="button_back_kill_enable_title">Kill app back button</string>
     <string name="button_back_kill_enable_summary">Kill the foreground app by long-pressing the back button</string>
@@ -219,8 +219,8 @@
     <string name="navbar_title">Navigation bar</string>
     <string name="navbar_recents_style_title">Recents style</string>
     <string name="omniswitch_settings">Settings</string>
-    <string name="omniswitch_dialog_running_new">OmniSwitch is currently not enabled. Please enable it in the app settings.</string>
-    <string name="omniswitch_dialog_unavail">OmniSwitch is not installed.</string>
+    <string name="omniswitch_dialog_running_new">Omni switch is currently not enabled. Please enable it in the app settings.</string>
+    <string name="omniswitch_dialog_unavail">Omni switch is not installed.</string>
     <string name="omniswitch_title">Recents style</string>
     <string name="long_press_recents_action_title">Long press recents action</string>
     <string name="long_press_recents_action_split">Toggle splitscreen</string>
