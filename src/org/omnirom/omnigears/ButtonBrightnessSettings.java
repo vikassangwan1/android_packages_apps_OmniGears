@@ -28,7 +28,7 @@ import android.support.v7.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.provider.SearchIndexableResource;
 
-import org.omnirom.omnilib.preference.CustomSeekBarPreference;
+import org.omnirom.omnigears.preference.CustomSeekBarPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 

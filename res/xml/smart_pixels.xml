@@ -19,7 +19,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/smart_pixels_title" >
 
-    <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+    <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
         android:key="smart_pixels_enable"
         android:title="@string/smart_pixels_enable_title"
         android:summary="@string/smart_pixels_enable_summary"
@@ -34,7 +34,7 @@
         android:title="@string/smart_pixels_percent"
         android:dialogTitle="@string/smart_pixels_percent" />
 
-    <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+    <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
         android:key="smart_pixels_on_power_save"
         android:title="@string/smart_pixels_on_power_save_title"
         android:summary="@string/smart_pixels_on_power_save_summary"

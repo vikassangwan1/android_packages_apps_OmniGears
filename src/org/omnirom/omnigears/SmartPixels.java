@@ -38,7 +38,7 @@ import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
-import org.omnirom.omnigears.preference.SystemSettingSwitchPreference;
+import org.omnirom.omnilib.preference.SystemSettingSwitchPreference;
 
 public class SmartPixels extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {

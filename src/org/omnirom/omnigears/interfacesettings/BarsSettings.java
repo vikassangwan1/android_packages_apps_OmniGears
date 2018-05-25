@@ -27,7 +27,6 @@ import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
-import android.text.TextUtils;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 
@@ -44,16 +43,9 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
-import org.omnirom.omnilib.preference.Helpers;
+import org.omnirom.omnigears.preference.Helpers;
 
-import org.omnirom.omnilib.preference.CustomSeekBarPreference;
-
-import org.omnirom.omnilib.preference.AppMultiSelectListPreference;
-import org.omnirom.omnilib.preference.ScrollAppsViewPreference;
-
-import java.util.Arrays;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class BarsSettings extends SettingsPreferenceFragment implements

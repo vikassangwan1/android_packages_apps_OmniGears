@@ -55,7 +55,7 @@
 			android:entryValues="@array/notification_sound_vib_screen_on_values"
 			android:summary="%s" />
 			
-		<org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+		<org.omnirom.omnilib.preference.SystemSettingSwitchPreference
 		    android:key="incall_notifications_vibrate"
 			android:title="@string/incall_notifications_vibrate"
 			android:summary="@string/incall_notifications_vibrate_summary"
@@ -65,17 +65,17 @@
                 android:key="incall_vib_options"
                 android:title="@string/incall_vibration_category" >
 
-            <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+            <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
                 android:key="vibrate_on_connect"
                 android:title="@string/incall_vibrate_connect_title"
                 android:defaultValue="false" />
 
-            <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+            <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
                 android:key="vibrate_on_callwaiting"
                 android:title="@string/incall_vibrate_call_wait_title"
                 android:defaultValue="false" />
 
-            <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+            <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
                 android:key="vibrate_on_disconnect"
                 android:title="@string/incall_vibrate_disconnect_title"
                 android:defaultValue="false" />
@@ -85,25 +85,25 @@
 		<PreferenceCategory
 			android:title="@string/other_category"/>
 			
-		<org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+		<org.omnirom.omnilib.preference.SystemSettingSwitchPreference
 				android:key="force_expanded_notifications"
 				android:title="@string/force_expanded_notifications_title"
 				android:summary="@string/force_expanded_notifications_summary"
 				android:defaultValue="false" />
          
-        <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+        <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
 				android:key="notification_guts_kill_app_button"
 				android:title="@string/notification_guts_kill_app_button_title"
 				android:summary="@string/notification_guts_kill_app_button_summary"
 				android:defaultValue="false" />
 				
-			<org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+			<org.omnirom.omnilib.preference.SystemSettingSwitchPreference
 				android:key="toast_icon"
 				android:title="@string/toast_icon_title"
 				android:summary="@string/toast_icon_summary"
 				android:defaultValue="false" />
 				
-			<org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+			<org.omnirom.omnilib.preference.SystemSettingSwitchPreference
                 android:key="status_bar_ime_notification"
                 android:title="@string/status_bar_ime_notification_title"
                 android:summary="@string/status_bar_ime_notification_summary"

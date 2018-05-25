@@ -48,7 +48,7 @@
         android:summary="@string/double_tap_sleep_lockscreen_summary"
         android:defaultValue="false" />
         
-    <org.omnirom.lib.preference.SystemSettingSwitchPreference
+    <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
         android:key="lockscreen_weather"
         android:title="@string/lockscreen_weather_title"
         android:summary="@string/lockscreen_items_aod_info_title"
@@ -57,7 +57,7 @@
     <PreferenceCategory
             android:title="@string/size_category_title"/>
 
-    <org.omnirom.omnilib.preference.CustomSeekBarPreference
+    <org.omnirom.omnigears.preference.CustomSeekBarPreference
         android:key="lockclock_font_size"
         android:title="@string/lockclock_font_size_title"
         android:max="108"
@@ -66,7 +66,7 @@
         android:persistent="false"
         android:defaultValue="78" />
 
-    <org.omnirom.omnilib.preference.CustomSeekBarPreference
+    <org.omnirom.omnigears.preference.CustomSeekBarPreference
         android:key="lockdate_font_size"
         android:title="@string/lockdate_font_size_title"
         android:max="25"
@@ -76,7 +76,7 @@
         android:persistent="false" />
 
     <PreferenceCategory
-            android:title="@string/unlock_category_title"/>
+        android:title="@string/unlock_category_title"/>
         
 	<org.omnirom.omnilib.preference.SystemSettingSwitchPreference
         android:key="fp_unlock_keystore"

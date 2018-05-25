@@ -43,7 +43,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
-import org.omnirom.omnigears.preference.GlobalSettingSwitchPreference;
+import org.omnirom.omnilib.preference.GlobalSettingSwitchPreference;
 import org.omnirom.omnigears.preference.PackageListAdapter;
 import org.omnirom.omnigears.preference.PackageListAdapter.PackageItem;
 import android.provider.Settings;

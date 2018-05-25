@@ -17,47 +17,26 @@
  */
 package org.omnirom.omnigears.interfacesettings;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.content.ContentResolver;
 import android.content.Context;
-import android.content.res.Resources;
-import android.net.TrafficStats;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.text.TextUtils;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.MenuInflater;
-import android.util.Log;
-import android.support.v7.preference.CheckBoxPreference;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceCategory;
-import android.support.v7.preference.PreferenceGroup;
 import android.support.v7.preference.PreferenceScreen;
-import android.support.v14.preference.SwitchPreference;
 import android.view.View;
 
-import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
-import org.omnirom.omnigears.preference.Helpers;
-
-import org.omnirom.omnigears.preference.CustomSeekBarPreference;
-
-import org.omnirom.omnigears.preference.AppMultiSelectListPreference;
-import org.omnirom.omnigears.preference.ScrollAppsViewPreference;
+import org.omnirom.omnilib.preference.AppMultiSelectListPreference;
+import org.omnirom.omnilib.preference.ScrollAppsViewPreference;
 
 import java.util.Arrays;
 import java.util.ArrayList;

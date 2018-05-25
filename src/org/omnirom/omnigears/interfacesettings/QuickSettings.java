@@ -45,7 +45,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settingslib.core.AbstractPreferenceController;
 
-import org.omnirom.omnigears.preference.SystemSettingSwitchPreference;
+import org.omnirom.omnilib.preference.SystemSettingSwitchPreference;
 import org.omnirom.omnigears.preference.CustomSeekBarPreference;
 
 import java.util.ArrayList;

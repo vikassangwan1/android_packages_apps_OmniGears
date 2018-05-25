@@ -37,7 +37,7 @@ import com.android.settings.search.Indexable;
 import java.util.List;
 import java.util.ArrayList;
 
-import org.omnirom.omnilib.preference.CustomSeekBarPreference;
+import org.omnirom.omnigears.preference.CustomSeekBarPreference;
 
 public class NetworkTraffic extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {

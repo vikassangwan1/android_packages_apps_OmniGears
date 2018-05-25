@@ -86,7 +86,7 @@
             android:persistent="false"
             android:title="@string/media_player_autostart_title" />
 
-        <org.omnirom.omnilib.preference.CustomSeekBarPreference
+        <org.omnirom.omnigears.preference.CustomSeekBarPreference
             android:dependency="event_service_enabled"
             android:key="app_chooser_timeout"
             android:max="60"
@@ -103,7 +103,7 @@
             android:persistent="false"
             android:title="@string/app_chooser_position_title" />
 
-        <org.omnirom.omnilib.preference.CustomSeekBarPreference
+        <org.omnirom.omnigears.preference.CustomSeekBarPreference
             android:dependency="event_service_enabled"
             android:key="wired_events_threshold"
             android:max="6"
@@ -123,7 +123,7 @@
         android:key="category_network"
         android:title="@string/category_network_title">
 
-        <org.omnirom.omnilib.preference.CustomSeekBarPreference
+        <org.omnirom.omnigears.preference.CustomSeekBarPreference
             android:dependency="event_service_enabled"
             android:icon="@drawable/ic_settings_wireless"
             android:key="disable_wifi_threshold"

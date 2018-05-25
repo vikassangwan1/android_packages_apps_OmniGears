@@ -19,20 +19,20 @@
             android:key="aspect_settings"
             android:title="@string/aspect_settings_title" >
 
-			<org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+			<org.omnirom.omnilib.preference.SystemSettingSwitchPreference
                 android:key="aspect_ratio_apps_enabled"
                 android:title="@string/aspect_ratio_apps_enabled_title"
                 android:summary="@string/aspect_ratio_apps_enabled_summary"
                 android:defaultValue="false" />
 
-            <org.omnirom.omnigears.preference.AppMultiSelectListPreference
+            <org.omnirom.omnilib.preference.AppMultiSelectListPreference
                 android:dependency="aspect_ratio_apps_enabled"
                 android:key="aspect_ratio_apps_list"
                 android:persistent="false"
                 android:summary="@string/aspect_ratio_apps_list_summary"
                 android:title="@string/aspect_ratio_apps_list_title" />
 
-            <org.omnirom.omnigears.preference.ScrollAppsViewPreference
+            <org.omnirom.omnilib.preference.ScrollAppsViewPreference
                 android:dependency="aspect_ratio_apps_enabled"
                 android:key="aspect_ratio_apps_list_scroller"
                 android:persistent="false"

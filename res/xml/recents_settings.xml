@@ -39,7 +39,7 @@
         android:entryValues="@array/immersive_recents_values"
         android:persistent="false" />
 
-    <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+    <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
         android:key="show_clear_all_recents"
         android:title="@string/show_clear_all_recents_button_title"
         android:summaryOn="@string/show_clear_all_recents_button_summary_on"
