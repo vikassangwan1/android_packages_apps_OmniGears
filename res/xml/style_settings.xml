@@ -46,17 +46,17 @@
                     android:targetClass="org.omnirom.omnistyle.BrowseThemesActivity" />
         </Preference>
     </PreferenceCategory>
-    
+
     <PreferenceCategory
         android:key="category_system"
         android:title="@string/animation_category">
         
-			<ListPreference
-				android:key="toast_animation"
-				android:title="@string/toast_animation_title"
-				android:entries="@array/toast_animation_entries"
-				android:entryValues="@array/toast_animation_values"
-				android:persistent="false" />
+		<ListPreference
+		    android:key="toast_animation"
+		    android:title="@string/toast_animation_title"
+		    android:entries="@array/toast_animation_entries"
+		    android:entryValues="@array/toast_animation_values"
+		    android:persistent="false" />
 
             <ListPreference
                 android:key="screen_off_animation"
@@ -65,7 +65,7 @@
                 android:entryValues="@array/screen_off_animation_values"
                 android:persistent="false"/>
 
-            <org.omnirom.omnigears.preference.GlobalSettingSwitchPreference
+            <org.omnirom.omnilib.preference.GlobalSettingSwitchPreference
                 android:key="system_default_animation"
                 android:title="@string/system_default_animation_title"
                 android:summary="@string/system_default_animation_summary"
@@ -76,31 +76,31 @@
         <PreferenceCategory
             android:title="@string/settings_category">
             
-        <SwitchPreference
+        	<SwitchPreference
                 android:key="show_dashboard_columns"
                 android:title="@string/show_dashboard_columns_title"
                 android:summary="@string/show_dashboard_columns_summary"
                 android:persistent="false" />
                 
-        <SwitchPreference
+        	<SwitchPreference
                 android:key="hide_dashboard_summary"
                 android:title="@string/hide_dashboard_summary_title"
                 android:summary="@string/hide_dashboard_summary_summary"
                 android:persistent="false" />
             
-		<org.omnirom.omnigears.preference.SystemSettingSwitchPreference
-				android:key="enable_conditions"
-				android:title="@string/dashboard_conditions_title"
-				android:summaryOn="@string/summary_dashboard_conditions_enabled"
-				android:summaryOff="@string/summary_dashboard_conditions_disabled"
-				android:defaultValue="true" />
+		<org.omnirom.omnilib.preference.SystemSettingSwitchPreference
+		    android:key="enable_conditions"
+		    android:title="@string/dashboard_conditions_title"
+		    android:summaryOn="@string/summary_dashboard_conditions_enabled"
+	          android:summaryOff="@string/summary_dashboard_conditions_disabled"
+		    android:defaultValue="true" />
 				
-		<org.omnirom.omnigears.preference.SystemSettingSwitchPreference
-				android:key="enable_suggestions"
-				android:title="@string/dashboard_suggestions_title"
-				android:summaryOn="@string/summary_dashboard_suggestions_enabled"
-				android:summaryOff="@string/summary_dashboard_suggestions_disabled"
-				android:defaultValue="true" />
+		<org.omnirom.omnilib.preference.SystemSettingSwitchPreference
+		    android:key="enable_suggestions"
+		    android:title="@string/dashboard_suggestions_title"
+		    android:summaryOn="@string/summary_dashboard_suggestions_enabled"
+		    android:summaryOff="@string/summary_dashboard_suggestions_disabled"
+		    android:defaultValue="true" />
             
 		</PreferenceCategory>
 

@@ -36,19 +36,19 @@
         android:icon="@drawable/ic_new_lockscreenitems"
         android:fragment="org.omnirom.omnigears.interfacesettings.LockscreenItemSettings" />
 
-	<org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+	<org.omnirom.omnilib.preference.SystemSettingSwitchPreference
         android:key="lockscreen_battery_info"
         android:title="@string/lockscreen_battery_info_title"
         android:summary="@string/lockscreen_battery_info_summary"
         android:defaultValue="false" />
         
-    <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+    <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
         android:key="double_tap_sleep_lockscreen"
         android:title="@string/double_tap_sleep_lockscreen_title"
         android:summary="@string/double_tap_sleep_lockscreen_summary"
         android:defaultValue="false" />
         
-    <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+    <org.omnirom.lib.preference.SystemSettingSwitchPreference
         android:key="lockscreen_weather"
         android:title="@string/lockscreen_weather_title"
         android:summary="@string/lockscreen_items_aod_info_title"
@@ -57,7 +57,7 @@
     <PreferenceCategory
             android:title="@string/size_category_title"/>
 
-    <org.omnirom.omnigears.preference.CustomSeekBarPreference
+    <org.omnirom.omnilib.preference.CustomSeekBarPreference
         android:key="lockclock_font_size"
         android:title="@string/lockclock_font_size_title"
         android:max="108"
@@ -66,7 +66,7 @@
         android:persistent="false"
         android:defaultValue="78" />
 
-    <org.omnirom.omnigears.preference.CustomSeekBarPreference
+    <org.omnirom.omnilib.preference.CustomSeekBarPreference
         android:key="lockdate_font_size"
         android:title="@string/lockdate_font_size_title"
         android:max="25"
@@ -78,13 +78,13 @@
     <PreferenceCategory
             android:title="@string/unlock_category_title"/>
         
-	<org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+	<org.omnirom.omnilib.preference.SystemSettingSwitchPreference
         android:key="fp_unlock_keystore"
         android:title="@string/fp_unlock_keystore_title"
         android:summary="@string/fp_unlock_keystore_summary"
         android:defaultValue="false" />
     
-    <org.omnirom.omnigears.preference.SecureSettingSwitchPreference
+    <org.omnirom.omnilib.preference.SecureSettingSwitchPreference
         android:key="face_auto_unlock"
         android:title="@string/face_auto_unlock_title"
         android:summary="@string/face_auto_unlock_summary"
@@ -93,19 +93,19 @@
     <PreferenceCategory
         android:title="@string/disable_category_title"/>
         
-    <org.omnirom.omnigears.preference.SecureSettingSwitchPreference
+    <org.omnirom.omnilib.preference.SecureSettingSwitchPreference
         android:key="lockscreen_power_menu_disabled"
         android:title="@string/lockscreen_power_menu_disabled_title"
         android:summary="@string/lockscreen_power_menu_disabled_summary"
         android:defaultValue="false" />
 
-    <org.omnirom.omnigears.preference.SecureSettingSwitchPreference
+    <org.omnirom.omnilib.preference.SecureSettingSwitchPreference
         android:key="lockscreen_qs_disabled"
         android:title="@string/lockscreen_qs_disabled_title"
         android:summary="@string/lockscreen_qs_disabled_summary"
         android:defaultValue="false" />
         
-    <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+    <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
         android:key="lockscreen_hide_media"
         android:title="@string/lockscreen_hide_media_title"
         android:summary="@string/lockscreen_hide_media_summary"
