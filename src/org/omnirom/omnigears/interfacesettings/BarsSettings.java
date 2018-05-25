@@ -28,15 +28,11 @@ import android.provider.Settings;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.text.TextUtils;
-import android.util.Log;
 
-import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 
-import android.support.v7.preference.CheckBoxPreference;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceGroup;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.PreferenceCategory;
 import android.view.View;
@@ -49,8 +45,8 @@ import com.android.settings.search.Indexable;
 
 import org.omnirom.omnigears.preference.SeekBarPreference;
 
-import org.omnirom.omnigears.preference.AppMultiSelectListPreference;
-import org.omnirom.omnigears.preference.ScrollAppsViewPreference;
+import org.omnirom.omnilib.preference.AppMultiSelectListPreference;
+import org.omnirom.omnilib.preference.ScrollAppsViewPreference;
 
 import java.util.Arrays;
 import java.util.ArrayList;

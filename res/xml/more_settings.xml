@@ -23,7 +23,7 @@
             android:key="category_other"
             android:title="@string/other_category">
 
-            <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+            <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
                 android:key="volume_dialog_headers"
                 android:title="@string/volume_dialog_headers_title"
                 android:summary="@string/volume_dialog_headers_summary"
@@ -78,7 +78,7 @@
                 android:summary="@string/doze_settings_summary"
                 android:fragment="org.omnirom.omnigears.system.DozeSettings" />
 
-            <org.omnirom.omnigears.preference.GlobalSettingSwitchPreference
+            <org.omnirom.omnilib.preference.GlobalSettingSwitchPreference
                 android:key="show_cpu_overlay"
                 android:title="@string/show_cpu_title"
                 android:summary="@string/show_cpu_summary"
@@ -103,7 +103,7 @@
                 android:summary="@string/system_default_animation_summary"
                 android:defaultValue="true" />    
 
-            <org.omnirom.omnigears.preference.GlobalSettingSwitchPreference
+            <org.omnirom.omnilib.preference.GlobalSettingSwitchPreference
                 android:key="wake_when_plugged_or_unplugged"
                 android:title="@string/wake_when_plugged_or_unplugged_title"
                 android:summary="@string/wake_when_plugged_or_unplugged_summary"
