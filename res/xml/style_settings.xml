@@ -74,6 +74,31 @@
         </PreferenceCategory>
         
         <PreferenceCategory
+            android:title="@string/tint_category_title">
+            
+            <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
+                android:key="wallpaper_keyguard_wallpaper_tint"
+                android:title="@string/wallpaper_tint_keyguard"
+                android:defaultValue="true" />
+                
+            <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
+                android:key="wallpaper_notification_shade_wallpaper_tint"
+                android:title="@string/wallpaper_tint_notification_shade"
+                android:defaultValue="true" />
+                
+            <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
+                android:key="wallpaper_power_menu_tint"
+                android:title="@string/wallpaper_tint_power_menu"
+                android:defaultValue="true" />
+                
+            <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
+                android:key="wallpaper_recents_tint"
+                android:title="@string/wallpaper_tint_recents"
+                android:defaultValue="true" />
+              
+        </PreferenceCategory>
+        
+        <PreferenceCategory
             android:title="@string/settings_category">
             
         	<SwitchPreference

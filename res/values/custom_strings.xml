@@ -530,7 +530,7 @@
     <string name="wakelocks_title">Wakelocks</string>
     <string name="wakelocks_summary">Show wakelock statistics</string>
     <string name="system_category">System</string>
-    <string name="animation_category">Animation</string>
+    <string name="animation_category">Animations</string>
     <string name="quicksettings_title">Quick settings</string>
     <string name="qs_tile_title_visibility_title">Tile titles</string>
     <string name="qs_tile_title_visibility_summary">Show titles underneath quick settings tiles</string>
@@ -821,6 +821,7 @@
     <string name="qs_settings_title">Quick settings</string>
     <string name="tuner_settings_title">System UI tuner</string>
     <string name="unlock_category_title">Unlock</string>
+    <string name="tint_category_title">Tint</string>
     <string name="disable_category_title">Disable</string>
     <string name="quicksettings_item_summary">Configure the layout of the quick settings area</string>
     <string name="navigation_bar_summary">Configure navigaton bar layout and buttons</string>
@@ -1074,6 +1075,13 @@
     <string name="smart_pulldown_none_summary">Open quick settings when there are no notifications</string>
     <string name="smart_pulldown_off_summary">is turned off</string>
     
+    <!-- Wallpaper tint -->
+    <string name="wallpaper_tint_power_menu">Power menu background tint</string>
+    <string name="wallpaper_tint_recents">Recents background tint</string>
+    <string name="wallpaper_tint_keyguard">Lock screen background tint</string>
+    <string name="wallpaper_tint_notification_shade">Notification shade tint</string>
+    <string name="wallpaper_tint_summary">Apply a tint to the background based on the homescreen wallpaper</string>
+  
     <!-- Incall vibrate options -->
     <string name="incall_vibration_category">In-call vibration options</string>
     <string name="incall_vibrate_connect_title">On connect</string>
