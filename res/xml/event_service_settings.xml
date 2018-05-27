@@ -120,7 +120,7 @@
         android:key="category_network"
         android:title="@string/category_network_title">
 
-        <org.omnirom.omnigears.preference.SeekBarPreference
+        <org.omnirom.omnilib.preference.SeekBarPreference
             android:dependency="event_service_enabled"
             android:icon="@drawable/ic_settings_wireless"
             android:key="disable_wifi_threshold"
