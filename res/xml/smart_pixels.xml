@@ -25,7 +25,7 @@
         android:summary="@string/smart_pixels_enable_summary"
         android:defaultValue="false" />
 
-    <org.omnirom.omnigears.preference.SystemSettingListPreference
+    <org.omnirom.omnilib.preference.SystemSettingListPreference
         android:key="smart_pixels_pattern"
         android:entries="@array/smart_pixels_percent_strings"
         android:entryValues="@array/smart_pixels_percent_values"
@@ -40,7 +40,7 @@
         android:summary="@string/smart_pixels_on_power_save_summary"
         android:defaultValue="false" />
 
-    <org.omnirom.omnigears.preference.SystemSettingListPreference
+    <org.omnirom.omnilib.preference.SystemSettingListPreference
         android:key="smart_pixels_shift_timeout"
         android:entries="@array/smart_pixels_shift_times"
         android:entryValues="@array/smart_pixels_shift_values"
