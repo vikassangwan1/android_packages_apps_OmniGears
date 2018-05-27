@@ -45,17 +45,17 @@
                 android:key="incall_vib_options"
                 android:title="@string/incall_vibration_category" >
 
-            <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+            <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
                 android:key="vibrate_on_connect"
                 android:title="@string/incall_vibrate_connect_title"
                 android:defaultValue="false" />
 
-            <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+            <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
                 android:key="vibrate_on_callwaiting"
                 android:title="@string/incall_vibrate_call_wait_title"
                 android:defaultValue="false" />
 
-            <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+            <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
                 android:key="vibrate_on_disconnect"
                 android:title="@string/incall_vibrate_disconnect_title"
                 android:defaultValue="false" />
@@ -97,7 +97,7 @@
                 android:entryValues="@array/screen_off_animation_values"
                 android:persistent="false"/>
 
-            <org.omnirom.omnigears.preference.GlobalSettingSwitchPreference
+            <org.omnirom.omnilib.preference.GlobalSettingSwitchPreference
                 android:key="system_default_animation"
                 android:title="@string/system_default_animation_title"
                 android:summary="@string/system_default_animation_summary"
@@ -109,7 +109,7 @@
                 android:summary="@string/wake_when_plugged_or_unplugged_summary"
                 android:defaultValue="@*android:bool/config_unplugTurnsOnScreen" />
             
-            <org.omnirom.omnigears.preference.SystemSettingSwitchPreference
+            <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
                 android:key="three_finger_gesture"
                 android:title="@string/three_finger_gesture"
                 android:summary="@string/three_finger_gesture_summary"
