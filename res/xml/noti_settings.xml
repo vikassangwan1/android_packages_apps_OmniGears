@@ -33,7 +33,7 @@
         		
 	<PreferenceCategory
         android:title="@string/behaviour_category"/>
-        
+
         <Preference
 			android:key="led_settings"
 			android:title="@string/batterylight_title"

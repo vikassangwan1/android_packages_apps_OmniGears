@@ -984,6 +984,9 @@
 	<string name="incall_notifications_vibrate">Less annoying in-call notifications</string>
     <string name="incall_notifications_vibrate_summary">Vibrate instead of playing a sound for in-call notifications</string>
     
+    <string name="power_notifications_title">Power notifications</string>
+    <string name="power_notifications_summary">Advanced notifications control on long press</string>
+    
     <!-- Screenshot editor -->
     <string name="screenshot_edit_app">Screenshot editor</string>
     <string name="screenshot_edit_app_summary">Select which image editor to use to edit screenshots with</string>
