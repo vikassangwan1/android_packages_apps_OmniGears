@@ -823,6 +823,7 @@
     <!-- Custom strings mine-->
     <string name="recents_settings_title">Recents</string>
     <string name="qs_settings_title">Quick settings</string>
+    <string name="privacy_guard_settings_title">Privacy guard</string>
     <string name="tuner_settings_title">System UI tuner</string>
     <string name="unlock_category_title">Unlock</string>
     <string name="tint_category_title">Tint</string>
@@ -1004,7 +1005,7 @@
     <string name="summary_quick_settings">Panel items, custom header, opacity</string>
     <string name="summary_recents_settings">Immersive recents, clear all FAB</string>
     <string name="summary_style_settings">Themes, animations, layout</string>
-    <string name="summary_misc_settings">App ops, doze, events, weather</string>
+    <string name="summary_misc_settings">Privacy guard, doze, events, weather</string>
     <string name="summary_device_settings">Gestures, ambient display, notification slider</string>
     <string name="summary_buttons_settings">Hardware keys, buttons backlight</string>
 

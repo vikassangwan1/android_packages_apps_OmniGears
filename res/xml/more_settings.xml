@@ -20,10 +20,11 @@
     android:title="@string/more_settings_title">
 
 	<Preference
-        android:title="@string/app_ops_settings"
-        android:summary="@string/app_ops_settings_summary"
+        android:key="privacy_guard_manager"
         android:icon="@drawable/ic_new_appops"
-        android:fragment="com.android.settings.applications.AppOpsSummary"/>
+        android:summary="@string/app_ops_settings_summary"
+        android:fragment="com.android.settings.privacyguard.PrivacyGuardManager"
+        android:title="@string/privacy_guard_settings_title" />
             
 	<Preference
 	    android:key="chooser_activity_blacklist"
