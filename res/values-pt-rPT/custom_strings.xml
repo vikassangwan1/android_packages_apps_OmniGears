@@ -220,8 +220,6 @@
   <string name="lockscreen_shortcut_add_dialog_title">Adicionar atalho</string>
   <string name="lockscreen_shortcut_apps_title">Atalhos</string>
   <string name="lockscreen_shortcut_add">Adicionar\u2026</string>
-  <string name="lockscreen_hide_indicator_display_title">Ocultar o texto de estado do fundo do ecrã</string>
-  <string name="lockscreen_hide_indicator_display_summary">Ocultar a informação de carregamento e dicas de desbloqueio</string>
   <string name="lockscreen_camera_shortcut_enable_title">Mostrar atalho da câmara</string>
   <string name="lockscreen_camera_shortcut_enable_summary">A visibilidade depende da configuração do sistema</string>
   <string name="lockscreen_left_shortcut_enable_title">Mostrar atalho do telefone ou assistente de voz</string>
@@ -265,6 +263,9 @@
   <string name="network_traffic_autohide_summary">Ocultar o monitor de tráfego quando não existir atividade</string>
   <string name="network_traffic_autohide_threshold">Limiar de inatividade</string>
   <string name="network_traffic_enable_title">Ativar</string>
+  <!-- captive portal - disable connectivity check -->
+  <string name="captive_portal_mode_title">Desativar o portal cativo</string>
+  <string name="captive_portal_mode_summary">Desativar a verificação de ligação ao desativar o portal cativo</string>
   <!-- statusbar brightness -->
   <string name="status_bar_brightness_control_title">Controlo de brilho</string>
   <string name="status_bar_brightness_control_summary">Ajustar o brilho deslizando através da barra de estado</string>
@@ -280,10 +281,12 @@
   <string name="recents_fullscreen_title">Ecrã inteiro</string>
   <string name="weather_title">Meteorologia</string>
   <string name="weather_config_title">Serviço meteorológico</string>
+  <string name="weather_config_summary">Definições do serviço de sistema</string>
   <string name="header_weather_title">Mostrar meteorologia no cabeçalho</string>
   <string name="header_weather_summary">Ativar a visualização da meteorologia no cabeçalho do painel de notificações</string>
   <string name="weather_icon_pack_title">Pacote de ícones</string>
   <string name="weather_icon_pack_note">Nota\u003a para instalar novos pacotes de ícones a partir da Play Store basta procurar por \"Chronus Icons\"</string>
+  <string name="weather_icon_pack_info_title">O pacote de ícones de condições é usado nas definições rápidas e no ecrã de bloqueio</string>
   <!-- Navigationbar settings -->
   <string name="navigationbar_title">Barra de navegação</string>
   <!-- Enable Tablet Style navigation bar -->
@@ -318,7 +321,6 @@
   <string name="global_actions_advanced_reboot_summary">Mostrar mais opções no menu de reinicialização</string>
   <string name="global_actions_advanced_reboot_title">Ativar a reinicialização avançada</string>
   <string name="global_actions_advanced_reboot_summary_new">Mostrar mais opções no menu de reinicialização quando o dispositivo estiver desbloqueado</string>
-  <string name="font_sample_text">11:57</string>
   <string name="screenshot_crop_and_share_title">Cortar e partilhar a captura de ecrã</string>
   <string name="screenshot_crop_and_share_summary">Mostrar uma janela de edição de imagem após uma captura de ecrã de modo a poder realizar operações como cortar, partilhar ou guardar</string>
   <!--<string name="screenshot_crop_behavior_title"></string>
@@ -670,4 +672,20 @@
   <string name="hide_lockscreen_alarm_summary">Alterar a visibilidade do texto do alarme por baixo do widget do relógio</string>
   <string name="hide_lockscreen_status_bar_title">Ocultar a barra de estado</string>
   <string name="hide_lockscreen_status_bar_summary">Tocar na barra de estado para alternar a visibilidade</string>
+  <string name="hide_lockscreen_indicator_display_title">Ocultar o texto de estado do fundo do ecrã</string>
+  <string name="hide_lockscreen_indicator_display_summary">Ocultar a informação de carregamento e dicas de desbloqueio</string>
+  <string name="hide_lockscreen_icon_title">Ocultar o ícone de bloqueio do ecrã</string>
+  <string name="hide_lockscreen_icon_summary">Alterar a visibilidade do ícone de ecrã de bloqueio</string>
+  <string name="lockscreen_weather_title">Mostrar condições meteorológicas</string>
+  <string name="lockscreen_weather_summary">Mostrar a condição meteorológica atual e a temperatura</string>
+  <string name="lockscreen_items_aod_info_title">Esta configuração de visibilidae também se aplica à visualização de ambiente</string>
+  <string name="system_proxi_check_enabled_title">Verificação de proximidade</string>
+  <string name="system_proxi_check_enabled_summary">Verificar o sensor de proximidade antes de executar eventos dos botões de ligar/desligar e de volume</string>
+  <string name="aspect_ratio_apps_enabled_title">Ativar dimensionamento</string>
+  <string name="aspect_ratio_apps_enabled_summary">Permitir que aplicações legadas usem o ecrã inteiro</string>
+  <string name="aspect_ratio_apps_list_title">Aplicações autorizadas a utilizarem o ecrã inteiro</string>
+  <string name="aspect_ratio_category_title">Dimensionamento de aplicações legadas</string>
+  <string name="aspect_ratio_apps_info">As aplicações têm de ser reiniciadas depois das alterações</string>
+  <string name="navigation_bar_menu_arrow_keys_title">Mostrar teclas de seta durante a introdução</string>
+  <string name="navigation_bar_menu_arrow_keys_summary">Mostrar botões de cursor para a esquerda e direita enquanto escreve</string>
 </resources>
