@@ -112,7 +112,7 @@
         android:key="captive_portal_mode"
         android:title="@string/captive_portal_mode_title"
         android:summary="@string/captive_portal_mode_summary"
-        android:defaultValue="true" />
+        android:defaultValue="false" />
                          
     </PreferenceCategory>
      
