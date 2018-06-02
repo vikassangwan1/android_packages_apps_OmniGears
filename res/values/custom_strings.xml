@@ -1018,7 +1018,7 @@
     
     <!-- Heads up timeout -->
     <string name="heads_up_time_out_title">Time out</string>
-    <string name="heads_up_time_out_summary">Peeking notifications will show for <xliff:g id="number">%d</xliff:g> ms</string>
+    <string name="heads_up_time_out_summary">Heads up notifications will show for <xliff:g id="number">%d</xliff:g> ms</string>
     <string name="heads_up_time_out_2000ms">2000 ms</string>
     <string name="heads_up_time_out_2500ms">2500 ms</string>
     <string name="heads_up_time_out_3000ms">3000 ms</string>
@@ -1105,16 +1105,17 @@
 
     <string name="navigation_bar_menu_arrow_keys_title">Arrow keys while typing</string>
     <string name="navigation_bar_menu_arrow_keys_summary">Display left and right cursor buttons while typing</string>
+    
+    <!-- Heads up snooze -->
+    <string name="heads_up_category">Peek notifications</string>
+    <string name="heads_up_snooze_title">Snooze timer</string>
+    <string name="heads_up_snooze_disabled_summary">Snooze timer is disabled</string>
+    <string name="heads_up_snooze_summary_one_minute">Swiping up will snooze heads up notifications for 1 minute</string>
+    <string name="heads_up_snooze_summary">Swiping up will snooze heads up notifications for <xliff:g id="number">%d</xliff:g> minutes</string>    
+    <string name="heads_up_snooze_1min">1 minute</string>
+    <string name="heads_up_snooze_5min">5 minutes</string>
+    <string name="heads_up_snooze_10min">10 minutes</string>
+    <string name="heads_up_snooze_15min">15 minutes</string>
+    <string name="heads_up_snooze_20min">20 minutes</string>
 
-        <!-- Wallpaper tint -->
-    <string name="wallpaper_tint_title">Wallpaper tint</string> 
-    <string name="wallpaper_tint_power_menu">Power menu</string>
-    <string name="wallpaper_tint_recents">Recents</string>
-    <string name="wallpaper_tint_keyguard">Lockscreen</string>
-    <string name="wallpaper_tint_notification_shade">Notifications</string>
-    <string name="wallpaper_tint_summary">Apply a tint to the background based on the homescreen wallpaper</string>
-
-        <!-- Toast icon -->
-    <string name="toast_icon_title">App\'s icon in toast</string>
-    <string name="toast_icon_summary">Display the app icon corresponding with the toast</string>
 </resources>
