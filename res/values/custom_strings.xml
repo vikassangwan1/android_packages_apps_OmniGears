@@ -1107,6 +1107,10 @@
     <string name="navigation_bar_menu_arrow_keys_title">Arrow keys while typing</string>
     <string name="navigation_bar_menu_arrow_keys_summary">Display left and right cursor buttons while typing</string>
     
+    <!-- Notification count -->
+    <string name="status_bar_notif_count_title">Show notification count on icons</string>
+    <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
+    
     <!-- Heads up snooze -->
     <string name="heads_up_category">Peek notifications</string>
     <string name="heads_up_snooze_title">Snooze timer</string>
