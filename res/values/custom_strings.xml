@@ -1108,8 +1108,12 @@
     <string name="navigation_bar_menu_arrow_keys_summary">Display left and right cursor buttons while typing</string>
     
     <!-- Notification count -->
-    <string name="status_bar_notif_count_title">Show notification count on icons</string>
+    <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
+    
+    <!-- Show or Hide emergency button on lockscreen-->
+    <string name="show_emergency_button">Show emergency button</string>
+    <string name="show_emergency_button_summary">Change the emergency button\'s visibility</string>
     
     <!-- Heads up snooze -->
     <string name="heads_up_category">Peek notifications</string>

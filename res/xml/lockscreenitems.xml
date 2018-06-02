@@ -54,6 +54,12 @@
         android:title="@string/hide_lockscreen_icon_title"
         android:summary="@string/hide_lockscreen_icon_summary"
         android:defaultValue="false" />
+        
+     <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
+        android:key="show_emergency_button"
+        android:title="@string/show_emergency_button"
+        android:summary="@string/show_emergency_button_summary"
+        android:defaultValue="true" />
 
 </PreferenceScreen>
 
