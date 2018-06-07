@@ -778,4 +778,8 @@
 
     <string name="navigation_bar_menu_arrow_keys_title">Arrow keys while typing</string>
     <string name="navigation_bar_menu_arrow_keys_summary">Display left and right cursor buttons while typing</string>
+
+    <string name="lockscreen_clock_style_title">Lock screen clock style</string>
+    <string name="clock_style_digital">Digital</string>
+    <string name="clock_style_analog">Analog</string>
 </resources>
