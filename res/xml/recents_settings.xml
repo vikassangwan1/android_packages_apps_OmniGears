@@ -29,7 +29,12 @@
        
     <PreferenceCategory
        android:title="@string/aosp_recents_title" />
-    
+       
+    <Preference
+       android:key="recents_icon_pack"
+       android:title="@string/recents_icon_pack_title"
+       android:summary="@string/recents_icon_pack_summary" />
+
     <ListPreference
         android:key="immersive_recents"
         android:title="@string/immersive_recents_title"
