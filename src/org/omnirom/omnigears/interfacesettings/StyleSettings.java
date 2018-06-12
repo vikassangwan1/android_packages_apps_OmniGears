@@ -22,12 +22,20 @@ import android.content.Context;
 import android.content.ContentResolver;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.ServiceManager;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.Resources;
+import android.util.Log;
+import android.content.Context;
+
 import android.provider.Settings;
 import android.provider.SearchIndexableResource;
 import android.widget.Toast;
@@ -39,17 +47,26 @@ import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
+import org.omnirom.omnigears.preference.SecureSettingSeekBarPreference;
+
 import java.util.List;
 import java.util.ArrayList;
 
 public class StyleSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener, Indexable {
     private static final String TAG = "StyleSettings";
     
+    private static final String SYSUI_ROUNDED_SIZE = "sysui_rounded_size";
+    private static final String SYSUI_ROUNDED_CONTENT_PADDING = "sysui_rounded_content_padding";
+
     private static final String SYSTEMUI_THEME_STYLE = "systemui_theme_style";
     private static final String KEY_SHOW_DASHBOARD_COLUMNS = "show_dashboard_columns";
     private static final String KEY_HIDE_DASHBOARD_SUMMARY = "hide_dashboard_summary";
     private static final String KEY_SCREEN_OFF_ANIMATION = "screen_off_animation";
     private static final String KEY_TOAST_ANIMATION = "toast_animation";
+    
+    private Context mContext;
+    private SecureSettingSeekBarPreference mCornerRadius;
+    private SecureSettingSeekBarPreference mContentPadding;
 
 	private ListPreference mSystemUIThemeStyle;
     private SharedPreferences mAppPreferences;
@@ -120,6 +137,20 @@ public class StyleSettings extends SettingsPreferenceFragment implements OnPrefe
         mToastAnimation.setValueIndex(CurrentToastAnimation); //set to index of default value
         mToastAnimation.setSummary(mToastAnimation.getEntries()[CurrentToastAnimation]);
         mToastAnimation.setOnPreferenceChangeListener(this);
+        
+        // Rounded Corner Radius
+        mCornerRadius = (SecureSettingSeekBarPreference) findPreference(SYSUI_ROUNDED_SIZE);
+        int cornerRadius = Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.SYSUI_ROUNDED_SIZE, 0);
+        mCornerRadius.setValue(cornerRadius / 1);
+        mCornerRadius.setOnPreferenceChangeListener(this);
+
+        // Rounded Content Padding
+        mContentPadding = (SecureSettingSeekBarPreference) findPreference(SYSUI_ROUNDED_CONTENT_PADDING);
+        int contentPadding = Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING, 0);
+        mContentPadding.setValue(contentPadding / 1);
+        mContentPadding.setOnPreferenceChangeListener(this);
 
     }
 
@@ -144,6 +175,16 @@ public class StyleSettings extends SettingsPreferenceFragment implements OnPrefe
             Settings.System.putInt(getContentResolver(), Settings.System.SYSTEM_UI_THEME, Integer.valueOf(value));
             int valueIndex = mSystemUIThemeStyle.findIndexOfValue(value);
             mSystemUIThemeStyle.setSummary(mSystemUIThemeStyle.getEntries()[valueIndex]);
+            return true;
+        } else if (preference == mCornerRadius) {
+            int value = (Integer) newValue;
+            Settings.Secure.putInt(getContentResolver(),
+                Settings.Secure.SYSUI_ROUNDED_SIZE, value * 1);
+            return true;
+        } else if (preference == mContentPadding) {
+            int value = (Integer) newValue;
+            Settings.Secure.putInt(getContentResolver(),
+                Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING, value * 1);
             return true;
         }
         return false;
