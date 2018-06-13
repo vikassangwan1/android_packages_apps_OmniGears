@@ -19,6 +19,7 @@ package org.omnirom.omnigears.interfacesettings;
 import android.content.Context;
 import android.content.ContentResolver;
 import android.os.Bundle;
+import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
@@ -40,6 +41,12 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
     private static final String CLOCK_FONT_SIZE  = "lockclock_font_size";
     private static final String DATE_FONT_SIZE  = "lockdate_font_size";
 
+    private static final String LOCKSCREEN_CLOCK_STYLE = "lockscreen_clock_style";
+    private static final String KEY_OMNI_CLOCK_SETTINGS = "omni_clock_settings";
+
+    private ListPreference mLockscreenClockStyle;
+    private Preference mOmniClockSettings;
+
     private CustomSeekBarPreference mClockFontSize;
     private CustomSeekBarPreference mDateFontSize;
 
@@ -52,6 +59,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.lockscreen_settings);
+        final ContentResolver resolver = getContentResolver();
 
         mClockFontSize = (CustomSeekBarPreference) findPreference(CLOCK_FONT_SIZE);
         mClockFontSize.setValue(Settings.System.getInt(getContentResolver(),
@@ -62,6 +70,17 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
         mDateFontSize.setValue(Settings.System.getInt(getContentResolver(),
                 Settings.System.LOCKDATE_FONT_SIZE,14));
         mDateFontSize.setOnPreferenceChangeListener(this);
+
+        mLockscreenClockStyle = (ListPreference) findPreference(LOCKSCREEN_CLOCK_STYLE);
+        int clockStyle = Settings.System.getInt(resolver,
+                Settings.System.LOCKSCREEN_CLOCK_STYLE, 0);
+
+        mLockscreenClockStyle.setValue(Integer.toString(clockStyle));
+        mLockscreenClockStyle.setSummary(mLockscreenClockStyle.getEntry());
+        mLockscreenClockStyle.setOnPreferenceChangeListener(this);
+
+        mOmniClockSettings = findPreference(KEY_OMNI_CLOCK_SETTINGS);
+        mOmniClockSettings.setEnabled(clockStyle == 2);
     }
 
     @Override
@@ -80,6 +99,13 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
             int top = (Integer) newValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.LOCKDATE_FONT_SIZE, top*1);
+            return true;
+        } else if (preference == mLockscreenClockStyle) {
+            int value = Integer.valueOf((String) newValue);
+            int index = mLockscreenClockStyle.findIndexOfValue((String) newValue);
+            mLockscreenClockStyle.setSummary(mLockscreenClockStyle.getEntries()[index]);
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCKSCREEN_CLOCK_STYLE, value);
+            mOmniClockSettings.setEnabled(value == 2);
             return true;
         }
         return false;

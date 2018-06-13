@@ -23,6 +23,7 @@
     <string name="profiles_add">Add...</string>
     <string name="profile_choose_app">Choose app</string>
     <string name="reset">Reset</string>
+    <string name="kbs">kB/s</string>
     <!-- Hardware keys -->
     <string name="button_keys_title">Keys</string>
     <string name="keys_bindings_title">Key actions</string>
@@ -301,8 +302,8 @@
     <string name="network_traffic_enable_title">Enable</string>
 
     <!-- captive portal - disable connectivity check -->
-    <string name="captive_portal_mode_title">Disable captive portal</string>
-    <string name="captive_portal_mode_summary">Disable connectivity check by disabling captive portal</string>
+    <string name="captive_portal_ignore_mode_title">Enable captive portal</string>
+    <string name="captive_portal_ignore_mode_summary">Enable connectivity check by enabling captive portal</string>
 
     <!-- statusbar brightness -->
     <string name="status_bar_brightness_control_title">Brightness control</string>
@@ -788,7 +789,7 @@
     <string name="expanded_user_configurable">User configurable</string>
     <string name="show_only_launcher_menu">Only launcher apps</string>
     <string name="show_all_apps_menu">All apps</string>
-    
+
     <!-- Face Auto Unlock -->
     <string name="face_auto_unlock_title">Auto face unlock</string>
     <string name="face_auto_unlock_summary">Dismiss lock screen after recognizing trusted face</string>
@@ -1069,9 +1070,9 @@
     <string name="sizer_message_success">Success</string>
 
 
-    <string name="size_category_title">Size</string>
-    <string name="lockdate_font_size_title">Lock screen date</string>
-    <string name="lockclock_font_size_title">Lock screen clock</string>
+    <string name="clock_category_title">Clock</string>
+    <string name="lockdate_font_size_title">Date size</string>
+    <string name="lockclock_font_size_title">Digital clock size</string>
     
     <!-- Smart pulldown-->
     <string name="smart_pulldown_title">Smart pulldown</string>
@@ -1118,4 +1119,23 @@
     <string name="heads_up_snooze_15min">15 minutes</string>
     <string name="heads_up_snooze_20min">20 minutes</string>
 
+    <string name="lockscreen_clock_style_title">Lock screen clock style</string>
+    <string name="clock_style_digital">Digital</string>
+    <string name="clock_style_analog">Analog</string>
+    <string name="clock_style_omni">Omni clock</string>
+
+    <string name="omni_clock_settings_title">Analog clock</string>
+    <string name="omni_clock_settings_summary">Style and color settings</string>
+    <string name="omni_clock_24h_mode_title">24h mode</string>
+    <string name="omni_clock_24h_mode_summary"></string>
+    <string name="omni_clock_show_ticks_title">Show hour marks</string>
+    <string name="omni_clock_show_ticks_summary"></string>
+    <string name="omni_clock_show_numbers_title">Show hour numbers</string>
+    <string name="omni_clock_show_numbers_summary"></string>
+    <string name="omni_clock_bg_color_title">Background color</string>
+    <string name="omni_clock_border_color_title">Border color</string>
+    <string name="omni_clock_hour_color_title">Hour color</string>
+    <string name="omni_clock_minute_color_title">Minute color</string>
+    <string name="omni_clock_text_color_title">Text color</string>
+    <string name="omni_clock_accent_color_title">Accent color</string>
 </resources>
