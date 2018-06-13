@@ -753,14 +753,38 @@
   <string name="captive_portal_mode_title">Отключить доступный портал</string>
   <string name="captive_portal_mode_summary">Отключить проверку соединения, отключив доступный портал</string>
 
-        <!-- Wallpaper tint -->
+  <!-- Wallpaper tint -->
   <string name="wallpaper_tint_title">Оттенок на основе обоев</string> 
   <string name="wallpaper_tint_power_menu">В меню питания</string>
   <string name="wallpaper_tint_recents">В недавних приложениях</string>
   <string name="wallpaper_tint_keyguard">На экране блокировки</string>
   <string name="wallpaper_tint_notification_shade">В уведомлениях</string>
   <string name="wallpaper_tint_summary">Применить оттенок к фону на основе обоев рабочего стола</string>
-          <!-- Toast icon -->
+  <!-- Toast icon -->
   <string name="toast_icon_title">Иконка приложения в тост-уведомлении</string>
   <string name="toast_icon_summary">Отображать значок приложения, соответствующий тост-уведомлению</string>
+
+  <!-- captive portal - disable connectivity check -->
+  <string name="captive_portal_ignore_mode_title">Включить портал доступности</string>
+  <string name="captive_portal_ignore_mode_summary">Активировать проверку соединения, включив портал доступности</string>
+
+  <string name="lockscreen_clock_style_title">Стиль часов на экране блокировки</string>
+  <string name="clock_style_digital">Цифровые</string>
+  <string name="clock_style_analog">Аналоговые</string>
+  <string name="clock_style_omni">OmniClock</string>
+
+  <string name="omni_clock_settings_title">Аналоговые часы</string>
+  <string name="omni_clock_settings_summary">Настройки стиля и цвета</string>
+  <string name="omni_clock_24h_mode_title">24-часовой режим</string>
+  <string name="omni_clock_24h_mode_summary"></string>
+  <string name="omni_clock_show_ticks_title">Показать часовые метки</string>
+  <string name="omni_clock_show_ticks_summary"></string>
+  <string name="omni_clock_show_numbers_title">Показать цифры часов</string>
+  <string name="omni_clock_show_numbers_summary"></string>
+  <string name="omni_clock_bg_color_title">Цвет фона</string>
+  <string name="omni_clock_border_color_title">Цвет границы</string>
+  <string name="omni_clock_hour_color_title">Цвет часа</string>
+  <string name="omni_clock_minute_color_title">Цвет минут</string>
+  <string name="omni_clock_text_color_title">Цвет текста</string>
+  <string name="omni_clock_accent_color_title">Цвет акцента</string>
 </resources>
