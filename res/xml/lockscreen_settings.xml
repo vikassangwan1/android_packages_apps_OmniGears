@@ -15,7 +15,6 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
             android:key="lockscreen_settings"
             android:title="@string/lockscreen_category_title" >
 
@@ -58,5 +57,17 @@
         android:summary="@string/face_auto_unlock_summary"
         android:defaultValue="false"/>    
 
+    <ListPreference
+        android:key="lockscreen_clock_style"
+        android:title="@string/lockscreen_clock_style_title"
+        android:entries="@array/lockscreen_clock_style_entries"
+        android:entryValues="@array/lockscreen_clock_style_values"
+        android:persistent="false"/>
+
+    <Preference
+        android:key="omni_clock_settings"
+        android:title="@string/omni_clock_settings_title"
+        android:summary="@string/omni_clock_settings_summary"
+        android:fragment="org.omnirom.omnigears.OmniClockSettings" />
 </PreferenceScreen>
 
