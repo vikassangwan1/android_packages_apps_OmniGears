@@ -43,9 +43,11 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
 
     private static final String LOCKSCREEN_CLOCK_STYLE = "lockscreen_clock_style";
     private static final String KEY_OMNI_CLOCK_SETTINGS = "omni_clock_settings";
+    private static final String KEY_DIGITAL_CLOCK_SETTINGS = "digital_clock_settings";
 
     private ListPreference mLockscreenClockStyle;
     private Preference mOmniClockSettings;
+    private Preference mDigitalClockSettings;
 
     private CustomSeekBarPreference mClockFontSize;
     private CustomSeekBarPreference mDateFontSize;
@@ -81,6 +83,9 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
 
         mOmniClockSettings = findPreference(KEY_OMNI_CLOCK_SETTINGS);
         mOmniClockSettings.setEnabled(clockStyle == 2);
+    
+        mDigitalClockSettings = findPreference(KEY_DIGITAL_CLOCK_SETTINGS);
+        mDigitalClockSettings.setEnabled(clockStyle == 0);
     }
 
     @Override
@@ -106,6 +111,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
             mLockscreenClockStyle.setSummary(mLockscreenClockStyle.getEntries()[index]);
             Settings.System.putInt(getContentResolver(), Settings.System.LOCKSCREEN_CLOCK_STYLE, value);
             mOmniClockSettings.setEnabled(value == 2);
+            mDigitalClockSettings.setEnabled(value == 0);
             return true;
         }
         return false;
