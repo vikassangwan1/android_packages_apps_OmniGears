@@ -64,6 +64,21 @@
 		<PreferenceCategory
                 android:key="incall_vib_options"
                 android:title="@string/incall_vibration_category" >
+                
+            <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
+                android:key="flash_on_call_waiting"
+                android:title="@string/flash_on_call_title"
+                android:defaultValue="false" />
+
+            <org.omnirom.omnigears.preference.CustomSeekBarPreference
+                android:key="flash_on_call_waiting_delay"
+                android:max="1000"
+                android:persistent="false"
+                android:title="@string/flash_on_call_delay_title"
+                settings:min="50"
+                settings:units=""
+                settings:interval="50"
+                android:dependency="flash_on_call_waiting"/>
 
             <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
                 android:key="vibrate_on_connect"

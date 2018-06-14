@@ -35,23 +35,11 @@
         android:summary="@string/lockscreen_item_summary"
         android:icon="@drawable/ic_new_lockscreenitems"
         android:fragment="org.omnirom.omnigears.interfacesettings.LockscreenItemSettings" />
-
-	<org.omnirom.omnilib.preference.SystemSettingSwitchPreference
-        android:key="lockscreen_battery_info"
-        android:title="@string/lockscreen_battery_info_title"
-        android:summary="@string/lockscreen_battery_info_summary"
-        android:defaultValue="false" />
-        
+    
     <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
         android:key="double_tap_sleep_lockscreen"
         android:title="@string/double_tap_sleep_lockscreen_title"
         android:summary="@string/double_tap_sleep_lockscreen_summary"
-        android:defaultValue="false" />
-        
-    <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
-        android:key="lockscreen_weather"
-        android:title="@string/lockscreen_weather_title"
-        android:summary="@string/lockscreen_items_aod_info_title"
         android:defaultValue="false" />
 
     <PreferenceCategory
@@ -63,12 +51,6 @@
         android:entries="@array/lockscreen_clock_style_entries"
         android:entryValues="@array/lockscreen_clock_style_values"
         android:persistent="false"/>
-
-    <Preference
-        android:key="omni_clock_settings"
-        android:title="@string/omni_clock_settings_title"
-        android:summary="@string/omni_clock_settings_summary"
-        android:fragment="org.omnirom.omnigears.OmniClockSettings" />
 
     <org.omnirom.omnigears.preference.CustomSeekBarPreference
         android:key="lockclock_font_size"
@@ -87,6 +69,13 @@
         settings:units=""
         android:defaultValue="14"
         android:persistent="false" />
+        
+    <Preference
+        android:key="omni_clock_settings"
+        android:title="@string/omni_clock_settings_title"
+        android:summary="@string/omni_clock_settings_summary"
+        android:icon="@drawable/ic_new_omniclock"
+        android:fragment="org.omnirom.omnigears.OmniClockSettings" />
 
     <PreferenceCategory
         android:title="@string/unlock_category_title"/>

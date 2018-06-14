@@ -36,6 +36,8 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import org.omnirom.omnigears.TelephonyUtils;
 
+import org.omnirom.omnigears.preference.CustomSeekBarPreference;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -43,9 +45,11 @@ public class NotiSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 			
 	private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
+	private static final String FLASH_ON_CALL_WAITING_DELAY = "flash_on_call_waiting_delay";
 			
 	private ListPreference mNoisyNotification;
 	private ListPreference mAnnoyingNotification;
+	private CustomSeekBarPreference mFlashOnCallWaitingDelay;
 
     @Override
     public int getMetricsCategory() {
@@ -79,6 +83,10 @@ public class NotiSettings extends SettingsPreferenceFragment implements
         if (!TelephonyUtils.isVoiceCapable(getActivity())) {
             prefSet.removePreference(incallVibCategory);
         }
+        
+        mFlashOnCallWaitingDelay = (CustomSeekBarPreference) findPreference(FLASH_ON_CALL_WAITING_DELAY);
+        mFlashOnCallWaitingDelay.setValue(Settings.System.getInt(resolver, Settings.System.FLASH_ON_CALLWAITING_DELAY, 200));
+        mFlashOnCallWaitingDelay.setOnPreferenceChangeListener(this);
 
     }
 
@@ -105,6 +113,10 @@ public class NotiSettings extends SettingsPreferenceFragment implements
             int index = mAnnoyingNotification.findIndexOfValue((String) newValue);
             mAnnoyingNotification.setSummary(
                     mAnnoyingNotification.getEntries()[index]);
+            return true;
+        } else if (preference == mFlashOnCallWaitingDelay) {
+            int val = (Integer) newValue;
+            Settings.System.putInt(getContentResolver(), Settings.System.FLASH_ON_CALLWAITING_DELAY, val);
             return true;
 		}
         return false;

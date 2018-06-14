@@ -80,11 +80,9 @@
     <string name="button_back_kill_enable_title">Kill app back button</string>
     <string name="button_back_kill_enable_summary">Kill the foreground app by long-pressing the back button</string>
     <string name="button_back_kill_timeout_title">Kill app timeout</string>
-    <string name="button_back_kill_timeout_250ms">250 ms</string>
-    <string name="button_back_kill_timeout_300ms">300 ms</string>
-    <string name="button_back_kill_timeout_400ms">400 ms</string>
+    <string name="button_back_kill_timeout_350ms">350 ms</string>
     <string name="button_back_kill_timeout_500ms">500 ms</string>
-    <string name="button_back_kill_timeout_700ms">700 ms</string>
+    <string name="button_back_kill_timeout_750ms">750 ms</string>
     <string name="button_back_kill_timeout_1000ms">1000 ms</string>
 
     <!-- Double tap to sleep -->
@@ -354,8 +352,8 @@
     <string name="tuner_settings_summary">Do not disturb</string>
 
     <!-- Lockscreen battery info indicator  -->
-    <string name="lockscreen_battery_info_title">Battery info</string>
-    <string name="lockscreen_battery_info_summary">Display charging current, voltage, battery temperature on the lock screen</string>
+    <string name="lockscreen_battery_info_title">Show advanced battery info</string>
+    <string name="lockscreen_battery_info_summary">Display charging current, voltage and battery temperature</string>
     
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">Kill app button</string>
@@ -1005,14 +1003,14 @@
     
     <!-- Summaries -->
     <string name="summary_status_bar">Status bar, navigation bar</string>
-    <string name="summary_lock_screen">Appearance, shortcuts, unlock behaviour</string>
-    <string name="summary_noti_settings">Heads up, ticker, charging light</string>
-    <string name="summary_quick_settings">Panel items, custom header, opacity</string>
-    <string name="summary_recents_settings">Immersive recents, clear all FAB</string>
-    <string name="summary_style_settings">Themes, animations, layout</string>
+    <string name="summary_lock_screen">Clock style, shortcuts</string>
+    <string name="summary_noti_settings">Heads up, ticker</string>
+    <string name="summary_quick_settings">Panel items, custom header</string>
+    <string name="summary_recents_settings">Omni switch, clear all FAB</string>
+    <string name="summary_style_settings">Themes, animations, tint</string>
     <string name="summary_misc_settings">Privacy guard, doze, events, weather</string>
     <string name="summary_device_settings">Gestures, ambient display, notification slider</string>
-    <string name="summary_buttons_settings">Hardware keys, buttons backlight</string>
+    <string name="summary_buttons_settings">Hardware keys, button backlight</string>
 
     <!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">Force expanded notifications</string>
@@ -1072,8 +1070,8 @@
 
 
     <string name="clock_category_title">Clock</string>
-    <string name="lockdate_font_size_title">Date size</string>
-    <string name="lockclock_font_size_title">Digital clock size</string>
+    <string name="lockdate_font_size_title">Date and alarm size</string>
+    <string name="lockclock_font_size_title">Clock size (digital only)</string>
     
     <!-- Smart pulldown-->
     <string name="smart_pulldown_title">Smart pulldown</string>
@@ -1093,10 +1091,10 @@
     <string name="wallpaper_tint_summary">Apply a tint to the background based on the homescreen wallpaper</string>
   
     <!-- Incall vibrate options -->
-    <string name="incall_vibration_category">In-call vibration options</string>
-    <string name="incall_vibrate_connect_title">On connect</string>
-    <string name="incall_vibrate_call_wait_title">On call waiting</string>
-    <string name="incall_vibrate_disconnect_title">On disconnect</string>
+    <string name="incall_vibration_category">Call</string>
+    <string name="incall_vibrate_connect_title">Vibrate on connect</string>
+    <string name="incall_vibrate_call_wait_title">Vibrate on call waiting</string>
+    <string name="incall_vibrate_disconnect_title">Vibrate on disconnect</string>
 
     <string name="aspect_ratio_apps_enabled_title">Enable scaling</string>
     <string name="aspect_ratio_apps_enabled_summary">Allow legacy apps to use full screen</string>
@@ -1148,6 +1146,11 @@
     <string name="alarm_blocker_reload">Reload</string>
     <string name="alarm_blocker_warning_title">Proceed with caution</string>
     <string name="alarm_blocker_warning">Blocking alarms have the potential to cause instability, crashes or data loss.</string>
+    
+    <!-- Flash on call -->
+    <string name="flash_on_call_category">Pulse flash</string>
+    <string name="flash_on_call_title">Pulse flash on incoming call</string>
+    <string name="flash_on_call_delay_title">Flash pulse rate (ms)</string>
 
     <!-- Heads up snooze -->
     <string name="heads_up_category">Peek notifications</string>
@@ -1164,9 +1167,9 @@
     <string name="lockscreen_clock_style_title">Lock screen clock style</string>
     <string name="clock_style_digital">Digital</string>
     <string name="clock_style_analog">Analog</string>
-    <string name="clock_style_omni">Omni clock</string>
+    <string name="clock_style_omni">Omni</string>
 
-    <string name="omni_clock_settings_title">Analog clock</string>
+    <string name="omni_clock_settings_title">Omni clock</string>
     <string name="omni_clock_settings_summary">Style and color settings</string>
     <string name="omni_clock_24h_mode_title">24h mode</string>
     <string name="omni_clock_24h_mode_summary"></string>

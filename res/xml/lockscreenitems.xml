@@ -47,7 +47,15 @@
         android:key="hide_lockscreen_indicator_display"
         android:title="@string/hide_lockscreen_indicator_display_title"
         android:summary="@string/hide_lockscreen_indicator_display_summary"
-        android:defaultValue="false" />
+        android:defaultValue="false"
+        android:disableDependentsState="true" />
+    
+    <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
+        android:key="lockscreen_battery_info"
+        android:title="@string/lockscreen_battery_info_title"
+        android:summary="@string/lockscreen_battery_info_summary"
+        android:defaultValue="false"
+        android:dependency="hide_lockscreen_indicator_display" />
 
     <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
         android:key="hide_lockscreen_icon"
@@ -60,6 +68,12 @@
         android:title="@string/show_emergency_button"
         android:summary="@string/show_emergency_button_summary"
         android:defaultValue="true" />
+        
+     <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
+        android:key="lockscreen_weather"
+        android:title="@string/lockscreen_weather_title"
+        android:summary="@string/lockscreen_items_aod_info_title"
+        android:defaultValue="false" />
 
 </PreferenceScreen>
 
