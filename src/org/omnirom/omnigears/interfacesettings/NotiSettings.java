@@ -62,6 +62,7 @@ public class NotiSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.noti_settings);
         
         final PreferenceScreen prefSet = getPreferenceScreen();
+        final ContentResolver resolver = getActivity().getContentResolver();
         
         mNoisyNotification = (ListPreference) findPreference("notification_sound_vib_screen_on");
         mNoisyNotification.setOnPreferenceChangeListener(this);
