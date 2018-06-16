@@ -771,7 +771,7 @@
   <string name="lockscreen_clock_style_title">Стиль часов на экране блокировки</string>
   <string name="clock_style_digital">Цифровые</string>
   <string name="clock_style_analog">Аналоговые</string>
-  <string name="clock_style_omni">OmniClock</string>
+  <string name="clock_style_binary">Бинарные</string>
 
   <string name="omni_clock_settings_title">Аналоговые часы</string>
   <string name="omni_clock_settings_summary">Настройки стиля и цвета</string>
@@ -787,4 +787,11 @@
   <string name="omni_clock_minute_color_title">Цвет минут</string>
   <string name="omni_clock_text_color_title">Цвет текста</string>
   <string name="omni_clock_accent_color_title">Цвет акцента</string>
+
+  <string name="lockscreen_digital_clock_two_lines_title">В две линии</string>
+  <string name="lockscreen_digital_clock_two_lines_summary"></string>
+  <string name="lockscreen_digital_clock_bold_hour_title">Жирные цифры часов</string>
+  <string name="lockscreen_digital_clock_bold_hour_summary"></string>
+  <string name="digital_clock_settings_title">Цифровые часы</string>
+  <string name="digital_clock_settings_summary">Настройки стиля</string>
 </resources>
