@@ -74,6 +74,7 @@
         android:key="digital_clock_settings"
         android:title="@string/digital_clock_settings_title"
         android:summary="@string/digital_clock_settings_summary"
+        android:icon="@drawable/ic_new_digitalclock"
         android:fragment="org.omnirom.omnigears.DigitalClockSettings" />
 
     <Preference
