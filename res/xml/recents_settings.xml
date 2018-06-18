@@ -26,6 +26,11 @@
        android:entries="@array/navbar_recents_style_entries"
        android:entryValues="@array/navbar_recents_style_values"
        android:persistent="false"/>
+    
+    <Preference
+       android:key="restart_ui"
+       android:title="@string/restart_ui"
+       android:summary="@string/restart_ui_summary" />
        
     <PreferenceCategory
        android:title="@string/aosp_recents_title" />

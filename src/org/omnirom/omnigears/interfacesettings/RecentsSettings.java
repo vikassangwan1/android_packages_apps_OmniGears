@@ -63,6 +63,7 @@ import java.util.List;
 
 import com.android.internal.util.omni.OmniSwitchConstants;
 import com.android.internal.util.omni.PackageUtils;
+import org.omnirom.omnigears.preference.Helpers;
 
 public class RecentsSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, DialogInterface.OnDismissListener, Indexable {
@@ -70,6 +71,7 @@ public class RecentsSettings extends SettingsPreferenceFragment implements
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
     private static final String IMMERSIVE_RECENTS = "immersive_recents";
     private static final String NAVIGATION_BAR_RECENTS_STYLE = "navbar_recents_style";
+    private String KEY_RESTART_UI = "restart_ui";
     
     private static final String RECENT_ICON_PACK = "recents_icon_pack";
 
@@ -91,6 +93,7 @@ public class RecentsSettings extends SettingsPreferenceFragment implements
     private ListPreference mRecentsClearAllLocation;
     private ListPreference mImmersiveRecents;
     private ListPreference mNavbarRecentsStyle;
+    private Preference mRestartUI;
 
     @Override
     public int getMetricsCategory() {
@@ -129,6 +132,7 @@ public class RecentsSettings extends SettingsPreferenceFragment implements
         mNavbarRecentsStyle.setSummary(mNavbarRecentsStyle.getEntry());
         mNavbarRecentsStyle.setOnPreferenceChangeListener(this);
 
+        mRestartUI = findPreference(KEY_RESTART_UI);
     }
 
     @Override
@@ -173,6 +177,8 @@ public class RecentsSettings extends SettingsPreferenceFragment implements
         if (preference == mIconPack) {
             pickIconPack(getContext());
             return true;
+        } else if (preference == mRestartUI) {
+            Helpers.showSystemUIrestartDialog(getActivity());
         }
         return super.onPreferenceTreeClick(preference);
     }

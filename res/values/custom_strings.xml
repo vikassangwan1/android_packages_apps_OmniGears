@@ -77,6 +77,10 @@
     <string name="keys_action_app_switch_card">AOSP (stack)</string>
     <string name="keys_action_omniswitch_short">Omni switch</string>
     <string name="keys_action_app_switch_grid">AOSP (grid)</string>
+    <string name="recents_grid">Grid</string>
+    <string name="recents_go">Android go</string>
+    <string name="restart_ui">Restart UI</string>
+    <string name="restart_ui_summary">Required for grid and android go style</string>
     <string name="button_back_kill_enable_title">Kill app back button</string>
     <string name="button_back_kill_enable_summary">Kill the foreground app by long-pressing the back button</string>
     <string name="button_back_kill_timeout_title">Kill app timeout</string>
