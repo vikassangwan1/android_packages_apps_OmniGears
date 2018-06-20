@@ -86,15 +86,6 @@
                 android:entryValues="@array/ticker_animation_mode_values"
                 android:defaultValue="1" />
 
-            <org.omnirom.omnilib.preference.SeekBarPreference
-                android:key="qs_panel_alpha"
-                android:title="@string/qs_panel_alpha_title"
-                android:max="255"
-                settings:min="0"
-                android:persistent="false"
-                settings:unitsLeft=""
-                settings:unitsRight="" />
-
         </PreferenceCategory>
 
         <PreferenceCategory
