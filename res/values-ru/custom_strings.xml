@@ -790,4 +790,8 @@
   <string name="aspect_ratio_apps_info">Приложения необходимо перезапустить для применения изменений</string>
   <string name="navigation_bar_menu_arrow_keys_title">Показывать стрелки при вводе текста</string>
   <string name="navigation_bar_menu_arrow_keys_summary">Отображать левую и правую кнопки курсора при наборе текста</string>
+  <!-- QuickSettings Panel Transparency -->
+  <string name="quick_settings_category">Быстрые настройки</string>
+  <string name="qs_panel_alpha_title">Непрозрачность быстрых настроек</string>
+  <string name="qs_panel_alpha_summary">Настроить непрозрачность фона</string>
 </resources>
