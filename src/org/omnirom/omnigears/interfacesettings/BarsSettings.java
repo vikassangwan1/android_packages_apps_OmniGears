@@ -57,6 +57,7 @@ import org.omnirom.omnilib.preference.SeekBarPreference;
 
 import org.omnirom.omnilib.preference.AppMultiSelectListPreference;
 import org.omnirom.omnilib.preference.ScrollAppsViewPreference;
+import org.omnirom.omnilib.preference.SeekBarPreference;
 
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -79,12 +80,14 @@ public class BarsSettings extends SettingsPreferenceFragment implements
     private static final String KEY_ASPECT_RATIO_APPS_LIST = "aspect_ratio_apps_list";
     private static final String KEY_ASPECT_RATIO_CATEGORY = "aspect_ratio_category";
     private static final String KEY_ASPECT_RATIO_APPS_LIST_SCROLLER = "aspect_ratio_apps_list_scroller";
+    private static final String QS_PANEL_ALPHA = "qs_panel_alpha";
 
     private ListPreference mQuickPulldown;
     private ListPreference mTickerMode;
     private ListPreference mTickerAnimation;
     private AppMultiSelectListPreference mAspectRatioAppsSelect;
     private ScrollAppsViewPreference mAspectRatioApps;
+    private SeekBarPreference mQsPanelAlpha;
 
     @Override
     public int getMetricsCategory() {
@@ -132,6 +135,11 @@ public class BarsSettings extends SettingsPreferenceFragment implements
                 1, UserHandle.USER_CURRENT);
         mTickerAnimation.setValue(String.valueOf(tickerAnimationMode));
         mTickerAnimation.setSummary(mTickerAnimation.getEntry());
+        mQsPanelAlpha = (SeekBarPreference) findPreference(QS_PANEL_ALPHA);
+        int qsPanelAlpha = Settings.System.getInt(getContentResolver(),
+                Settings.System.QS_PANEL_BG_ALPHA, 221);
+        mQsPanelAlpha.setValue((int)(((double) qsPanelAlpha / 255) * 100));
+        mQsPanelAlpha.setOnPreferenceChangeListener(this);
 
         final PreferenceCategory aspectRatioCategory =
                 (PreferenceCategory) getPreferenceScreen().findPreference(KEY_ASPECT_RATIO_CATEGORY);
@@ -195,6 +203,12 @@ public class BarsSettings extends SettingsPreferenceFragment implements
             } else {
                 Settings.System.putString(getContentResolver(), Settings.System.ASPECT_RATIO_APPS_LIST, "");
             }
+            return true;
+        } else if (preference == mQsPanelAlpha) {
+            int bgAlpha = (Integer) newValue;
+            int trueValue = (int) (((double) bgAlpha / 100) * 255);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.QS_PANEL_BG_ALPHA, trueValue);
             return true;
         }
         return false;
