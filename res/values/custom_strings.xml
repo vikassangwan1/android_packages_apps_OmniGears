@@ -1142,6 +1142,10 @@
     <string name="status_bar_temperature_show_scale_hide_image">Show temp with scale</string>
     <string name="status_bar_temperature_hide_scale_hide_image">Show temp without scale</string>
     <string name="status_bar_show_image">Show image</string>
+    
+    <!-- Activity Indicators -->
+    <string name="activity_indicators">Activity indicators</string>
+    <string name="activity_indicators_summary">Enable to show network activity indicators</string>
 
     <!-- Heads up snooze -->
     <string name="heads_up_category">Peek notifications</string>
