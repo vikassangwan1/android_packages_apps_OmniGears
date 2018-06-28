@@ -35,6 +35,7 @@
         android:title="@string/heads_up_snooze_title"
         android:entries="@array/heads_up_snooze_entries"
         android:entryValues="@array/heads_up_snooze_values"
+        android:dependency="heads_up_notifications_enabled"
         android:persistent="false" />
 
     <PreferenceCategory
