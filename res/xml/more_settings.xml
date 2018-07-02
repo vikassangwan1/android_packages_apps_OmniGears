@@ -18,18 +18,22 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:key="more_settings"
     android:title="@string/more_settings_title">
+    
+    <Preference
+        android:key="device_parts"
+        android:title="@string/omni_device_parts"
+        android:summary="@string/summary_device_settings"
+        android:fragment="org.omnirom.device.DeviceParts" />
 
 	<Preference
         android:key="privacy_guard_manager"
-        android:icon="@drawable/ic_new_appops"
-        android:summary="@string/app_ops_settings_summary"
         android:fragment="com.android.settings.privacyguard.PrivacyGuardManager"
+        android:summary="@string/app_ops_settings_summary"
         android:title="@string/privacy_guard_settings_title" />
         
     <Preference
 	    android:key="event_service_settings"
-	    android:title="@string/event_service_settings_title"
-	    android:icon="@drawable/ic_new_events">
+	    android:title="@string/event_service_settings_title">
 	    <intent
             android:action="android.intent.action.MAIN"
             android:targetPackage="org.omnirom.omnibrain"
@@ -39,40 +43,34 @@
 	<Preference
 	    android:key="omnijaws_settings"
 	    android:title="@string/weather_title"
-	    android:icon="@drawable/ic_new_weather"
-        android:summary="@string/weather_settings_summary"
+	    android:summary="@string/weather_settings_summary"
 	    android:fragment="org.omnirom.omnigears.moresettings.OmniJawsSettings" />
 	    
 	<Preference
         android:key="time_in_state"
         android:title="@string/time_in_state_title"
-        android:icon="@drawable/ic_new_timeinstate"
         android:summary="@string/time_in_state_summary"
         android:fragment="org.omnirom.omnigears.system.TimeInState" />
-            
-	<Preference
+        
+    <Preference
 	    android:key="chooser_activity_blacklist"
 	    android:fragment="org.omnirom.omnigears.moresettings.ChooserActivityBlacklist"
-	    android:icon="@drawable/ic_new_chooserblacklist"
 	    android:title="@string/chooser_activity_blacklist_title"
 	    android:summary="@string/chooser_activity_blacklist_summary"
 	    android:persistent="false" />
-			
+		
 	<Preference
         android:key="doze_settings"
         android:title="@string/doze_settings_title"
-        android:icon="@drawable/ic_new_doze"
         android:fragment="org.omnirom.omnigears.system.DozeSettings" />
 			
 	<PreferenceScreen
         android:key="systemappremover"
         android:fragment="org.omnirom.omnigears.moresettings.SystemappRemover"
-        android:icon="@drawable/ic_new_systemappremover"
         android:title="@string/system_app_remover" />
 				
 	<Preference
 	    android:title="@string/tuner_settings_title"
-	    android:icon="@drawable/ic_new_systemuituner"
 	    android:summary="@string/tuner_settings_summary" >
 	    <intent android:action="android.intent.action.MAIN"
 	        android:targetPackage="com.android.systemui"
@@ -85,13 +83,11 @@
         <Preference
             android:key="wakelock_blocker"
             android:title="@string/wakelock_blocker"
-            android:icon="@drawable/ic_new_wakelockblocker"
             android:fragment="org.omnirom.omnigears.moresettings.WakeLockBlocker"/>
             
         <Preference
             android:key="alarm_blocker"
             android:title="@string/alarm_blocker"
-            android:icon="@drawable/ic_new_alarmsblocker"
             android:fragment="org.omnirom.omnigears.moresettings.AlarmBlocker"/>
 
     </PreferenceCategory>
@@ -115,7 +111,7 @@
     <PreferenceCategory
         android:key="more_system"
         android:title="@string/other_category">
-			
+		
 	<SwitchPreference
 	    android:key="fingerprint_success_vib"
 		android:title="@string/fprint_sucess_vib_title"

@@ -17,7 +17,6 @@
                 
             <Preference
 				android:title="@string/quicksettings_items_title"
-				android:icon="@drawable/ic_new_qsitems"
 				android:summary="@string/quicksettings_item_summary" >
 				<intent android:action="android.intent.action.MAIN"
 					android:targetPackage="com.android.systemui"

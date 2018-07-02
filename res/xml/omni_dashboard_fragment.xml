@@ -82,14 +82,6 @@
         android:layout="@layout/preference_layout_misc_settings"
         android:fragment="org.omnirom.omnigears.moresettings.MoreSettings" />
 
-    <Preference
-        android:key="device_parts"
-        android:title="@string/omni_device_parts"
-        android:summary="@string/summary_device_settings"
-        android:icon="@drawable/ic_settings_device"
-        android:layout="@layout/preference_layout_device_settings"
-        android:fragment="org.omnirom.device.DeviceParts" />
-
     <!--<Preference
         android:key="weather_service_settings"
         android:icon="@drawable/ic_qs_weather_default_on"

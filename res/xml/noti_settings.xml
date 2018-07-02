@@ -21,14 +21,12 @@
     <Preference
         android:key="headsup_category"
         android:title="@string/headsup_title"
-        android:icon="@drawable/ic_new_headsup"
         android:summary="@string/headsup_summary"
         android:fragment="org.omnirom.omnigears.interfacesettings.HeadsUp" />
 
     <Preference
         android:title="@string/ticker_title"
         android:summary="@string/ticker_summary"
-        android:icon="@drawable/ic_new_ticker"
         android:fragment="org.omnirom.omnigears.interfacesettings.Ticker" />
         		
 	<PreferenceCategory
@@ -37,7 +35,6 @@
         <Preference
 			android:key="led_settings"
 			android:title="@string/batterylight_title"
-			android:icon="@drawable/ic_new_batterylight"
 			android:summary="@string/batterylight_summary"
 			android:fragment="org.omnirom.omnigears.batterylight.BatteryLightSettings" />
 	

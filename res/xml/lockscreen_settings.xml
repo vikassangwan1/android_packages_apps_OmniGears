@@ -22,7 +22,6 @@
     <Preference
         android:key="bottom_shortcuts_category"
         android:title="@string/systemui_tuner_lockscreen_bottom_shortcuts_title"
-        android:icon="@drawable/ic_new_bottomshortcuts"
         android:summary="@string/systemui_tuner_lockscreen_bottom_shortcuts_summary">
         <intent android:action="android.intent.action.MAIN"
             android:targetPackage="com.android.systemui"
@@ -33,7 +32,6 @@
         android:key="lockscreen_item"
         android:title="@string/lockscreen_item_title"
         android:summary="@string/lockscreen_item_summary"
-        android:icon="@drawable/ic_new_lockscreenitems"
         android:fragment="org.omnirom.omnigears.interfacesettings.LockscreenItemSettings" />
     
     <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
@@ -74,14 +72,12 @@
         android:key="digital_clock_settings"
         android:title="@string/digital_clock_settings_title"
         android:summary="@string/digital_clock_settings_summary"
-        android:icon="@drawable/ic_new_digitalclock"
         android:fragment="org.omnirom.omnigears.DigitalClockSettings" />
 
     <Preference
         android:key="omni_clock_settings"
         android:title="@string/omni_clock_settings_title"
         android:summary="@string/omni_clock_settings_summary"
-        android:icon="@drawable/ic_new_omniclock"
         android:fragment="org.omnirom.omnigears.OmniClockSettings" />
 
     <PreferenceCategory

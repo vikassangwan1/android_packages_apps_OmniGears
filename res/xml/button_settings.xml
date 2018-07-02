@@ -35,7 +35,6 @@
         <Preference
             android:key="button_brightness"
             android:title="@string/button_backlight_title"
-            android:icon="@drawable/ic_new_buttonbrightness"
             android:summary="@string/button_backlight_summary"
             android:persistent="false"
             android:fragment="org.omnirom.omnigears.ButtonBrightnessSettings" />
@@ -86,7 +85,6 @@
         <Preference
             android:key="global_actions"
             android:title="@string/global_actions_title"
-            android:icon="@drawable/ic_new_powermenu"
             android:summary="@string/global_actions_summary"
             android:fragment="org.omnirom.omnigears.interfacesettings.GlobalActionsSettings" />
 

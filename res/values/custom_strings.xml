@@ -993,7 +993,7 @@
     <string name="summary_recents_settings">Omni switch, clear all FAB</string>
     <string name="summary_style_settings">Themes, animations, tint</string>
     <string name="summary_misc_settings">Privacy guard, doze, events, weather</string>
-    <string name="summary_device_settings">Gestures, ambient display, notification slider</string>
+    <string name="summary_device_settings">Gestures, ambient display, slider</string>
     <string name="summary_buttons_settings">Hardware keys, button backlight</string>
 
     <!-- Force expanded notifications -->

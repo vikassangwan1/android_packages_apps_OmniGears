@@ -38,7 +38,6 @@
         <Preference
             android:key="omni_theme_select_activity"
             android:title="@string/omni_theme_select_title"
-            android:icon="@drawable/ic_new_settings_themes"
             android:summary="@string/omni_theme_select_summary"
             android:persistent="false" >
             <intent android:action="android.intent.action.MAIN"
