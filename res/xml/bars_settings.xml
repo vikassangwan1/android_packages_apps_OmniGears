@@ -115,6 +115,12 @@
                 android:summary="@string/expanded_desktop_summary"
                 android:fragment="org.omnirom.omnigears.interfacesettings.ExpandedDesktop" />
 
+            <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
+                android:key="splitscreen_force_systembar_enabled"
+                android:title="@string/splitscreen_force_systembar_enabled_title"
+                android:summary="@string/splitscreen_force_systembar_enabled_summary"
+                android:defaultValue="true" />
+
         </PreferenceCategory>
 
         <PreferenceCategory
