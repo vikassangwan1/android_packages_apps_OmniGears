@@ -794,4 +794,6 @@
   <string name="quick_settings_category">Быстрые настройки</string>
   <string name="qs_panel_alpha_title">Непрозрачность быстрых настроек</string>
   <string name="qs_panel_alpha_summary">Настроить непрозрачность фона</string>
+  <string name="splitscreen_force_systembar_enabled_title">Принудительно показывать системные панели при разделении экрана</string>
+  <string name="splitscreen_force_systembar_enabled_summary"></string>
 </resources>

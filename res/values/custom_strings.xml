@@ -1190,4 +1190,7 @@
     <string name="lockscreen_digital_clock_bold_hour_summary"></string>
     <string name="digital_clock_settings_title">Digital clock</string>
     <string name="digital_clock_settings_summary">Style settings</string>
+
+    <string name="splitscreen_force_systembar_enabled_title">Force show system bars in splitscreen</string>
+    <string name="splitscreen_force_systembar_enabled_summary"></string>
 </resources>

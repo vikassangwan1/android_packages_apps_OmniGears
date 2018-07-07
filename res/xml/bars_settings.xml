@@ -145,6 +145,12 @@
             android:summary="@string/navigation_bar_menu_arrow_keys_summary"
             android:defaultValue="fale"/>
 
+            <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
+                android:key="splitscreen_force_systembar_enabled"
+                android:title="@string/splitscreen_force_systembar_enabled_title"
+                android:summary="@string/splitscreen_force_systembar_enabled_summary"
+                android:defaultValue="true" />
+
         </PreferenceCategory>
 
 	    <PreferenceCategory
