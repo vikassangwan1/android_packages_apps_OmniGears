@@ -35,12 +35,17 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settings.Utils;
 
+import org.omnirom.omnigears.preference.CustomSeekBarPreference;
+
 import com.android.internal.logging.nano.MetricsProto;
 
 public class Ticker extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String TICKER_DURATION = "status_bar_ticker_tick_duration";
+    
     private ListPreference mTickerMode;
     private ListPreference mTickerAnimation;
+    private CustomSeekBarPreference mTickerDuration;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,6 +69,13 @@ public class Ticker extends SettingsPreferenceFragment implements Preference.OnP
                 1, UserHandle.USER_CURRENT);
         mTickerAnimation.setValue(String.valueOf(tickerAnimationMode));
         mTickerAnimation.setSummary(mTickerAnimation.getEntry());
+        
+        mTickerDuration = (CustomSeekBarPreference) findPreference(TICKER_DURATION);
+        int tickerDuration = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.STATUS_BAR_TICKER_TICK_DURATION, 3000, UserHandle.USER_CURRENT);
+        mTickerDuration.setValue(tickerDuration);
+        mTickerDuration.setOnPreferenceChangeListener(this);
+        
         updatePrefs();
     }
 
@@ -87,6 +99,12 @@ public class Ticker extends SettingsPreferenceFragment implements Preference.OnP
             mTickerAnimation.setSummary(
                     mTickerAnimation.getEntries()[index]);
             return true;
+         } else if (preference == mTickerDuration) {
+            int tickerDuration = (Integer) newValue;
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.STATUS_BAR_TICKER_TICK_DURATION, tickerDuration,
+                    UserHandle.USER_CURRENT);
+            return true;      
          }
         return false;
     }
