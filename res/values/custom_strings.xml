@@ -1138,6 +1138,9 @@
     <string name="flash_on_call_title">Blink flashlight on incoming call</string>
     <string name="flash_on_call_delay_title">Blink rate (ms)</string>
     
+    <string name="recents_show_membar_title">Memory bar</string>
+    <string name="recents_show_membar_summary">Show a bar with the device\'s available memory</string>
+    
     <!-- StatusBar weather settings -->
     <string name="statusbar_weather_title">Status bar weather</string>
     <string name="statusbar_weather_summary">Show weather temp and or image on the status bar</string>
