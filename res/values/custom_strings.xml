@@ -90,7 +90,7 @@
     <string name="button_back_kill_timeout_1000ms">1000 ms</string>
 
     <!-- Double tap to sleep -->
-    <string name="double_tap_to_sleep_title">Double-tap to sleep</string>
+    <string name="double_tap_to_sleep_title">Status bar</string>
     <string name="double_tap_to_sleep_summary">Double tap on the status bar to put the device to sleep</string>
 
     <!-- Doze pulse (ambient display) options -->
@@ -328,7 +328,7 @@
 
     <string name="weather_title">Weather</string>
     <string name="weather_config_title">Weather service</string>
-    <string name="weather_config_summary">Configure weather provider, location , unit etc.</string>
+    <string name="weather_config_summary">Configure settings</string>
     <string name="header_weather_title">Header view weather</string>
     <string name="header_weather_summary">Enable notification panel header weather display</string>
     <string name="weather_icon_pack_title">Condition icon pack</string>
@@ -343,7 +343,6 @@
     <string name="enable_tablet_navigation_summary">Tablet layout shows back and home on the left side and overview on the right side of the navigation bar</string>
 
     <string name="other_category">Other</string>
-    <string name="blocker_category">Blockers</string>
     <string name="home_category_title">Home</string>
     <string name="behaviour_category">Behaviour</string>
     <string name="security_category">Security</string>
@@ -352,8 +351,11 @@
     <string name="options_category">Options</string>
     <string name="style_category">Style</string>
     <string name="notification_category">Notifications</string>
+    <string name="double_tap_options">Double-tap to sleep</string>
+    <string name="gesture_settings_title">Gestures</string>
+    <string name="gesture_settings_summary">Screenshot, double-tap to sleep</string>
     <string name="event_service_settings_title">Events</string>
-    <string name="event_service_settings_summary">Automated actions</string>
+    <string name="event_service_settings_summary">Headset and network related actions</string>
     <string name="tuner_settings_summary">Do not disturb</string>
 
     <!-- Lockscreen battery info indicator  -->
@@ -666,7 +668,7 @@
     <string name="system_volume_option_title">System volume</string>
     <string name="call_volume_option_title">Voice call volume</string>
 
-    <string name="double_tap_sleep_lockscreen_title">Double tap to sleep on lock screen</string>
+    <string name="double_tap_sleep_lockscreen_title">Lock screen</string>
     <string name="double_tap_sleep_lockscreen_summary">Double tap anywhere on the lock screen to put the device to sleep</string>
 
     <string name="screen_off_animation_fade">Simple fade</string>
@@ -742,7 +744,7 @@
 
     <!-- fingerprint authentication vibration -->
     <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string>
-    <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication (on lock screen and inside apps)</string>
+    <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
 
     <string name="choose_app">Choose app</string>
     <string name="not_ready_summary">Resolving...</string>
@@ -817,7 +819,9 @@
     <string name="icon_manager_summary">Configure the visibility of statusbar items</string>
     <string name="carrier_label_summary">Customize the carrier label on the lockscreen or statusbar</string>
     <string name="qs_footer">Options for QS rows/column count and to hide qs labels are located in QS edit menu under the 3-dot menu</string>
-	<string name="weather_settings_summary">Configure settings for lock screen weather and quick settings weather tile</string>
+	<string name="weather_settings_summary">Lock screen and quick settings tile</string>
+	<string name="category_gestures_title">Offscreen gestures</string>
+	<string name="category_gestures_summary">Configure gesture actions</string>
 	
     <string name="long_press_power_torch_title">Long press for flashlight</string>
     <string name="long_press_power_torch_summary">Toggle flashlight when screen is off</string>
@@ -992,8 +996,8 @@
     <string name="summary_quick_settings">Panel items, custom header</string>
     <string name="summary_recents_settings">Omni switch, clear all FAB</string>
     <string name="summary_style_settings">Themes, animations, tint</string>
-    <string name="summary_misc_settings">Privacy guard, doze, events, weather</string>
-    <string name="summary_device_settings">Gestures, ambient display, slider</string>
+    <string name="summary_misc_settings">Events, weather, doze</string>
+    <string name="summary_device_settings">Ambient display, slider</string>
     <string name="summary_buttons_settings">Hardware keys, button backlight</string>
 
     <!-- Force expanded notifications -->
@@ -1021,6 +1025,7 @@
     <string name="ticker_enabled">Notification ticker</string>
     <string name="ticker_media_enabled">Notification and music ticker</string>
     <string name="ticker_animation_mode_title">Ticker animation style</string>
+    <string name="ticker_tick_duration_title">Ticker duration (ms)</string>
     <string name="ticker_animation_mode_alpha_fade">Fade</string>
     <string name="ticker_animation_mode_scroll">Scroll</string>
     
@@ -1035,19 +1040,6 @@
 
     <string name="system_proxi_check_enabled_title">Proximity check</string>
     <string name="system_proxi_check_enabled_summary">Check proximity sensor before handling power button and volume button wake events</string>
-    
-    <!-- SlimSizer  -->
-    <string name="caution">Caution!</string>
-    <string name="sizer_message_startup">This tool allows you to delete system apps. Use with caution and only delete apps you know are safe to be removed.</string>
-    <string name="sizer_message_delete">Are you sure ?</string>
-    <string name="btn_delete">Delete selected apps now</string>
-    <string name="delete_progress_title">Deleting</string>
-    <string name="delete_progress">Selected files are being deleted...</string>
-    <string name="sizer_message_noselect">Nothing selected.</string>
-    <string name="system_app_remover">System app remover</string>
-    <string name="sizer_message_error">Failed to uninstall, check root access</string>
-    <string name="sizer_message_success">Success</string>
-
 
     <string name="clock_category_title">Clock</string>
     <string name="lockdate_font_size_title">Date and alarm size</string>
@@ -1110,29 +1102,7 @@
     <!-- Disabling FC notifications -->
     <string name="disable_fc_notifications_title">Disable FC notifications</string>
     <string name="disable_fc_notifications_summary">This will hide all force close notifications. Use with caution</string>
-    
-    <!-- Wakelock blocker -->
-    <string name="wakelock_blocker">Wakelock blocker</string>
-    <string name="wakelock_blocker_title">Enable blocking</string>
-    <string name="wakelock_blocker_summary"> </string>
-    <string name="wakelock_blocker_save">Save</string>
-    <string name="wakelock_list_header">Available wakelocks</string>
-    <string name="wakelock_blocker_reload">Reload</string>
-    <string name="wakelock_blocker_warning_title">Proceed with caution</string>
-    <string name="wakelock_blocker_warning">Blocking wakelocks have the potential to cause instability, crashes or data loss</string>
-    
-    <!-- Alarm blocker -->
-    <string name="alarm_blocker">Alarms blocker</string>
-    <string name="alarm_blocker_title">Enable blocking</string>
-    <string name="alarm_blocker_summary"> </string>
-    <string name="alarm_blocker_save">Save</string>
-    <string name="alarm_list_header">Available alarms</string>
-    <string name="alarm_blocker_reload">Reload</string>
-    <string name="alarm_blocker_warning_title">Proceed with caution</string>
-    <string name="alarm_blocker_warning">Blocking alarms have the potential to cause instability, crashes or data loss.</string>
-    
-    <string name="ticker_tick_duration_title">Ticker duration (ms)</string>
-    
+
     <!-- Flash on call -->
     <string name="flash_on_call_category">Blink flashlight</string>
     <string name="flash_on_call_title">Blink flashlight on incoming call</string>

@@ -33,12 +33,6 @@
         android:title="@string/lockscreen_item_title"
         android:summary="@string/lockscreen_item_summary"
         android:fragment="org.omnirom.omnigears.interfacesettings.LockscreenItemSettings" />
-    
-    <org.omnirom.omnilib.preference.SystemSettingSwitchPreference
-        android:key="double_tap_sleep_lockscreen"
-        android:title="@string/double_tap_sleep_lockscreen_title"
-        android:summary="@string/double_tap_sleep_lockscreen_summary"
-        android:defaultValue="false" />
 
     <PreferenceCategory
             android:title="@string/clock_category_title"/>

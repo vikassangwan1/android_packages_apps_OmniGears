@@ -23,7 +23,6 @@
         android:title="@string/custom_bars_settings_title"
         android:summary="@string/summary_status_bar"
         android:icon="@drawable/ic_settings_statusbar"
-        android:layout="@layout/preference_layout_bar_settings"
         android:fragment="org.omnirom.omnigears.interfacesettings.BarsSettings" />
        
 	<Preference
@@ -31,7 +30,6 @@
         android:title="@string/lockscreen_category_title"
         android:summary="@string/summary_lock_screen"
         android:icon="@drawable/ic_owlsnest_lockscreen"
-        android:layout="@layout/preference_layout_lockscreen"
         android:fragment="org.omnirom.omnigears.interfacesettings.LockscreenSettings" />
         
     <Preference
@@ -39,7 +37,6 @@
         android:title="@string/notification_category"
         android:summary="@string/summary_noti_settings"
         android:icon="@drawable/ic_owlsnest_notif"
-        android:layout="@layout/preference_layout_noti_settings"
         android:fragment="org.omnirom.omnigears.interfacesettings.NotiSettings" />
         
     <Preference
@@ -47,7 +44,6 @@
         android:title="@string/qs_settings_title"
         android:summary="@string/summary_quick_settings"
         android:icon="@drawable/ic_owlsnest_qs"
-        android:layout="@layout/preference_layout_quick_settings"
         android:fragment="org.omnirom.omnigears.interfacesettings.QuickSettings" />
 
 	<Preference
@@ -55,7 +51,6 @@
         android:title="@string/button_settings_title"
         android:summary="@string/summary_buttons_settings"
         android:icon="@drawable/ic_owlsnest_buttons"
-        android:layout="@layout/preference_layout_button_settings"
         android:fragment="org.omnirom.omnigears.ButtonSettings" />
 
     <Preference
@@ -63,7 +58,6 @@
         android:title="@string/style_settings_title"
         android:summary="@string/summary_style_settings"
         android:icon="@drawable/ic_settings_style"
-        android:layout="@layout/preference_layout_style_settings"
         android:fragment="org.omnirom.omnigears.interfacesettings.StyleSettings" />
         
     <Preference
@@ -71,15 +65,34 @@
         android:title="@string/recents_settings_title"
         android:summary="@string/summary_recents_settings"
         android:icon="@drawable/ic_owlsnest_recents"
-        android:layout="@layout/preference_layout_recents_settings"
         android:fragment="org.omnirom.omnigears.interfacesettings.RecentsSettings" />
-           
+        
+    <Preference
+        android:key="gesture_settings"
+        android:title="@string/gesture_settings_title"
+        android:summary="@string/gesture_settings_summary"
+        android:icon="@drawable/ic_owlsnest_gesture"
+        android:fragment="org.omnirom.omnigears.interfacesettings.GestureSettings" />
+        
+    <Preference
+        android:key="device_parts"
+        android:title="@string/omni_device_parts"
+        android:summary="@string/summary_device_settings"
+        android:icon="@drawable/ic_owlsnest_advanced"
+        android:fragment="org.omnirom.device.DeviceParts" />
+        
+    <Preference
+        android:key="privacy_guard_manager"
+        android:fragment="com.android.settings.privacyguard.PrivacyGuardManager"
+        android:summary="@string/app_ops_settings_summary"
+        android:icon="@drawable/ic_settings_privacy"
+        android:title="@string/privacy_guard_settings_title" />
+       
     <Preference
         android:key="more_settings"
         android:title="@string/more_settings_title"
         android:summary="@string/summary_misc_settings"
-        android:icon="@drawable/ic_owlsnest_advanced"
-        android:layout="@layout/preference_layout_misc_settings"
+        android:icon="@drawable/ic_settings_more"
         android:fragment="org.omnirom.omnigears.moresettings.MoreSettings" />
 
     <!--<Preference
