@@ -46,8 +46,7 @@ public class NotiSettings extends SettingsPreferenceFragment implements
 			
 	private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
 	private static final String FLASH_ON_CALL_WAITING_DELAY = "flash_on_call_waiting_delay";
-			
-	private ListPreference mNoisyNotification;
+
 	private ListPreference mAnnoyingNotification;
 	private CustomSeekBarPreference mFlashOnCallWaitingDelay;
 
@@ -63,14 +62,6 @@ public class NotiSettings extends SettingsPreferenceFragment implements
         
         final PreferenceScreen prefSet = getPreferenceScreen();
         final ContentResolver resolver = getActivity().getContentResolver();
-        
-        mNoisyNotification = (ListPreference) findPreference("notification_sound_vib_screen_on");
-        mNoisyNotification.setOnPreferenceChangeListener(this);
-        int mode = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON,
-                1, UserHandle.USER_CURRENT);
-        mNoisyNotification.setValue(String.valueOf(mode));
-        mNoisyNotification.setSummary(mNoisyNotification.getEntry());
 
 		mAnnoyingNotification = (ListPreference) findPreference("less_notification_sounds");
         mAnnoyingNotification.setOnPreferenceChangeListener(this);
@@ -99,15 +90,7 @@ public class NotiSettings extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
 		ContentResolver resolver = getActivity().getContentResolver();
-		if (preference.equals(mNoisyNotification)) {
-            int mode = Integer.parseInt(((String) newValue).toString());
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON, mode, UserHandle.USER_CURRENT);
-            int index = mNoisyNotification.findIndexOfValue((String) newValue);
-            mNoisyNotification.setSummary(
-                    mNoisyNotification.getEntries()[index]);
-            return true;
-        } else if (preference.equals(mAnnoyingNotification)) {
+		if (preference.equals(mAnnoyingNotification)) {
             int mode = Integer.parseInt(((String) newValue).toString());
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, mode, UserHandle.USER_CURRENT);
